@@ -268,6 +268,9 @@ void CreateSeaEnvironment()
 	//PeopleOnShip.isNight = Whr_IsNight();
 
 	// тут лишнее QuestsCheck();
+
+	SetActiveCamera(SHIP_CAMERA); // Vex: fixing the camera when loading save to sea
+
 }
 // boal -->
 string Sea_FindNearColony()
