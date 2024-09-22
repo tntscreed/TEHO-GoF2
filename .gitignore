@@ -1,1 +1,2 @@
-resource
+RESOURCE/*
+!RESOURCE/INI
