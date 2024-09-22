@@ -837,6 +837,8 @@ void NewGame_continue()
 	pchar = GetMainCharacter(); //fix
 		
 	initNewMainCharacter(); // все там
+	LoadMainCharacterInFirstLocationGroup("Ship_deck_Low", "goto", "goto4");
+
 	
 	ReloadProgressUpdate();
 		

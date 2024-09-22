@@ -3547,6 +3547,7 @@ void initNewMainCharacter()//инициализация главного гер�
 	ReloadProgressUpdate();	
     DeleteAttribute(ch, "Ship");
     
+	/*
 	if (startHeroType == 1)	// Шарль
 	{
 		ch.Ship.Type = SHIP_NOTUSED;
@@ -3568,6 +3569,20 @@ void initNewMainCharacter()//инициализация главного гер�
 	    ch.quest.Tut_start.win_condition.l1.location = "Ship_deck_Low";
 	    ch.quest.Tut_start.function                  = "Tut_StartGame";
 	}	
+	*/
+
+	ch.Ship.Type = GenerateShipExt((SHIP_CAREERLUGGER + rand(2)), 0, ch);
+	SetBaseShipData(ch);
+	ch.Ship.Name = "Quicksilver";
+	SetCrewQuantity(ch, GetMinCrewQuantity(ch));
+	// коцаем корабль
+	// ch.ship.SP = sti(ch.ship.SP) - 10; <-- этот код не имеет смысла
+	ch.ship.HP = sti(ch.ship.HP) - makeint(sti(ch.ship.HP) / 2);
+	// Tutorial - НАЧАЛО ИГРЫ
+	ch.quest.Tut_start.win_condition.l1 = "location";
+	ch.quest.Tut_start.win_condition.l1.location = "Ship_deck_Low";
+	ch.quest.Tut_start.function = "Tut_StartGame";
+
 	// Warship Для разных квестов
 	// Важно: функция MaryCelesteInit() должна быть тут, а не в initStartState2Character()
 	// т.к. в ней идет выборка колоний, которые в функции initStartState2Character() еще не инитились
