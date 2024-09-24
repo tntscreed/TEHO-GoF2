@@ -68,52 +68,36 @@ ps_hero_qty {20}
 heroName_1 {Charles}
 heroNameGen_1 {Charles}
 heroNameDat_1 {Charles}
-
 heroLastname_1 {de Maure}
 heroLastnameGen_1 {de Maure}
 heroLastNameDat_1 {de Maure}
-
 heroFace_1 {201}
-
 heroModel_1 {Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8}
-
 heroType_1 {HeroType_1}
-
 heroNation_1 {FRANCE}
-
 heroBaseNation_1 {FRANCE}
-
 sex_1 {man}
 animation_1 {man_A}
-
-hero_1
+heroInfo_1
 {
 From HeroDescribe!
 }
 
+
 heroName_2 {Diego}
 heroLastname_2   {De Montoya}
-
 heroNameGen_2 {Diego}
 heroLastnameGen_2 {De Montoya}
-
 heroNameDat_2 {Diego}
 heroLastNameDat_2 {De Montoya}
-
 heroFace_2 {203}
-
 heroModel_2  {Diego_1,Diego_1,Diego_1,Diego_1,Diego_1,protocusto,Diego_6}
-
 heroType_2 {HeroType_1} 
-
 heroNation_2 {SPAIN}
-
 heroBaseNation_2 {SPAIN}
-
 sex_2 {man}
 animation_2 {man_A}
-
-hero_2
+heroInfo_2
 {
 From HeroDescribe 2! Diego de Montoya!
 }
