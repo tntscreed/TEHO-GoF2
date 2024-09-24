@@ -3387,8 +3387,6 @@ void setNewMainCharacter(ref ch, int num)
 
     totalInfo = LanguageConvertString(idLngFile, "heroModel_" + num);
     ch.HeroModel = totalInfo;
-    ch.model	= GetSubStringByNum(ch.HeroModel, 0);
-    ch.headModel = "h_" + ch.model;
 
     totalInfo = LanguageConvertString(idLngFile, "heroName_" + num);
     ch.name 	=  totalInfo;
@@ -3396,13 +3394,28 @@ void setNewMainCharacter(ref ch, int num)
     totalInfo = LanguageConvertString(idLngFile, "heroLastname_" + num);
     ch.lastname = totalInfo;
 
+	totalInfo = LanguageConvertString(idLngFile, "heroNameGen_" + num);
+	ch.nameGen = totalInfo;
+
+	totalInfo = LanguageConvertString(idLngFile, "heroLastnameGen_" + num);
+	ch.lastnameGen = totalInfo;
+
+	totalInfo = LanguageConvertString(idLngFile, "heroNameDat_" + num);
+	ch.nameDat = totalInfo;
+
+	totalInfo = LanguageConvertString(idLngFile, "heroLastnameDat_" + num);
+	ch.lastnameDat = totalInfo;
+
     totalInfo = LanguageConvertString(idLngFile, "sex_" + num);
     ch.sex = totalInfo;
 
-    totalInfo = LanguageConvertString(idLngFile, "animation_" + num);
-    ch.model.animation = totalInfo;
+	totalInfo = LanguageConvertString(idLngFile, "animation_" + num);
+	ch.model.animation = totalInfo;
 
-    if(ch.sex == "woman")
+	totalInfo = LanguageConvertString(idLngFile, "heroInfo_" + num);
+	ch.info = totalInfo;
+
+	if(ch.sex == "woman")
 	{
 		ch.model.height = 1.75;
 	}
@@ -3411,10 +3424,15 @@ void setNewMainCharacter(ref ch, int num)
 		ch.model.height = 1.8;
 	}
 
+	totalInfo = LanguageConvertString(idLngFile, "heroType_" + num);
+	ch.HeroParam.HeroType = totalInfo;
+
+
+
     LanguageCloseFile(idLngFile);
-    // для НПС
-    ch.HeroParam.HeroType = GetNewMainCharacterType(num);
-    ch.nation             = GetNewMainCharacterNation(num);
+
+    ch.nation = GetNewMainCharacterNation(num);
+	ch.BaseNation = GetNewMainCharacterBaseNation(num);
 }
 
 string GetNewMainCharacterType(int _startHeroType)
@@ -3445,7 +3463,7 @@ void initNewMainCharacter()//инициализация главного гер�
 	string sTemp;
 	int    iTmp, i;
 
-    CCS_SetNewMainCharacter(ch, startHeroType);
+    setNewMainCharacter(ch, startHeroType);
     // контроль версий -->
     InitMigrations();
     // контроль версий <--
@@ -3707,6 +3725,52 @@ int GetNewMainCharacterNation(int _startHeroType)
 
     idLngFile = LanguageOpenFile("HeroDescribe.txt");
     totalInfo = LanguageConvertString(idLngFile, "heroNation_" + _startHeroType);
+    LanguageCloseFile(idLngFile);
+
+    switch(totalInfo)
+	{
+		case "Англия":
+            return ENGLAND;
+		break;
+		case "Франция":
+            return FRANCE;
+		break;
+		case "Испания":
+            return SPAIN;
+		break;
+		case "Голландия":
+			return HOLLAND;
+		break;
+		case "Береговое братство":
+			return PIRATE;
+		break;
+
+		case "ENGLAND":
+            return ENGLAND;
+		break;
+		case "FRANCE":
+            return FRANCE;
+		break;
+		case "SPAIN":
+            return SPAIN;
+		break;
+		case "HOLLAND":
+			return HOLLAND;
+		break;
+		case "PIRATE":
+			return PIRATE;
+		break;
+	}
+	return PIRATE;
+}
+
+int GetNewMainCharacterBaseNation(int _startHeroType)
+{
+    int    idLngFile = -1;
+    string totalInfo;
+
+    idLngFile = LanguageOpenFile("HeroDescribe.txt");
+    totalInfo = LanguageConvertString(idLngFile, "heroBaseNation_" + _startHeroType);
     LanguageCloseFile(idLngFile);
 
     switch(totalInfo)

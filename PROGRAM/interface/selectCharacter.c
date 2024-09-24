@@ -48,7 +48,7 @@ void InitInterface(string iniName)
 	SetEventHandler("frame","IProcessFrame",0);
 	SetEventHandler("ievnt_command","ProcessCommandExecute",0);
 	
-	CCS_SetNewMainCharacter(&NullCharacter, startHeroType);
+	setNewMainCharacter(&NullCharacter, startHeroType);
 	SetCharacterSPECIAL(NullCharacter.HeroParam.HeroType, &NullCharacter);
 	SetSPECIALMiniTableCharSelect("TABLE_SMALLSKILL", &NullCharacter);
 	SetSetupInfoText();
@@ -636,7 +636,7 @@ void ProcessCommandExecuteRight()
 void SetVariable(bool _init)
 {
 	if (startHeroType < 1) startHeroType = 1; // fix
-	CCS_SetNewMainCharacter(&NullCharacter, startHeroType);
+	setNewMainCharacter(&NullCharacter, startHeroType);
 	SetFormatedText("HERO_NAME", GetFullName(&NullCharacter));
     SetFormatedText("HERO_TYPE", XI_ConvertString(nulChr.HeroParam.HeroType));
 

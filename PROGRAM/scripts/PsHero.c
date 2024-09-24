@@ -29,7 +29,7 @@ void InitPsHeros()
 			{			
 				PsHeroQty++;
 				ch = GetCharacter(NPC_GenerateCharacter("PsHero_" + PsHeroQty, "off_hol_2", "man", "man", 5, PIRATE, -1, true, "pofficer"));
-				CCS_setNewMainCharacter(ch, n);
+				setNewMainCharacter(ch, n);
 			}
 			else continue;
 		}
