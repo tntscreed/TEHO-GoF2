@@ -12,7 +12,7 @@
 #define VERSION_WWW     "http://www.blackmark.bz"
 
 // Show special message for test game statment
-#define MOD_BETTATESTMODE			"Off"  // On -DEV version; Test - TST ver; Off - relize
+#define MOD_BETTATESTMODE			"On"  // On -DEV version; Test - TST ver; Off - relize
 
 // глобальные строковые переменные
 String sGlobalTemp;
@@ -125,7 +125,7 @@ int MOD_SKILL_ENEMY_RATE   = 4;
 
 // boal 23.01.2004 доработка 091004 сколь угодно героев -->
 int    startHeroType 	= 1;
-int    MaxHeroQty		= 1;  // максимальное кол-во ГГ
+int    MaxHeroQty		= 3;  // максимальное кол-во ГГ
 int    MaxPGGQty		= 10; // максимальное кол-во ПГГ (+2 оставшихся ГГ)
 //int    heroFaceId    = 1;
 // boal 23.01.2004 <--
