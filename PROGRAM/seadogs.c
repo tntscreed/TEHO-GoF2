@@ -854,7 +854,6 @@ void NewGame_continue()
 	startGameWeather = true;
 		
 	InterfaceStates.startGameWeather = FindWeather("11 Hour");
-	if (startHeroType != 1) LoadMainCharacterInFirstLocationGroup("Ship_deck_Low", "goto", "goto4");
     	
 	UpdateCrewInColonies(); // пересчет наемников в городах
 	
