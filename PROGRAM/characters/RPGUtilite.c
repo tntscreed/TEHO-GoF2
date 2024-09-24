@@ -3387,6 +3387,7 @@ void setNewMainCharacter(ref ch, int num)
 
     totalInfo = LanguageConvertString(idLngFile, "heroModel_" + num);
     ch.HeroModel = totalInfo;
+	ch.model = GetSubStringByNum(ch.HeroModel, 0);
 
     totalInfo = LanguageConvertString(idLngFile, "heroName_" + num);
     ch.name 	=  totalInfo;
@@ -3433,6 +3434,8 @@ void setNewMainCharacter(ref ch, int num)
 
     ch.nation = GetNewMainCharacterNation(num);
 	ch.BaseNation = GetNewMainCharacterBaseNation(num);
+
+	ch.cirassIDX = 0;
 }
 
 string GetNewMainCharacterType(int _startHeroType)
