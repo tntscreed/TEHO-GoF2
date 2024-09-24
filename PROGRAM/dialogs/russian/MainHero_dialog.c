@@ -426,8 +426,30 @@ void ProcessDialogEvent()
 			//<-- завершение игры
 			Link.l10 = RandPhraseSimple("Not now. There is no time.", "No time for that, too much to do.");
 			Link.l10.go = "exit";
+
+			Link.l69 = "[VEX DEBUG]";
+			Link.l69.go = "VEX_DEBUG";
 		break;
-		
+
+		case "VEX_DEBUG":
+			Dialog.Text = "VEX DEBUG";
+			Link.l1 = "Trace all characters.";
+			Link.l1.go = "VEX_DEBUG_LIST_CHARS";
+		break;
+
+		case "VEX_DEBUG_LIST_CHARS":
+			Dialog.Text = "Listing characters...";
+			for (i=0; i<MAX_CHARACTERS; i++)
+			{
+				if (CheckAttribute(&Characters[i], "id") && Characters[i].id != "")
+				{
+					Trace("Character[" + i + "] = " + Characters[i].id + "; Name: " + GetFullName(&Characters[i]));
+				}
+			}
+			Link.l1 = "";
+			Link.l1.go = "exit";
+		break;
+
 		case "StartSelfRepair":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit_Self();
