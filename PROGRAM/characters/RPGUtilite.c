@@ -3296,8 +3296,8 @@ void CCS_SetNewMainCharacter(ref ch, int num)
 			
 			ch.FaceId 				= 203;
 			ch.HeroModel 			= "Diego_1,Diego_1,Diego_1,Diego_1,Diego_1,protocusto,Diego_6";
-			ch.name 				= "Диего";
-			ch.lastname				= "де Монтойя";
+			ch.name 				= "Diego";
+			ch.lastname				= "de Montoya";
 			ch.nameGen				= "Диего";
 			ch.lastnameGen			= "де Монтойя";
 			ch.nameDat				= "Диего";
@@ -3307,7 +3307,7 @@ void CCS_SetNewMainCharacter(ref ch, int num)
 			ch.HeroParam.HeroType 	= "HeroType_1";
 			ch.nation				= SPAIN;
 			ch.BaseNation			= SPAIN;
-			ch.info					= "Здесь будет описание Главного Героя Диего де Монтойя.";									
+			ch.info					= "Здесь будет описание Главного Героя Диего де Монтойя.";
 			
 		break;		
 		case 3: // Паттерсон
@@ -3315,8 +3315,8 @@ void CCS_SetNewMainCharacter(ref ch, int num)
 			
 			ch.FaceId 				= 202;
 			ch.HeroModel 			= "Willy_1,Willy_1,Willy_1,Willy_1,Willy_1,protocusto,Willy_6";
-			ch.name 				= "Вильям";
-			ch.lastname				= "Патерсон";
+			ch.name 				= "William";
+			ch.lastname				= "Patterson";
 			ch.nameGen				= "Вильяма";
 			ch.lastnameGen			= "Патерсона";
 			ch.nameDat				= "Вильяму";
