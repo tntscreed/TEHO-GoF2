@@ -136,7 +136,7 @@ heroNameDat_5 {Peter}
 heroLastname_5 {Blood}
 heroLastnameGen_5 {Blood}
 heroLastNameDat_5 {Blood}
-heroFace_5 {1221}
+heroFace_5 {2221}
 heroModel_5 {Blad_0,Blad_1,Blad_2,Blad_3,Blad_4,Blad_5,Blad_6,Blad_7,Blad_8}
 heroType_5 {HeroType_1}
 heroNation_5 {ENGLAND}
@@ -144,3 +144,559 @@ heroBaseNation_5 {ENGLAND}
 sex_5 {man}
 animation_5 {man}
 heroInfo_5 {A character only for an Expert player... \nA man to whom fate has dealt the cruelest of hands. Medicine was his calling, saving lives was his vocation, but can he withstand the brutality of the events that befall him and win the fight to survive? He must adapt to unfathomable hardships, use all his intelligence to solve the riddles of survival and face insurmountable odds in the fight to gain his freedom. It will require the skills of a true hero to survive and break free. But what then? Will he continue to strive for good, or surrender to evil?}
+
+heroName_6 {Nicolaas}
+heroNameGen_6 {Nicolaas}
+heroNameDat_6 {Nicolaas}
+heroLastname_6 {van Hoorn}
+heroLastnameGen_6 {van Hoorn}
+heroLastNameDat_6 {van Hoorn}
+heroFace_6 {2215}
+heroModel_6 {Resc_0,Resc_1,Resc_2,Resc_3,Resc_4,Resc_5,Resc_6,Resc_7,Resc_9}
+heroType_6 {HeroType_1}
+heroNation_6 {HOLLAND}
+heroBaseNation_6 {HOLLAND}
+sex_6 {man}
+animation_6 {man}
+heroInfo_6 {A character for the Businessman in every player... \nHe came to the Caribbean with the notion of making a fortune in trade, having previously served as a mercenary in Europe. In any case, he is not known to shy away from making pieces of eight the dirty way.}
+
+heroName_7 {Diego}
+heroNameGen_7 {Diego}
+heroNameDat_7 {Diego}
+heroLastname_7 {Espinoza}
+heroLastnameGen_7 {Espinoza}
+heroLastNameDat_7 {Espinoza}
+heroFace_7 {2214}
+heroModel_7 {Espinosa,Espinosa_Cirass,Espinosa_Cirass1,Espinosa_Cirass2,Espinosa_Cirass4,Espinosa_Cirass3,Espinosa,Espinosa,Espinosa}
+heroType_7 {HeroType_1}
+heroNation_7 {SPAIN}
+heroBaseNation_7 {SPAIN}
+sex_7 {man}
+animation_7 {man}
+heroInfo_7 {A character for an Adventurous player... \nWhere does a man find power? In money and in might. And where does a man find those? In his knowledge and skill, or in the skills of others. A knack for finding the right solutions, and a passion for wealth, have led our hero on an strange adventure in the Caribbean.}
+
+heroName_8 {Nathaniel}
+heroNameGen_8 {Nathaniel}
+heroNameDat_8 {Nathaniel}
+heroLastname_8 {Butler}
+heroLastnameGen_8 {Butler}
+heroLastNameDat_8 {Butler}
+heroFace_8 {2999}
+heroModel_8 {BPM10,BPM10_Cirass,BPM10_Cirass1,BPM10_Cirass2,BPM10_Cirass4,BPM10_Cirass3,BPM10_Trmp,BPM10_Trader,BPM10_Richman}
+heroType_8 {HeroType_1}
+heroNation_8 {ENGLAND}
+heroBaseNation_8 {ENGLAND}
+sex_8 {man}
+animation_8 {man}
+heroInfo_8 {Privateering is a highly rewarding career...so is politics. Why steal from ships on the high seas when it can be done from the comfortable seat of a governors mansion?}
+
+heroName_9 {Christophe Julien}
+heroNameGen_9 {Christophe Julien}
+heroNameDat_9 {Christophe Julien}
+heroLastname_9 {de Rapièr}
+heroLastnameGen_9 {de Rapièr}
+heroLastNameDat_9 {de Rapièr}
+heroFace_9 {2997}
+heroModel_9 {Hero1,Hero1_Cirass,Hero1_Cirass1,Hero1_Cirass2,Hero1_Cirass4,Hero1_Cirass3,blood_bomj,Hero2,Hero3}
+heroType_9 {HeroType_1}
+heroNation_9 {FRANCE}
+heroBaseNation_9 {FRANCE}
+sex_9 {man}
+animation_9 {man}
+heroInfo_9 {Christophe-Julien de Rapièr was one of the youngest pirate captains of his time, achieving the rank of a captain at the beginning of his thirties. At some point in his life, he met young pirate Jack Sparrow and gave him instructions in sword fighting. They became good friends, and Christophe even offered Jack to join his crew.}
+
+heroName_10 {Antonio}
+heroNameGen_10 {Antonio}
+heroNameDat_10 {Antonio}
+heroLastname_10 {de Sotomayor}
+heroLastnameGen_10 {de Sotomayor}
+heroLastNameDat_10 {de Sotomayor}
+heroFace_10 {2998}
+heroModel_10 {Inqu1,Inqu1_Cirass,Inqu1_Cirass1,Inqu1_Cirass2,Inqu1_Cirass4,Inqu1_Cirass3}
+heroType_10 {HeroType_1}
+heroNation_10 {SPAIN}
+heroBaseNation_10 {SPAIN}
+sex_10 {man}
+animation_10 {man}
+heroInfo_10 {Inquisitor player for the church... \nAfter completeing several trials in Cartagena de Indias, Antonio has decided to spend some time in the Caribbean before going home. Armed with a law degree and a bible, he has made it his mission to help the faithful by testing the strength of their faith. }
+
+heroName_11 {Horatio}
+heroNameGen_11 {Horatio}
+heroNameDat_11 {Horatio}
+heroLastname_11 {Hornblower}
+heroLastnameGen_11 {Hornblower}
+heroLastNameDat_11 {Hornblower}
+heroFace_11 {2247}
+heroModel_11 {Bmid_eng1_3,Bmid_eng1_3_cirass,Bmid_eng1_3_cirass1,Bmid_eng1_3_cirass2,Bmid_eng1_3_cirass3,Bmid_eng1_3_cirass4,Bleu_eng1_1,Bcap_eng1_1,Badm_eng1_1}
+heroType_11 {HeroType_1}
+heroNation_11 {ENGLAND}
+heroBaseNation_11 {ENGLAND}
+sex_11 {man}
+animation_11 {man}
+heroInfo_11 {Born in Kent, the son of a doctor. He has no inherited wealth or influential connections who can advance his career. He is given a classical education, and by the time he joins the Royal Navy at age seventeen, he is well-versed in Greek and Latin. He is tutored in French by a penniless French émigré and has an aptitude for mathematics, which serves him well as a navigator.}
+
+heroName_12 {Black Smoke}
+heroNameGen_12 {Black Smoke}
+heroNameDat_12 {Black Smoke}
+heroLastname_12 {James}
+heroLastnameGen_12 {James}
+heroLastNameDat_12 {James}
+heroFace_12 {2216}
+heroModel_12 {Isterling,Isterling_Cirass,Isterling_Cirass1,Isterling_Cirass2,Isterling_Cirass3,Isterling_Cirass4}
+heroType_12 {HeroType_1}
+heroNation_12 {PIRATE}
+heroBaseNation_12 {PIRATE}
+sex_12 {man}
+animation_12 {man}
+heroInfo_12 {Having survied the attack on his ship, King George's Amnesty, Black Smoke James has vowed revenge on Jack Sparrow. }
+
+heroName_13 {Eduardo}
+heroNameGen_13 {Eduardo}
+heroNameDat_13 {Eduardo}
+heroLastname_13 {Blomar}
+heroLastnameGen_13 {Blomar}
+heroLastNameDat_13 {Blomar}
+heroFace_13 {2030}
+heroModel_13 {officer_13,officer_13_cirass,officer_13_cirass1,officer_13_cirass2,officer_13_cirass3,officer_13_cirass4}
+heroType_13 {HeroType_1}
+heroNation_13 {SPAIN}
+heroBaseNation_13 {SPAIN}
+sex_13 {man}
+animation_13 {man}
+heroInfo_13 {Sometimes nationality means nothing when it comes to riches of Spain and her colonies... }
+
+heroName_14 {Michiel}
+heroNameGen_14 {Michiel}
+heroNameDat_14 {Michiel}
+heroLastname_14 {Andrieszoon}
+heroLastnameGen_14 {Andrieszoon}
+heroLastNameDat_14 {Andrieszoon}
+heroFace_14 {2031}
+heroModel_14 {officer_14,officer_14_cirass,officer_14_cirass1,officer_14_cirass2,officer_14_cirass3,officer_14_cirass4}
+heroType_14 {HeroType_1}
+heroNation_14 {HOLLAND}
+heroBaseNation_14 {HOLLAND}
+sex_14 {man}
+animation_14 {man}
+heroInfo_14 {Always eager for buccaneering raids in the Spanish Main, Michiel is in the hunt for that one big raid which will make all his dreams come true. }
+
+heroName_15 {Juan}
+heroNameGen_15 {Juan}
+heroNameDat_15 {Juan}
+heroLastname_15 {Guartem}
+heroLastnameGen_15 {Guartem}
+heroLastNameDat_15 {Guartem}
+heroFace_15 {2032}
+heroModel_15 {officer_15,officer_15_cirass,officer_15_cirass1,officer_15_cirass2,officer_15_cirass3,officer_15_cirass4}
+heroType_15 {HeroType_1}
+heroNation_15 {SPAIN}
+heroBaseNation_15 {SPAIN}
+sex_15 {man}
+animation_15 {man}
+heroInfo_15 {A thorn to Spain's New World holdings, Juan and his crew of loyal pirates seek gold and treasures where ever they may be. }
+
+heroName_16 {Blaze}
+heroNameGen_16 {Devlin}
+heroNameDat_16 {Blaze}
+heroLastname_16 {Devlin}
+heroLastnameGen_16 {Blaze}
+heroLastNameDat_16 {Devlin}
+heroFace_16 {2001}
+heroModel_16 {Devlin}
+heroType_16 {HeroType_1}
+heroNation_16 {ENGLAND}
+heroBaseNation_16 {ENGLAND}
+sex_16 {man}
+animation_16 {man}
+heroInfo_16 {Devlin is adventurous and daring as any other buccaneer and can stand his own in any battle...except when against his step-sister. }
+
+heroName_17 {Christopher}
+heroNameGen_17 {Christopher}
+heroNameDat_17 {Christopher}
+heroLastname_17 {Syn}
+heroLastnameGen_17 {Syn}
+heroLastNameDat_17 {Syn}
+heroFace_17 {2022}
+heroModel_17 {officer_5,officer_5_cirass,officer_5_cirass1,officer_5_cirass2,officer_5_cirass3,officer_5_cirass4}
+heroType_17 {HeroType_1}
+heroNation_17 {ENGLAND}
+heroBaseNation_17 {ENGLAND}
+sex_17 {man}
+animation_17 {man}
+heroInfo_17 {Christopher Syn, alias The Scarecrow is an Englishman of many talents. In his life, he has been a pirate, smuggler, and vicar. }
+
+heroName_18 {Olivier}
+heroNameGen_18 {Olivier}
+heroNameDat_18 {Olivier}
+heroLastname_18 {Levasseur}
+heroLastnameGen_18 {Levasseur}
+heroLastNameDat_18 {Levasseur}
+heroFace_18 {2024}
+heroModel_18 {officer_7,officer_7_cirass,officer_7_cirass1,officer_7_cirass2,officer_7_cirass3,officer_7_cirass4}
+heroType_18 {HeroType_1}
+heroNation_18 {FRANCE}
+heroBaseNation_18 {FRANCE}
+sex_18 {man}
+animation_18 {man}
+heroInfo_18 {Nicknamed La Buse or La Bouche (The Buzzard) in his early days, called thus because of the speed and stealth with which he always attacked his enemies. }
+
+heroName_19 {Jack}
+heroNameGen_19 {Jack}
+heroNameDat_19 {Jack}
+heroLastname_19 {Aubrey}
+heroLastnameGen_19 {Aubrey}
+heroLastNameDat_19 {Aubrey}
+heroFace_19 {2311}
+heroModel_19 {luckyjack,luckyjack_cirass,luckyjack_cirass1,luckyjack_cirass2,luckyjack_cirass3,luckyjack_cirass4,luckyjack3,luckyjack1,luckyjack2}
+heroType_19 {HeroType_1}
+heroNation_19 {ENGLAND}
+heroBaseNation_19 {ENGLAND}
+sex_19 {man}
+animation_19 {man}
+heroInfo_19 {Like any stout-hearted Royal Navy midshipman or lieutenant, Jack Aubrey hungered for glory and for command of a ship. Indeed, the two were vitally connected, for the first was a path to the second and the latter (with luck) could bring the former. Aubrey obtained his first real command on April 19, 1800, the HMS Sophie.  }
+
+heroName_20 {David}
+heroNameGen_20 {David}
+heroNameDat_20 {David}
+heroLastname_20 {Marteen}
+heroLastnameGen_20 {Marteen}
+heroLastNameDat_20 {Marteen}
+heroFace_20 {2027}
+heroModel_20 {officer_10,officer_10_cirass,officer_10_cirass1,officer_10_cirass2,officer_10_cirass3,officer_10_cirass4}
+heroType_20 {HeroType_1}
+heroNation_20 {HOLLAND}
+heroBaseNation_20 {HOLLAND}
+sex_20 {man}
+animation_20 {man}
+heroInfo_20 {Having sailed with Henry Morgan, David is no stranger to danger and fortune. }
+
+heroName_21 {James}
+heroNameGen_21 {James}
+heroNameDat_21 {James}
+heroLastname_21 {Barrows}
+heroLastnameGen_21 {Barrows}
+heroLastNameDat_21 {Barrows}
+heroFace_21 {2249}
+heroModel_21 {barrows_55,barrows_55_cirass,barrows_55_cirass1,barrows_55_cirass2,barrows_55_cirass3,barrows_55_cirass4}
+heroType_21 {HeroType_1}
+heroNation_21 {ENGLAND}
+heroBaseNation_21 {ENGLAND}
+sex_21 {man}
+animation_21 {man}
+heroInfo_21 {Being one of the few Brethren of the Coast that doesn't fear Morgan's wrath, James is reknown for his unusual boldness and courage. "Captain Raven", as some call him due to his unusual tattoo, is also one of the many picaroons that have tight connections with Sir Thomas Modyford. }
+
+heroName_22 {Bartolomé}
+heroNameGen_22 {Bartolomé}
+heroNameDat_22 {Bartolomé}
+heroLastname_22 {Charpes}
+heroLastnameGen_22 {Charpes}
+heroLastNameDat_22 {Charpes}
+heroFace_22 {2026}
+heroModel_22 {officer_9,officer_9_cirass,officer_9_cirass1,officer_9_cirass2,officer_9_cirass3,officer_9_cirass4}
+heroType_22 {HeroType_1}
+heroNation_22 {SPAIN}
+heroBaseNation_22 {SPAIN}
+sex_22 {man}
+animation_22 {man}
+heroInfo_22 {Although Spanish, Bartolomé knows who holds the real wealth in the caribbean and is not afraid to take some for himself. }
+
+heroName_23 {James}
+heroNameGen_23 {James}
+heroNameDat_23 {James}
+heroLastname_23 {Norrington}
+heroLastnameGen_23 {Norrington}
+heroLastNameDat_23 {Norrington}
+heroFace_23 {2309}
+heroModel_23 {Norrington,Norrington_cirass,Norrington_cirass1,Norrington_cirass2,Norrington_cirass3,Norrington_cirass4,Norrington2,Norrington3,Norrington4}
+heroType_23 {HeroType_1}
+heroNation_23 {ENGLAND}
+heroBaseNation_23 {ENGLAND}
+sex_23 {man}
+animation_23 {man}
+heroInfo_23 {James Norrington was an English officer in the Royal Navy, achieving the rank of Commodore prior to the attack on Port Royal by the Black Pearl. He was later awarded the rank of Admiral in the East India Trading Company, and assumed command of Davy Jones and the Flying Dutchman on behalf of Lord Cutler Beckett during the war against piracy.  }
+
+heroName_24 {Pedro}
+heroNameGen_24 {Pedro}
+heroNameDat_24 {Pedro}
+heroLastname_24 {de la Plesa}
+heroLastnameGen_24 {de la Plesa}
+heroLastNameDat_24 {de la Plesa}
+heroFace_24 {2212}
+heroModel_24 {Chard2,Chard2_cirass,Chard2_cirass1,Chard2_cirass2,Chard2_cirass3,Chard2_cirass4}
+heroType_24 {HeroType_1}
+heroNation_24 {SPAIN}
+heroBaseNation_24 {SPAIN}
+sex_24 {man}
+animation_24 {man}
+heroInfo_24 {Having abadoned his captain Jan Jacobsen during a crucial battle, Pedro has come to caribbean to start anew and hopes not to run into any old friends of his former captain... }
+
+heroName_25 {Jan}
+heroNameGen_25 {Jan}
+heroNameDat_25 {Jan}
+heroLastname_25 {Willems}
+heroLastnameGen_25 {Willems}
+heroLastNameDat_25 {Willems}
+heroFace_25 {2237}
+heroModel_25 {Chard3b,Chard3b_cirass,Chard3b_cirass1,Chard3b_cirass2,Chard3b_cirass3,Chard3b_cirass4}
+heroType_25 {HeroType_1}
+heroNation_25 {HOLLAND}
+heroBaseNation_25 {HOLLAND}
+sex_25 {man}
+animation_25 {man}
+heroInfo_25 {Based out of Petit Goave, Willems has participated in number of expeditions against the Spanish and has earned the respect of the Brethren of the Coast. }
+
+heroName_26 {Jeremy}
+heroNameGen_26 {Jeremy}
+heroNameDat_26 {Jeremy}
+heroLastname_26 {Pitt}
+heroLastnameGen_26 {Pitt}
+heroLastNameDat_26 {Pitt}
+heroFace_26 {2230}
+heroModel_26 {Pitt,Pitt_cirass,Pitt_cirass1,Pitt_cirass2,Pitt_cirass3,Pitt_cirass4}
+heroType_26 {HeroType_1}
+heroNation_26 {ENGLAND}
+heroBaseNation_26 {ENGLAND}
+sex_26 {man}
+animation_26 {man}
+heroInfo_26 {Once considered nobility in England, after being arrested and sent away to the Caribbean, Jeremy has traded in his life of luxury for a life on the high seas along side his friend Peter Blood.  }
+
+heroName_27 {Jack}
+heroNameGen_27 {Jack}
+heroNameDat_27 {Jack}
+heroLastname_27 {Sparrow}
+heroLastnameGen_27 {Sparrow}
+heroLastNameDat_27 {Sparrow}
+heroFace_27 {2306}
+heroModel_27 {dep0,dep0,dep1,dep2,dep2,dep3,dep0,madjackNH,madjack}
+heroType_27 {HeroType_1}
+heroNation_27 {PIRATE}
+heroBaseNation_27 {PIRATE}
+sex_27 {man}
+animation_27 {man2_ab}
+heroInfo_27 {A character only for an Expert player... \nJack has become the stuff of legend and many tales are told of his exploits, most of these tales however were fabrications concocted by Sparrow to bolster his reputation. Despite his many deceptions though, Jack did embark on a great number of adventures many of these involved the supernatural, and indeed Jack's ultimate ambition was to achieve immortality, and the freedom to sail the Seven Seas as a pirate for eternity.}
+
+heroName_28 {William}
+heroNameGen_28 {William}
+heroNameDat_28 {William}
+heroLastname_28 {Turner}
+heroLastnameGen_28 {Turner}
+heroLastNameDat_28 {Turner}
+heroFace_28 {2307}
+heroModel_28 {will,will,will1,will2,will2,will3}
+heroType_28 {HeroType_1}
+heroNation_28 {PIRATE}
+heroBaseNation_28 {PIRATE}
+sex_28 {man}
+animation_28 {man2_ab}
+heroInfo_28 {The only son of Bootstrap Bill Turner. Born in Glasgow, Scotland, Will was raised by his mother, and had no contact with his father, whom he believed was a merchant sailor. Once she died, he headed to the Caribbean to search for his father. He ended up in Port Royal as a blacksmith's apprentice. }
+
+heroName_29 {Hector}
+heroNameGen_29 {Hector}
+heroNameDat_29 {Hector}
+heroLastname_29 {Barbossa}
+heroLastnameGen_29 {Barbossa}
+heroLastNameDat_29 {Barbossa}
+heroFace_29 {2308}
+heroModel_29 {pirat10,pirat11,pirat12,pirat12,pirat12,pirat13}
+heroType_29 {HeroType_1}
+heroNation_29 {PIRATE}
+heroBaseNation_29 {PIRATE}
+sex_29 {man}
+animation_29 {man2_ab}
+heroInfo_29 {Hector Barbossa was the Pirate Lord of the Caspian Sea. In his youth he was an honest sailor, who left to make an easier living as a pirate. One day he joined the crew of the Black Pearl, captained by Jack Sparrow. After two years of sailing under Sparrow's command, Barbossa lead a mutiny against Jack and marooned him on an uninhabited island and then journeyed to the Isla de Muerta to claim the lost treasure of Cortés. }
+
+heroName_30 {Red Legs}
+heroNameGen_30 {Red Legs}
+heroNameDat_30 {Red Legs}
+heroLastname_30 {Greaves}
+heroLastnameGen_30 {Greaves}
+heroLastNameDat_30 {Greaves}
+heroFace_30 {2996}
+heroModel_30 {Pat_0,Pat_1,Pat_2,Pat_3,Pat_4,Pat_5,Pat_6,Pat_7,Pat_8}
+heroType_30 {HeroType_1}
+heroNation_30 {ENGLAND}
+heroBaseNation_30 {ENGLAND}
+sex_30 {man}
+animation_30 {man}
+heroInfo_30 {As pirates go, Red Legs Greaves was not only a successful one but also a lucky one. He managed to survive his life as a pirate and live to ripe old age. Greaves was born in Barbados, the son of Scottish slaves, he ran away in his teens and joined a pirate captain and crew; in time he became captain and went on to further sucess. Greaves got his nickname "Red Legs" from his heritage. The kilt wearing Scots were known for going bare legged in any weather and this lifestyle led to "red legs" in the Caribbean sun. Red Legs was a common nickname for the Scots and the Irish. }
+
+heroName_31 {Nathaniel}
+heroNameGen_31 {Nathaniel}
+heroNameDat_31 {Nathaniel}
+heroLastname_31 {Hawk}
+heroLastnameGen_31 {Hawk}
+heroLastNameDat_31 {Hawk}
+heroFace_31 {2310}
+heroModel_31 {blaz0,blaz0,blaz1,blaz2,blaz2,blaz3}
+heroType_31 {HeroType_1}
+heroNation_31 {ENGLAND}
+heroBaseNation_31 {ENGLAND}
+sex_31 {man}
+animation_31 {man2_ab}
+heroInfo_31 {A young and energetic corsair. Always be ahead, is his motto. Twice he has been caught and has escaped captivity both times. Each time he manages to escape, and obtain his liberty, he again quickly returns to his favorite cause... Being a Corsair. }
+
+heroName_32 {Lawrence}
+heroNameGen_32 {Lawrence}
+heroNameDat_32 {Lawrence}
+heroLastname_32 {Beltropa}
+heroLastnameGen_32 {Beltropa}
+heroLastNameDat_32 {Beltropa}
+heroFace_32 {2334}
+heroModel_32 {beltrop}
+heroType_32 {HeroType_1}
+heroNation_32 {PIRATE}
+heroBaseNation_32 {PIRATE}
+sex_32 {man}
+animation_32 {beltrop}
+heroInfo_32 {Rumored to hail from the land of the Cossacks, Beltropa is a man of few words but do not mistake his subtlety for weakness!}
+
+heroName_33 {Davy}
+heroNameGen_33 {Davy}
+heroNameDat_33 {Davy}
+heroLastname_33 {Jones}
+heroLastnameGen_33 {Jones}
+heroLastNameDat_33 {Jones}
+heroFace_33 {2390}
+heroModel_33 {DavyJones}
+heroType_33 {HeroType_1}
+heroNation_33 {PIRATE}
+heroBaseNation_33 {PIRATE}
+sex_33 {man}
+animation_33 {man3}
+heroInfo_33 {A character only for an Expert player... \nYe know of Davy Jones, yes? A man of the sea. A great sailor, until, he ran afoul of that which vex all men...}
+
+heroName_34 {Boris}
+heroNameGen_34 {Boris}
+heroNameDat_34 {Boris}
+heroLastname_34 {Palachnik}
+heroLastnameGen_34 {Palachnik}
+heroLastNameDat_34 {Palachnik}
+heroFace_34 {2329}
+heroModel_34 {alexander}
+heroType_34 {HeroType_1}
+heroNation_34 {PIRATE}
+heroBaseNation_34 {PIRATE}
+sex_34 {man}
+animation_34 {alexander_ab}
+heroInfo_34 {Sometimes called Borya, was a Russian pirate captain who succeeded in becoming a Pirate Lord of the Caspian Sea. His Piece of Eight was a wooden eyeball. Barbossa succeeded Borya and became the next Pirate Lord of the Caspian Sea and gave his Piece of Eight to Ragetti for safekeeping.}
+
+heroName_35 {Angelica}
+heroNameGen_35 {Angelica}
+heroNameDat_35 {Angelica}
+heroLastname_35 {}
+heroLastnameGen_35 {}
+heroLastNameDat_35 {}
+heroFace_35 {2250}
+heroModel_35 {Angelica,Angelica,Angelica,Angelica,Angelica,Angelica,Angelica,Angelica,Angelica}
+heroType_35 {HeroType_1}
+heroNation_35 {PIRATE}
+heroBaseNation_35 {PIRATE}
+sex_35 {woman}
+animation_35 {woman3_ab}
+heroInfo_35 {Angelica is the daughter of the notorious pirate captain Blackbeard and one of Jack Sparrow's past relationships.}
+
+heroName_36 {Shi}
+heroNameGen_36 {Shi}
+heroNameDat_36 {Shi}
+heroLastname_36 {Xianggu}
+heroLastnameGen_36 {Xianggu}
+heroLastNameDat_36 {Xianggu}
+heroFace_36 {2243}
+heroModel_36 {YokoDias,YokoDias3,YokoDias3,YokoDias3,YokoDias4,YokoDias5,YokoDias1,YokoDias2,YokoDias2}
+heroType_36 {HeroType_1}
+heroNation_36 {PIRATE}
+heroBaseNation_36 {PIRATE}
+sex_36 {woman}
+animation_36 {YokoDias}
+heroInfo_36 {Once a former guard of Mistress Ching. After the Battle of Calypso's maelstrom, Shi has decided to remain in the caribbean and make her own fortune... But will she be as sucessfull as her former captain? }
+
+heroName_37 {Danielle}
+heroNameGen_37 {Danielle}
+heroNameDat_37 {Danielle}
+heroLastname_37 {Greene}
+heroLastnameGen_37 {Greene}
+heroLastNameDat_37 {Greene}
+heroFace_37 {2302}
+heroModel_37 {Danielle}
+heroType_37 {HeroType_1}
+heroNation_37 {ENGLAND}
+heroBaseNation_37 {ENGLAND}
+sex_37 {woman}
+animation_37 {Danielle}
+heroInfo_37 {Not one to shy away from adventure, Danielle intends to make her name known in the Caribbean. Although she can't help but wonder if she will ever run into her former lover.... }
+
+heroName_38 {Anne}
+heroNameGen_38 {Anne}
+heroNameDat_38 {Anne}
+heroLastname_38 {Dieu-le-veut}
+heroLastnameGen_38 {Dieu-le-veut}
+heroLastNameDat_38 {Dieu-le-veut}
+heroFace_38 {2236}
+heroModel_38 {Daniell0}
+heroType_38 {HeroType_1}
+heroNation_38 {FRANCE}
+heroBaseNation_38 {FRANCE}
+sex_38 {woman}
+animation_38 {Danielle}
+heroInfo_38 {"Anne Gods-wants-it"; as it seemed that if she wanted something, it was as if God gave it to her. Although having a woman aboard a ship is bad luck, Anne brings good luck to where ever she goes and has a willing crew to follow her there. }
+
+heroName_39 {Beatrice}
+heroNameGen_39 {Beatrice}
+heroNameDat_39 {Beatrice}
+heroLastname_39 {Devlin}
+heroLastnameGen_39 {Devlin}
+heroLastNameDat_39 {Devlin}
+heroFace_39 {2000}
+heroModel_39 {Beatrice,Beatrice1,Beatrice1,Beatrice3,Beatrice2,Beatrice4,BeatriceC,Beatrice,Beatrice}
+heroType_39 {HeroType_1}
+heroNation_39 {ENGLAND}
+heroBaseNation_39 {ENGLAND}
+sex_39 {woman}
+animation_39 {beatrice_ab}
+heroInfo_39 {Beatrice is just as adventurous and plucky as her male counterparts and can stand her own in any battle...even up against her step-brother.   }
+
+heroName_40 {Jessika}
+heroNameGen_40 {Jessika}
+heroNameDat_40 {Jessika}
+heroLastname_40 {Zayonts}
+heroLastnameGen_40 {Zayonts}
+heroLastNameDat_40 {Zayonts}
+heroFace_40 {2330}
+heroModel_40 {jessika}
+heroType_40 {HeroType_1}
+heroNation_40 {HOLLAND}
+heroBaseNation_40 {HOLLAND}
+sex_40 {woman}
+animation_40 {Jessika_ab}
+heroInfo_40 {Charming, but no less insidious. The daughter of the governor of Curaçao she left the paternal house of her own will in search of bitter-salty sea spray, and sugary sweet delicacies. Jessika can not only make passionate love - she can kill dispassionately. }
+
+heroName_41 {Anamaria}
+heroNameGen_41 {Anamaria}
+heroNameDat_41 {Anamaria}
+heroLastname_41 {}
+heroLastnameGen_41 {}
+heroLastNameDat_41 {}
+heroFace_41 {2244}
+heroModel_41 {Anamaria,Anamaria3,Anamaria3,Anamaria3,Anamaria4,Anamaria5,Anamaria1,Anamaria2,Anamaria2}
+heroType_41 {HeroType_1}
+heroNation_41 {PIRATE}
+heroBaseNation_41 {PIRATE}
+sex_41 {woman}
+animation_41 {YokoDias}
+heroInfo_41 {Anamaria was a pirate and a crew member of the HMS Interceptor under Captain Jack Sparrow's command during the attempt to rescue Elizabeth Swann from Captain Hector Barbossa on Isla de Muerta. By the time Davy Jones called in Jack's debt, however, Anamaria was no longer a member of Sparrow's crew, although it can be presumed that Jack kept his earlier promise to her and got her another ship or boat.}
+
+heroName_42 {Constance}
+heroNameGen_42 {Constance}
+heroNameDat_42 {Constance}
+heroLastname_42 {Magliore}
+heroLastnameGen_42 {Magliore}
+heroLastNameDat_42 {Magliore}
+heroFace_42 {2168}
+heroModel_42 {Angellica,Angellica,Angellica,Angellica,Angellica,Angellica,Angellica,Angellica1,Angellica2}
+heroType_42 {HeroType_1}
+heroNation_42 {PIRATE}
+heroBaseNation_42 {PIRATE}
+sex_42 {woman}
+animation_42 {beatrice_ab}
+heroInfo_42 {Constance Magliore was the sister of Jean Magliore, and a crew member serving under Captain Jack Sparrow aboard the Barnacle. She was transformed into a cat by Tia Dalma, and later transformed back.}
+
