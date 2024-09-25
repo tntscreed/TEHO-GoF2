@@ -101,3 +101,39 @@ heroInfo_2
 {
 From HeroDescribe 2! Diego de Montoya!
 }
+
+heroName_3 {William}
+heroLastname_3   {Patterson}
+heroNameGen_3 {William}
+heroLastnameGen_3 {Patterson}
+heroNameDat_3 {William}
+heroLastNameDat_3 {Patterson}
+heroFace_3 {202}
+heroModel_3  {Willy_1,Willy_1,Willy_1,Willy_1,Willy_1,protocusto,Willy_6}
+heroType_3 {HeroType_3} 
+heroNation_3 {ENGLAND}
+heroBaseNation_3 {ENGLAND}
+sex_3 {man}
+animation_3 {man_A}
+heroInfo_3
+{
+From HeroDescribe 3
+}
+
+heroName_4 {Diego}
+heroLastname_4   {Espinosa}
+heroNameGen_4 {Diego}
+heroLastnameGen_4 {Espinosa}
+heroNameDat_4 {Diego}
+heroLastNameDat_4 {Espinosa}
+heroFace_4 {214}
+heroModel_4  {Espinosa,Espinosa_Cirass,Espinosa_Cirass1,Espinosa_Cirass2,Espinosa_Cirass3,Espinosa,Espinosa}
+heroType_4 {HeroType_4} 
+heroNation_4 {SPAIN}
+heroBaseNation_4 {SPAIN}
+sex_4 {man}
+animation_4 {man_A}
+heroInfo_4
+{
+From HeroDescribe 4
+}
