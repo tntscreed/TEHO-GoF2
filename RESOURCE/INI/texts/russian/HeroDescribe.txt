@@ -79,9 +79,7 @@ heroBaseNation_1 {FRANCE}
 sex_1 {man}
 animation_1 {man_A}
 heroInfo_1
-{
-From HeroDescribe!
-}
+{From HeroDescribe!}
 
 
 heroName_2 {Diego}
@@ -98,9 +96,7 @@ heroBaseNation_2 {SPAIN}
 sex_2 {man}
 animation_2 {man_A}
 heroInfo_2
-{
-From HeroDescribe 2! Diego de Montoya!
-}
+{From HeroDescribe 2! Diego de Montoya!}
 
 heroName_3 {William}
 heroLastname_3   {Patterson}
@@ -116,9 +112,7 @@ heroBaseNation_3 {ENGLAND}
 sex_3 {man}
 animation_3 {man_A}
 heroInfo_3
-{
-From HeroDescribe 3
-}
+{From HeroDescribe 3}
 
 heroName_4 {Diego}
 heroLastname_4   {Espinosa}
@@ -134,6 +128,19 @@ heroBaseNation_4 {SPAIN}
 sex_4 {man}
 animation_4 {man_A}
 heroInfo_4
-{
-From HeroDescribe 4
-}
+{From HeroDescribe 4}
+
+heroName_5 {Peter}
+heroNameGen_5 {Peter}
+heroNameDat_5 {Peter}
+heroLastname_5 {Blood}
+heroLastnameGen_5 {Blood}
+heroLastNameDat_5 {Blood}
+heroFace_5 {1221}
+heroModel_5 {Blad_0,Blad_1,Blad_2,Blad_3,Blad_4,Blad_5,Blad_6,Blad_7,Blad_8}
+heroType_5 {HeroType_1}
+heroNation_5 {ENGLAND}
+heroBaseNation_5 {ENGLAND}
+sex_5 {man}
+animation_5 {man}
+heroInfo_5 {A character only for an Expert player... \nA man to whom fate has dealt the cruelest of hands. Medicine was his calling, saving lives was his vocation, but can he withstand the brutality of the events that befall him and win the fight to survive? He must adapt to unfathomable hardships, use all his intelligence to solve the riddles of survival and face insurmountable odds in the fight to gain his freedom. It will require the skills of a true hero to survive and break free. But what then? Will he continue to strive for good, or surrender to evil?}

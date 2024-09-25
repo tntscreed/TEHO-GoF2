@@ -125,7 +125,7 @@ int MOD_SKILL_ENEMY_RATE   = 4;
 
 // boal 23.01.2004 доработка 091004 сколь угодно героев -->
 int    startHeroType 	= 1;
-int    MaxHeroQty		= 4;  // максимальное кол-во ГГ
+int    MaxHeroQty		= 5;  // максимальное кол-во ГГ
 int    MaxPGGQty		= 10; // максимальное кол-во ПГГ (+2 оставшихся ГГ)
 //int    heroFaceId    = 1;
 // boal 23.01.2004 <--
