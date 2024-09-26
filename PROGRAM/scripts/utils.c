@@ -1244,6 +1244,10 @@ string FindAlliedColonyForNation(int iNation, bool _checkPort)
 	int m = 0;
 	string sColony = "";
 	
+	if(colonies[i].nation == PIRATE){
+		return "Pirates";
+	}
+
 	for (int i = 0; i<MAX_COLONIES; i++)
 	{
 		if (colonies[i].nation != "none" && colonies[i].id != "Panama" && colonies[i].id != "SanAndres")
