@@ -433,8 +433,10 @@ void ProcessDialogEvent()
 
 		case "VEX_DEBUG":
 			Dialog.Text = "VEX DEBUG";
-			Link.l1 = "Trace all characters.";
+			Link.l1 = "Trace all characters!";
 			Link.l1.go = "VEX_DEBUG_LIST_CHARS";
+			Link.l2 = "Trace all items!";
+			Link.l2.go = "VEX_DEBUG_LIST_ITEMS";
 		break;
 
 		case "VEX_DEBUG_LIST_CHARS":
@@ -444,6 +446,19 @@ void ProcessDialogEvent()
 				if (CheckAttribute(&Characters[i], "id") && Characters[i].id != "")
 				{
 					Trace("Character[" + i + "] = " + Characters[i].id + "; Name: " + GetFullName(&Characters[i]));
+				}
+			}
+			Link.l1 = "";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_LIST_ITEMS":
+			Dialog.Text = "Listing items...";
+			for (i=0; i<ITEMS_QUANTITY; i++)
+			{
+				if (CheckAttribute(&Items[i], "id"))
+				{
+					Trace(Items[i].id + ";" + GetConvertStr(Items[i].name, "ItemsDescribe.txt"));
 				}
 			}
 			Link.l1 = "";
