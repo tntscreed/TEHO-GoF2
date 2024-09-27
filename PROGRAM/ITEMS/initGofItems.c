@@ -33,7 +33,7 @@ int GofInitItems()
 	itm.model = "";
 	itm.quest = "eng_flag_rise";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Nation = ENGLAND; //����� ������
 	itm.TitulCur = 1; // ����� ������
@@ -50,7 +50,7 @@ int GofInitItems()
 	itm.model = "";
 	itm.quest = "fra_flag_rise";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	//	itm.shown = 0;
 	itm.price = 0;
 	itm.Nation = FRANCE; //����� ������
@@ -68,7 +68,7 @@ int GofInitItems()
 	itm.model = "";
 	itm.quest = "spa_flag_rise";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	//	itm.shown = 0;
 	itm.price = 0;
 	itm.Nation = SPAIN; //����� ������
@@ -86,7 +86,7 @@ int GofInitItems()
 	itm.model = "";
 	itm.quest = "hol_flag_rise";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	//	itm.shown = 0;
 	itm.price = 0;
 	itm.Nation = HOLLAND; //����� ������
@@ -108,7 +108,7 @@ int GofInitItems()
 	itm.model = "unarmed";
 	itm.folder = "items";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	itm.price = 1;
 	itm.Weight = 0.0;
 	itm.dmg_min = 1.0;
@@ -133,7 +133,7 @@ int GofInitItems()
 	itm.model = "kocherg";
 	itm.folder = "items";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	itm.price = 3;
 	itm.Weight = 4;
 	itm.dmg_min = 1.0;
@@ -158,7 +158,7 @@ int GofInitItems()
 	itm.model = "lead1";
 	itm.folder = "items";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	itm.price = 25;
 	itm.Weight = 0.5;
 	itm.dmg_min = 2.0;
@@ -182,7 +182,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade5";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 40;
 	itm.Weight = 1;
@@ -208,7 +208,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade2";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 60;
 	itm.Weight = 3;
@@ -234,7 +234,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade6";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 100;
 	itm.Weight = 2.5;
@@ -260,7 +260,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade9";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 300;
 	itm.Weight = 2.8;
@@ -286,7 +286,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade14";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 200;
 	itm.Weight = 3.5;
@@ -312,7 +312,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade19";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 350;
 	itm.Weight = 2.6;
@@ -338,7 +338,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade22";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 450;
 	itm.Weight = 2.7;
@@ -364,7 +364,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade23";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 650;
 	itm.Weight = 2.5;
@@ -390,7 +390,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "arm1";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 1650;
 	itm.Weight = 3.7;
@@ -416,7 +416,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade27";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	// boal 19.01.2004 -->
 	itm.price = 5000;
 	itm.Weight = 2.9;
@@ -442,7 +442,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade27";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	// boal 15.12.2009 -->
 	itm.price = 12500;
 	itm.Weight = 3.5;
@@ -469,7 +469,7 @@ int GofInitItems()
 	itm.model = "blade1";
 	itm.folder = "items";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 25;
 	itm.Weight = 4.5;
@@ -495,7 +495,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade4";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 50;
 	itm.Weight = 4.6;
@@ -521,7 +521,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "topor3";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 75;
 	itm.Weight = 6;
@@ -547,7 +547,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade3";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 100;
 	itm.Weight = 5.3;
@@ -573,7 +573,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade7";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 125;
 	itm.Weight = 4.5;
@@ -599,7 +599,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade12";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 150;
 	itm.Weight = 6;
@@ -625,7 +625,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade18";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 200;
 	itm.Weight = 5.4;
@@ -651,7 +651,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade30";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 300;
 	itm.Weight = 4.1;
@@ -677,7 +677,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade31";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 400;
 	itm.Weight = 4.5;
@@ -703,7 +703,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade24";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	// boal 19.01.2004 -->
 	itm.price = 750;
 	itm.Weight = 4.3;
@@ -729,7 +729,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade25";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	// boal 19.01.2004 -->
 	itm.price = 850;
 	itm.Weight = 4.2;
@@ -755,7 +755,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade34";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 1000;
 	itm.Weight = 5.5;
@@ -781,7 +781,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade26";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	// boal 19.01.2004 -->
 	itm.price = 1250;
 	itm.Weight = 4.7;
@@ -807,7 +807,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade32";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 1500;
 	itm.Weight = 4.4;
@@ -834,7 +834,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade10";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 150;
 	itm.Weight = 7;
@@ -860,7 +860,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade35";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 200;
 	itm.Weight = 9;
@@ -886,7 +886,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade8";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 225;
 	itm.Weight = 7.5;
@@ -912,7 +912,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade11";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 250;
 	itm.Weight = 8;
@@ -938,7 +938,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade13";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 300;
 	itm.Weight = 6.5;
@@ -964,7 +964,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "topor1";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 325;
 	itm.Weight = 10;
@@ -990,7 +990,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade15";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 350;
 	itm.Weight = 8.5;
@@ -1016,7 +1016,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade16";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 400;
 	itm.Weight = 9.5;
@@ -1042,7 +1042,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade17";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 450;
 	itm.Weight = 11.5;
@@ -1068,7 +1068,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade20";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 500;
 	itm.Weight = 8.5;
@@ -1094,7 +1094,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade21";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 19.01.2004 -->
 	itm.price = 550;
 	itm.Weight = 10.5;
@@ -1120,7 +1120,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade33";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 650;
 	itm.Weight = 9;
@@ -1146,7 +1146,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade28";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 1500;
 	itm.Weight = 9.3;
@@ -1172,7 +1172,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "topor2";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 1650;
 	itm.Weight = 12.5;
@@ -1198,7 +1198,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade30";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 15.12.2009 -->
 	itm.price = 12500;
 	itm.Weight = 7.5;
@@ -1225,7 +1225,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "blade16";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_3";
+	itm.picTexture = "ITEMS_GOF3";
 	// boal 15.12.2009 -->
 	itm.price = 12500;
 	itm.Weight = 7.5;
@@ -1253,7 +1253,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "pistol1";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 50;
 	itm.Weight = 3;
@@ -1276,7 +1276,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "pistol2";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 200;
 	itm.Weight = 4;
@@ -1299,7 +1299,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "pistol3";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 400;
 	itm.Weight = 6;
@@ -1322,7 +1322,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "pistol6";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 650;
 	itm.Weight = 5;
@@ -1345,7 +1345,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "pistol5";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	itm.price = 1900;
 	// boal 19.01.2004 -->
 	itm.Weight = 3;
@@ -1368,7 +1368,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "pistol4";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	itm.shown = 4;
 	itm.price = 2500;
 	// boal 19.01.2004 -->
@@ -1392,7 +1392,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "mushket";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	// boal 19.01.2004 -->
 	itm.price = 5000;
 	itm.Weight = 13;
@@ -1415,7 +1415,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "mushket1";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	// boal 19.01.2004 -->
 	itm.price = 5500;
 	itm.Weight = 13;
@@ -1438,7 +1438,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_gold";
 	itm.model = "";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	n++;
 
@@ -1448,7 +1448,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_chest";
 	itm.model = "stat1";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 12500; // ����� ���������� � �����
 	itm.Weight = 15; // boal
 	n++;
@@ -1459,7 +1459,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_coins";
 	itm.model = "purse";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	//	itm.shown = 0;
 	// boal 19.01.2004 -->
 	itm.price = 500;
@@ -1477,7 +1477,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_incas_collection";
 	itm.model = "";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	//	itm.shown = 0;
 	itm.price = 22500;
 	// boal 19.01.2004 -->
@@ -1492,7 +1492,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_letter_1";
 	itm.model = "";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1504,7 +1504,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_letter_2";
 	itm.model = "";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1516,7 +1516,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_letter_open";
 	itm.model = "";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1530,7 +1530,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_letter_notes";
 	itm.model = "";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1542,7 +1542,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_order";
 	itm.model = "";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1554,7 +1554,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_letter_Albermal";
 	itm.model = "";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	n++; 
@@ -1566,7 +1566,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_EngTradeLicence";
 	itm.model = "";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1578,7 +1578,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_FraTradeLicence";
 	itm.model = "";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1590,7 +1590,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_SpaTradeLicence";
 	itm.model = "";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1602,7 +1602,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_HolTradeLicence";
 	itm.model = "";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1614,7 +1614,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Trust";
 	itm.model = "";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1627,7 +1627,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_sicretLetter";
 	itm.model = "";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	//	itm.shown = 0;
 	itm.price = 0;
 	// boal 19.01.2004 -->
@@ -1642,7 +1642,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_LegransMap";
 	itm.model = "";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	itm.price = 0;
 	// boal 19.01.2004 -->
 	itm.Weight = 0.1;
@@ -1656,7 +1656,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_bible";
 	itm.model = "";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	//	itm.shown = 0;
 	itm.price = 0;
 	// boal 19.01.2004 -->
@@ -1671,7 +1671,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_ShipsJournal";
 	itm.model = ""; 
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	//	itm.shown = 0;
 	itm.price = 0;
 	// boal 19.01.2004 -->
@@ -1687,7 +1687,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Powder_mummie";
 	itm.model = "pursel";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	//itm.shown = 0;
 	// boal 19.01.2004 -->
 	itm.Weight = 0.5;
@@ -1702,7 +1702,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_DeSouzaCross";
 	itm.model = "sapphire";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	// boal 19.01.2004 -->
 	itm.Weight = 0.3;
 	itm.price = 0;
@@ -1716,7 +1716,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_DOjeronRing";
 	itm.model = "RingJew";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	itm.Weight = 0.3;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -1728,7 +1728,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_BlackLabel";
 	itm.model = "";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	itm.Weight = 0.1;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -1740,7 +1740,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Term_arm";
 	itm.model = "pursel";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.price = 0;
 	itm.Weight = 5.5;
 	itm.ItemType = "QUESTITEMS";
@@ -1752,7 +1752,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Malyava";
 	itm.model = "";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1764,7 +1764,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_PortmansBook";
 	itm.model = "";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	itm.price = 0;
 	itm.Weight = 0.2;
 	itm.ItemType = "QUESTITEMS";
@@ -1778,7 +1778,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "mushket2x2";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	// boal 19.01.2004 -->
 	itm.price = 50000;
 	itm.Weight = 17;
@@ -1801,7 +1801,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "maquahuitl";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	// boal 19.01.2004 -->
 	itm.price = 7750;
 	itm.Weight = 15.0;
@@ -1826,7 +1826,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_LSC";
 	itm.model = "";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 100000;
 	itm.Weight = 0.2;
 	itm.imageTga = "LostShipsCity";
@@ -1842,7 +1842,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Griffins_Weapon";
 	itm.model = "";
 	itm.picIndex =14;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.shown = 0;
 	itm.Weight = 3.4;
 	itm.price = 0;
@@ -1855,7 +1855,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Weapon_for_escape";
 	itm.model = "";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.shown = 0;
 	itm.Weight = 10;
 	itm.price = 0;
@@ -1875,7 +1875,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Rock_letter";
 	itm.model = "StoneMap";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.shown = 0; //������� �������� ��������, �.�. ����� �� ������ �� ����.������ ��������.
 	string PutLocation, PutLocator;   //������ ���������.
 	int WherePut = rand(4);
@@ -1919,7 +1919,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Azzy_bottle";
 	itm.model = "pursel";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.shown = 1; //�� ���� ������� �� ��������� �� �������
 	itm.useLocator = "button01";
 	// boal 19.01.2004 -->
@@ -1935,7 +1935,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_ShipyardsMap";
 	itm.model = "shipyardsMap";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -1947,7 +1947,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_MayorsRing";
 	itm.model = "RingSimGold";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	itm.Weight = 0.3;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -1959,7 +1959,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_UsurersJew";
 	itm.model = "Diamond";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	itm.Weight = 0.1;
 	itm.price = 0;
 	itm.JevelType = xiDStr("diamond");
@@ -1972,7 +1972,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_OpenBook";
 	itm.model = "OpenBook";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.Weight = 0.2;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -1987,7 +1987,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Ladder";
 	itm.model = "Ladder";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.Weight = 0.2;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -1999,7 +1999,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Key1";
 	itm.model = "keysimple";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.Weight = 0.0;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -2011,7 +2011,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Key2";
 	itm.model = "keymiddle";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.Weight = 0.0;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -2023,7 +2023,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Key3";
 	itm.model = "keygrand";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.Weight = 0.0;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -2035,7 +2035,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_keyPanama";
 	itm.model = "keygrand";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.Weight = 0.0;
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -2047,7 +2047,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_keyQuestLSC";
 	itm.model = "keymiddle";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.shown = 0; //������� ���� �������
 	itm.startLocation = "Villemstad_houseSp5";
 	itm.startLocator = "item2";
@@ -2062,7 +2062,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_letter_LSC";
 	itm.model = "letter";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_4";
+	itm.picTexture = "ITEMS_GOF4";
 	itm.price = 0;
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
@@ -2075,7 +2075,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_migraine_potion";
 	itm.model = "balsam";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	itm.shown = 0;
 	itm.Weight = 0.4;
 	itm.price = 0;
@@ -2088,7 +2088,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_MsStid_ring";
 	itm.model = "RingJew";//pursel
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	itm.shown = 0;
 	itm.Weight = 0.4;
 	itm.price = 0;
@@ -2101,7 +2101,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_pinion";
 	itm.model = "Pinion";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.shown = 1; 
 	itm.startLocation = "UnderWater";
 	itm.startLocator = "item" + (rand(4)+1);
@@ -2118,7 +2118,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "pistol7";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	itm.shown = 1;
 	itm.price = 12500;
 	//����� � ����
@@ -2144,7 +2144,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Ascold_rabble";
 	itm.model = "kocherg";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_12";
+	itm.picTexture = "ITEMS_GOF12";
 	itm.shown = 0;
 	itm.useLocation = "Guadeloupe_Cave";
 	itm.useLocator = "button02";
@@ -2164,7 +2164,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_1";
 	itm.model = "Totem_1";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Shore_ship1";
 	itm.startLocator = "item1";
@@ -2183,7 +2183,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_2";
 	itm.model = "Totem_2";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Shore55";
 	itm.startLocator = "item1";
@@ -2202,7 +2202,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_3";
 	itm.model = "Totem_3";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Marigo_Cave";
 	itm.startLocator = "item1";
@@ -2221,7 +2221,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_4";
 	itm.model = "Totem_4";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "PortSpein_town";
 	itm.startLocator = "item1";
@@ -2240,7 +2240,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_5";
 	itm.model = "Totem_5";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "FortFrance_Dungeon";
 	itm.startLocator = "item1";
@@ -2259,7 +2259,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_6";
 	itm.model = "Totem_6";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Tortuga_town";
 	itm.startLocator = "item1";
@@ -2278,7 +2278,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_7";
 	itm.model = "Totem_7";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Villemstad_townhall";
 	itm.startLocator = "item1";
@@ -2297,7 +2297,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_8";
 	itm.model = "Totem_8";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Mayak8";
 	itm.startLocator = "item1";
@@ -2316,7 +2316,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_9";
 	itm.model = "Totem_9";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Santiago_Incquisitio";
 	itm.startLocator = "item1";
@@ -2335,7 +2335,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_10";
 	itm.model = "Totem_10";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Temple";
 	itm.startLocator = "item1";
@@ -2354,7 +2354,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_11";
 	itm.model = "Totem_11";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Tenochtitlan";
 	itm.startLocator = "item1";
@@ -2373,7 +2373,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_12";
 	itm.model = "Totem_12";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = 0; 
 	itm.useLocation = "Temple_great";
 	itm.useLocator = "button01";
@@ -2390,7 +2390,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_13";
 	itm.model = "Totem_13";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Tenotchitlan_Jungle_06";
 	itm.startLocator = "item1";
@@ -2409,7 +2409,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_14";
 	itm.model = "Totem_14";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Panama_jungle_02";
 	itm.startLocator = "item1";
@@ -2428,7 +2428,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Totem_15";
 	itm.model = "Totem_15";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = true; 
 	itm.startLocation = "Temple_Inside";
 	itm.startLocator = "item1";
@@ -2450,7 +2450,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_SkullAztec";
 	itm.model = "SkullAztec";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_AZTEC";
+	itm.picTexture = "ITEMS_GOFAZTEC";
 	itm.shown = 1; 
 	itm.startLocation = "Temple_great";
 	itm.startLocator = "item1";
@@ -2467,7 +2467,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_KnifeAztec";
 	itm.model = "KnifeAztec";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.shown = 0; 
 	itm.useLocation = "Tenochtitlan";
 	itm.useLocator = "button01";
@@ -2490,7 +2490,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_bad";
 	itm.model = "";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_10";
+	itm.picTexture = "ITEMS_GOF10";
 	//	itm.shown = 0;
 	itm.price = 500;
 	// boal 19.01.2004 -->
@@ -2509,7 +2509,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_normal";
 	itm.model = "";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	//	itm.shown = 0;
 	itm.price = 1525;
 	// boal 19.01.2004 -->
@@ -2528,7 +2528,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Map_Best";
 	itm.model = "";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	//	itm.shown = 0;
 	itm.price = 15000;
 	// boal 19.01.2004 -->
@@ -2543,7 +2543,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_good";
 	itm.model = "";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	//	itm.shown = 0;
 	itm.price = 3050;
 	// boal 19.01.2004 -->
@@ -2563,7 +2563,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_bermudas";
 	itm.model = "";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 650;
 	itm.Weight = 0.2;
 	itm.imageTga = "bermudas";
@@ -2579,7 +2579,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_jam";
 	itm.model = "";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "Jamaica";
@@ -2595,7 +2595,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_cayman";
 	itm.model = "";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 1000;
 	itm.Weight = 0.2;
 	itm.imageTga = "kayman";
@@ -2611,7 +2611,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_barbados";
 	itm.model = "";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "barbados";
@@ -2627,7 +2627,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_TORTUGA";
 	itm.model = "";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "TORTUGA";
@@ -2643,7 +2643,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_Curacao";
 	itm.model = "";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "curacao";
@@ -2659,7 +2659,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_martiniqua";
 	itm.model = "";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "martinica";
@@ -2675,7 +2675,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_dominica";
 	itm.model = "";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 1000;
 	itm.Weight = 0.2;
 	itm.imageTga = "dominica";
@@ -2691,7 +2691,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_trinidad";
 	itm.model = "";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "trinidad";
@@ -2707,7 +2707,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_puerto";
 	itm.model = "";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 600;
 	itm.Weight = 0.2;
 	itm.imageTga = "p_rico";
@@ -2723,7 +2723,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_cuba";
 	itm.model = "";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 3100;
 	itm.Weight = 0.2;
 	itm.imageTga = "cuba";
@@ -2739,7 +2739,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_Pearl";
 	itm.model = "";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 3250;
 	itm.Weight = 0.2;
 	itm.imageTga = "Pearl";
@@ -2755,7 +2755,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_hisp";
 	itm.model = "";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 2500;
 	itm.Weight = 0.2;
 	itm.imageTga = "hispaniola";
@@ -2771,7 +2771,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_nevis";
 	itm.model = "";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 450;
 	itm.Weight = 0.2;
 	itm.imageTga = "nevis";
@@ -2787,7 +2787,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_beliz";
 	itm.model = "";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 1100;
 	itm.Weight = 0.2;
 	itm.imageTga = "beliz";
@@ -2803,7 +2803,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_guad";
 	itm.model = "";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "guadelupa";
@@ -2819,7 +2819,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_santa";
 	itm.model = "";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 950;
 	itm.Weight = 0.2;
 	itm.imageTga = "santa";
@@ -2835,7 +2835,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_antigua";
 	itm.model = "";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "antigua";
@@ -2851,7 +2851,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_terks";
 	itm.model = "";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 1500;
 	itm.Weight = 0.2;
 	itm.imageTga = "terks";
@@ -2867,7 +2867,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_sm";
 	itm.model = "";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "s_martin";
@@ -2883,7 +2883,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_maine_1";
 	itm.model = "";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 5000;
 	itm.Weight = 0.2;
 	itm.imageTga = "maine_1";
@@ -2899,7 +2899,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_maine_2";
 	itm.model = "";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 5000;
 	itm.Weight = 0.2;
 	itm.imageTga = "maine_2";
@@ -2915,7 +2915,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_panama";
 	itm.model = "";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_13";
+	itm.picTexture = "ITEMS_GOF13";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "panama";
@@ -2931,7 +2931,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_maracaibo";
 	itm.model = "";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "maracaibo";
@@ -2947,7 +2947,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_cumana";
 	itm.model = "";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_11";
+	itm.picTexture = "ITEMS_GOF11";
 	itm.price = 500;
 	itm.Weight = 0.2;
 	itm.imageTga = "cumana";
@@ -2965,7 +2965,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_full";
 	itm.model = "";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	itm.price = 0; // 0 test
 	itm.Weight = 0.4;
 	itm.imageTga = "none";
@@ -2981,7 +2981,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_part1";
 	itm.model = "";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	itm.price = 0;
 	itm.Weight = 0.2;
 	itm.imageTga = "none";
@@ -2997,7 +2997,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_map_part2";
 	itm.model = "";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	itm.price = 0;
 	itm.Weight = 0.2;
 	itm.imageTga = "none";
@@ -3019,7 +3019,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_statue1";
 	itm.model = "stat1";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	//itm.shown = false;
 	itm.price = 10;
 	itm.Weight = 35;
@@ -3040,7 +3040,7 @@ int GofInitItems()
 	itm.name = "GOF_itmname_spyglass1";
 	itm.describe = "GOF_itmdescr_spyglass1";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 25;
 	itm.Weight = 1;
@@ -3081,7 +3081,7 @@ int GofInitItems()
 	itm.name = "GOF_itmname_spyglass2";
 	itm.describe = "GOF_itmdescr_spyglass2";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	// boal 19.01.2004 -->
 	itm.price = 150;
 	itm.Weight = 1.5;
@@ -3122,7 +3122,7 @@ int GofInitItems()
 	itm.name = "GOF_itmname_spyglass3";
 	itm.describe = "GOF_itmdescr_spyglass3";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_6";
+	itm.picTexture = "ITEMS_GOF6";
 	itm.price = 450;
 	// boal 19.01.2004 -->
 	itm.Weight = 2;
@@ -3159,7 +3159,7 @@ int GofInitItems()
 	itm.name = "GOF_itmname_spyglass4";
 	itm.describe = "GOF_itmdescr_spyglass4";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	itm.folder = "items";
 	itm.model = "spyglass4";
 	itm.price = 1250;
@@ -3196,7 +3196,7 @@ int GofInitItems()
 	itm.name = "GOF_itmname_spyglass5";
 	itm.describe = "GOF_itmdescr_spyglass5";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	itm.folder = "items";
 	itm.model = "spyglass4";
 	itm.price = 21250;
@@ -3235,7 +3235,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_potion1";
 	itm.model = "potion";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 50;
@@ -3273,7 +3273,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_potion2";
 	itm.model = "potionbig";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 125;
@@ -3312,7 +3312,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_potion3";
 	itm.model = "Antidote";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 100;
@@ -3345,7 +3345,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_potion4";
 	itm.model = "balsam";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	// boal 19.01.2004 -->
 	itm.price = 225;
 	itm.Weight = 0.4;
@@ -3384,7 +3384,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_potionrum";
 	itm.model = "balsam";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 75;
@@ -3418,7 +3418,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_potionwine";
 	itm.model = "balsam";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	// boal 19.01.2004 -->
 	itm.price = 250;
 	itm.Weight = 1;
@@ -3451,7 +3451,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_potion5";
 	itm.model = "balsam";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	// boal 19.01.2004 -->
 	itm.price = 15;
 	itm.Weight = 0.4;
@@ -3481,7 +3481,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry1";
 	itm.model = "sapphire";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 25;
@@ -3521,7 +3521,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry2";
 	itm.model = "diamond";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 350;
@@ -3549,7 +3549,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry3";
 	itm.model = "ruby";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 275;
@@ -3577,7 +3577,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry4";
 	itm.model = "emerald";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 250;
@@ -3605,7 +3605,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry5";
 	itm.model = "sapphire";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 120;
@@ -3633,7 +3633,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry6";
 	itm.model = "sapphire";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 50;
@@ -3665,7 +3665,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry7";
 	itm.model = "sapphire";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 100;
@@ -3697,7 +3697,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry8";
 	itm.model = "sapphire";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 5;
@@ -3728,7 +3728,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry9";
 	itm.model = "sapphire";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 40;
@@ -3760,7 +3760,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry10";
 	itm.model = "emerald";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 85;
@@ -3797,7 +3797,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry11";
 	itm.model = "pearlbig";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 45;
@@ -3834,7 +3834,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry12";
 	itm.model = "pearlsmall";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 20;
@@ -3866,7 +3866,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry13";
 	itm.model = "sapphire";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 75;
@@ -3898,7 +3898,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry14";
 	itm.model = "sapphire";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 100;
@@ -3930,7 +3930,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry15";
 	itm.model = "sapphire";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 150;
@@ -3962,7 +3962,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry16";
 	itm.model = "sapphire";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_2";
+	itm.picTexture = "ITEMS_GOF2";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 5;
@@ -3990,7 +3990,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry17";
 	itm.model = "pursel";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 55;
@@ -4022,7 +4022,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_jewelry18";
 	itm.model = "pursel";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 165;
@@ -4054,7 +4054,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_bullet";//"itmdescr_mineral1";
 	itm.model = "pursel";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	//	itm.shown = false;
 	itm.price = 4;//280;
 	itm.Weight = 0.1;
@@ -4070,7 +4070,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral2";
 	itm.model = "sapphire";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 300;
@@ -4094,7 +4094,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral3";
 	itm.model = "sapphire";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 5;
@@ -4115,7 +4115,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral4";
 	itm.model = "pursel"; // ���� ��� �����
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	//	itm.shown = false;
 	itm.price = 12;
 	// boal 19.01.2004 -->
@@ -4147,7 +4147,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral5";
 	itm.model = "pursel";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 1;
@@ -4171,7 +4171,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral6";
 	itm.model = "pursel";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 10;
@@ -4203,7 +4203,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral7";
 	itm.model = "pursel";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 70;
@@ -4235,7 +4235,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral8";
 	itm.model = "pursel";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 15;
@@ -4263,7 +4263,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral9";
 	itm.model = "pursel";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 40;
@@ -4291,7 +4291,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_mineral10";
 	itm.model = "pursel";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 2;
@@ -4319,7 +4319,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_sculMa1";
 	itm.model = "pursel";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	itm.price = 2500;
 	// boal 19.01.2004 -->
 	itm.Weight = 3.5;
@@ -4334,7 +4334,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_sculMa2";
 	itm.model = "pursel";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	itm.price = 3500;
 	// boal 19.01.2004 -->
 	itm.Weight = 3.5;
@@ -4349,7 +4349,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_sculMa3";
  	itm.model = "pursel";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	itm.price = 5000;
 	// boal 19.01.2004 -->
 	itm.Weight = 3.5;
@@ -4364,7 +4364,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_cat1";
 	itm.model = "";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	//itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 2500;
@@ -4380,7 +4380,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_CursedCoin";
 	itm.model = "purse";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.shown = 0;
 	itm.price = 500;
 	itm.Weight = 0.1;
@@ -4398,7 +4398,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Maokun";
 	itm.model = "";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.shown = 0;
 	itm.price = 4500;
 	itm.Weight = 0.2;
@@ -4412,7 +4412,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Voodoo";
 	itm.model = "";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.shown = 0;
 	itm.price = 400;
 	itm.Weight = 0.1;
@@ -4430,7 +4430,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Chalices";
 	itm.model = "";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.shown = 0;
 	itm.price = 5000;
 	itm.Weight = 3;
@@ -4444,7 +4444,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Cane";
 	itm.model = "";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.shown = 0;
 	itm.price = 2500;
 	itm.Weight = 3;
@@ -4458,7 +4458,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Keycloth";
 	itm.model = "";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.shown = 0;
 	itm.price = 1250;
 	itm.Weight = 1;
@@ -4472,7 +4472,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Timekeeper";
 	itm.model = "";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.shown = 0;
 	itm.price = 4250;
 	itm.Weight = 1;
@@ -4487,7 +4487,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Pirata";
 	itm.model = "OpenBook";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.price = 4250;
 	itm.Weight = 3;
 	itm.rare = 0.01;
@@ -4501,7 +4501,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_Malleus";
 	itm.model = "OpenBook";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.price = 3250;
 	itm.Weight = 3;
 	itm.rare = 0.01;
@@ -4516,7 +4516,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian1";
 	itm.model = "pursel";
 	itm.picIndex = 1;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 150;
@@ -4544,7 +4544,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian2";
 	itm.model = "pursel";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 100;
@@ -4572,7 +4572,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian3";
 	itm.model = "pursel";
 	itm.picIndex = 3;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 50;
@@ -4604,7 +4604,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian4";
 	itm.model = "pursel";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 2;
@@ -4628,7 +4628,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian5";
 	itm.model = "sapphire";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 65;
@@ -4660,7 +4660,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian6";
 	itm.model = "sapphire";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 300;
@@ -4684,7 +4684,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian7";
 	itm.model = "sapphire";
 	itm.picIndex = 7;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 75;
@@ -4716,7 +4716,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian8";
 	itm.model = "sapphire";
 	itm.picIndex = 8;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 70;
@@ -4748,7 +4748,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian9";
 	itm.model = "sapphire";
 	itm.picIndex = 9;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 10;
@@ -4776,7 +4776,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian11";
 	itm.model = "";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 2500;
@@ -4792,7 +4792,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian10";
 	itm.model = "sapphire";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 105;
@@ -4824,7 +4824,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian12";
 	itm.model = "sapphire";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 615;
@@ -4860,7 +4860,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian13";
 	itm.model = "pursel";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 20;
@@ -4896,7 +4896,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian14";
 	itm.model = "pursel";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 105;
@@ -4932,7 +4932,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian15";
 	itm.model = "sapphire";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 250;
@@ -4952,7 +4952,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian16";
 	itm.model = "sapphire";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_5";
+	itm.picTexture = "ITEMS_GOF5";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 7;
@@ -4988,7 +4988,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian17";
 	itm.model = "sapphire";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 25;
@@ -5024,7 +5024,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian18";
 	itm.model = "pursel";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 75;
@@ -5044,7 +5044,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian19";
 	itm.model = "pursel";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 1200;
@@ -5064,7 +5064,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian20";
 	itm.model = "pursel";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 375;
@@ -5084,7 +5084,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian21";
 	itm.model = "sapphire";
 	itm.picIndex = 15;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 12;
@@ -5104,7 +5104,7 @@ int GofInitItems()
 	itm.describe = "GOF_itmdescr_indian22";
 	itm.model = "pursel";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_7";
+	itm.picTexture = "ITEMS_GOF7";
 	//	itm.shown = false;
 	// boal 19.01.2004 -->
 	itm.price = 2;
@@ -6103,7 +6103,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "6";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_9";
+	itm.picTexture = "ITEMS_GOF9";
 	itm.price = 10;
 	itm.Weight = 6;
 	itm.CirassLevel = 0.0;
@@ -6121,7 +6121,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "7";
 	itm.picIndex = 16;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	itm.price = 10000;
 	itm.Weight = 8;
 	itm.CirassLevel = 0.0;
@@ -6139,7 +6139,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "8";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_1";
+	itm.picTexture = "ITEMS_GOF1";
 	itm.price = 125000;
 	itm.Weight = 7;
 	itm.CirassLevel = 0.0;
@@ -6157,7 +6157,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "6";
 	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.price = 10;
 	itm.Weight = 6;
 	itm.CirassLevel = 0.0;
@@ -6175,7 +6175,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "7";
 	itm.picIndex = 5;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.price = 10000;
 	itm.Weight = 7;
 	itm.CirassLevel = 0.0;
@@ -6193,7 +6193,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "8";
 	itm.picIndex = 6;
-	itm.picTexture = "ITEMS_14";
+	itm.picTexture = "ITEMS_GOF14";
 	itm.price = 125000;
 	itm.Weight = 8;
 	itm.CirassLevel = 0.0;
@@ -6212,7 +6212,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "1";
 	itm.picIndex = 14;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	itm.price = 3500;
 	// boal 19.01.2004 -->
 	itm.Weight = 30;
@@ -6240,7 +6240,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "2";
 	itm.picIndex = 11;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	itm.price = 12500;
 	// boal 19.01.2004 -->
 	itm.Weight = 25;
@@ -6268,7 +6268,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "3";
 	itm.picIndex = 13;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	itm.price = 11000;
 	// boal 19.01.2004 -->
 	itm.Weight = 23;
@@ -6292,7 +6292,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "4";
 	itm.picIndex = 12;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	itm.price = 9500;
 	// boal 19.01.2004 -->
 	itm.Weight = 20;
@@ -6316,7 +6316,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "5";
 	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_8";
+	itm.picTexture = "ITEMS_GOF8";
 	itm.price = 15000;
 	// boal 19.01.2004 -->
 	itm.Weight = 17;
