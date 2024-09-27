@@ -9,5 +9,6 @@ RESOURCE/Textures/*
 !RESOURCE/Textures/INTERFACES
 RESOURCE/Textures/INTERFACES/*
 !RESOURCE/Textures/INTERFACES/Items*.tga.tx
+!RESOURCE/Textures/INTERFACES/gof_Items*.tga.tx
 !RESOURCE/Textures/INTERFACES/PORTRAITS
 !RESOURCE/Textures/Characters
