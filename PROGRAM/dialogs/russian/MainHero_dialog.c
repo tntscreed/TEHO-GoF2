@@ -437,6 +437,8 @@ void ProcessDialogEvent()
 			Link.l1.go = "VEX_DEBUG_LIST_CHARS";
 			Link.l2 = "Trace all items!";
 			Link.l2.go = "VEX_DEBUG_LIST_ITEMS";
+			Link.l3 = "Add item to player by ID!";
+			Link.l3.go = "VEX_DEBUG_ADD_ITEM";
 		break;
 
 		case "VEX_DEBUG_LIST_CHARS":
@@ -462,6 +464,29 @@ void ProcessDialogEvent()
 				}
 			}
 			Link.l1 = "";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_ADD_ITEM":
+			Dialog.Text = "Give the ID of the item to add:";
+
+			link.l1.edit = 1;
+			link.l1.go = "VEX_DEBUG_ADD_ITEM2";
+		break;
+
+		case "VEX_DEBUG_ADD_ITEM2":
+			Dialog.Text = "Adding item...";
+			string itemIdTemp = dialogEditStrings[1];
+			bool itemGiveSuccess = GiveItem2Character(pchar, itemIdTemp);
+			if (itemGiveSuccess == true)
+			{
+				Dialog.Text = "Item added successfully.";
+			}
+			else
+			{
+				Dialog.Text = "Failed to add item.";
+			}
+			Link.l1 = "Exit";
 			Link.l1.go = "exit";
 		break;
 
