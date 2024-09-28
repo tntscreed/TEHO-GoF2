@@ -368,7 +368,7 @@ void Items_ShowItem(int _itemN)
 		Items_LoadModel(&itemModels[_itemN], &Items[_itemN]);
 
 		if (!FindLocator(Items[_itemN].startLocation, Items[_itemN].startLocator, &al, true))
-			Trace("ItemLogic: locator for item "+_itemN+" not found! ["+Items[_itemN].startLocation+">>"+Items[_itemN].startLocator);
+			Trace("ItemLogic: locator for item "+Items[_itemN].id+" not found! ["+Items[_itemN].startLocation+">>"+Items[_itemN].startLocator);
 		Trace ("ItemLogic: showing item at "+al.x+", "+al.y+", "+al.z);
 		SendMessage(&itemModels[_itemN], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
 	}
