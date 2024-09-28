@@ -859,7 +859,12 @@ void AddToTable(ref rChar)
 		GameInterface.TABLE_LIST.(sList).td3.icon.width = 56;
 		GameInterface.TABLE_LIST.(sList).td3.icon.height = 56;
 		GameInterface.TABLE_LIST.(sList).td3.textoffset = "60, 0";
-		GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+		if(findSubStr(rItem.id, "GOF_", 0) == 0){
+			GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "Gof_ItemsDescribe.txt");
+		}
+		else{
+			GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+		}
 		GameInterface.TABLE_LIST.(sList).index = Index;
 		GameInterface.TABLE_LIST.(sList).td3.scale = 1.0;
 		GameInterface.TABLE_LIST.(sList).td4.str = "-";

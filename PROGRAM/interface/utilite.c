@@ -870,7 +870,13 @@ string GetItemDescribe(int iGoodIndex)
 {
 	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
+	int    LngFileID = -1;
+	if(findSubStr(Items[iGoodIndex].id, "GOF_", 0) == 0){
+		lngFileID = LanguageOpenFile("Gof_ItemsDescribe.txt")
+	}
+	else{
+		lngFileID = LanguageOpenFile("ItemsDescribe.txt")
+	}
     string describeStr = "";
 
 	if (CheckAttribute(arItm, "groupID"))

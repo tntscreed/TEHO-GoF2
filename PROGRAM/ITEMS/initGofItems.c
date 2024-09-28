@@ -345,6 +345,10 @@ int GofInitItems()
 	// boal 19.01.2004 <--
 	itm.dmg_min = 13.0;
 	itm.dmg_max = 53.0;
+
+	//itm.Attack = itm.dmg_max; // TEMP VEX
+	//itm.Balance = 1.5; // TEMP VEX
+
 	itm.piercing = 44;
 	itm.minlevel = 1;
 	itm.rare = 0.001;

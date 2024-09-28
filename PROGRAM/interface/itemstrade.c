@@ -236,6 +236,7 @@ void AddToTable()
 	int leftQty, rightQty;
 	n = 1;
 	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
+	idGofLngFile = LanguageOpenFile("Gof_ItemsDescribe.txt");
 	Table_Clear("TABLE_LIST", false, true, false);
 	
 	// Сначало уникальные предметы
@@ -269,7 +270,14 @@ void AddToTable()
 			GameInterface.TABLE_LIST.(row).td4.icon.width = 32;
 			GameInterface.TABLE_LIST.(row).td4.icon.height = 32;
 			GameInterface.TABLE_LIST.(row).td4.textoffset = "31,0";
-			GameInterface.TABLE_LIST.(row).td4.str = LanguageConvertString(idLngFile, Items[i].name);
+			if(FindSubStr(Items[i].id, "GOF_", 0) == 0)
+			{
+				GameInterface.TABLE_LIST.(row).td4.str = LanguageConvertString(idGofLngFile, Items[i].name);
+			}
+			else
+			{
+				GameInterface.TABLE_LIST.(row).td4.str = LanguageConvertString(idLngFile, Items[i].name);
+			}
 			GameInterface.TABLE_LIST.(row).index = i;
 			GameInterface.TABLE_LIST.(row).td4.scale = 0.9;
             GameInterface.TABLE_LIST.(row).td3.str = GetTradeItemPrice(i, PRICE_TYPE_BUY, refStoreChar);
@@ -318,7 +326,16 @@ void AddToTable()
 			GameInterface.TABLE_LIST.(row).td4.icon.width = 32;
 			GameInterface.TABLE_LIST.(row).td4.icon.height = 32;
 			GameInterface.TABLE_LIST.(row).td4.textoffset = "31,0";
-			GameInterface.TABLE_LIST.(row).td4.str = LanguageConvertString(idLngFile, Items[i].name);
+
+			if(FindSubStr(Items[i].id, "GOF_", 0) == 0)
+			{
+				GameInterface.TABLE_LIST.(row).td4.str = LanguageConvertString(idGofLngFile, Items[i].name);
+			}
+			else
+			{
+				GameInterface.TABLE_LIST.(row).td4.str = LanguageConvertString(idLngFile, Items[i].name);
+			}
+
 			GameInterface.TABLE_LIST.(row).index = i;
 			GameInterface.TABLE_LIST.(row).td4.scale = 0.9;
 			//GameInterface.TABLE_LIST.(row).td4.color = iColor;
@@ -338,6 +355,7 @@ void AddToTable()
 	
 	NextFrameRefreshTable();
 	LanguageCloseFile(idLngFile);
+	LanguageCloseFile(idGofLngFile);
 }
 
 void NextFrameRefreshTable()
@@ -565,7 +583,15 @@ void ShowGoodsInfo(int iGoodIndex)
 	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
 	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-	string sHeader = LanguageConvertString(lngFileID, GoodName);
+	int	   gofLngFileID = LanguageOpenFile("Gof_ItemsDescribe.txt");
+	string sHeader = "ERROR WITH HEADER";
+	if(FindSubStr(Items[iGoodIndex].id, "GOF_", 0) == 0)
+	{
+		sHeader = LanguageConvertString(gofLngFileID, GoodName);
+	}
+	else{
+		sHeader = LanguageConvertString(lngFileID, GoodName);
+	}
 
     iCurGoodsIdx = iGoodIndex;
 
@@ -593,6 +619,7 @@ void ShowGoodsInfo(int iGoodIndex)
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", describeStr);
 	LanguageCloseFile(lngFileID);
+	LanguageCloseFile(gofLngFileID);
 
 	iCharQty = GetCharacterFreeItem(refCharacter, Items[iGoodIndex].id);
 

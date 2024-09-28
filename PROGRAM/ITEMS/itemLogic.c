@@ -191,6 +191,8 @@ void Item_OnPickItem()
 	youvegotString = LanguageConvertString(langFile, "youve_got");
 	PlayStereoSound("interface\important_item.wav");
 
+	string itemId;
+
 	if (chr.activeRandItem == true)
 	{
 		string activeRandItemAttribute = "RandItemType"+sti(chr.activeItem);
@@ -198,6 +200,13 @@ void Item_OnPickItem()
 		{
 			SendMessage(&randItemModels[sti(chr.activeItem)], "lslff", MSG_MODEL_BLEND, "blenditemlit", 1000, 1.0, 0.0);
 			GenerateAndAddItems(GetMainCharacter(), Items[sti(activeLocation.(activeRandItemAttribute))].id, 1);
+
+			itemId = Items[sti(activeLocation.(activeRandItemAttribute))].id;
+			if(findSubStr(itemId, "GOF_", 0) == 0){
+				LanguageCloseFile(langFile);
+				langFile = LanguageOpenFile("Gof_ItemsDescribe.txt");
+			}
+
 			displayItemName = LanguageConvertString(langFile, Items[sti(activeLocation.(activeRandItemAttribute))].name);
 			Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 
@@ -211,7 +220,11 @@ void Item_OnPickItem()
 		Items[activeItem].shown = false;
 		SendMessage(&itemModels[activeItem], "lslff", MSG_MODEL_BLEND, "blenditemlit", 1000, 1.0, 0.0);
 		GenerateAndAddItems(GetMainCharacter(), Items[activeItem].id, 1);
-
+		itemId = Items[activeItem].id;
+		if(findSubStr(itemId, "GOF_", 0) == 0){
+				LanguageCloseFile(langFile);
+				langFile = LanguageOpenFile("Gof_ItemsDescribe.txt");
+			}
 		displayItemName = LanguageConvertString(langFile, Items[activeItem].name);
 		Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 		// ===> перехват взятия предметов из локатора item на метод обрабоки для квестовых нужд 

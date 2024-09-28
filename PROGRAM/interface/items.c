@@ -173,6 +173,7 @@ void FillItemsTable(int _mode) // 1 - все 2 - оружие 3 - остальн
 	string groupID;
 	string itemType;
 	int  idLngFile;
+	int  idGofLngFile;
 	bool ok, ok0, ok1, ok2, ok3;
 	aref rootItems, arItem;
 	aref  curItem;
@@ -189,6 +190,7 @@ void FillItemsTable(int _mode) // 1 - все 2 - оружие 3 - остальн
 	GameInterface.TABLE_ITEMS.top = 0;
 	n = 1;
 	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
+	idGofLngFile = LanguageOpenFile("Gof_ItemsDescribe.txt");
 	Table_Clear("TABLE_ITEMS", false, true, false);
 	
 	// Заполним вещами от нас
@@ -256,7 +258,14 @@ void FillItemsTable(int _mode) // 1 - все 2 - оружие 3 - остальн
 				GameInterface.TABLE_ITEMS.(row).td1.icon.width = 32;
 				GameInterface.TABLE_ITEMS.(row).td1.icon.height = 32;
 				GameInterface.TABLE_ITEMS.(row).td1.textoffset = "31,0";
-				GameInterface.TABLE_ITEMS.(row).td1.str = LanguageConvertString(idLngFile, arItem.name);
+				
+				if(FindSubStr(arItem.id, "GOF_", 0) == 0){
+					GameInterface.TABLE_ITEMS.(row).td1.str = LanguageConvertString(idGofLngFile, arItem.name);
+				}
+				else{
+					GameInterface.TABLE_ITEMS.(row).td1.str = LanguageConvertString(idLngFile, arItem.name);
+				}
+
 				GameInterface.TABLE_ITEMS.(row).td1.scale = 0.85;
 				
 				GameInterface.TABLE_ITEMS.(row).td2.str   = FloatToString(stf(arItem.Weight), 1);
@@ -272,6 +281,7 @@ void FillItemsTable(int _mode) // 1 - все 2 - оружие 3 - остальн
     
 	Table_UpdateWindow("TABLE_ITEMS");
 	LanguageCloseFile(idLngFile);
+	LanguageCloseFile(idGofLngFile);
 	if (_mode == 1)
 	{
 		FillItemsSelected();

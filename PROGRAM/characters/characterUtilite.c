@@ -2873,9 +2873,14 @@ void UpdateCharacterEquipItem(ref chref)
 				arEquip.(sAttr).time = sti(arEquip.(sAttr).time) - 1;
 				if(sti(arEquip.(sAttr).time) == 0) 
 				{
-					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 					sItem = GetCharacterEquipBySlot(chref, sAttr)
 					ref arItem = ItemsFromID(sItem);
+					if (findSubStr(arItem.id, "GOF_", 0) == 0){
+						idLngFile = LanguageOpenFile("Gof_ItemsDescribe.txt");
+					}
+					else{
+						idLngFile = LanguageOpenFile("ItemsDescribe.txt");
+					}
 					Log_SetStringToLog(GetFullName(chref) + " noticed that " + LanguageConvertString(idLngFile, arItem.name) + " has lost it's powers");
 					RemoveCharacterArtefactEquip(chref, sAttr);
 					LanguageCloseFile(idLngFile);

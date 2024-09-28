@@ -456,13 +456,22 @@ void ProcessDialogEvent()
 
 		case "VEX_DEBUG_LIST_ITEMS":
 			Dialog.Text = "Listing items...";
+			int itmDesc = LanguageOpenFile("ItemsDescribe.txt");
+			int itmDescGof = LanguageOpenFile("Gof_ItemsDescribe.txt");
 			for (i=0; i<ITEMS_QUANTITY; i++)
 			{
 				if (CheckAttribute(&Items[i], "id"))
 				{
-					Trace(Items[i].id + ";" + GetConvertStr(Items[i].name, "ItemsDescribe.txt"));
+					if(findSubStr(Items[i].id, "GOF_", 0) == 0){
+						Trace(Items[i].id + ";" + LanguageConvertString(itmDescGof, Items[i].name));
+					}
+					else{
+						Trace(Items[i].id + ";" + LanguageConvertString(itmDesc, Items[i].name));
+					}
 				}
 			}
+			LanguageCloseFile(itmDesc);
+			LanguageCloseFile(itmDescGof);
 			Link.l1 = "";
 			Link.l1.go = "exit";
 		break;

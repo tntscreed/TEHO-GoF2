@@ -100,8 +100,8 @@ int InitItems()
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//					ХОЛОДНОЕ ОРУЖИЕ
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-    //int InitStdBlade(индекс,модель, текстура, картинка, целевая группа, качество, тип клинка, номер в группе, длина, изгиб, генерируемый, кол-во генерируемых, генерабельная цена, цена если не генерируемый);
+
+	// int InitStdBlade(ItemIndex, ModelID, picTexture, picIndex, TargetGroup, Quality, BladeType, BladeNum, Lenght, Curve, isGenerable, GenerationQty, isGenerablePrice, Price)	
 	n = InitStdBlade(n,  "unarmed", "ITEMS_17",  9,   TGT_QUEST, 		B_POOR, "FencingL",17, 1.00, 1.00, 0,  0, 0, 		  1); // кулаки Jason: нельзя кулаки в группу янки - индеи и каторжники получаются без оружия
 	n = InitStdBlade(n, "slave_01", "ITEMS_15",  1,   TGT_YANKEE, 		B_POOR, "FencingL", 0, 0.70, 1.00, 0,  0, 0, 		200); // гарпун 
 	n = InitStdBlade(n, "slave_02", "ITEMS_15", 14,   TGT_YANKEE,       B_POOR, "FencingS", 1, 0.60, 1.20, 1, 10, 1, 		  0); // мачете 
