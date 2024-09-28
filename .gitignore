@@ -7,8 +7,17 @@ RESOURCE/MODELS/*
 !RESOURCE/MODELS/Items
 RESOURCE/MODELS/Items/*
 !RESOURCE/MODELS/Items/GOF_*.gm
+!RESOURCE/MODELS/Ammo
+RESOURCE/MODELS/Ammo/*
+!RESOURCE/MODELS/Ammo/GOF_*.gm
 !RESOURCE/Textures
 RESOURCE/Textures/*
+!RESOURCE/Textures/Ammo
+RESOURCE/Textures/Ammo/*
+!RESOURCE/Textures/Ammo/GOF_*.tga.tx
+!RESOURCE/Textures/Items
+RESOURCE/Textures/Items/*
+!RESOURCE/Textures/Items/GOF_*.tga.tx
 !RESOURCE/Textures/INTERFACES
 RESOURCE/Textures/INTERFACES/*
 !RESOURCE/Textures/INTERFACES/Items*.tga.tx
