@@ -1830,7 +1830,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 	
 	if(Items_FindItem(itemName, &arItm) < 0)
 	{
-		trace("TakeNItems warning - can't find " + itemName + " item");
+		trace("TakeNItems warning - can't find item '" + itemName + "'");
 		return false;
 	}
 	
