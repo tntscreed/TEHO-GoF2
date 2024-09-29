@@ -226,7 +226,8 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;
 	
-	makeref(itm,Items[n]);
+	// Already in TEHO
+	/*makeref(itm,Items[n]);
 	itm.id = "GOF_blade6";  //��������
 	itm.groupID = BLADE_ITEM_TYPE;
 	itm.name = "GOF_itmname_blade6";
@@ -250,7 +251,7 @@ int GofInitItems()
 	itm.param.colorend = argb(0, 32, 32, 32);
 	itm.FencingType = "FencingLight";
 	itm.ItemType = "WEAPON";
-	n++;
+	n++;*/
 	
 	makeref(itm,Items[n]);
 	itm.id = "GOF_blade9"; //����������� ������
@@ -803,7 +804,8 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;
 	
-	makeref(itm,Items[n]);
+	// Already in TEHO
+	/*makeref(itm,Items[n]);
 	itm.id = "GOF_blade32"; //������
 	itm.groupID = BLADE_ITEM_TYPE;
 	itm.name = "GOF_itmname_blade32";
@@ -827,7 +829,7 @@ int GofInitItems()
 	itm.param.colorend = argb(0, 32, 32, 32);
 	itm.FencingType = "Fencing";
 	itm.ItemType = "WEAPON";
-	n++;
+	n++;*/
 	
 	///////////////////////////  FencingHeavy   ////////////////////////////
 	makeref(itm,Items[n]);
