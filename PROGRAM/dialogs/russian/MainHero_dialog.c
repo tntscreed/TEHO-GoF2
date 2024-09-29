@@ -437,21 +437,48 @@ void ProcessDialogEvent()
 			Link.l1.go = "VEX_DEBUG_LIST_CHARS";
 			Link.l2 = "Trace all items!";
 			Link.l2.go = "VEX_DEBUG_LIST_ITEMS";
-			Link.l3 = "Add item to player by ID!";
-			Link.l3.go = "VEX_DEBUG_ADD_ITEM";
-			Link.l4 = "Clear main character's inventory!";
-			Link.l4.go = "VEX_DEBUG_CLEAR_INVENTORY";
-
-			Link.l5 = "Add all GoF blades to player!";
-			Link.l5.go = "VEX_DEBUG_ADD_GOF_BLADES";
-			Link.l6 = "Add all GoF guns to player!";
-			Link.l6.go = "VEX_DEBUG_ADD_GOF_GUNS";
+			Link.l3 = "Item management";
+			Link.l3.go = "VEX_DEBUG_ITEM_MANAGEMENT";
 
 			Link.l7 = "Levels and skills!";
 			Link.l7.go = "VEX_DEBUG_LEVELS_AND_SKILLS";
 
 			Link.l99 = "Exit";
 			Link.l99.go = "exit";
+		break;
+
+		case "VEX_DEBUG_ITEM_MANAGEMENT":
+			Link.l1 = "Add item to player by ID!";
+			Link.l1.go = "VEX_DEBUG_ADD_ITEM";
+			Link.l2 = "Clear main character's inventory!";
+			Link.l2.go = "VEX_DEBUG_CLEAR_INVENTORY";
+			Link.l3 = "Add all GoF blades to player!";
+			Link.l3.go = "VEX_DEBUG_ADD_GOF_BLADES";
+			Link.l4 = "Add all GoF guns to player!";
+			Link.l4.go = "VEX_DEBUG_ADD_GOF_GUNS";
+			Link.l5 = "Add all GoF items to player!";
+			Link.l5.go = "VEX_DEBUG_ADD_ALL_GOF_ITEMS";
+
+			Link.l99 = "Exit";
+			Link.l99.go = "exit";
+		break;
+
+		case "VEX_DEBUG_ADD_ALL_GOF_ITEMS":
+			Dialog.Text = "Adding GoF items...";
+			for(i=0; i<ITEMS_QUANTITY; i++){
+				
+				bool substrGof = (findSubStr(Items[i].id, "GOF_", 0) == 0);
+				bool emptyItem = (findSubStr(Items[i].id, "GOF_item", 0) == 0);
+
+				Trace("Check item number: " + (i) + " of " + ITEMS_QUANTITY);
+				if(substrGof == true && emptyItem==false){
+					Log_SetStringToLog("Adding item: " + Items[i].id);
+					GiveItem2Character(pchar, Items[i].id);
+				}
+			}
+			Dialog.Text = "GoF items added.";
+			Link.l1 = "";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_LEVELS_AND_SKILLS":
@@ -536,8 +563,10 @@ void ProcessDialogEvent()
 			{
 				if (CheckAttribute(&Items[i], "id"))
 				{
-					if(findSubStr(Items[i].id, "GOF_", 0) == 0){
-						Trace(Items[i].id + ";" + LanguageConvertString(itmDescGof, Items[i].name));
+					substrGof = (findSubStr(Items[i].id, "GOF_", 0) == 0);
+					emptyItem = (findSubStr(Items[i].id, "GOF_item", 0) == 0);
+					if(substrGof == true && emptyItem==false){
+						Trace("ID: " + Items[i].id + "; Name: " + LanguageConvertString(itmDescGof, Items[i].name) + "; quality: " + Items[i].quality + "; target: " + Items[i].target);
 					}
 					else{
 						Trace(Items[i].id + ";" + LanguageConvertString(itmDesc, Items[i].name));
