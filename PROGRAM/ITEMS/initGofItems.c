@@ -25,6 +25,7 @@ int GofInitItems()
 	n = 0;
 	// � ������ ���� ��� ��� ���������� ������
 	//==================PATENTS
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_patent_eng";
 	itm.groupID = PATENT_ITEM_TYPE;
@@ -95,11 +96,15 @@ int GofInitItems()
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
 	n++;
+	*/
 
 	/////////////////////////////////////////////////////////////////
 	//									WEAPONS   ����� ������ � ������� ������� �� ���������� ����� � ������, � �� �� ��������!!!
 	////////////////////////////////////////////////////////////////
 	///////////////////////////  FencingLight   ////////////////////////////
+	
+	// Already in TEHO
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_unarmed"; // ����
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -123,6 +128,7 @@ int GofInitItems()
 	itm.FencingType = "FencingLight";
 	itm.ItemType = "WEAPON";
 	n++;
+	*/
 	
 	// boal 21.05.2004 -->
 	makeref(itm,Items[n]);
@@ -492,7 +498,8 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;
 
-	makeref(itm,Items[n]);
+	// Already in TEHO
+	/*makeref(itm,Items[n]);
 	itm.id = "GOF_blade4";  //���������� �����
 	itm.groupID = BLADE_ITEM_TYPE;
 	itm.name = "GOF_itmname_blade4";
@@ -516,7 +523,7 @@ int GofInitItems()
 	itm.param.colorend = argb(0, 32, 32, 32);
 	itm.FencingType = "Fencing";
 	itm.ItemType = "WEAPON";
-	n++;
+	n++;*/
 
 	makeref(itm,Items[n]);
 	itm.id = "GOF_topor3";  //�������
@@ -884,7 +891,8 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;
 	
-	makeref(itm,Items[n]);
+	// Already in TEHO
+	/*makeref(itm,Items[n]);
 	itm.id = "GOF_blade8";  //����������� ���
 	itm.groupID = BLADE_ITEM_TYPE;
 	itm.name = "GOF_itmname_blade8";
@@ -908,7 +916,7 @@ int GofInitItems()
 	itm.param.colorend = argb(0, 32, 32, 32);
 	itm.FencingType = "FencingHeavy";
 	itm.ItemType = "WEAPON";
-	n++;
+	n++;*/
 
 	makeref(itm,Items[n]);
 	itm.id = "GOF_blade11"; //����������� �����
@@ -1390,7 +1398,8 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;
 
-	makeref(itm,Items[n]);
+	// Already in TEHO
+	/*makeref(itm,Items[n]);
 	itm.id = "GOF_mushket"; //��������
 	itm.groupID = GUN_ITEM_TYPE;
 	itm.name = "GOF_itmname_mushket";
@@ -1411,7 +1420,7 @@ int GofInitItems()
 	itm.minlevel = 1;
 	itm.rare = 0.0001;
 	itm.ItemType = "WEAPON";
-	n++;
+	n++;*/
 
   	makeref(itm,Items[n]);
 	itm.id = "GOF_mushket1"; //�������� <-----Officerpuppy 02/04/10
@@ -1437,7 +1446,7 @@ int GofInitItems()
 	n++;
 
 	// <<<< ---------------  QUEST ITEMS  --------------------
-
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_gold";
 	itm.name = "GOF_itmname_gold";
@@ -2485,7 +2494,7 @@ int GofInitItems()
 	n++;
 
 	ItemsForLocators_end = n; //�������� ����� ��� ����. ���������
-
+	*/
 	// <<<< ---------------  QUEST ITEMS  --------------------
 
 	// ����� //////////////////////////////////////////////////
@@ -3234,7 +3243,7 @@ int GofInitItems()
 	n++;
 
 	//POTIONS
-
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_potion1";
 	itm.name = "GOF_itmname_potion1";
@@ -3478,9 +3487,10 @@ int GofInitItems()
 	itm.SortIndex = 2;
 	itm.ItemType = "SUPPORT";
 	n++;
-
+	*/
 	//JEWELRY
 
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_jewelry1";
 	itm.name = "GOF_itmname_jewelry1";
@@ -4053,7 +4063,8 @@ int GofInitItems()
 	itm.minlevel = 0;
 	itm.rare = 0.1;
 	n++;
-
+	*/
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_bullet"; // boal ��� ���� "mineral1";
 	itm.name = "GOF_itmname_bullet"; //"itmname_mineral1";
@@ -4069,7 +4080,9 @@ int GofInitItems()
 	itm.SortIndex = 1;
 	itm.ItemType = "SUPPORT";
 	n++;
+	*/
 
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_mineral2";
 	itm.name = "GOF_itmname_mineral2";
@@ -4318,6 +4331,7 @@ int GofInitItems()
 	itm.minlevel =0;
 	itm.rare = 0.1;
 	n++;
+	*/
 
 	makeref(itm,Items[n]);
 	itm.id = "GOF_sculMa1";
