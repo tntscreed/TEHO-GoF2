@@ -439,6 +439,80 @@ void ProcessDialogEvent()
 			Link.l2.go = "VEX_DEBUG_LIST_ITEMS";
 			Link.l3 = "Add item to player by ID!";
 			Link.l3.go = "VEX_DEBUG_ADD_ITEM";
+			Link.l4 = "Clear main character's inventory!";
+			Link.l4.go = "VEX_DEBUG_CLEAR_INVENTORY";
+
+			Link.l5 = "Add all GoF blades to player!";
+			Link.l5.go = "VEX_DEBUG_ADD_GOF_BLADES";
+			Link.l6 = "Add all GoF guns to player!";
+			Link.l6.go = "VEX_DEBUG_ADD_GOF_GUNS";
+
+			Link.l7 = "Levels and skills!";
+			Link.l7.go = "VEX_DEBUG_LEVELS_AND_SKILLS";
+
+			Link.l99 = "Exit";
+			Link.l99.go = "exit";
+		break;
+
+		case "VEX_DEBUG_LEVELS_AND_SKILLS":
+			Dialog.Text = "Adding ranks and skill points.";
+			pchar.skill.freeskill = 100;
+			pchar.rank = 100;
+			pchar.perks.freepoints_self = 100;
+			pchar.perks.freepoints_ship = 100;
+
+			Link.l1 = "";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_ADD_GOF_GUNS":
+			Dialog.Text = "Adding GoF guns...";
+
+			for(i=0; i<ITEMS_QUANTITY; i++){
+				Trace("Check item number: " + (i) + " of " + ITEMS_QUANTITY);
+
+				if(findSubStr(Items[i].id, "GOF_", 0) == 0){
+					if(Items[i].groupId == GUN_ITEM_TYPE){
+						items[i].minlevel = 1;
+						Log_SetStringToLog("Adding item: " + Items[i].id);
+						GiveItem2Character(pchar, Items[i].id);
+					}
+					
+				}
+			}
+
+			Dialog.Text = "GoF guns added.";
+			Link.l1 = "";
+			Link.l1.go = "exit";
+		break;
+
+
+		case "VEX_DEBUG_ADD_GOF_BLADES":
+			Dialog.Text = "Adding GoF blades...";
+
+			for(i=0; i<ITEMS_QUANTITY; i++){
+				Trace("Check item number: " + (i) + " of " + ITEMS_QUANTITY);
+
+				if(findSubStr(Items[i].id, "GOF_", 0) == 0){
+					if(Items[i].groupId == BLADE_ITEM_TYPE){
+						Log_SetStringToLog("Adding item: " + Items[i].id);
+						GiveItem2Character(pchar, Items[i].id);
+					}
+					
+				}
+			}
+
+			Dialog.Text = "GoF blades added.";
+			Link.l1 = "";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_CLEAR_INVENTORY":
+			Dialog.Text = "Clearing inventory...";
+			RemoveAllCharacterItems(pchar, false);
+			Dialog.Text = "Inventory cleared.";
+			Link.l1 = "";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_LIST_CHARS":
@@ -479,8 +553,8 @@ void ProcessDialogEvent()
 		case "VEX_DEBUG_ADD_ITEM":
 			Dialog.Text = "Give the ID of the item to add:";
 
-			link.l1.edit = 1;
-			link.l1.go = "VEX_DEBUG_ADD_ITEM2";
+			Link.l1.edit = 1;
+			Link.l1.go = "VEX_DEBUG_ADD_ITEM2";
 		break;
 
 		case "VEX_DEBUG_ADD_ITEM2":
