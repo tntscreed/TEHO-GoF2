@@ -2498,6 +2498,8 @@ int GofInitItems()
 	// <<<< ---------------  QUEST ITEMS  --------------------
 
 	// ����� //////////////////////////////////////////////////
+
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_map_bad";	// to del
 	itm.groupID = MAPS_ITEM_TYPE;
@@ -3019,15 +3021,14 @@ int GofInitItems()
 	itm.imageType = "MapRead"; // ��������� �����
 	itm.mapType = "Part";
 	itm.ItemType = "MAP";
-	n++;
+	n++;*/
 	// boal ����� ���������� ����� <--
-
 
 	//  ���������� ������
 	ItemDeadStartCount = n;
 	trace("���������� ������ � �������� "+ItemDeadStartCount);
 	
-	
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_Statue1"; //+1
 	itm.name = "GOF_itmname_statue1";
@@ -3046,9 +3047,11 @@ int GofInitItems()
 	itm.minlevel = 1;
 	itm.rare = 0.001;
 	n++;
+	*/
 	
+
 	//SPYGLASSES
-	
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_spyglass1";
 	itm.groupID = SPYGLASS_ITEM_TYPE;
@@ -3241,6 +3244,7 @@ int GofInitItems()
 	itm.rare = 0.0001;
 	itm.ItemType = "SUPPORT";
 	n++;
+	*/
 
 	//POTIONS
 	/*
@@ -4333,6 +4337,7 @@ int GofInitItems()
 	n++;
 	*/
 
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_sculMa1";
 	itm.name = "GOF_itmname_sculMa1";
@@ -6347,6 +6352,8 @@ int GofInitItems()
 	itm.ItemType = "SUPPORT";
 	n++;
 
+	*/
+
 	tempFixGofItems();
 
 	// trace("����� ��������� (����������� �������) "+n);
@@ -6361,8 +6368,18 @@ void tempFixGofItems()
 	{
 		if(Items[i].ItemType == "WEAPON")
 		{
-			Items[i].target = TGT_SOLDIER;
-			Items[i].quality = B_ORDINARY;
+			if(CheckAttribute(Items[i], "target") == false)
+			{
+				Items[i].target = TGT_SOLDIER;
+			}
+			{
+
+			}
+
+			if(CheckAttribute(Items[i], "quality") == false){
+				Items[i].quality = B_ORDINARY;
+			}
+
 		}
 	}
 }
