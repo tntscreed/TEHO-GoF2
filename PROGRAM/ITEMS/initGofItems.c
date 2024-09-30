@@ -1,3 +1,5 @@
+#include "ITEMS/initItemFunctions.c"
+
 int GofInitItems()
 {
 	InitButtons();
@@ -130,7 +132,8 @@ int GofInitItems()
 	n++;
 	*/
 	
-	// boal 21.05.2004 -->
+
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_rabble"; // �������
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -154,7 +157,9 @@ int GofInitItems()
 	itm.FencingType = "FencingLight";
 	itm.ItemType = "WEAPON";
 	n++;
-	// boal 21.05.2004 <--
+	*/
+	n = InitStdBlade(n, "GOF_rabble", "ITEMS_GOF10", 11, TGT_SOLDIER, B_POOR, "FencingL", 0, 1.00, 1.00, 1, 1, 1, 50);
+
 
 	/*makeref(itm,Items[n]);
 	itm.id = "GOF_Lead1"; // ������
