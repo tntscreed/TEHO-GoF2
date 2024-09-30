@@ -927,7 +927,8 @@ void AddToTable(ref rChar)
 			GameInterface.TABLE_LIST.(sList).td3.icon.width = 56;
 			GameInterface.TABLE_LIST.(sList).td3.icon.height = 56;
 			GameInterface.TABLE_LIST.(sList).td3.textoffset = "60, 0";
-			GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+			if(findSubStr(rItem.id, "GOF_", 0) == 0) GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "Gof_ItemsDescribe.txt");
+			else GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 			GameInterface.TABLE_LIST.(sList).index = i;
 			GameInterface.TABLE_LIST.(sList).td3.scale = 1.0;
 			GameInterface.TABLE_LIST.(sList).td4.str = FloatToString(stf(rItem.Weight) * iRightQty, 1);
@@ -983,7 +984,8 @@ void AddToTable(ref rChar)
 			GameInterface.TABLE_LIST.(sList).td3.icon.width = 56;
 			GameInterface.TABLE_LIST.(sList).td3.icon.height = 56;
 			GameInterface.TABLE_LIST.(sList).td3.textoffset = "60, 0";
-			GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+			if(findSubStr(rItem.id, "GOF_", 0) == 0) GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "Gof_ItemsDescribe.txt");
+			else GameInterface.TABLE_LIST.(sList).td3.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 			GameInterface.TABLE_LIST.(sList).index = i;
 			GameInterface.TABLE_LIST.(sList).td3.scale = 1.0;
 			GameInterface.TABLE_LIST.(sList).td4.str = FloatToString(stf(rItem.Weight) * iRightQty, 1);
@@ -1335,7 +1337,10 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = Items[iGoodIndex].name;
 	ref    arItm = &Items[iGoodIndex];
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
+	//int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
+	int lngFileID = -1;
+	if(findSubStr(arItm.id, "GOF_", 0) == 0) lngFileID = LanguageOpenFile("Gof_ItemsDescribe.txt");
+	else lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 	string sHeader = LanguageConvertString(lngFileID, GoodName);
 
 	iCurGoodsIdx = iGoodIndex;

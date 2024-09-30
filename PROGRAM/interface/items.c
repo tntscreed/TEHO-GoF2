@@ -491,7 +491,10 @@ void SetItemInfo()
 	
 	if(CheckAttribute(arItm,"groupID") && arItm.groupID == GUN_ITEM_TYPE && IsEquipCharacterByItem(xi_refCharacter, arItm.ID))
 	{
-		int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
+		//int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
+		int lngFileID = -1;
+		if (FindSubStr(arItm.id, "GOF_", 0) == 0) lngFileID = LanguageOpenFile("Gof_ItemsDescribe.txt");
+		else lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 
 		if (HasSubStr(arItm.id, "mushket")) describeStr = GetAssembledString(LanguageConvertString(lngFileID,"mushket parameters equipped"), arItm) + newStr();		
 		else 								describeStr = GetAssembledString(LanguageConvertString(lngFileID,"weapon gun parameters equipped"), arItm) + newStr();
