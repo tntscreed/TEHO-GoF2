@@ -1,13 +1,19 @@
 new_string {
 
 }
-Potion parameters {Effect}
-health value {HP}
-weapon blade parameters {Weapon: damage min/max #ddmg_min#/#ddmg_max#}
-weapon blade type {Type #sFencingTypeName#}
-weapon gun parameters {Weapon: damage min/max #ddmg_min#/#ddmg_max#; reload time #dchargespeed# sec.; accuracy #daccuracy#%}
-youve_got {Item found: }
-used_item {Item used: }
+Potion parameters{Volume}
+health value{hp}
+
+weapon blade parameters{Weapon: Attack/Balance #f.1Attack#/#f.1Balance#}
+weapon blade type {Type: #sFencingTypeName#}
+weapon gun parameters{Weapon: damage min/max #ddmg_min#/#ddmg_max#}
+weapon gun parameters equipped{Weapon: damage min/max #ddmg_min#/#ddmg_max#, reload time #dchargespeed# sec., accuracy #daccuracy#%}
+mushket parameters{Weapon: damage min/max #ddmg_min#/#ddmg_max#}
+mushket parameters equipped{Weapon: damage min/max #ddmgmin#/#ddmgmax#, reload time #dchargespeed# sec., accuracy #daccuracy#%}
+
+youve_got {Item found - }
+used_item {Item used - }
+
 gof_itmname_gold {Gold}
 gof_itmdescr_gold {
  Gold: the yellow fever dream of every pirate. 
