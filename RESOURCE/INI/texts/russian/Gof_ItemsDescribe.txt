@@ -349,8 +349,8 @@ gof_itmname_Ascold_rabble {Small crowbar}
 gof_itmdescr_Ascold_rabble {
  A small iron pry bar, for household use. Though you can't turn the world with it, you can budge some heavy objects using the sharp, pointed end. 
 }
-gof_itmname_rabble {Poker}
-gof_itmdescr_rabble {
+itmname_GOF_rabble {Poker}
+itmdescr_GOF_rabble {
 An old, rusty piece of fireplace iron. Though not really a weapon as such, it's heavy enough and has a sturdy handle. 
 }
 gof_itmname_lead1 {Brass knuckles}
