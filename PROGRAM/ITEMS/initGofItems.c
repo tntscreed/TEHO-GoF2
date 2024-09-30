@@ -25,6 +25,7 @@ int GofInitItems()
 		itm.ItemType = "VARIETY";
 	}
 	n = 0;
+
 	// � ������ ���� ��� ��� ���������� ������
 	//==================PATENTS
 	/*
@@ -103,8 +104,46 @@ int GofInitItems()
 	/////////////////////////////////////////////////////////////////
 	//									WEAPONS   ����� ������ � ������� ������� �� ���������� ����� � ������, � �� �� ��������!!!
 	////////////////////////////////////////////////////////////////
-	///////////////////////////  FencingLight   ////////////////////////////
 	
+	n = InitStdBlade(n, "GOF_rabble", "ITEMS_GOF10", 11, TGT_SOLDIER, B_POOR, "FencingL", 0, 1.00, 1.00, 1, 1, 1, 50);
+	n = initStdBlade(n, GOF_blade5, ITEMS_GOF6, 9, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade2, ITEMS_GOF6, 10, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade9, ITEMS_GOF3, 2, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade14, ITEMS_GOF3, 7, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade19, ITEMS_GOF3, 12, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade22, ITEMS_GOF3, 15, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade23, ITEMS_GOF3, 16, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade27, ITEMS_GOF8, 3, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_cortblade, ITEMS_GOF8, 3, TGT_OFFICER, B_ORDINARY, FencingL, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade1, ITEMS_GOF6, 11, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_topor3, ITEMS_GOF10, 8, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade3, ITEMS_GOF6, 8, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade7, ITEMS_GOF6, 13, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade12, ITEMS_GOF3, 5, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade18, ITEMS_GOF3, 11, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade30, ITEMS_GOF10, 2, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade31, ITEMS_GOF10, 3, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade24, ITEMS_GOF8, 5, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade25, ITEMS_GOF8, 1, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade34, ITEMS_GOF10, 5, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade26, ITEMS_GOF8, 2, TGT_OFFICER, B_ORDINARY, FencingS, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade10, ITEMS_GOF3, 3, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade35, ITEMS_GOF10, 10, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade11, ITEMS_GOF3, 4, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade13, ITEMS_GOF3, 6, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_topor1, ITEMS_GOF10, 6, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade15, ITEMS_GOF3, 8, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade16, ITEMS_GOF3, 9, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade17, ITEMS_GOF3, 10, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade20, ITEMS_GOF3, 13, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade21, ITEMS_GOF3, 14, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade33, ITEMS_GOF10, 9, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_blade28, ITEMS_GOF10, 16, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_topor2, ITEMS_GOF10, 7, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_tritblade, ITEMS_GOF10, 2, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	n = initStdBlade(n, GOF_piranblade, ITEMS_GOF3, 9, TGT_OFFICER, B_ORDINARY, FencingH, 0, 1.00, 1.00, 1, 1, 1, 4000);
+	
+
 	// Already in TEHO
 	/*
 	makeref(itm,Items[n]);
@@ -158,8 +197,6 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;
 	*/
-	n = InitStdBlade(n, "GOF_rabble", "ITEMS_GOF10", 11, TGT_SOLDIER, B_POOR, "FencingL", 0, 1.00, 1.00, 1, 1, 1, 50);
-
 
 	/*makeref(itm,Items[n]);
 	itm.id = "GOF_Lead1"; // ������
@@ -185,6 +222,7 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;*/
 	
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_blade5";  //������
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -236,6 +274,7 @@ int GofInitItems()
 	itm.FencingType = "FencingLight";
 	itm.ItemType = "WEAPON";
 	n++;
+	*/
 	
 	// Already in TEHO
 	/*makeref(itm,Items[n]);
@@ -264,6 +303,7 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;*/
 	
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_blade9"; //����������� ������
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -358,9 +398,6 @@ int GofInitItems()
 	itm.dmg_min = 13.0;
 	itm.dmg_max = 53.0;
 
-	//itm.Attack = itm.dmg_max; // TEMP VEX
-	//itm.Balance = 1.5; // TEMP VEX
-
 	itm.piercing = 44;
 	itm.minlevel = 1;
 	itm.rare = 0.001;
@@ -397,6 +434,7 @@ int GofInitItems()
 	itm.FencingType = "FencingLight";
 	itm.ItemType = "WEAPON";
 	n++;
+	*/
 	
 	/*makeref(itm,Items[n]);
 	itm.id = "GOF_arm1"; //������ �����
@@ -424,6 +462,7 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;*/
 	
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_blade27"; //������ ����� �������
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -476,7 +515,8 @@ int GofInitItems()
 	itm.FencingType = "FencingLight";
 	itm.ItemType = "WEAPON";
 	n++;
-	///////////////////////////  Fencing   ////////////////////////////
+
+
 	makeref(itm,Items[n]);
 	itm.id = "GOF_blade1"; //������ �����
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -502,6 +542,7 @@ int GofInitItems()
 	itm.FencingType = "Fencing";
 	itm.ItemType = "WEAPON";
 	n++;
+	*/
 
 	// Already in TEHO
 	/*makeref(itm,Items[n]);
@@ -530,6 +571,7 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;*/
 
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_topor3";  //�������
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -815,6 +857,7 @@ int GofInitItems()
 	itm.FencingType = "Fencing";
 	itm.ItemType = "WEAPON";
 	n++;
+	*/
 	
 	// Already in TEHO
 	/*makeref(itm,Items[n]);
@@ -843,7 +886,7 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;*/
 	
-	///////////////////////////  FencingHeavy   ////////////////////////////
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_blade10"; //���������� �����
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -895,6 +938,7 @@ int GofInitItems()
 	itm.FencingType = "FencingHeavy";
 	itm.ItemType = "WEAPON";
 	n++;
+	*/
 	
 	// Already in TEHO
 	/*makeref(itm,Items[n]);
@@ -923,6 +967,7 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;*/
 
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_blade11"; //����������� �����
 	itm.groupID = BLADE_ITEM_TYPE;
@@ -1217,7 +1262,7 @@ int GofInitItems()
 	itm.folder = "items";
 	itm.model = "GOF_blade30";
 	itm.picIndex = 2;
-	itm.picTexture = "ITEMS_GOF10";
+	itm.picTexture = "ITEMS_GOF10";-
 	// boal 15.12.2009 -->
 	itm.price = 12500;
 	itm.Weight = 7.5;
@@ -1263,6 +1308,7 @@ int GofInitItems()
     	itm.ItemType = "WEAPON";
 	n++;
 	//GUNS
+	*/
 
 	makeref(itm,Items[n]);
 	itm.id = "GOF_pistol1";
