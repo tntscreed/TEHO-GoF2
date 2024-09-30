@@ -236,7 +236,7 @@ void AddToTable()
 	int leftQty, rightQty;
 	n = 1;
 	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	idGofLngFile = LanguageOpenFile("Gof_ItemsDescribe.txt");
+	int idGofLngFile = LanguageOpenFile("Gof_ItemsDescribe.txt");
 	Table_Clear("TABLE_LIST", false, true, false);
 	
 	// Сначало уникальные предметы
