@@ -2448,6 +2448,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 			if(CheckAttribute(arItm, "blade.colorstart"))	{colors = sti(arItm.blade.colorstart);}
 			if(CheckAttribute(arItm, "blade.colorend"))	{colore = sti(arItm.blade.colorend);}			
 			SendMessage(chref, "llsfll", MSG_CHARACTER_SETBLADE, 0, modelName, liveTime, colors, colore);
+			trace("Set blade '" + arItm.id + "' to character '" + chref.id + "'; attack: " + arItm.Attack + "; balance: " + arItm.balance);
 			// boal -->
 			if(CheckAttribute(arItm,"FencingType"))
 			{	LAi_BladeFencingType(chref, arItm.FencingType);
