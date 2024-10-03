@@ -1306,9 +1306,40 @@ int GofInitItems()
    	 itm.FencingType = "FencingHeavy";
     	itm.ItemType = "WEAPON";
 	n++;
-	//GUNS
 	*/
+	//GUNS
 
+	n = initStdGun(n, "GOF_pistol1", "GOF_pistol1", "ITEMS_GOF6", 1, 0.1, 1, 50, 20.0, 100.0, 3.0, 1, B_ORDINARY);
+	n = initStdGun(n, "GOF_pistol2", "GOF_pistol2", "ITEMS_GOF6", 2, 0.1, 1, 200, 30.0, 120.0, 4.0, 1, B_ORDINARY);
+	n = initStdGun(n, "GOF_pistol3", "GOF_pistol3", "ITEMS_GOF6", 3, 0.0001, 1, 400, 50.0, 175.0, 6.0, 1, B_ORDINARY);
+	n = initStdGun(n, "GOF_pistol6", "GOF_pistol6", "ITEMS_GOF6", 6, 0.0001, 1, 650, 35.0, 110.0, 5.0, 2, B_ORDINARY);
+	n = initStdGun(n, "GOF_pistol5", "GOF_pistol5", "ITEMS_GOF6", 5, 0.0001, 1, 1900, 40.0, 170.0, 3.0, 1, B_ORDINARY);
+	n = initStdGun(n, "GOF_pistol4", "GOF_pistol4", "ITEMS_GOF6", 4, 0.0001, 1, 2500, 30.0, 120.0, 6.0, 4, B_ORDINARY);
+	n = initStdGun(n, "GOF_mushket1", "GOF_mushket1", "ITEMS_GOF14", 3, 0.0001, 1, 5500, 80.0, 280.0, 13.0, 1, B_ORDINARY);
+
+
+	initGunExt("GOF_pistol1", "t1", "cartridge", "", 20.0, 100.0, 12.0, 60.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 30, 8, 0);
+	initGunExt("GOF_pistol1", "t2", "bullet", "gunpowder", 20.0, 100.0, 12.0, 60.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 30, 8, 1);
+
+	initGunExt("GOF_pistol2", "t1", "cartridge", "", 30.0, 120.0, 18.0, 72.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 50, 12, 0);
+	initGunExt("GOF_pistol2", "t2", "bullet", "gunpowder", 30.0, 120.0, 18.0, 72.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 50, 12, 1);
+
+	initGunExt("GOF_pistol3", "t1", "cartridge", "", 50.0, 175.0, 30.0, 105.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 20, 22, 0);
+	initGunExt("GOF_pistol3", "t2", "bullet", "gunpowder", 50.0, 175.0, 30.0, 105.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 20, 22, 1);
+
+	initGunExt("GOF_pistol6", "t1", "cartridge", "", 35.0, 110.0, 21.0, 66.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 60, 20, 0);
+	initGunExt("GOF_pistol6", "t2", "bullet", "gunpowder", 35.0, 110.0, 21.0, 66.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 60, 20, 1);
+
+	initGunExt("GOF_pistol5", "t1", "cartridge", "", 40.0, 170.0, 24.0, 102.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 80, 16, 0);
+	initGunExt("GOF_pistol5", "t2", "bullet", "gunpowder", 40.0, 170.0, 24.0, 102.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 80, 16, 1);
+
+	initGunExt("GOF_pistol4", "t1", "cartridge", "", 30.0, 120.0, 18.0, 72.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 50, 28, 0);
+	initGunExt("GOF_pistol4", "t2", "bullet", "gunpowder", 30.0, 120.0, 18.0, 72.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 50, 28, 1);
+
+	initGunExt("GOF_mushket1", "t1", "cartridge", "", 80.0, 280.0, 48.0, 168.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 80, 10, 0);
+	initGunExt("GOF_mushket1", "t2", "bullet", "gunpowder", 80.0, 280.0, 48.0, 168.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 80, 10, 1);
+
+	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_pistol1";
 	itm.groupID = GUN_ITEM_TYPE;
@@ -1447,6 +1478,7 @@ int GofInitItems()
 	itm.rare = 0.0001;
 	itm.ItemType = "WEAPON";
 	n++;
+	*/
 
 	// Already in TEHO
 	/*makeref(itm,Items[n]);
@@ -1472,6 +1504,7 @@ int GofInitItems()
 	itm.ItemType = "WEAPON";
 	n++;*/
 
+	/*
   	makeref(itm,Items[n]);
 	itm.id = "GOF_mushket1"; //�������� <-----Officerpuppy 02/04/10
 	itm.groupID = GUN_ITEM_TYPE;
@@ -1494,6 +1527,7 @@ int GofInitItems()
 	itm.rare = 0.0001;
 	itm.ItemType = "WEAPON";
 	n++;
+	*/
 
 	// <<<< ---------------  QUEST ITEMS  --------------------
 	/*
@@ -6404,34 +6438,12 @@ int GofInitItems()
 
 	*/
 
-	tempFixGofItems();
+
 
 	// trace("����� ��������� (����������� �������) "+n);
 	// trace("��������� ����������� �������: " + Items[ItemsForLocators_start].id);
 	// trace("�������� ����������� �������: " + Items[ItemsForLocators_end].id);
 	return n;
-}
-
-void tempFixGofItems()
-{
-	for(int i=0; i<GOF_ITEMS_QUANTITY; i++)
-	{
-		if(Items[i].ItemType == "WEAPON")
-		{
-			if(CheckAttribute(Items[i], "target") == false)
-			{
-				Items[i].target = TGT_SOLDIER;
-			}
-			{
-
-			}
-
-			if(CheckAttribute(Items[i], "quality") == false){
-				Items[i].quality = B_ORDINARY;
-			}
-
-		}
-	}
 }
 
 void InitButtons()
