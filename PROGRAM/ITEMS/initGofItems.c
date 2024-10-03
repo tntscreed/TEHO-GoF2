@@ -1339,6 +1339,7 @@ int GofInitItems()
 	initGunExt("GOF_mushket1", "t1", "cartridge", "", 80.0, 280.0, 48.0, 168.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 80, 10, 0);
 	initGunExt("GOF_mushket1", "t2", "bullet", "gunpowder", 80.0, 280.0, 48.0, 168.0, 0.0, 0.0, 1, 1, 0, 0, 0, 0, 80, 10, 1);
 
+	InitMushketExt("GOF_mushket1", 25.0,  50.0,  10.0,  25.0, "FencingH", "FencingL" );
 	/*
 	makeref(itm,Items[n]);
 	itm.id = "GOF_pistol1";
