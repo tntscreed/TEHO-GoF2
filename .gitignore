@@ -14,6 +14,7 @@ RESOURCE/MODELS/Ammo/*
 RESOURCE/Textures/*
 !RESOURCE/Textures/Ammo
 RESOURCE/Textures/Ammo/*
+!RESOURCE/Particles
 
 !RESOURCE/Textures/Items
 RESOURCE/Textures/Items/*
