@@ -18,6 +18,7 @@ RESOURCE/Textures/Ammo/*
 # MNH Weather
 !RESOURCE/Particles
 !RESOURCE/Sea
+!RESOURCE/Textures/splash.tga.tx
 
 !RESOURCE/Textures/Items
 RESOURCE/Textures/Items/*
