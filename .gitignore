@@ -14,7 +14,10 @@ RESOURCE/MODELS/Ammo/*
 RESOURCE/Textures/*
 !RESOURCE/Textures/Ammo
 RESOURCE/Textures/Ammo/*
+
+# MNH Weather
 !RESOURCE/Particles
+!RESOURCE/Sea
 
 !RESOURCE/Textures/Items
 RESOURCE/Textures/Items/*
