@@ -1,3 +1,9 @@
+#include "scripts\ColonyUpgrades.c"
+
+#define COLONY_POPULATION_LIMIT_1	5000
+#define COLONY_POPULATION_LIMIT_2	10000
+#define COLONY_POPULATION_LIMIT_3	20000
+#define COLONY_POPULATION_LIMIT_4	50000
 
 extern void InitColonies();
 
@@ -83,3 +89,112 @@ string Colony_GetLighthouseId(string _colony)
 	return sMayak;
 }
 // <--
+
+void SetUpgradesForColony(int i)
+{
+	if(colonies[i].nation != "none")
+	{
+		colonies[i].colonylevel = rand(iColonyState - 1) + 1;
+
+		if(sti(colonies[i].colonylevel) > 0)
+		{
+			colonies[i].fort = 1;
+			colonies[i].shipyard = 1;
+			colonies[i].wheatfield = 1;
+			colonies[i].fishingpier = 1;
+			colonies[i].mill = 1;
+		}
+		if(sti(colonies[i].colonylevel) > 1)
+		{
+			colonies[i].fort = 2;
+			colonies[i].shipyard = 2;
+			colonies[i].huts = 1; 
+			colonies[i].storehouse = 1;
+		}
+		if(sti(colonies[i].colonylevel) > 2)
+		{		
+			colonies[i].fort = 3;
+			colonies[i].shipyard = 3;
+			colonies[i].church = 1;
+
+			colonies[i].huts = 1; 
+			colonies[i].storehouse = 1;
+		}
+		
+		if(sti(colonies[i].colonylevel) > 3)
+		{
+			colonies[i].academy = 1; 
+			colonies[i].expedition = 0;
+			colonies[i].church = 1;
+		}
+
+		int iMoneyForColony = sti(colonies[i].money);
+
+		BuildUpgrade(i, UPGRADE_PIER, false);
+		BuildUpgrade(i, UPGRADE_MILL, false);
+		BuildUpgrade(i, UPGRADE_SHIPYARD, false);
+		BuildUpgrade(i, UPGRADE_HUTS, false);
+		BuildUpgrade(i, UPGRADE_ACADEMY, false);
+		BuildUpgrade(i, UPGRADE_STOREHOUSE, false);
+		BuildUpgrade(i, UPGRADE_CHURCH, false);
+		BuildFortUpgrade(i);
+		
+		colonies[i].money = iMoneyForColony;
+	}
+}
+
+
+void SetUpgrades()
+{
+	for(int i = 0; i < MAX_COLONIES; i++)
+	{
+		SetUpgradesForColony(i);
+	}
+		
+}
+
+void CreateColonyPopulation()
+{
+	for(int i = 0; i< MAX_COLONIES; i++)
+	{		
+		if (colonies[i].nation != "none" || colonies[i].id == "IslaMona")
+		{
+			switch (colonies[i].colonylevel)
+			{
+				case "0":
+					colonies[i].population = 0;
+					colonies[i].money = 0;
+				break;
+				
+				case "1":
+					colonies[i].population = 500+rand(250);
+					colonies[i].money = 5000+rand(2500);
+				break;
+
+				case "2":
+					colonies[i].population = 750+rand(500);
+					colonies[i].money = 7500+rand(5000);
+				break;
+
+				case "3":
+					colonies[i].population = 1000+rand(1000);
+					colonies[i].money = 10000+rand(10000);
+				break;
+
+				case "4":
+					colonies[i].population = 3000+rand(3000);
+					colonies[i].money = 20000+rand(20000);
+				break;
+			}
+		}
+		colonies[i].population = sti(colonies[i].population) + 100 * iColonyState;
+		colonies[i].money = sti(colonies[i].money) + 1000 * iColonyState;
+
+		colonies[i].crew = makeint(sti(colonies[i].population)/10.0));
+		colonies[i].crew.experience = 1;
+	}
+
+	ColonyUpgradesInit();
+	SetUpgrades();
+	FillColoniesInfo();
+}

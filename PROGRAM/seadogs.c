@@ -554,6 +554,10 @@ void InterfaceDoExit()
 		case RC_INTERFACE_TO_LOGBOOK:
 			LaunchQuestBook();
 		break;
+
+		case RC_INTERFACE_TO_COLONY:
+			LaunchColonyManagement();
+		break;
 		
 		case RC_INTERFACE_TO_ITEMS:
 			LaunchItems(); // to_do

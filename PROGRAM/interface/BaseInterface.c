@@ -252,4 +252,7 @@ void InitInterfaceTables()
 	Interfaces[INTERFACE_REPAIR].SectionName = "interface\repair.c";
 	Interfaces[INTERFACE_REPAIR].IniFile = "RESOURCE\INI\INTERFACES\repair.ini";
 	// ugeen <--
+
+	Interfaces[INTERFACE_COLONY_MANAGEMENT].SectionName = "interface\ColonyManagement.c";
+	Interfaces[INTERFACE_COLONY_MANAGEMENT].IniFile = "RESOURCE\INI\INTERFACES\ColonyManagement.ini";
 }

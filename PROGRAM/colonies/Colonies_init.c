@@ -843,4 +843,8 @@ void InitColonies()
 		colonies[n].Default.BoardLocation = "SanAndres_ExitTown";
 		colonies[n].FortValue = 80; 		
 		colonies[n].DontSetShipInPort = true; // 280313
+
+
+
+		CreateColonyPopulation();
 } 

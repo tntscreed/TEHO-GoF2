@@ -158,14 +158,21 @@ void ProcessCommandExecute()
 			    nodName = "I_ITEMS";
 			}
 		break;
+		case "I_COLONIES_2":
+			if(comName=="click")
+			{
+			    nodName = "I_COLONIES";
+			}
+		break;
 	}
 	// boal new menu 31.12.04 -->
 	if (nodName == "I_CHARACTER" || nodName == "I_SHIP" ||
 	    nodName == "I_QUESTBOOK" || nodName == "I_TRADEBOOK" ||
-		nodName == "I_NATIONS" || nodName == "I_ITEMS")
+		nodName == "I_NATIONS" || nodName == "I_ITEMS" || nodName == "I_COLONIES")
 	{
 		if(comName=="click")
 		{
+			trace("node name = " + nodName + ", click");
             InterfaceStates.ReloadMenuExit = true;
 			IDoExit(RC_INTERFACE_ANY_EXIT);
 			PostEvent("LaunchIAfterFrame",1,"sl", nodName, 2);

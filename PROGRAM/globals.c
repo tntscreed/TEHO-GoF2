@@ -125,6 +125,9 @@ string 	sSpManGenNames[21], sSpWomenGenNames[9], sSpGenFamilies[54];
 #define NAMETYPE_VIP "Vip"
 #define NAMETYPE_MAIN "Main"
 
+#define MAX_UPGRADES	12 // Colony upgrades
+object ColonyUpgrades[MAX_UPGRADES];
+
 Object Names;
 
 object  	NullCharacter;
@@ -132,6 +135,7 @@ object	Characters[TOTAL_CHARACTERS];
 object	Locations[MAX_LOCATIONS];
 object	Islands[MAX_ISLANDS];
 object	Colonies[MAX_COLONIES];
+object  ColoniesInfo[MAX_COLONIES];
 
 object  	Environment;
 int		nMainCharacterIndex = 1;//-1;
@@ -149,6 +153,11 @@ float GridStepX = 0.1;
 float GridStepPC = 0.1;
 float MaxWaveDistance = 4000.0;//4000.0;//3000.0;//2000.0;//1000.0
 float LodScale = 0.7;//0.7;//1.2;//2.0;//4.0
+
+// TODO: decide the fate of these CT globals
+int iColonyState = 1; // From CT
+int iAgressionState = 1; // From CT
+int	iGameArcade = 4; // From CT
 
 ref GetCharacter(int iIndex) 
 { 

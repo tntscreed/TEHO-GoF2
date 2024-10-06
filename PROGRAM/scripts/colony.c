@@ -1,3 +1,14 @@
+void FillColoniesInfo()
+{
+	string sLocation;
+	for(int i = 0; i < MAX_COLONIES; i ++)
+	{
+		CopyAttributes(&coloniesinfo[i], &colonies[i]);
+		sLocation = colonies[i].id + "_town";
+		SetEnterLocationQuest(sLocation, "ColoniesInfoUpdate", 0);
+	}
+}
+
 int CheckColonyMoney(string sColony)
 {
 	int iMoney;
@@ -51,6 +62,7 @@ void CreateColonyCommanders()
 		}
 		// boal <--
 		colonies[i].commander = colonies[i].id + " Fort Commander";
+		trace("Making fort commander for colony:" + colonies[i].id);
 		
 		iChar = GenerateCharacter(sti(colonies[i].nation), WITH_SHIP, "officer", MAN, 1, FORT_COMMANDER);
 		
@@ -1725,4 +1737,155 @@ int TWN_CityCost(string city)
 	    money = (25 * 50000);
 	}
 	return money;
+}
+
+
+void CreateFortCommander(aref chr, aref fortcommander)
+{
+	fortcommander.rank = chr.rank;
+	fortcommander.experience = chr.experience;
+	fortcommander.reputation = chr.reputation;
+	fortcommander.skill.leadership = chr.skill.leadership;
+	fortcommander.skill.temp.leadership = chr.skill.temp.leadership;
+	fortcommander.skill.fencing = chr.skill.fencing;
+	fortcommander.skill.temp.fencing = chr.skill.temp.fencing;
+	fortcommander.skill.gun = chr.skill.gun;
+	fortcommander.skill.temp.gun = chr.skill.temp.gun;
+	fortcommander.skill.cannons = chr.skill.cannons;
+	fortcommander.skill.temp.cannons = chr.skill.temp.cannons;
+	fortcommander.skill.accuracy = chr.skill.accuracy;
+	fortcommander.skill.temp.accuracy = chr.skill.temp.accuracy;
+	fortcommander.skill.defence = chr.skill.defence;
+	fortcommander.skill.temp.defence = chr.skill.temp.defence;
+	fortcommander.skill.sneak = chr.skill.sneak;
+	fortcommander.skill.temp.sneak = chr.skill.temp.sneak;
+
+	fortcommander.name = chr.name;
+	fortcommander.faceID = chr.faceID;
+}
+
+void RechargeColonyCaptureEx(string sColony)
+{
+	ref chr;
+
+	int iColony = FindColony(sColony);
+	chr = characterFromID(Colonies[iColony].commander);
+	
+	if (sti(Colonies[iColony].time) > 0)
+	{
+		AddCharacterExp(chr, 10000);
+	}
+	
+	string sQuestCapture = "check_for_capture_" + sColony;
+	
+	int iTimerForCapture = 10 + iAgressionState * 10 + sti(chr.skill.leadership) + rand(40); 
+	iTimerForCapture = iTimerForCapture * (1.0 + (0.2 * iGameArcade));
+	
+	pchar.quest.(sQuestCapture).win_condition.l1 = "Timer";
+	pchar.quest.(sQuestCapture).win_condition.l1.date.day = GetAddingDataDay(0, 0, iTimerForCapture);
+	pchar.quest.(sQuestCapture).win_condition.l1.date.month = GetAddingDataMonth(0, 0, iTimerForCapture);
+	pchar.quest.(sQuestCapture).win_condition.l1.date.year = GetAddingDataYear(0, 0, iTimerForCapture);
+	pchar.quest.(sQuestCapture).win_condition.l1.date.hour = rand(23);
+	pchar.quest.(sQuestCapture).win_condition = "check_for_capture_colony";
+	pchar.quest.(sQuestCapture).function = "CheckForCaptureColony";
+	pchar.quest.(sQuestCapture).colony = sColony;
+	
+	sQuestCapture = "LooseColony_" + sColony;
+	pchar.quest.(sQuestCapture).over = "yes";
+	
+	sQuestCapture = "wait_for_capture_" + sColony;
+	pchar.quest.(sQuestCapture).over = "yes";
+	
+	Colonies[iColony].agressor = "-1";
+	Colonies[iColony].capturetime = "";
+	Colonies[iColony].capture_day = 0;
+	Colonies[iColony].capture_month = 0;
+	Colonies[iColony].capture_year = 0;
+	Colonies[iColony].resquetime = "";
+}
+
+void CreateGovernor(aref chr, string sColony)
+{
+	ref fortcommander;
+	
+	chr.dialog.currentnode = "hovernor";
+	
+
+	int iColony = FindColony(sColony);
+	
+	Colonies[iColony].commander = chr.id;
+	Colonies[iColony].time = "0";
+
+	//int iOldNation = sti(Colonies[iColony].nation);
+	//Colonies[iColony].loyality = GetCharacterReputation(pchar, iOldNation);
+	
+	RemovePassenger(pchar, chr);
+	
+	string sfortcommander = "Player " + sColony + " Fort Commander";
+	fortcommander = CharacterFromID(sfortcommander);
+
+	CreateFortCommander(chr, fortcommander);
+
+	chr.location = sColony+"_townhall";
+	chr.location.group = "sit";
+	chr.location.locator = "sit1";
+	chr.dialog.filename = "officer_dialog.c";
+	chr.dialog.currentnode = "First time";
+	chr.greeting = "officer_common_" + (rand(3) + 1);
+
+	LAi_RemoveLoginTime(chr);
+	LAi_SetHuberType(chr);
+	
+	if(sti(Colonies[iColony].ismaincolony) == 1)
+	{
+		int iOldNation = sti(pchar.from_interface.oldnation);
+		string sExHovernor = GetNationNameBytype(iOldNation)+"_hovernor";
+		int iExHovernor = GetCharacterIndex(sExHovernor);
+		if(sExHovernor != -1)
+		{
+			characters[iExHovernor].location = "none";
+		}
+	}
+
+	Colonies[iColony].nation = PIRATE;
+	
+	if (Colonies[iColony].capture_flag != "1")
+	{
+		Colonies[iColony].TimerInfo = sti(Colonies[iColony].TimerInfo) + 1;
+		fortcommander.ship.crew.quantity = 100;
+		pchar.colony_quantity = sti(pchar.colony_quantity) + 1;
+	}
+	Colonies[iColony].capture_flag = "1";
+	Colonies[iColony].nation = PIRATE;
+	
+	chr.colony_id = sColony;
+	
+	fortcommander.nation = PIRATE;	
+	pchar.nation = PIRATE;
+
+	string sLocator = "reload_fort" + colonies[iColony].num;
+
+	//int iOldFortChar = Fort_FindCharacter(colonies[iColony].island, "reload", sLocator);
+
+	Fort_SetCharacter(fortcommander, colonies[iColony].island, "reload", sLocator);
+	fortcommander.ship.crew.quantity = Colonies[iColony].crew;
+	fortcommander.ship.crew.experience = Colonies[iColony].crew.experience;
+
+	colonies[iColony].crew.sailors = sti(colonies[iColony].crew.sailors) + 50;
+	colonies[iColony].crew.soldiers = sti(colonies[iColony].crew.soldiers) + 50;
+	colonies[iColony].crew.musketeers = sti(colonies[iColony].crew.musketeers) + 20;
+	colonies[iColony].crew.cannoners = sti(colonies[iColony].crew.cannoners) + 50;
+	Colonies[iColony].crew.experience = 10;
+
+	SetCharacterRelationAsOtherCharacter(GetCharacterIndex(fortcommander.id), nMainCharacterIndex);
+	SetCharacterRelationBoth(GetCharacterIndex(fortcommander.id), nMainCharacterIndex, RELATION_FRIEND);
+	
+	RechargeColonyCaptureEx(sColony);
+	
+	//string sIsland = Colonies[iColony].island;
+	sColony = sColony + "Town";
+	worldMap.labels.(sColony).icon = PIRATE;
+	//worldMap.islands.(sIsland).locations.city.label.icon = PIRATE;
+
+	//SetTownCapturedState(sColony, false);
 }

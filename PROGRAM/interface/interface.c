@@ -949,6 +949,16 @@ void LaunchSelectNation()
 	//StartVideo("3Ship");
 }
 
+void LaunchColonyManagement()
+{
+	if(procInterfacePrepare(INTERFACE_COLONY_MANAGEMENT))
+	{
+		nPrevInterface = -1;
+		CurrentInterface = INTERFACE_COLONY_MANAGEMENT;
+		InitInterface(Interfaces[CurrentInterface].IniFile);
+	}
+}
+
 void ISTART_SelCharacter()
 {
 	InterfaceStates.Launched = true;
@@ -1458,6 +1468,7 @@ void ILaunchAfterFrame()
 		case "I_TRADEBOOK":		LaunchTradeBook();	return; break;
 		case "I_NATIONS":		LaunchNationRelation();	return; break;
 		case "I_ITEMS":			LaunchItems();	return; break;
+		case "I_COLONIES":		LaunchColonyManagement(); return; break;
 		// boal 220904 <--
 		case "TransferMain":
 			if( CheckAttribute(pchar,"TransferChar") )
