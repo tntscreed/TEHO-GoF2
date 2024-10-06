@@ -29,6 +29,8 @@ RESOURCE/Textures/INTERFACES/*
 !RESOURCE/Textures/INTERFACES/PORTRAITS
 RESOURCE/Textures/INTERFACES/PORTRAITS/*
 !RESOURCE/Textures/INTERFACES/icons_spec.tga.tx
+!RESOURCE/Textures/INTERFACES/Colonies.tga.tx
+!RESOURCE/Textures/INTERFACES/upgrades.tga.tx
 !RESOURCE/Textures/Characters/
 
 # Exclude all GoF "Ammo" textures
