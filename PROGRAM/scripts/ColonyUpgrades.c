@@ -196,7 +196,8 @@ int BuildUpgrade(int iColony, int iUpgrade, bool isRealBuild)
 		colonies[iColony].(sBuildModel) = sti(colonies[iColony].(sBuildModel)) + 1;
 	}
 
-	if(sti(ColonyUpgrades[iUpgrade].model) == 1)
+	//if(sti(ColonyUpgrades[iUpgrade].model) == 1)
+	if(false)
 	{
 		
 		bool isBuild = false;
@@ -210,39 +211,39 @@ int BuildUpgrade(int iColony, int iUpgrade, bool isRealBuild)
 
 		if(isBuild == true)
 		{
-			//Locations[iLocation].models.always.(sBuildModel) = "..\..\upgrades/" + sBuildModel + iBuildStep;
-			//trace("ColonyUpgrades.c: BuildUpgrade: sBuildModel:" + sBuildModel + ", iBuildStep" + iBuildStep + " ; location: " + Locations[iLocation].id + " ; " + Locations[iLocation].models.always.(sBuildModel));
+			Locations[iLocation].models.always.(sBuildModel) = "..\..\upgrades/" + sBuildModel + iBuildStep;
+			trace("ColonyUpgrades.c: BuildUpgrade: sBuildModel:" + sBuildModel + ", iBuildStep" + iBuildStep + " ; location: " + Locations[iLocation].id + " ; " + Locations[iLocation].models.always.(sBuildModel));
 		}
 		else
 		{
-			//Locations[iLocation].models.always.(sBuildModel) = "..\..\upgrades/" + sBuildModel + "_destroyed";
-			//trace("ColonyUpgrades.c: BuildUpgrade: sBuildModel:" + sBuildModel + " ; location: " + Locations[iLocation].id + " ; " + " ; " + Locations[iLocation].models.always.(sBuildModel));
+			Locations[iLocation].models.always.(sBuildModel) = "..\..\upgrades/" + sBuildModel + "_destroyed";
+			trace("ColonyUpgrades.c: BuildUpgrade: sBuildModel:" + sBuildModel + " ; location: " + Locations[iLocation].id + " ; " + " ; " + Locations[iLocation].models.always.(sBuildModel));
 		}
-		//Locations[iLocation].models.always.(sBuildModel).locator.group = "Upgrades";
-		//Locations[iLocation].models.always.(sBuildModel).locator.name = sBuildModel;
+		Locations[iLocation].models.always.(sBuildModel).locator.group = "Upgrades";
+		Locations[iLocation].models.always.(sBuildModel).locator.name = sBuildModel;
 		
-		//Locations[iLocation].models.always.(sBuildModel).tech = "dLightModel";
+		Locations[iLocation].models.always.(sBuildModel).tech = "dLightModel";
 		
 		if(iUpgrade == UPGRADE_SHIPYARD)
 		{
-			//string sShipyardLocation = colonies[iColony].id + "_shipyard";
-			//int iShipyardLocation = FindLocation(sShipyardLocation);
-			//string sNewString = "shipyard0" + colonies[iColony].(sBuildModel);
-			//Locations[iShipyardLocation].filespath.models = "locations/inside/" + sNewString;
+			string sShipyardLocation = colonies[iColony].id + "_shipyard";
+			int iShipyardLocation = FindLocation(sShipyardLocation);
+			string sNewString = "shipyard0" + colonies[iColony].(sBuildModel);
+			Locations[iShipyardLocation].filespath.models = "locations/inside/" + sNewString;
 
-			//locations[iShipyardLocation].image = "loading/" + sNewString + ".tga";
+			locations[iShipyardLocation].image = "loading/" + sNewString + ".tga";
 
-			//locations[iShipyardLocation].models.always.locators = sNewString + "_locators";
-			//locations[iShipyardLocation].models.always.shipyard = sNewString;
-			//locations[iShipyardLocation].models.day.charactersPatch = sNewString + "_patch";
+			locations[iShipyardLocation].models.always.locators = sNewString + "_locators";
+			locations[iShipyardLocation].models.always.shipyard = sNewString;
+			locations[iShipyardLocation].models.day.charactersPatch = sNewString + "_patch";
 
-			//locations[iShipyardLocation].models.night.charactersPatch = sNewString + "_patch";
+			locations[iShipyardLocation].models.night.charactersPatch = sNewString + "_patch";
 
-			//locations[iShipyardLocation].models.always.window = sNewString + "_window";
-			//locations[iShipyardLocation].models.always.window.tech = "LocationWindows";
-			//locations[iShipyardLocation].models.always.window.level = 50;
+			locations[iShipyardLocation].models.always.window = sNewString + "_window";
+			locations[iShipyardLocation].models.always.window.tech = "LocationWindows";
+			locations[iShipyardLocation].models.always.window.level = 50;
 
-			//locations[iShipyardLocation].models.always.back = "..\inside_back";
+			locations[iShipyardLocation].models.always.back = "..\inside_back";
 		}
 		
 
@@ -252,35 +253,35 @@ int BuildUpgrade(int iColony, int iUpgrade, bool isRealBuild)
 		
 		if(iUpgrade == UPGRADE_CHURCH && isBuild == true)
 		{
-			//locations[iTownLocation].reload.l7.disable = false;
+			locations[iTownLocation].reload.l7.disable = false;
 		}
 		else
 		{
-			//locations[iTownLocation].reload.l7.disable = true;
+			locations[iTownLocation].reload.l7.disable = true;
 		}
 
 
 		if(iUpgrade == UPGRADE_SHIPYARD && isBuild == true)
 		{
-			//locations[iTownLocation].reload.l5.disable = false;
+			locations[iTownLocation].reload.l5.disable = false;
 		}
 		else
 		{
-			//locations[iTownLocation].reload.l5.disable = true;
+			locations[iTownLocation].reload.l5.disable = true;
 		}
 
 		if(iUpgrade == UPGRADE_MILL && isBuild == true)
 		{
 			string sMovieModel = sBuildModel + "_movie";
 			
-			//Locations[iLocation].models.always.(sMovieModel) = "..\..\upgrades/" + sMovieModel;
-			//Locations[iLocation].models.always.(sMovieModel).locator.group = "Upgrades";
-			//Locations[iLocation].models.always.(sMovieModel).locator.name = sMovieModel;
+			Locations[iLocation].models.always.(sMovieModel) = "..\..\upgrades/" + sMovieModel;
+			Locations[iLocation].models.always.(sMovieModel).locator.group = "Upgrades";
+			Locations[iLocation].models.always.(sMovieModel).locator.name = sMovieModel;
 
-			//Locations[iLocation].models.always.(sMovieModel).rotate.x = 0.0;
-			//Locations[iLocation].models.always.(sMovieModel).rotate.y = 0.0;
-			//Locations[iLocation].models.always.(sMovieModel).rotate.z = 1.0;
-			//Locations[iLocation].models.always.(sMovieModel).tech = "dLightModel";
+			Locations[iLocation].models.always.(sMovieModel).rotate.x = 0.0;
+			Locations[iLocation].models.always.(sMovieModel).rotate.y = 0.0;
+			Locations[iLocation].models.always.(sMovieModel).rotate.z = 1.0;
+			Locations[iLocation].models.always.(sMovieModel).tech = "dLightModel";
 		}
 		
 	}
