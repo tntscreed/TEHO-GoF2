@@ -155,6 +155,9 @@ void SetUpgrades()
 
 void CreateColonyPopulation()
 {
+	ColonyUpgradesInit();
+	SetUpgrades();
+	FillColoniesInfo();
 	for(int i = 0; i< MAX_COLONIES; i++)
 	{		
 		if (colonies[i].nation != "none" || colonies[i].id == "IslaMona")
@@ -190,11 +193,7 @@ void CreateColonyPopulation()
 		colonies[i].population = sti(colonies[i].population) + 100 * iColonyState;
 		colonies[i].money = sti(colonies[i].money) + 1000 * iColonyState;
 
-		colonies[i].crew = makeint(sti(colonies[i].population)/10.0));
+		colonies[i].crew = makeint(sti(colonies[i].population)/10.0);
 		colonies[i].crew.experience = 1;
 	}
-
-	ColonyUpgradesInit();
-	SetUpgrades();
-	FillColoniesInfo();
 }
