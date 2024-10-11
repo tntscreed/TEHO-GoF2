@@ -1,3 +1,89 @@
+void CreateGovernor(aref chr, string sColony)
+{
+	ref fortcommander;
+	
+	chr.dialog.currentnode = "hovernor";
+	
+
+	int iColony = FindColony(sColony);
+	
+	Colonies[iColony].commander = chr.id;
+	Colonies[iColony].time = "0";
+
+	//int iOldNation = sti(Colonies[iColony].nation);
+	//Colonies[iColony].loyality = GetCharacterReputation(pchar, iOldNation);
+	
+	RemovePassenger(pchar, chr);
+	
+	string sfortcommander = "Player " + sColony + " Fort Commander";
+	fortcommander = CharacterFromID(sfortcommander);
+
+	CreateFortCommander(chr, fortcommander);
+
+	chr.location = sColony+"_townhall";
+	chr.location.group = "sit";
+	chr.location.locator = "sit1";
+	chr.dialog.filename = "officer_dialog.c";
+	chr.dialog.currentnode = "First time";
+	chr.greeting = "officer_common_" + (rand(3) + 1);
+
+	LAi_RemoveLoginTime(chr);
+	LAi_SetHuberType(chr);
+	
+	if(sti(Colonies[iColony].ismaincolony) == 1)
+	{
+		int iOldNation = sti(pchar.from_interface.oldnation);
+		string sExHovernor = GetNationNameBytype(iOldNation)+"_hovernor";
+		int iExHovernor = GetCharacterIndex(sExHovernor);
+		if(sExHovernor != -1)
+		{
+			characters[iExHovernor].location = "none";
+		}
+	}
+
+	Colonies[iColony].nation = PIRATE;
+	
+	if (Colonies[iColony].capture_flag != "1")
+	{
+		Colonies[iColony].TimerInfo = sti(Colonies[iColony].TimerInfo) + 1;
+		fortcommander.ship.crew.quantity = 100;
+		pchar.colony_quantity = sti(pchar.colony_quantity) + 1;
+	}
+	Colonies[iColony].capture_flag = "1";
+	Colonies[iColony].nation = PIRATE;
+	
+	chr.colony_id = sColony;
+	
+	fortcommander.nation = PIRATE;	
+	pchar.nation = PIRATE;
+
+	string sLocator = "reload_fort" + colonies[iColony].num;
+
+	//int iOldFortChar = Fort_FindCharacter(colonies[iColony].island, "reload", sLocator);
+
+	Fort_SetCharacter(fortcommander, colonies[iColony].island, "reload", sLocator);
+	fortcommander.ship.crew.quantity = Colonies[iColony].crew;
+	fortcommander.ship.crew.experience = Colonies[iColony].crew.experience;
+
+	colonies[iColony].crew.sailors = sti(colonies[iColony].crew.sailors) + 50;
+	colonies[iColony].crew.soldiers = sti(colonies[iColony].crew.soldiers) + 50;
+	colonies[iColony].crew.musketeers = sti(colonies[iColony].crew.musketeers) + 20;
+	colonies[iColony].crew.cannoners = sti(colonies[iColony].crew.cannoners) + 50;
+	Colonies[iColony].crew.experience = 10;
+
+	SetCharacterRelationAsOtherCharacter(GetCharacterIndex(fortcommander.id), nMainCharacterIndex);
+	SetCharacterRelationBoth(GetCharacterIndex(fortcommander.id), nMainCharacterIndex, RELATION_FRIEND);
+	
+	RechargeColonyCaptureEx(sColony);
+	
+	//string sIsland = Colonies[iColony].island;
+	sColony = sColony + "Town";
+	worldMap.labels.(sColony).icon = PIRATE;
+	//worldMap.islands.(sIsland).locations.city.label.icon = PIRATE;
+
+	//SetTownCapturedState(sColony, false);
+}
+
 void FillColoniesInfo()
 {
 	string sLocation;
@@ -1167,6 +1253,7 @@ void SetTownMayor(ref Ch, int natGover)
 void ReturnMayorPosition(ref Ch)
 {
 	Ch.location = Ch.City + "_townhall";
+	//trace("ReturnMayorPosition location townhall: " + Ch.location);
 	Ch.location.group   = "sit";
 	Ch.location.locator = "sit1";
 	LAi_SetHuberTypeNoGroup(Ch);
@@ -1742,6 +1829,7 @@ int TWN_CityCost(string city)
 
 void CreateFortCommander(aref chr, aref fortcommander)
 {
+	fortcommander.nation = chr.nation;
 	fortcommander.rank = chr.rank;
 	fortcommander.experience = chr.experience;
 	fortcommander.reputation = chr.reputation;
@@ -1802,90 +1890,4 @@ void RechargeColonyCaptureEx(string sColony)
 	Colonies[iColony].capture_month = 0;
 	Colonies[iColony].capture_year = 0;
 	Colonies[iColony].resquetime = "";
-}
-
-void CreateGovernor(aref chr, string sColony)
-{
-	ref fortcommander;
-	
-	chr.dialog.currentnode = "hovernor";
-	
-
-	int iColony = FindColony(sColony);
-	
-	Colonies[iColony].commander = chr.id;
-	Colonies[iColony].time = "0";
-
-	//int iOldNation = sti(Colonies[iColony].nation);
-	//Colonies[iColony].loyality = GetCharacterReputation(pchar, iOldNation);
-	
-	RemovePassenger(pchar, chr);
-	
-	string sfortcommander = "Player " + sColony + " Fort Commander";
-	fortcommander = CharacterFromID(sfortcommander);
-
-	CreateFortCommander(chr, fortcommander);
-
-	chr.location = sColony+"_townhall";
-	chr.location.group = "sit";
-	chr.location.locator = "sit1";
-	chr.dialog.filename = "officer_dialog.c";
-	chr.dialog.currentnode = "First time";
-	chr.greeting = "officer_common_" + (rand(3) + 1);
-
-	LAi_RemoveLoginTime(chr);
-	LAi_SetHuberType(chr);
-	
-	if(sti(Colonies[iColony].ismaincolony) == 1)
-	{
-		int iOldNation = sti(pchar.from_interface.oldnation);
-		string sExHovernor = GetNationNameBytype(iOldNation)+"_hovernor";
-		int iExHovernor = GetCharacterIndex(sExHovernor);
-		if(sExHovernor != -1)
-		{
-			characters[iExHovernor].location = "none";
-		}
-	}
-
-	Colonies[iColony].nation = PIRATE;
-	
-	if (Colonies[iColony].capture_flag != "1")
-	{
-		Colonies[iColony].TimerInfo = sti(Colonies[iColony].TimerInfo) + 1;
-		fortcommander.ship.crew.quantity = 100;
-		pchar.colony_quantity = sti(pchar.colony_quantity) + 1;
-	}
-	Colonies[iColony].capture_flag = "1";
-	Colonies[iColony].nation = PIRATE;
-	
-	chr.colony_id = sColony;
-	
-	fortcommander.nation = PIRATE;	
-	pchar.nation = PIRATE;
-
-	string sLocator = "reload_fort" + colonies[iColony].num;
-
-	//int iOldFortChar = Fort_FindCharacter(colonies[iColony].island, "reload", sLocator);
-
-	Fort_SetCharacter(fortcommander, colonies[iColony].island, "reload", sLocator);
-	fortcommander.ship.crew.quantity = Colonies[iColony].crew;
-	fortcommander.ship.crew.experience = Colonies[iColony].crew.experience;
-
-	colonies[iColony].crew.sailors = sti(colonies[iColony].crew.sailors) + 50;
-	colonies[iColony].crew.soldiers = sti(colonies[iColony].crew.soldiers) + 50;
-	colonies[iColony].crew.musketeers = sti(colonies[iColony].crew.musketeers) + 20;
-	colonies[iColony].crew.cannoners = sti(colonies[iColony].crew.cannoners) + 50;
-	Colonies[iColony].crew.experience = 10;
-
-	SetCharacterRelationAsOtherCharacter(GetCharacterIndex(fortcommander.id), nMainCharacterIndex);
-	SetCharacterRelationBoth(GetCharacterIndex(fortcommander.id), nMainCharacterIndex, RELATION_FRIEND);
-	
-	RechargeColonyCaptureEx(sColony);
-	
-	//string sIsland = Colonies[iColony].island;
-	sColony = sColony + "Town";
-	worldMap.labels.(sColony).icon = PIRATE;
-	//worldMap.islands.(sIsland).locations.city.label.icon = PIRATE;
-
-	//SetTownCapturedState(sColony, false);
 }

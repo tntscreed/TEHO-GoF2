@@ -197,3 +197,77 @@ void CreateColonyPopulation()
 		colonies[i].crew.experience = 1;
 	}
 }
+
+int PlayerSetGovernor(aref chr, string sColony)
+{
+	int iColony = FindColony(sColony);
+	if(iColony == -1) return -1;
+
+	// Remove old governour
+	int iOldGov = GetCharacterIndex(sColony + "_Mayor");
+	characters[iOldGov].city = "none";
+	characters[iOldGov].location = "none";
+	characters[iOldGov].location.group   = "none";
+	characters[iOldGov].location.locator = "none";
+	characters[iOldGov].location.mayor = "none";
+	DeleteAttribute(&characters[iOldGov], "mayor");
+
+	
+
+	Colonies[iColony].nation = PIRATE;
+
+	int iChar = GetCharacterIndex(chr.id);
+
+	characters[iChar].from_sea = colonies[iColony].from_sea; // для захвата с суши
+    characters[iChar].Default  = characters[iChar].location;  // чтоб сухопутные города вернули население
+    characters[iChar].Default.BoardLocation = colonies[iColony].Default.BoardLocation;
+    characters[iChar].Mayor = true; // признак мэра
+
+	//chr.id = sColony + "_Mayor"; // Might not be needed, might break some things
+	chr.city = sColony;
+	LAi_SetCurHPMax(chr);
+
+	ReturnMayorPosition(chr);
+	LAi_LoginInCaptureTown(chr, true);
+
+	return iChar;
+}
+
+int PlayerGenerateFortCommander(string sColony, int iGovernor)
+{
+	int iColony = FindColony(sColony);
+	if(iColony == -1) return -1;
+
+	int iChar = iGovernor;
+
+	if (CheckAttribute(&colonies[iColony], "HasNoFort"))
+	{
+        if (iChar != -1)
+        {
+			characters[iChar].Default.Crew.Quantity    = 1900;
+			characters[iChar].Default.Crew.MinQuantity = 1200;
+			characters[iChar].Default.nation = characters[iChar].nation;
+		}
+		return true;
+	}
+
+	ref fortcommanderchar = GetCharacter(NPC_GenerateCharacter("PlayerNewFortCommander", "panhandler_"+(rand(5)+1), "man", "man", 5, PIRATE, -1, false, "slave")); // TODO: obviously change
+	ref fortcommander = GetCharacter(GetCharacterIndex(sColony + " Fort Commander")); // Change to "Player X Fort Commander" system.
+
+	CreateFortCommander(fortcommanderchar, fortcommander);
+
+	int iFortChar = GetCharacterIndex(fortcommanderchar);
+	return iFortChar;
+}
+
+void PlayerCaptureColony(aref chr, string sColony)
+{
+	int governorIndex = PlayerSetGovernor(chr, sColony);
+	PlayerGenerateFortCommander(sColony, governorIndex);
+	
+	pchar.quest.waithours = 47;
+	DoQuestFunctionDelay("WaitNextHours", 0.1);
+
+	UnloadLocation(&locations[FindLocation(sColony + "_town")]);
+	LoadLocation(&locations[FindLocation(sColony + "_town")]);
+}
