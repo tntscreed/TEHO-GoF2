@@ -558,8 +558,8 @@ ref CharacterFromID(string characterID)
     int i = GetCharacterIndex(characterID);
     if (i < 0 && MOD_BETTATESTMODE == "On")
 	{
-		Log_Info("Error: Не найдет НПС с characterID = "+characterID);
-		trace("Error: Не найдет НПС с characterID = "+characterID);
+		Log_Info("Error: Can't find character with ID: "+characterID);
+		trace("Error: Can't find character with ID: "+characterID);
 	}
     if (i>=0)
     {
