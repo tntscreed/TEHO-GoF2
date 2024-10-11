@@ -440,11 +440,170 @@ void ProcessDialogEvent()
 			Link.l3 = "Item management";
 			Link.l3.go = "VEX_DEBUG_ITEM_MANAGEMENT";
 
+			Link.l4 = "Personal cheats!";
+			Link.l4.go = "VEX_DEBUG_PERSONAL";
+
 			Link.l7 = "Levels and skills!";
 			Link.l7.go = "VEX_DEBUG_LEVELS_AND_SKILLS";
 
+			Link.l10 = "Colony management.";
+			Link.l10.go = "VEX_DEBUG_COLONY_MANAGEMENT";
+
+			Link.l11 = "Ship management.";
+			Link.l11.go = "VEX_DEBUG_SHIP_MANAGEMENT";
+
 			Link.l99 = "Exit";
 			Link.l99.go = "exit";
+		break;
+
+		case "VEX_DEBUG_PERSONAL":
+			Dialog.Text = "Personal cheats!";
+
+			if(CheckAttribute(pchar, "herculesmode")){
+				Link.l1 = "Disable Hercules mode!";
+			}
+			else{
+				Link.l1 = "Enable Hercules mode!";
+			}
+			Link.l1.go = "VEX_DEBUG_PERSONAL_HERCULES";
+
+			if(CheckAttribute(pchar, "godmode")){
+				Link.l2 = "Disable God mode!";
+			}
+			else{
+				Link.l2 = "Enable God mode!";
+			}
+			Link.l2.go = "VEX_DEBUG_PERSONAL_GOD";
+
+			Link.l99 = "Exit";
+			Link.l99.go = "exit";
+		break;
+
+		case "VEX_DEBUG_PERSONAL_HERCULES":
+			if(CheckAttribute(pchar, "herculesmode")){
+				DeleteAttribute(pchar, "herculesmode");
+				Dialog.Text = "Hercules mode disabled!";
+			}
+			else{
+				pchar.herculesmode = true;
+				Dialog.Text = "Hercules mode enabled!";
+			}
+
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_PERSONAL_GOD":
+			if(CheckAttribute(pchar, "godmode")){
+				DeleteAttribute(pchar, "godmode");
+				LAi_SetImmortal(pchar, false);
+				Dialog.Text = "God mode disabled!";
+			}
+			else{
+				pchar.godmode = true;
+				LAi_SetImmortal(pchar, true);
+				Dialog.Text = "God mode enabled!";
+			}
+
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_SHIP_MANAGEMENT":
+			Dialog.Text = "Ship management!";
+			Link.l1 = "Set Man o' War as player ship!";
+			Link.l1.go = "VEX_DEBUG_SHIP_ADD";
+		break;
+
+		case "VEX_DEBUG_SHIP_ADD":
+			Dialog.Text = "Setting best ship!";
+			
+			int shipToAdd = SHIP_LSHIP_ENG;
+
+			pchar.ship.type = GenerateShip(shipToAdd, 1);
+			SetBaseShipData(pchar);
+
+			ref shTo = &RealShips[sti(pchar.Ship.Type)];
+			ref refShip = &ShipsTypes[shipToAdd];
+
+			pchar.ship.crew.quantity = shTo.OptCrew;
+			
+			pchar.ship.cannons.type = refShip.Cannon;
+
+			SetShipCannonsDamagesNull(pchar);
+
+			pchar.ship.crew.exp.sailors = 100;
+			pchar.ship.crew.exp.soldiers = 100;
+			pchar.ship.crew.exp.cannoners = 100;
+
+			pchar.ship.crew.morale = 100;
+
+			SetCharacterGoods(pchar,GOOD_FOOD, 2000);
+			SetCharacterGoods(pchar,GOOD_BOMBS, 2000);
+
+			Dialog.Text = "Set best ship!";
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_COLONY_MANAGEMENT":
+			Dialog.Text = "Colony management!";
+			Link.l1 = "Take over colony!";
+			Link.l1.go = "VEX_DEBUG_COLONY_TAKEOVER_1";
+			Link.l2 = "Get current location!";
+			Link.l2.go = "VEX_DEBUG_COLONY_GET_LOCATION";
+			Link.l3 = "Get data about current colony!";
+			Link.l3.go = "VEX_DEBUG_COLONY_GET_DATA";
+		break;
+
+		case "VEX_DEBUG_COLONY_GET_DATA":
+			Dialog.Text = "Colony data!";
+			ref player_location = &Locations[FindLocation(pchar.location)];
+			string colonyId = player_location.fastreload;
+			int colonyIndex = FindColony(colonyId);
+			if(colonyIndex == -1){
+				Dialog.Text = "Colony not found: " + colonyId + "\n";
+				Dialog.Text = Dialog.Text + "Current location: " + pchar.location;
+			}
+			else{
+				Dialog.Text = "Colony found: " + colonyId + "\n";
+				Dialog.Text = Dialog.Text + "Nation: " + Colonies[colonyIndex].nation + "\n";
+				Dialog.Text = Dialog.Text + "Commander: " + Colonies[colonyIndex].commander + "\n";
+				Dialog.Text = Dialog.Text + "Agressor: " + Colonies[colonyIndex].agressor;
+			}
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_COLONY_GET_LOCATION":
+			Dialog.Text = "Current location: " + pchar.location;
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_COLONY_TAKEOVER_1":
+			Dialog.Text = "Take over colony by ID:";
+			Link.l1.edit = 1;
+			Link.l1.go = "VEX_DEBUG_COLONY_TAKEOVER_2";
+		break;
+
+
+		case "VEX_DEBUG_COLONY_TAKEOVER_2":
+			Dialog.Text = "Take over colony by ID: ";
+			colonyId = dialogEditStrings[1];
+			colonyIndex = FindColony(colonyId);
+			if(colonyIndex == -1){
+				Dialog.Text = "Colony not found!";
+			}
+			else{
+				Dialog.Text = "Colony found: " + colonyId;
+				ref governor_npc = GetCharacter(NPC_GenerateCharacter(colonyId + "_NewMayor", "skel2", "skeleton", "skeleton", 1, PIRATE, -1, false, "soldier"));
+				PlayerCaptureColony(governor_npc, colonyId);
+			}
+
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
+
 		break;
 
 		case "VEX_DEBUG_ITEM_MANAGEMENT":
