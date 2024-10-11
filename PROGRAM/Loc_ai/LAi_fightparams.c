@@ -732,6 +732,9 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	}
 	//Вычисляем повреждение
 	float dmg;
+
+
+
 	if (attack.model.animation == "mushketer")
 	{
 		dmg = LAi_CalcDamageForMushket(attack, enemy, attackType, isBlocked);
@@ -740,6 +743,11 @@ void LAi_ApplyCharacterAttackDamage(aref attack, aref enemy, string attackType, 
 	{
 		dmg = LAi_CalcDamageForBlade(attack, enemy, attackType, isBlocked);
 	}
+
+	if(CheckAttribute(attack, "herculesmode")){
+		dmg = 100000.0; 
+	}
+
 	float critical 	= 0.0;
 	float chance 	= 1.0;
 	
