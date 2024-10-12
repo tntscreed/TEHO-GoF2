@@ -675,7 +675,8 @@ void Ship_SetTaskDefend(int iTaskPriority, int iCharacterIndex, int iCharacterIn
 
 void Ship_DoFire()
 {
-	int bCameraOutside = SeaCameras_isCameraOutside();// || CrosshairHidden();     // LDH 17Jan17 aimed fire when crosshair visible
+	//int bCameraOutside = SeaCameras_isCameraOutside();// || CrosshairHidden();     // LDH 17Jan17 aimed fire when crosshair visible
+	int bCameraOutside = Scene.Camera == SHIP_CAMERA; // Vex: camera fix
 	// LDH 09Feb17 - tell player how to get aiming crogghair
 /*	bool bTemp = bMapEnter || bCanEnterToLand;	// LDH 11Feb17
 	if (CrosshairHidden() && GetCurControlGroup() == "Sailing1Pers" && bTemp)
