@@ -115,7 +115,7 @@ void CalculateSiegeCity()
 void CalculateCapturedCity()
 {
 
-    totalInfo = "Above the city "+ XI_ConvertString (" Colony "+ sCity) +" raised a new flag.";
+    totalInfo = "Above the settlement of "+ XI_ConvertString ("Colony"+ sCity) +", a new flag is raised.";
 
     SetNewGroupPicture("Nat1", "NATIONS",  GetNationNameByType(iNation));
     SetFormatedText("INFO_TEXT",totalInfo);
