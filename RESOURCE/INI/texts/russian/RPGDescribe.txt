@@ -285,7 +285,7 @@ Spain. A great colonial power, having in its possession the greater part of the 
 
 Pirate_descr
 {
-Pirates. These people care not for nationality - they live by the laws of the Brethren of the Coast (although it doesn't hinder them while selling their looat in colonies such as Port Royal and Tortuga). Dependng on their momentary interests, pirates can support any of the powers, although they are united by  one thing - hatred for the Spanish crown.
+Pirates. These people care not for nationality - they live by the laws of the Brethren of the Coast (although it doesn't hinder them while selling their loot in colonies such as Port Royal and Tortuga). Dependng on their momentary interests, pirates can support any of the powers, although they are united by  one thing - hatred for the Spanish crown.
 For any patrol, a pirate flag is like a red rag to a bull. An exile or a very shifty dealer - such is the pirate's fate.
 }
 
