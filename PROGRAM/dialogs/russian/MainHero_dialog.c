@@ -513,6 +513,66 @@ void ProcessDialogEvent()
 			Dialog.Text = "Ship management!";
 			Link.l1 = "Set Man o' War as player ship!";
 			Link.l1.go = "VEX_DEBUG_SHIP_ADD";
+
+			Link.l2 = "Add good officer!";
+			Link.l2.go = "VEX_DEBUG_SHIP_GOOD_OFFICER";
+			Link.l3 = "Add bad officer!";
+			Link.l3.go = "VEX_DEBUG_SHIP_BAD_OFFICER";
+
+			Link.l99 = "Exit";
+			Link.l99.go = "exit";
+		break;
+
+		case "VEX_DEBUG_SHIP_GOOD_OFFICER":
+			Dialog.Text = "Adding good officer!";
+
+
+			int iChar = NPC_GeneratePhantomCharacter("pofficer", pchar.nation, MAN, -1);
+			ref officer_chr = &characters[iChar];
+			SetNPCModelUniq(officer_chr, "pofficer", MAN);
+			SetOfficerParam(officer_chr, rand(4));
+
+			officer_chr.dialog.filename = "Enc_Officer_dialog.c";
+			officer_chr.dialog.currentnode = "hired";
+			officer_chr.greeting = "Gr_Officer";
+
+			LAi_group_MoveCharacter(officer_chr, LAI_GROUP_PLAYER_OWN);
+
+			officer_chr.loyality = 100.0;
+			officer_chr.reputation = 100;
+			officer_chr.alignment = "good";
+
+			AddPassenger(pchar, officer_chr, false);
+
+
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_SHIP_BAD_OFFICER":
+			Dialog.Text = "Adding bad officer!";
+
+
+			iChar = NPC_GeneratePhantomCharacter("pofficer", pchar.nation, MAN, -1);
+			officer_chr = &characters[iChar];
+			SetNPCModelUniq(officer_chr, "pofficer", MAN);
+			SetOfficerParam(officer_chr, rand(4));
+
+			officer_chr.dialog.filename = "Enc_Officer_dialog.c";
+			officer_chr.dialog.currentnode = "hired";
+			officer_chr.greeting = "Gr_Officer";
+
+			LAi_group_MoveCharacter(officer_chr, LAI_GROUP_PLAYER_OWN);
+
+			officer_chr.loyality = 100.0;
+			officer_chr.reputation = 0;
+			officer_chr.alignment = "bad";
+
+			AddPassenger(pchar, officer_chr, false);
+
+
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_SHIP_ADD":
