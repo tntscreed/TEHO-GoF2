@@ -1260,6 +1260,8 @@ void ProcessDialogEvent()
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + sld.id));
 			AddQuestUserData("Gen_CityCapture", "sName", GetFullName(NPChar));
 			//  СЖ <--
+
+			RemoveGovernor(sld.id);
         break;
         //////////////////////////////    офицер-наместник <--
 
