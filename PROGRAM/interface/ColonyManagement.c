@@ -140,6 +140,8 @@ void InitInterface(string iniName)
 	SetEventHandler("endHovernorSet", "FEndHovernorSet", 0);
 	SetEventHandler("HovernorAction", "FHovernorAction", 0);
 
+	XI_RegistryExitKey("IExit_F2");
+
 	SetSelectable("CHARACTERS_BUTTON", true);
 	SetSelectable("COLONIES_BUTTON", false);
 
@@ -161,7 +163,14 @@ void SetVariable()
 
 	string sText;
 
-	sText = GetCharacterFullName(colonies[iColony].commander);
+	if (CheckAttribute(&colonies[iColony], "commander"))
+	{
+		sText = GetCharacterFullName(colonies[iColony].commander);
+	}
+	else
+	{
+		sText = "";
+	}
 	sText = sText + " ";
 	SendMessage(&GameInterface,"lslle",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO", 10,0,&sText);
 
@@ -189,15 +198,23 @@ void SetVariable()
 	sText = sText + " ";
 	SendMessage(&GameInterface,"lslle",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO", 10,6,&sText);
 
-	string sFortComm = colonies[iColony].commander;
-	if (CheckAttribute(&characters[GetCharacterIndex(sFortComm)], "ship.crew.quantity"))
+	if (CheckAttribute(&colonies[iColony], "commander"))
 	{
-		sText = sti(characters[GetCharacterIndex(sFortComm)].ship.crew.quantity);
+		string sFortComm = colonies[iColony].commander;
+		if (CheckAttribute(&characters[GetCharacterIndex(sFortComm)], "ship.crew.quantity"))
+		{
+			sText = sti(characters[GetCharacterIndex(sFortComm)].ship.crew.quantity);
+		}
+		else
+		{
+			sText = 0;
+		}
 	}
 	else
 	{
-		sText = 0;
+		sText = 0;		
 	}
+	
 
 	sText = sText + " ";
 	SendMessage(&GameInterface,"lslle",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO", 10,7,&sText);
@@ -224,7 +241,14 @@ void SetVariable()
 	sText = sText + " ";
 	SendMessage(&GameInterface,"lslle",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO", 10,9,&sText);
 
-	SetNewPicture("CHARACTER_BIG_PICTURE", "interfaces\portraits\256\face_" + characters[GetCharacterIndex(colonies[iColony].commander)].FaceId + ".tga");
+	if (CheckAttribute(&colonies[iColony], "commander"))
+	{
+		SetNewPicture("CHARACTER_BIG_PICTURE", "interfaces\portraits\256\face_" + characters[GetCharacterIndex(colonies[iColony].commander)].FaceId + ".tga");
+	}
+	else
+	{
+		SetNewPicture("CHARACTER_BIG_PICTURE", "interfaces\empty_face.tga");
+	}
 	
 	SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO_TEXT", 1, 0);
 	SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO", 1, 0);
@@ -233,15 +257,7 @@ void SetVariable()
 
 void ProcessCancelExit()
 {
-	interfaceResultCommand = RC_INTERFACE_CHARACTER_EXIT;
-	if( CheckAttribute(&InterfaceStates,"InstantExit") && sti(InterfaceStates.InstantExit)==true )
-	{
-		CharInterfaceExit(true);
-	}
-	else
-	{
-		CharInterfaceExit(false);
-	}
+	IDoExit(RC_INTERFACE_ANY_EXIT, true);
 }
 
 void DelEventHandlers()
@@ -410,12 +426,24 @@ void FillColoniesScroll()
 			GameInterface.COLONY_SCROLL.(attributeName).img1 = Colonies[i].island;
 			GameInterface.COLONY_SCROLL.(attributeName).tex1 = 0;
 			sColony = Colonies[i].id;
-			pRef2.str1 = "#" + XI_ConvertString("Colony" + sColony);
-			pRef2.str2 = "#" + characters[GetCharacterIndex(Colonies[i].commander)].name;
-			pRef2.str3 = "#" + characters[GetCharacterIndex(Colonies[i].commander)].lastname;
-			GameInterface.COLONY_SCROLL.(attributeName).colony = i;
-			GameInterface.COLONY_SCROLL.(attributeName).character = colonies[i].commander;
-			listsize = listsize +  1;
+
+			if (CheckAttribute(Colonies[i], "commander"))
+			{
+				pRef2.str1 = "#" + XI_ConvertString("Colony" + sColony);
+				pRef2.str2 = "#" + characters[GetCharacterIndex(Colonies[i].commander)].name;
+				pRef2.str3 = "#" + characters[GetCharacterIndex(Colonies[i].commander)].lastname;
+				GameInterface.COLONY_SCROLL.(attributeName).colony = i;
+				GameInterface.COLONY_SCROLL.(attributeName).character = colonies[i].commander;
+				listsize = listsize +  1;
+			}
+			else{
+				pRef2.str1 = "#" + XI_ConvertString("Colony" + sColony);
+				pRef2.str2 = "No Governor";
+				pRef2.str3 = "";
+				GameInterface.COLONY_SCROLL.(attributeName).colony = i;
+				GameInterface.COLONY_SCROLL.(attributeName).character = -1;
+				listsize = listsize +  1;
+			}
 		}
 	}
 	GameInterface.COLONY_SCROLL.current = 0;
@@ -1320,7 +1348,13 @@ void ShowHovernorInfo( int nIdx )
 	}
 	if( nIdx<0 ) {
 		// �������� �������� �����������
-		charidx = GetCharacterIndex( colonies[iColony].commander );
+		if(CheckAttribute(&colonies[iColony],"commander"))
+		{
+			charidx = GetCharacterIndex( colonies[iColony].commander );
+		}
+		else{
+			charidx = -1;
+		}
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 3, "#("+XI_ConvertString("Hovernor")+")" );
 	}
 
@@ -1338,8 +1372,8 @@ void ShowHovernorInfo( int nIdx )
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 13, "#"+characters[charidx].skill.repair );
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 14, "#"+characters[charidx].skill.commerce );
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 15, "#"+characters[charidx].skill.sneak );
-
-		SetNewPicture("SETHovernor_CHARACTER_BIG_PICTURE", "interfaces\portraits\256\face_" + characters[charidx].FaceId + ".tga");
+		Log_SetStringToLog("ColonyManagement: Setting face picture for character "+characters[charidx].name);
+		SetNewPicture("SETHOVERNOR_CHARACTER_BIG_PICTURE", "interfaces\portraits\256\face_" + characters[charidx].FaceId + ".tga");
 	} else {
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 2, "empty" );
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 4, "#0" );
@@ -1355,6 +1389,7 @@ void ShowHovernorInfo( int nIdx )
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 14, "#0" );
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 15, "#0" );
 
+		Log_SetStringToLog("ColonyManagement: Setting empty picture");
 		SetNewPicture("SETHOVERNOR_CHARACTER_BIG_PICTURE", "interfaces\empty_face.tga");
 	}
 }

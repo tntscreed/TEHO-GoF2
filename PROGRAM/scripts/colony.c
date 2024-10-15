@@ -1187,14 +1187,16 @@ void SetCaptureTownByHero(string sColony)
     }
     ClearIslandShips(sColony); // убрать корабли в порту, сбегли
 	// флаг на карте
-	sColony = sColony + "_town";
-	worldMap.labels.(sColony).icon = iNation;
+	string sColonyTown = sColony + "_town";
+	worldMap.labels.(sColonyTown).icon = iNation;
 	AddFortNation(sti(Colonies[iColony].nation), -1);
 	j = sti(Colonies[iColony].nation);
  	AddFortNation(iNation, 1);
     Colonies[iColony].nation = iNation;
     Move_Govenour_Nation(j); // переселяем губера нации, которая была если паузы мира нет
     Colonies[iColony].HeroOwn = true;
+	Colonies[iColony].capture_flag = "1";
+	RemoveGovernor(sColony);
     // выкупленность города не меняем, тк отбив от мятежа дело ГГ
     SaveCurrentNpcQuestDateParam(&Colonies[iColony], "CaptureDate");
 }
