@@ -4,6 +4,8 @@
 int nCurScrollOfficerNum;
 bool bPerkMenuOn = false;
 
+bool bPlayerColonies = false; // Vex: adding colony management
+
 void InitInterface(string iniName)
 {
     xi_refCharacter = pchar;
@@ -42,6 +44,21 @@ void InitInterface(string iniName)
     EI_CreateFrame("CHARACTER_BIG_PICTURE_BORDER",369,78,579,315); // take from CHARACTER_BIG_PICTURE
     EI_CreateHLine("CHARACTER_BIG_PICTURE_BORDER", 373,104,575,1, 4);
     
+	// Vex: adding colony management -->
+	bPlayerColonies = PlayerHasColonies();
+	
+	CreateString(true, "buttonColonyManagement", XI_ConvertString("buttonColonyManagement"), "INTERFACE_TITLE", COLOR_NORMAL, 700, 15, SCRIPT_ALIGN_LEFT, 0.7);
+	if (bPlayerColonies==true)
+	{
+		ChangeStringColor("buttonColonyManagement", COLOR_NORMAL);
+	}
+	else
+	{
+		int greyColor = argb(255, 128, 128, 128);
+		ChangeStringColor("buttonColonyManagement", greyColor);
+	}
+	// <-- Vex: adding colony management
+
     SetVariable();
     SetCurrentNode("CHARACTERS_SCROLL");
     SetNodeUsing("CHARACTERS_SCROLL",true);
@@ -99,12 +116,14 @@ void ProcessCommandExecute()
 	string comName = GetEventData();
 	string nodName = GetEventData();
 
+	// Vex: adding colony management -->
 	if(nodName == "I_COLONIES" || nodName == "I_COLONIES_2")
 	{
-		if(comName=="click" && PlayerHasColonies() == false){
+		if(comName=="click" && bPlayerColonies == false){
 			return;
 		}
 	}
+	// <-- Vex: adding colony management
 
     switch(nodName)
 	{
