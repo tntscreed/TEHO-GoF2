@@ -198,13 +198,33 @@ void CreateColonyPopulation()
 	}
 }
 
-int PlayerSetGovernor(aref chr, string sColony)
+int GetGovernorOfColony(string sColony)
 {
 	int iColony = FindColony(sColony);
 	if(iColony == -1) return -1;
 
-	// Remove old governour
-	int iOldGov = GetCharacterIndex(sColony + "_Mayor");
+	return colonies[iColony].commander;
+}
+
+int RemoveGovernor(string sColony)
+{
+	int iColony = FindColony(sColony);
+	if(iColony == -1)
+	{
+		Trace("RemoveGovernor: Colony not found: " + sColony);
+		Log_SetStringToLog("RemoveGovernor: Colony not found: " + sColony);
+		return -1;
+	}
+
+	int iOldGov = GetGovernorOfColony(sColony);
+
+	if(iOldGov == -1)
+	{
+		Trace("RemoveGovernor: Governor not found: " + sColony);
+		Log_SetStringToLog("RemoveGovernor: Governor not found: " + sColony);
+		return -1;
+	}
+
 	characters[iOldGov].city = "none";
 	characters[iOldGov].location = "none";
 	characters[iOldGov].location.group   = "none";
@@ -212,7 +232,14 @@ int PlayerSetGovernor(aref chr, string sColony)
 	characters[iOldGov].location.mayor = "none";
 	DeleteAttribute(&characters[iOldGov], "mayor");
 
-	
+	DeleteAttribute(&colonies[iColony], "commander");
+}
+
+int PlayerSetGovernor(aref chr, string sColony)
+{
+	RemoveGovernor(sColony);
+
+	int iColony = FindColony(sColony);
 
 	Colonies[iColony].nation = PIRATE;
 	Colonies[iColony].capture_flag = 1;
@@ -233,12 +260,12 @@ int PlayerSetGovernor(aref chr, string sColony)
 	ReturnMayorPosition(chr);
 	LAi_LoginInCaptureTown(chr, true);
 
-	PlayerGenerateFortCommander(sColony, iChar);
+	PlayerSetFortCommander(sColony, iChar);
 
 	return iChar;
 }
 
-int PlayerGenerateFortCommander(string sColony, int iGovernor)
+int PlayerSetFortCommander(string sColony, int iGovernor)
 {
 	int iColony = FindColony(sColony);
 	if(iColony == -1) return -1;
@@ -256,8 +283,8 @@ int PlayerGenerateFortCommander(string sColony, int iGovernor)
 		return true;
 	}
 
-	ref fortcommanderchar = GetCharacter(NPC_GenerateCharacter("PlayerNewFortCommander", "panhandler_"+(rand(5)+1), "man", "man", 5, PIRATE, -1, false, "slave")); // TODO: obviously change
-	ref fortcommander = GetCharacter(GetCharacterIndex(sColony + " Fort Commander")); // Change to "Player X Fort Commander" system.
+	ref fortcommanderchar = GetCharacter(NPC_GenerateCharacter("PlayerNewFortCommander_" + sColony, "panhandler_"+(rand(5)+1), "man", "man", 5, PIRATE, -1, false, "slave")); // TODO: obviously change
+	ref fortcommander = GetCharacter(GetCharacterIndex(sColony + " Fort Commander")); // TODO: Change to "Player X Fort Commander" system.
 
 	CreateFortCommander(fortcommanderchar, fortcommander);
 
@@ -276,4 +303,17 @@ void PlayerCaptureColony(aref chr, string sColony)
 	UnloadLocation(&locations[FindLocation(sColony + "_town")]);
 	LoadLocation(&locations[FindLocation(sColony + "_town")]);
 	*/
+}
+
+bool PlayerHasColonies()
+{
+	for(int i = 0; i < MAX_COLONIES; i++)
+	{
+		if(CheckAttribute(&colonies[i], "capture_flag") && sti(colonies[i].capture_flag) == 1)
+		{
+			Log_SetStringToLog("Player colony found: " + colonies[i].id);
+			return true;
+		}
+	}
+	return false;
 }
