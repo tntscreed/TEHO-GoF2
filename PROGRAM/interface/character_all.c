@@ -98,6 +98,14 @@ void ProcessCommandExecute()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
+
+	if(nodName == "I_COLONIES" || nodName == "I_COLONIES_2")
+	{
+		if(comName=="click" && PlayerHasColonies() == false){
+			return;
+		}
+	}
+
     switch(nodName)
 	{
         case "B_SKILLUP":
