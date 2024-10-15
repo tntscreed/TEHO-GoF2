@@ -185,17 +185,19 @@ void ProcessCommandExecute()
 			    nodName = "I_ITEMS";
 			}
 		break;
+		// Vex: adding colony management -->
 		case "I_COLONIES_2":
 			if(comName=="click")
 			{
 			    nodName = "I_COLONIES";
 			}
 		break;
+		// <-- Vex: adding colony management
 	}
 	// boal new menu 31.12.04 -->
 	if (nodName == "I_CHARACTER" || nodName == "I_SHIP" ||
 	    nodName == "I_QUESTBOOK" || nodName == "I_TRADEBOOK" ||
-		nodName == "I_NATIONS" || nodName == "I_ITEMS" || nodName == "I_COLONIES")
+		nodName == "I_NATIONS" || nodName == "I_ITEMS" || nodName == "I_COLONIES") // Vex: adding colony management
 	{
 		if(comName=="click")
 		{
