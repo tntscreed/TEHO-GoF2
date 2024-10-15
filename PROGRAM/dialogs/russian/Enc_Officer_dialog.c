@@ -1189,6 +1189,9 @@ void ProcessDialogEvent()
 			AddQuestUserData("Gen_CityCapture", "sName", GetFullName(NPChar));
 			//  СЖ <--
 			Diag.CurrentNode = "Gover_Main";
+
+			PlayerSetGovernor(NPChar, sld.id);
+
             DialogExit();
         break;
 
