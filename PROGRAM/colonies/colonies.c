@@ -215,6 +215,7 @@ int PlayerSetGovernor(aref chr, string sColony)
 	
 
 	Colonies[iColony].nation = PIRATE;
+	Colonies[iColony].capture_flag = 1;
 
 	int iChar = GetCharacterIndex(chr.id);
 
@@ -223,12 +224,16 @@ int PlayerSetGovernor(aref chr, string sColony)
     characters[iChar].Default.BoardLocation = colonies[iColony].Default.BoardLocation;
     characters[iChar].Mayor = true; // признак мэра
 
+	colonies[iColony].commander = chr.id;
+
 	//chr.id = sColony + "_Mayor"; // Might not be needed, might break some things
 	chr.city = sColony;
 	LAi_SetCurHPMax(chr);
 
 	ReturnMayorPosition(chr);
 	LAi_LoginInCaptureTown(chr, true);
+
+	PlayerGenerateFortCommander(sColony, iChar);
 
 	return iChar;
 }
@@ -262,12 +267,13 @@ int PlayerGenerateFortCommander(string sColony, int iGovernor)
 
 void PlayerCaptureColony(aref chr, string sColony)
 {
-	int governorIndex = PlayerSetGovernor(chr, sColony);
-	PlayerGenerateFortCommander(sColony, governorIndex);
+	PlayerSetGovernor(chr, sColony);
 	
+	/*
 	pchar.quest.waithours = 47;
 	DoQuestFunctionDelay("WaitNextHours", 0.1);
 
 	UnloadLocation(&locations[FindLocation(sColony + "_town")]);
 	LoadLocation(&locations[FindLocation(sColony + "_town")]);
+	*/
 }
