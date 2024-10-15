@@ -1359,6 +1359,7 @@ void ShowHovernorInfo( int nIdx )
 	}
 }
 
+// Currently unused.
 void ChangeHovernor()
 {
 	if( nCurPassengerScrollNum < 0 ) return;
