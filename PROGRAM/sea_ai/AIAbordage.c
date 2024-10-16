@@ -96,8 +96,9 @@ void Return2SeaAfterAbordage()
 
 	Ship_RecreateStaticSounds();
 	DeleteAttribute(pchar, "abordage_active");
-}
 
+	SetActiveCamera(SHIP_CAMERA);
+}
 
 void Abordage_ReloadEndFade()
 {

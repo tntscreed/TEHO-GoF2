@@ -27,6 +27,8 @@
 
 #include "battle_interface\BattleInterface.c"
 
+#include "camera.c"
+
 #event_handler("Sea_FirstInit", "Sea_FirstInit");
 #event_handler("SeaLoad_GetPointer", "SeaLoad_GetPointer");
 
@@ -266,6 +268,9 @@ void CreateSeaEnvironment()
 	//PeopleOnShip.isNight = Whr_IsNight();
 
 	// тут лишнее QuestsCheck();
+
+	SetActiveCamera(SHIP_CAMERA); // Vex: fixing the camera when loading save to sea
+
 }
 // boal -->
 string Sea_FindNearColony()
@@ -1167,6 +1172,8 @@ void SeaLogin(ref Login)
 	InitBattleInterface();							ReloadProgressUpdate();
 	StartBattleInterface();							ReloadProgressUpdate();
 	RefreshBattleInterface();						ReloadProgressUpdate();
+
+	SetActiveCamera(SHIP_CAMERA);
 	
 	/*CreateEntity(&SeaOperator, "SEA_OPERATOR");
 	LayerAddObject(SEA_EXECUTE, &SeaOperator, -1);

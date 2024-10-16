@@ -202,6 +202,8 @@ void Return2SeaAfterCabin()
 
 	float fadeOutTime = RELOAD_TIME_FADE_OUT;
 
+	SetActiveCamera(SHIP_CAMERA);
+
 	SendMessage(&boarding_fader, "lfl", FADER_OUT, fadeOutTime, false);
 	SendMessage(&boarding_fader, "l", FADER_STARTFRAME);
 	

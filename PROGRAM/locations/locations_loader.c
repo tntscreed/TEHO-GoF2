@@ -470,6 +470,7 @@ bool LoadLocation(ref loc)
 
  	//Camera===============================================================================
 	CreateEntity(&locCamera, "locationcamera");
+	SetActiveCamera(LOCATION_CAMERA);
 	SendMessage(&locCamera, "li", MSG_CAMERA_SETTARGET, mainCharacter);
 	locCameraFollow();
 	pchar.CameraHoldPos = false; //boal
