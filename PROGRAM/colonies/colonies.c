@@ -203,7 +203,7 @@ int GetGovernorOfColony(string sColony)
 	int iColony = FindColony(sColony);
 	if(iColony == -1) return -1;
 
-	return colonies[iColony].commander;
+	return sti(colonies[iColony].commander);
 }
 
 int RemoveGovernor(string sColony)
@@ -212,7 +212,6 @@ int RemoveGovernor(string sColony)
 	if(iColony == -1)
 	{
 		Trace("RemoveGovernor: Colony not found: " + sColony);
-		Log_SetStringToLog("RemoveGovernor: Colony not found: " + sColony);
 		return -1;
 	}
 
@@ -221,7 +220,6 @@ int RemoveGovernor(string sColony)
 	if(iOldGov == -1)
 	{
 		Trace("RemoveGovernor: Governor not found: " + sColony);
-		Log_SetStringToLog("RemoveGovernor: Governor not found: " + sColony);
 		return -1;
 	}
 
@@ -233,6 +231,8 @@ int RemoveGovernor(string sColony)
 	DeleteAttribute(&characters[iOldGov], "mayor");
 
 	DeleteAttribute(&colonies[iColony], "commander");
+
+	return iOldGov;
 }
 
 int PlayerSetGovernor(aref chr, string sColony)
