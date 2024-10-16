@@ -43,6 +43,7 @@ void InitColonies()
 		colonies[i].population = 0;
 		colonies[i].colonists = 0;
 		colonies[i].tax_rate = (MOD_SKILL_ENEMY_RATE);
+
 		colonies[i].isBuild = 0;
 		colonies[i].info.day = worldMap.date.day;
 		colonies[i].info.month = worldMap.date.month;
@@ -51,6 +52,23 @@ void InitColonies()
 
 		colonies[i].fort = 3;
 		colonies[i].jail = rand(1); //где начальник тюрьмы мздоимец
+
+		// Vex: porting colony management -->
+		colonies[i].morale = 50;
+		colonies[i].colonists = 0;
+		colonies[i].colonylevel = rand(iColonyState - 1) + 1;
+		colonies[i].shipyard = 1;
+		colonies[i].wheatfield = 0;
+		colonies[i].fishingpier = 0;
+		colonies[i].mill = 0;
+		colonies[i].huts = 0; 
+		colonies[i].storehouse = 0;
+		colonies[i].church = 1;
+		colonies[i].academy = 0;
+		colonies[i].expedition = 0;
+		colonies[i].goldmines = rand(1)-1;
+		colonies[i].silvermines = rand(1)-1;
+		// <-- Vex: porting colony management
 
 		//SetTradeRules(i);
 	}
