@@ -475,6 +475,9 @@ void ProcessDialogEvent()
 			}
 			Link.l2.go = "VEX_DEBUG_PERSONAL_GOD";
 
+			Link.l3 = "Add 10,000,000 gold!";
+			Link.l3.go = "VEX_DEBUG_PERSONAL_GOLD";
+
 			Link.l99 = "Exit";
 			Link.l99.go = "exit";
 		break;
@@ -505,6 +508,13 @@ void ProcessDialogEvent()
 				Dialog.Text = "God mode enabled!";
 			}
 
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
+		break;
+
+		case "VEX_DEBUG_PERSONAL_GOLD":
+			AddMoneyToCharacter(pchar, 10000000);
+			Dialog.Text = "10,000,000 gold added!";
 			Link.l1 = "Exit";
 			Link.l1.go = "exit";
 		break;
