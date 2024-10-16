@@ -1,5 +1,3 @@
-#include "camera.c" // not completely sure if needed.
-
 bool bSeePeoplesOnDeck = false; // Warship 08.06.09 видеть матросов на палубе при виде от первого лица или нет
 
 // ugeen 13.09.20
@@ -93,8 +91,10 @@ void CreateSeaCamerasEnvironment()
 
 	makearef(Crosshair,SeaCameras.Crosshair);
 
-	if (!bSeaLoad){
-		Scene.Camera = SHIP_CAMERA;
+	if (!bSeaLoad)
+	{
+		SeaCameras.Camera = "SeaShipCamera";
+	
 		Crosshair.OutsideCamera = true;
 	}
 	
@@ -144,31 +144,31 @@ void SeaCameras_Switch()
 	// Коммент - выбираем состояние, ИЗ КОТОРОГО ПЕРЕКЛЮЧАЕМСЯ
 	// Sailors.IsOnDeck = 1; - Флаг, находимя ли мы на палубе
 	// если Sailors.IsOnDeck == 1, значит, мы на палубе, и матросов бегающих мы не увидем
-	switch (Scene.Camera)
+	switch (SeaCameras.Camera)
 	{
-		case FREE_CAMERA:
-			SetActiveCamera(SHIP_CAMERA);
+		case "SeaFreeCamera":
+			SeaCameras.Camera = "SeaShipCamera";
 			Crosshair.OutsideCamera = true;
 			Sailors.IsOnDeck = 0;
 			bSwitch = true;
 		break;
-		case SHIP_CAMERA:
+		case "SeaShipCamera":
 			if (!LAi_IsDead(&Characters[nMainCharacterIndex]))
 			{
-				SetActiveCamera(DECK_CAMERA);
+				SeaCameras.Camera = "SeaDeckCamera";
 				Crosshair.OutsideCamera = false;//CrosshairHidden(); // was false;  LDH 17Jan17
 //				Sailors.IsOnDeck = !bSeePeoplesOnDeck;
 				Sailors.IsOnDeck =! sti(InterfaceStates.CREWONDECK); //  belamour !CREW_ON_DECK; // LDH 15Jan17 show crew on deck
 				bSwitch = true;
 			}
 		break;
-		case DECK_CAMERA:
+		case "SeaDeckCamera":
 			//SeaCameras.Camera = "SeaFreeCamera"; break;		// Debug : SeaFreeCamera, release : SeaShipCamera
-			SetActiveCamera(SHIP_CAMERA);
+			SeaCameras.Camera = "SeaShipCamera"; 
 			// boal -->
 			if (locCameraEnableFree)
             {
-			    SetActiveCamera(FREE_CAMERA);
+			    SeaCameras.Camera = "SeaFreeCamera";
 			}
 			// boal <--
 			Crosshair.OutsideCamera = true;
@@ -220,9 +220,7 @@ bool SeaCameras_isCameraOutside()
 void SeaCameras_SetShipForSeaCamera(object Character)
 {
 	makeref(SeaShipCharacterForCamera, Character);
-	SendMessage(&SeaShipCamera, "sa", "SetCharacter", SeaShipCharacterForCamera);
-	SendMessage(&SeaDeckCamera, "sa", "SetCharacter", SeaShipCharacterForCamera);
-	UpdateCamera();
+	SeaCameras_UpdateCamera();
 }
 
 // LDH 17Jan17 hide crosshair -->

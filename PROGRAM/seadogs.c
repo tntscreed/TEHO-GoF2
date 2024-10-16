@@ -38,7 +38,6 @@
 #include "fleet_cmds.c"
 #include "controls\hotkey_modify.c" // belamour альтернативнивный модификатор
 #include "migrations.c"
-#include "camera.c"
 
 extern void InitBaseCannons();
 extern void InitCharacters();
