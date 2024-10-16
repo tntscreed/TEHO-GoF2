@@ -936,6 +936,11 @@ bool CheckForCompletedUpgrade(int iUpgrade, int iColony)
 {
 	string sUpgrade = colonyupgrades[iUpgrade].id;
 
+	if(sti(colonies[iColony].(sUpgrade)) > sti(ColonyUpgrades[iUpgrade].maxlevel)){
+		trace("Max colony upgrade level exceeded: Colony: " + colonies[iColony].id + ", Upgrade: " + sUpgrade + ", Level: " + sti(colonies[iColony].(sUpgrade)) + ", Max level: " + sti(ColonyUpgrades[iUpgrade].maxlevel));
+		colonies[iColony].(sUpgrade) = sti(ColonyUpgrades[iUpgrade].maxlevel);
+	}
+
 	if(sti(colonies[iColony].(sUpgrade)) == sti(ColonyUpgrades[iUpgrade].maxlevel))
 	{
 		return true;

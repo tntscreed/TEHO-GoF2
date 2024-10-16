@@ -151,7 +151,6 @@ void InitInterface(string iniName)
 	//SetFormatedText("INFO",xi_refCharacter.bio);
 	SetSelectable("SHIPS_BUTTON", true); // TODO: add check for ship
 	SetSelectable("SET_HOVERNOR_BUTTON",GetFreePassengersQuantity(pchar)>0);
-
 }
 
 
@@ -899,6 +898,12 @@ void Upgrade()
 	}
 
 	string sLevel = "l"+iUpgradeLevel;
+
+	if(sti(colonies[iColony].(sNode)) > sti(ColonyUpgrades[iUpgradeNum].maxlevel)){
+		trace("Max colony upgrade level exceeded: Colony: " + colonies[iColony].id + ", Upgrade: " + sNode + ", Level: " + sti(colonies[iColony].(sNode)) + ", Max level: " + sti(ColonyUpgrades[iUpgradeNum].maxlevel));
+		colonies[iColony].(sNode) = sti(ColonyUpgrades[iUpgradeNum].maxlevel);
+	}
+
 	if(sti(colonies[iColony].(sNode)) == sti(ColonyUpgrades[iUpgradeNum].maxlevel))
 	{
 		sDescr = XI_ConvertString("This building is already built");
@@ -915,6 +920,11 @@ void Upgrade()
 		}
 		else
 		{
+			
+			if(CheckAttribute(ColonyUpgrades[iUpgradeNum], sLevel) == false){
+				trace("Upgrade level not found: Colony: " + colonies[iColony].id + ", Upgrade: " + ColonyUpgrades[iUpgradeNum].id + ", Level: " + sLevel);
+			}
+
 			if(sti(ColonyUpgrades[iUpgradeNum].(sLevel).money) > sti(colonies[iColony].money))
 			{
 				iNeedMoney = sti(ColonyUpgrades[iUpgradeNum].(sLevel).money) - sti(colonies[iColony].money);
