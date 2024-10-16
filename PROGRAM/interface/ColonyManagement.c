@@ -1318,8 +1318,12 @@ void FillPassengerScroll()
 		makearef(pRef2,GameInterface.SETHOVERNOR_PASSENGER_LIST.(attributeName));
 
 		_curCharIdx = sti(pRef.(PsgAttrName));
-
-		if(_curCharIdx!=-1 && !CheckAttribute(&characters[_curCharIdx], "isfree") && !CheckAttribute(&characters[_curCharIdx], "isquest") && sti(characters[_curCharIdx].prisoned) != 1)
+		bool isPrisoned = false;
+		if(CheckAttribute(&characters[_curCharIdx], "prisoned") && sti(characters[_curCharIdx].prisoned) == 1)
+		{
+			isPrisoned = true;
+		}
+		if(_curCharIdx!=-1 && !CheckAttribute(&characters[_curCharIdx], "isfree") && !CheckAttribute(&characters[_curCharIdx], "isquest") && isPrisoned == false)
 		{
 			GameInterface.SETHOVERNOR_PASSENGER_LIST.(attributeName).character = _curCharIdx;
 			GameInterface.SETHOVERNOR_PASSENGER_LIST.(attributeName).img1 = GetFacePicName(GetCharacter(_curCharIdx));
