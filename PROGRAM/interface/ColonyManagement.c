@@ -920,7 +920,6 @@ void Upgrade()
 		}
 		else
 		{
-			
 			if(CheckAttribute(ColonyUpgrades[iUpgradeNum], sLevel) == false){
 				trace("Upgrade level not found: Colony: " + colonies[iColony].id + ", Upgrade: " + ColonyUpgrades[iUpgradeNum].id + ", Level: " + sLevel);
 			}
@@ -1386,7 +1385,6 @@ void ShowHovernorInfo( int nIdx )
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 13, "#"+characters[charidx].skill.repair );
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 14, "#"+characters[charidx].skill.commerce );
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 15, "#"+characters[charidx].skill.sneak );
-		Log_SetStringToLog("ColonyManagement: Setting face picture for character "+characters[charidx].name);
 		SetNewPicture("SETHOVERNOR_CHARACTER_BIG_PICTURE", "interfaces\portraits\256\face_" + characters[charidx].FaceId + ".tga");
 	} else {
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 2, "empty" );
@@ -1402,8 +1400,6 @@ void ShowHovernorInfo( int nIdx )
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 13, "#0" );
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 14, "#0" );
 		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 15, "#0" );
-
-		Log_SetStringToLog("ColonyManagement: Setting empty picture");
 		SetNewPicture("SETHOVERNOR_CHARACTER_BIG_PICTURE", "interfaces\empty_face.tga");
 	}
 }
