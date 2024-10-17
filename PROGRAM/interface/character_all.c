@@ -201,7 +201,6 @@ void ProcessCommandExecute()
 	{
 		if(comName=="click")
 		{
-			trace("node name = " + nodName + ", click");
             InterfaceStates.ReloadMenuExit = true;
 			IDoExit(RC_INTERFACE_ANY_EXIT);
 			PostEvent("LaunchIAfterFrame",1,"sl", nodName, 2);
