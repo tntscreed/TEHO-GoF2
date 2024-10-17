@@ -1,7 +1,67 @@
+void RechargeColonyPopulationUp()
+{
+	int iRechargeTime = rand(5)+5;
+	
+	if(CheckAttribute(pchar, "colonypopulationlock"))
+	{
+		ColonyPopulationUp();
+	}
+	
+	int iQuest = rand(1000000);
+	
+	while(iQuest == sti(pchar.time_events_counter))
+	{
+		iQuest = rand(1000000);
+	}
+	pchar.time_events_counter = iQuest;
+	
+	string sQuest = "recharge_colonypopulation_quest" + iQuest;
+	pchar.quest.(sQuest).win_condition.l1 = "timer";
+	pchar.quest.(sQuest).win_condition.l1.date.day = GetAddingDataDay(0, 0, iRechargeTime);
+	pchar.quest.(sQuest).win_condition.l1.date.month = GetAddingDataMonth(0, 0, iRechargeTime);
+	pchar.quest.(sQuest).win_condition.l1.date.year = GetAddingDataYear(0, 0, iRechargeTime);
+	pchar.quest.(sQuest).win_condition.l1.date.hour = rand(23);
+	pchar.quest.(sQuest).win_condition = "recharge_colonypopulation_quest";
+}
+
+void RechargeColonyUpgrades()
+{
+	
+	
+	int iRechargeTime = rand(10)+rand(10);
+
+	if(CheckAttribute(pchar, "colonyupgradelock"))
+	{
+		CheckColonyUpgrades();
+	}
+
+	iRechargeTime = iRechargeTime + iEvolutionState*10;
+	
+	int iQuest = rand(1000000);
+	
+	while(iQuest == sti(pchar.time_events_counter))
+	{
+		iQuest = rand(1000000);
+	}
+	pchar.time_events_counter = iQuest;
+
+	string sQuest = "recharge_colony_upgrade_quest" + iQuest;
+
+	pchar.quest.(sQuest).win_condition.l1 = "timer";
+	pchar.quest.(sQuest).win_condition.l1.date.day = GetAddingDataDay(0, 0, iRechargeTime);
+	pchar.quest.(sQuest).win_condition.l1.date.month = GetAddingDataMonth(0, 0, iRechargeTime);
+	pchar.quest.(sQuest).win_condition.l1.date.year = GetAddingDataYear(0, 0, iRechargeTime);
+	pchar.quest.(sQuest).win_condition.l1.date.hour = rand(23);
+	pchar.quest.(sQuest).win_condition = "recharge_colony_upgrade";
+}
+
 
 void ActivateTimeEvents()
 {
-
+	RechargeColonyUpgrades();
+	RechargeColonyPopulationUp();
+	//RechargeColonyOccupation();
+	//RechargeColonyColonistsUp();
 }
 
 //////////////////////// boal SLiB ////////////////////////////////

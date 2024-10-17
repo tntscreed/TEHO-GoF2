@@ -27,6 +27,16 @@ void QuestComplete(string sQuestName, string qname)
 		// boal -->
 		// смена отношений от времени
         // boal все теперь проверяется 15-25 день при расчете состояния мира = изменение в 5% - ранд(100) > 95
+
+		case "recharge_colonypopulation_quest":
+			pchar.colonypopulationlock = true;
+			RechargeColonyPopulationUp();
+		break;
+		case "recharge_colony_upgrade":
+			pchar.colonyupgradelock = true;
+			RechargeColonyUpgrades();
+		break;
+
         case "Nation_Legend":
             SetTimerCondition("Nation_Legend", 0, 0, 15+rand(10), true);
 			// тут чиним стророжевики -->

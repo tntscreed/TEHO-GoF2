@@ -158,6 +158,7 @@ float LodScale = 0.7;//0.7;//1.2;//2.0;//4.0
 int iColonyState = 2; // From CT
 int iAgressionState = 1; // From CT
 int	iGameArcade = 4; // From CT
+int iEvolutionState = 1; // From CT
 
 ref GetCharacter(int iIndex) 
 { 
