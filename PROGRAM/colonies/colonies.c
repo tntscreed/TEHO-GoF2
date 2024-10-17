@@ -311,7 +311,6 @@ bool PlayerHasColonies()
 	{
 		if(CheckAttribute(&colonies[i], "capture_flag") && sti(colonies[i].capture_flag) == 1)
 		{
-			Log_SetStringToLog("Player colony found: " + colonies[i].id);
 			return true;
 		}
 	}
