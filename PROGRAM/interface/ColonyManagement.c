@@ -968,6 +968,9 @@ void Upgrade()
 				{
 					iLevel = iLevel - 1;
 				}
+				if(iLevel<=0){
+					iLevel = 1;
+				}
 				sStep = "l"+iLevel;
 
 				makearef(aUpgrades, ColonyUpgrades[iUpgradeNum].requred.(sStep));
