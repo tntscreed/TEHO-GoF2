@@ -7,7 +7,7 @@ void CreateGovernor(aref chr, string sColony)
 
 	int iColony = FindColony(sColony);
 	
-	Colonies[iColony].commander = chr.id;
+	Colonies[iColony].commander = GetCharacterIndex(chr.id);
 	Colonies[iColony].time = "0";
 
 	//int iOldNation = sti(Colonies[iColony].nation);
@@ -133,6 +133,8 @@ void CreateColonyCommanders()
         	characters[iChar].Default  = characters[iChar].location;  // чтоб сухопутные города вернули население
         	characters[iChar].Default.BoardLocation = colonies[i].Default.BoardLocation;
         	characters[iChar].Mayor = true; // признак мэра
+			Colonies[i].commander = iChar;
+			trace("Making mayor for colony:" + colonies[i].id + ". Commander: " + characters[iChar].id);
         }
 
 		// добавить проверку на пиратов, у них нет фортов, нафиг им коммандер?
@@ -147,7 +149,7 @@ void CreateColonyCommanders()
 			continue;
 		}
 		// boal <--
-		colonies[i].commander = colonies[i].id + " Fort Commander";
+		colonies[i].fortcommander = colonies[i].id + " Fort Commander";
 		trace("Making fort commander for colony:" + colonies[i].id);
 		
 		iChar = GenerateCharacter(sti(colonies[i].nation), WITH_SHIP, "officer", MAN, 1, FORT_COMMANDER);

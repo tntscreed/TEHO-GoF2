@@ -667,8 +667,7 @@ void ProcessDialogEvent()
 			}
 			else{
 				Dialog.Text = "Colony found: " + colonyId;
-				ref governor_npc = GetCharacter(NPC_GenerateCharacter(colonyId + "_NewMayor", "skel2", "skeleton", "skeleton", 1, PIRATE, -1, false, "soldier"));
-				PlayerCaptureColony(governor_npc, colonyId);
+				PlayerCaptureColony(colonyId);
 			}
 
 			Link.l1 = "Exit";

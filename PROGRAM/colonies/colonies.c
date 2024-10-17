@@ -251,7 +251,7 @@ int PlayerSetGovernor(aref chr, string sColony)
     characters[iChar].Default.BoardLocation = colonies[iColony].Default.BoardLocation;
     characters[iChar].Mayor = true; // признак мэра
 
-	colonies[iColony].commander = chr.id;
+	colonies[iColony].commander = iChar;
 
 	//chr.id = sColony + "_Mayor"; // Might not be needed, might break some things
 	chr.city = sColony;
@@ -292,9 +292,9 @@ int PlayerSetFortCommander(string sColony, int iGovernor)
 	return iFortChar;
 }
 
-void PlayerCaptureColony(aref chr, string sColony)
+void PlayerCaptureColony(string sColony)
 {
-	PlayerSetGovernor(chr, sColony);
+	SetCaptureTownByHero(sColony);
 	
 	/*
 	pchar.quest.waithours = 47;
