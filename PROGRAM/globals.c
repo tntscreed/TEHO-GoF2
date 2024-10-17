@@ -160,6 +160,8 @@ int iAgressionState = 1; // From CT
 int	iGameArcade = 4; // From CT
 int iEvolutionState = 1; // From CT
 
+int iWorldSituationUpdateStepHooks = 11;
+
 ref GetCharacter(int iIndex) 
 { 
 	if (iIndex < 0 || iIndex >= MAX_CHARACTERS)

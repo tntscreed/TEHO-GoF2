@@ -124,6 +124,8 @@ void WorldSituationsUpdate()
 	int 	iStep = GetEventData();
 	float 	dayRandom;
 
+	Log_SetStringToLog("WorldSituationUpdate: iStep: " + iStep);
+
 	switch(iStep)
 	{
 		case 0:		
@@ -266,12 +268,15 @@ void WorldSituationsUpdate()
 			GenerateRumour() //homo 05/07/06			
 		break;		
 		
+		case 11:
+			UpdateColonyProfit();
+		break;
 	}
 
 	iStep++;
 	InterfaceStates.WorldSituationUpdateStep = iStep;
 
-	if(iStep <= 10)
+	if(iStep <= iWorldSituationUpdateStepHooks)
 	{
 		PostEvent("EvSituationsUpdate", 1000, "l", iStep);
 	}

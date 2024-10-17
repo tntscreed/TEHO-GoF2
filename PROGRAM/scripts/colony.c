@@ -1,3 +1,96 @@
+void UpdateColonyProfit()
+{
+	ref chr;
+	int iColonyMoney;
+	int iCommerce, iLeadership;
+	int iProfit;
+	float fCommerce, fLeadership;
+	
+	for (int i = 0; i < MAX_COLONIES; i++)
+	{
+		if (colonies[i].nation != "none")
+		{
+			if(colonies[i].commander == -1)
+			{
+				//trace("f..k");
+				continue;
+			}
+			chr = &Characters[sti(colonies[i].commander)];
+			iColonyMoney = sti(colonies[i].money);
+			//iColonyMoney = iColonyMoney + sti(chr.skill.leadership) + sti(chr.skill.commerce);
+			
+			iCommerce = sti(chr.skill.commerce);
+			if(iCommerce > 12) iCommerce = 12;
+			iLeadership = sti(chr.skill.leadership);
+			if(iLeadership > 12) iLeadership = 12;
+
+			fCommerce = 1.0 + (0.01 * makefloat(iCommerce));
+			fLeadership = 1.0 + (0.01 * makefloat(iLeadership));
+			
+			iProfit = sti(colonies[i].population) * sti(colonies[i].tax_rate) / 30;
+			iProfit = iProfit * fCommerce * fLeadership;
+			
+			if(sti(colonies[i].nation) != PIRATE)
+			{
+				iProfit = iProfit * (1.0 + (0.05 * makefloat(iGameArcade)));
+			}
+
+			iColonyMoney = iColonyMoney + iProfit;
+
+			if(sti(colonies[i].goldmines) == 1)
+			{
+				iColonyMoney = iColonyMoney + sti(ColonyUpgrades[UPGRADE_GOLDMINES].money_per_day);
+			}
+			if(sti(colonies[i].silvermines) == 1)
+			{
+				iColonyMoney = iColonyMoney + sti(ColonyUpgrades[UPGRADE_SILVERMINES].money_per_day);
+			}
+			colonies[i].money = iColonyMoney;
+
+			/*if(iColonyMoney > 20000)
+			{
+				trace("Colony " + colonies[i].id + " have more then 20000 gil.")
+			}*/
+
+			if(sti(Colonies[i].capture_flag) == 1)
+			{
+				float fMoraleChange = 2.0 + iLeadership * 0.1;
+
+				Colonies[i].morale = stf(Colonies[i].morale) + fMoraleChange;
+
+				float fLoyalityChange = 2.0 + iLeadership * 0.1;
+				
+				fLoyalityChange = fLoyalityChange + (0.1 * iGameArcade);
+				
+				float fTaxRate = stf(colonies[i].tax_rate) -  (fCommerce * 0.1 + iGameArcade);
+
+				fLoyalityChange = fLoyalityChange - fTaxRate;
+
+				Colonies[i].loyality = stf(Colonies[i].loyality) + fLoyalityChange;
+
+				if(sti(Colonies[i].loyality) > 99)
+				{
+					Colonies[i].loyality = 99;
+				}
+				if(sti(Colonies[i].loyality) < 0)
+				{
+					Colonies[i].loyality = 0;
+				}
+
+				if(sti(Colonies[i].morale) > 99)
+				{
+					Colonies[i].morale = 99;
+				}
+				if(sti(Colonies[i].morale) < 0)
+				{
+					Colonies[i].morale = 0;
+				}
+
+			}
+		}
+	}
+}
+
 void CreateGovernor(aref chr, string sColony)
 {
 	ref fortcommander;

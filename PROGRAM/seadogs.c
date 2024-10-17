@@ -759,7 +759,7 @@ void OnLoad()
     BattleInterface.battleborder.used = InterfaceStates.ShowBattleMode;
 
 	if( CheckAttribute(&InterfaceStates,"WorldSituationUpdateStep") &&
-		sti(InterfaceStates.WorldSituationUpdateStep) < 10 )
+		sti(InterfaceStates.WorldSituationUpdateStep) < iWorldSituationUpdateStepHooks )
 	{
 		Event("EvSituationsUpdate", "l", sti(InterfaceStates.WorldSituationUpdateStep));
 	}
