@@ -735,6 +735,10 @@ void ColonyPopulationUp()
 			}
 		}	
 	}
+	trace("ColonyUpgrades.c: ColonyPopulationUp: done");
+	if(bBettaTestMode){
+		Log_SetStringToLog("ColonyPopulationUp done");
+	}
 }
 
 void ColonyColonistsUp()
