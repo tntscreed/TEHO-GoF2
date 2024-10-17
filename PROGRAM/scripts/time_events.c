@@ -265,7 +265,7 @@ void WorldSituationsUpdate()
 		break;
 		
 		case 10:
-			GenerateRumour() //homo 05/07/06			
+			GenerateRumour(); //homo 05/07/06			
 		break;		
 		
 		case 11:
