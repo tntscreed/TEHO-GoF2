@@ -78,6 +78,10 @@ bool DialogMain(ref Character)
 	startDialogMainCounter = 0;
 	SetEventHandler("frame", "StartDialogMain", 1);
 	SetTimeScale(0.0);
+	if(IsPerkIntoList("TimeSpeed"))
+	{
+		DelPerkFromActiveList("TimeSpeed");
+	}
 	if (locCameraCurMode == LOCCAMERA_FOLLOW && !CheckAttribute(loadedLocation, "lockCamAngle") && mainChr.location.group != "sit") // для квестов
 	{
 		SetCameraDialogMode(Character);  // boal
