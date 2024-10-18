@@ -288,7 +288,7 @@ int PlayerSetFortCommander(string sColony, int iGovernor)
 
 	CreateFortCommander(fortcommander, newfortcommander);
 
-	int iFortChar = GetCharacterIndex(fortcommanderchar);
+	int iFortChar = GetCharacterIndex(newfortcommander);
 	return iFortChar;
 }
 
