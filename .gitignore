@@ -34,7 +34,6 @@ RESOURCE/Textures/INTERFACES/PORTRAITS/*
 !RESOURCE/Textures/INTERFACES/Colonies.tga.tx
 !RESOURCE/Textures/INTERFACES/upgrades.tga.tx
 !RESOURCE/Textures/Characters/
-!RESOURCE/Textures/INTERFACES/mainback.tga.tx
 
 # Exclude all GoF "Ammo" textures
 !RESOURCE/Textures/Ammo/axe.tga.tx
