@@ -1494,6 +1494,17 @@ int GenerateCharacter(int iNation, int isShip, string sModel, int iSex, int isLo
 	return iChar;
 }
 
+//Copies most features excluding the ID.
+void CopyCharacter(int iCharTo, int iChar){
+	characters[iCharTo].model = characters[iChar].model;
+	characters[iCharTo].headmodel = characters[iChar].headmodel;
+	characters[iCharTo].nation = characters[iChar].nation;
+	characters[iCharTo].rank = characters[iChar].rank;
+	characters[iCharTo].name = characters[iChar].name;
+	characters[iCharTo].lastname = characters[iChar].lastname;
+	characters[iCharTo].faceID = characters[iChar].faceID;
+}
+
 int GetRandomNationForMapEncounter(string sIslandID, bool bMerchant)
 {   // boal: метод соверненно не понятен, убрал из него массив НатионСтайт, заменив на 1.0, раз работало - пусть будет как было, но логика чумовая
 	int iNation = -1;
