@@ -1244,7 +1244,7 @@ string FindAlliedColonyForNation(int iNation, bool _checkPort)
 	int m = 0;
 	string sColony = "";
 	
-	if(colonies[i].nation == PIRATE){
+	if(pchar.nation == PIRATE){
 		return "Pirates";
 	}
 
