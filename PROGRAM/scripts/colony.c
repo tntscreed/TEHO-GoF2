@@ -1946,6 +1946,7 @@ void CreateFortCommander(aref chr, aref fortcommander)
 	fortcommander.skill.temp.sneak = chr.skill.temp.sneak;
 
 	fortcommander.name = chr.name;
+	fortcommander.lastname = chr.lastname;
 	fortcommander.faceID = chr.faceID;
 }
 
