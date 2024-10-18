@@ -285,10 +285,11 @@ int PlayerSetFortCommander(string sColony, int iGovernor)
 
 	ref newfortcommander = GetCharacter(NPC_GenerateCharacter("PlayerNewFortCommander_" + sColony, "panhandler_"+(rand(5)+1), "man", "man", 5, PIRATE, -1, false, "slave")); // TODO: obviously change
 	ref fortcommander = GetCharacter(GetCharacterIndex(sColony + " Fort Commander")); // TODO: Change to "Player X Fort Commander" system.
+	CreateFortCommander(newfortcommander, fortcommander);
 
-	CreateFortCommander(fortcommander, newfortcommander);
+	FreeCharacter(GetCharacterIndex(newfortcommander.id));
 
-	int iFortChar = GetCharacterIndex(newfortcommander);
+	int iFortChar = GetCharacterIndex(fortcommander);
 	return iFortChar;
 }
 
