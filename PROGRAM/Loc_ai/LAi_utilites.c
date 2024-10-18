@@ -2989,7 +2989,13 @@ void CreateAmmo(aref loc) // Jason, оружейная
 			// солдаты
 			for (i=1; i<=3; i++)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"AmmoSold_"+i, "sold_"+NationShortName(iNation)+"_"+(rand(7)+1), "man", "man", iRank, iNation, 2, true, "soldier"));
+				if(iNation == PIRATE){
+					sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"AmmoSold_"+i, "Skel1", "man", "man", iRank, iNation, 2, true, "soldier")); // If the guards remain skeletons, something went wrong.
+					CreateModel(GetCharacterIndex(sld.id), "pirate", MAN);
+				}
+				else{
+					sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"AmmoSold_"+i, "sold_"+NationShortName(iNation)+"_"+(rand(7)+1), "man", "man", iRank, iNation, 2, true, "soldier"));
+				}
 				FantomMakeCoolFighter(sld, iRank, 60, 60, "blade_13", "pistol1", "bullet", 50);
 				sld.City = loc.parent_colony;
 				sld.CityType = "soldier";
