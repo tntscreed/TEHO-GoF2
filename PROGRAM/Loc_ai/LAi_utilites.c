@@ -2954,15 +2954,27 @@ void CreateAmmo(aref loc) // Jason, оружейная
 	{
 		if (Loc.id == "Jungle_fort_ammo") return;
 		ref sld;
-		int i, iNation, iRank;			
-		if (!CheckAttribute(loc, "Ammo_date") || GetNpcQuestPastDayParam(loc, "Ammo_date") > 2)
+		int i, iNation, iRank;	
+		if (!CheckAttribute(loc, "Ammo_date") || GetNpcQuestPastDayParam(loc, "Ammo_date") > 2 || GetCharacterIndex(loc.parent_colony+"AmmoOff") == -1)
 		{
 			SaveCurrentNpcQuestDateParam(loc, "Ammo_date");
 			iNation = GetCityNation(loc.parent_colony);
 			string slai_group = GetNationNameByType(iNation)  + "_citizens";
 			iRank = sti(pchar.rank)+5+MOD_SKILL_ENEMY_RATE*2;
 			// комендант
-			sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"AmmoOff", "off_"+NationShortName(iNation)+"_"+(rand(1)+1), "man", "man", iRank, iNation, 2, true, "governor"));
+			//if(iNation == PIRATE){
+			//	sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"AmmoOff", "Skel1", "man", "man", iRank, iNation, 2, true, "governor"));
+			//}
+			//else{
+			//	sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"AmmoOff", "off_"+NationShortName(iNation)+"_"+(rand(1)+1), "man", "man", iRank, iNation, 2, true, "governor"));
+			//}
+			//sld = Characters[GetCharacterIndex(loc.parent_colony + " Fort Commander")];
+
+			string commandant_id = loc.parent_colony+"AmmoOff";
+
+			sld = GetCharacter(NPC_GenerateCharacter(commandant_id, "Skel1", "man", "man", iRank, iNation, 2, true, "governor")); // If the commandant remains a skeleton after the copying, something went wrong.
+			CopyCharacter(GetCharacterIndex(sld.id), GetCharacterIndex(loc.parent_colony + " Fort Commander"));
+
 			FantomMakeCoolFighter(sld, iRank+5, 70, 70, "blade_13", "pistol3", "grapeshot", 100);
 			sld.City = loc.parent_colony;
 			sld.CityType = "soldier";
