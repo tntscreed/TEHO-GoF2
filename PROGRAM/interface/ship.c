@@ -10,6 +10,9 @@ int iSelected; // курсор в таблице
 int iShipQty, iUnits, iCurGoodsIdx;
 
 string sMessageMode;
+
+bool bPlayerColonies = false; // Vex: adding colony management
+
 void InitInterface_R(string iniName, ref _chr) // _chr нужно для читового просмотра НПС в море
 {
     InterfaceStack.SelectMenu_node = "LaunchShipState"; // запоминаем, что звать по Ф2
@@ -68,6 +71,21 @@ void InitInterface_R(string iniName, ref _chr) // _chr нужно для чит�
     
     SetFormatedText("Money_TEXT", MakeMoneyShow(sti(pchar.Money), MONEY_SIGN,MONEY_DELIVER));
     
+	// Vex: adding colony management -->
+	bPlayerColonies = PlayerHasColonies();
+	
+	CreateString(true, "buttonColonyManagement", XI_ConvertString("buttonColonyManagement"), "INTERFACE_TITLE", COLOR_NORMAL, 700, 15, SCRIPT_ALIGN_LEFT, 0.7);
+	if (bPlayerColonies==true)
+	{
+		ChangeStringColor("buttonColonyManagement", COLOR_NORMAL);
+	}
+	else
+	{
+		int greyColor = argb(255, 128, 128, 128);
+		ChangeStringColor("buttonColonyManagement", greyColor);
+	}
+	// <-- Vex: adding colony management
+
     GameInterface.TABLE_LIST.hr.td1.str = "The goods in the hold";
 	GameInterface.TABLE_LIST.hr.td1.scale = 0.9;
 	GameInterface.TABLE_LIST.hr.td2.str = "Qty";
@@ -140,6 +158,16 @@ void ProcessCommandExecute()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
+
+	// Vex: adding colony management -->
+	if(nodName == "I_COLONIES" || nodName == "I_COLONIES_2")
+	{
+		if(comName=="click" && bPlayerColonies == false){
+			return;
+		}
+	}
+	// <-- Vex: adding colony management
+
     switch(nodName)
 	{
 		/////  пушки -->
@@ -322,11 +350,19 @@ void ProcessCommandExecute()
 			    nodName = "I_ITEMS";
 			}
 		break;
+		// Vex: adding colony management -->
+		case "I_COLONIES_2":
+			if(comName=="click")
+			{
+			    nodName = "I_COLONIES";
+			}
+		break;
+		// <-- Vex: adding colony management
 	}
 	// boal new menu 31.12.04 -->
 	if (nodName == "I_CHARACTER" || nodName == "I_SHIP" ||
 	    nodName == "I_QUESTBOOK" || nodName == "I_TRADEBOOK" ||
-		nodName == "I_NATIONS" || nodName == "I_ITEMS")
+		nodName == "I_NATIONS" || nodName == "I_ITEMS" || nodName == "I_COLONIES") // Vex: adding colony management
 	{
 		// belamour если пришли из кораблей на приколе
 		if(CheckAttribute(pchar,"SystemInfo.ShowShip")) DeleteAttribute(pchar,"SystemInfo.ShowShip"); 
