@@ -2,6 +2,8 @@ void RechargeColonyPopulationUp()
 {
 	int iRechargeTime = rand(5)+5;
 	
+	Log_TestInfo("RechargeColonyPopulationUp: iRechargeTime = " + iRechargeTime);
+
 	if(CheckAttribute(pchar, "colonypopulationlock"))
 	{
 		ColonyPopulationUp();
