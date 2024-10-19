@@ -397,7 +397,7 @@ void FillColoniesScroll()
 	GameInterface.COLONY_SCROLL.current = 0;
 	GameInterface.COLONY_SCROLL.ImagesGroup.t1 = "ISLANDSICON";
 	
-	GameInterface.COLONY_SCROLL.BadPicture1 = "interfaces\empty_face.tga";
+	GameInterface.COLONY_SCROLL.BadPicture1 = "interfaces\empty_colony.tga";
 	
 	int listsize = 0;
 	
