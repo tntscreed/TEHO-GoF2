@@ -189,7 +189,7 @@ void SetVariable()
 	sText = sText + " ";
 	SendMessage(&GameInterface,"lslle",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO", 10,4,&sText);
 
-	sText = XI_ConvertString(GetMoraleName(sti(colonies[iColony].loyality)));
+	sText = XI_ConvertString(GetLoyalityName(sti(colonies[iColony].loyality)));
 	sText = sText + " ";
 	SendMessage(&GameInterface,"lslle",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO", 10,5,&sText);
 
