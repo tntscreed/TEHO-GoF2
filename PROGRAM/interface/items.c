@@ -1,6 +1,8 @@
 /// BOAL меню предметов
 #include "interface\character_all.h"
 
+bool bPlayerColonies = false; // Vex: adding colony management
+
 void InitInterface(string iniName)
 {
     InterfaceStack.SelectMenu_node = "LaunchItems"; // запоминаем, что звать по Ф2
@@ -21,6 +23,21 @@ void InitInterface(string iniName)
 	SetEventHandler("TableSelectChange", "TableSelectChange", 0);
 	SetEventHandler("eTabControlPress","procTabChange",0);
 	SetEventHandler("ExitMapWindow","ExitMapWindow",0);
+
+	// Vex: adding colony management -->
+	bPlayerColonies = PlayerHasColonies();
+	
+	CreateString(true, "buttonColonyManagement", XI_ConvertString("buttonColonyManagement"), "INTERFACE_TITLE", COLOR_NORMAL, 700, 15, SCRIPT_ALIGN_LEFT, 0.7);
+	if (bPlayerColonies==true)
+	{
+		ChangeStringColor("buttonColonyManagement", COLOR_NORMAL);
+	}
+	else
+	{
+		int greyColor = argb(255, 128, 128, 128);
+		ChangeStringColor("buttonColonyManagement", greyColor);
+	}
+	// <-- Vex: adding colony management
     
     XI_RegistryExitKey("IExit_F2");
     SetVariable();
@@ -61,6 +78,15 @@ void ProcessCommandExecute()
 	string comName = GetEventData();
 	string nodName = GetEventData();
 	
+	// Vex: adding colony management -->
+	if(nodName == "I_COLONIES" || nodName == "I_COLONIES_2")
+	{
+		if(comName=="click" && bPlayerColonies == false){
+			return;
+		}
+	}
+	// <-- Vex: adding colony management
+
     switch(nodName)
 	{
 		case "EQUIP_BUTTON":
@@ -106,11 +132,19 @@ void ProcessCommandExecute()
 			    nodName = "I_ITEMS";
 			}
 		break;
+		// Vex: adding colony management -->
+		case "I_COLONIES_2":
+			if(comName=="click")
+			{
+			    nodName = "I_COLONIES";
+			}
+		break;
+		// <-- Vex: adding colony management
 	}
 	// boal new menu 31.12.04 -->
 	if (nodName == "I_CHARACTER" || nodName == "I_SHIP" ||
 	    nodName == "I_QUESTBOOK" || nodName == "I_TRADEBOOK" ||
-		nodName == "I_NATIONS" || nodName == "I_ITEMS")
+		nodName == "I_NATIONS" || nodName == "I_ITEMS" || nodName == "I_COLONIES") // Vex: adding colony management
 	{
 		if(comName=="click")
 		{
