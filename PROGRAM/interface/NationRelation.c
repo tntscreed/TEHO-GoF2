@@ -1,6 +1,8 @@
 /// BOAL меню наций
 int curNationIdx;
 
+bool bPlayerColonies = false; // Vex: adding colony management
+
 void InitInterface(string iniName)
 {
     InterfaceStack.SelectMenu_node = "LaunchNationRelation"; // запоминаем, что звать по Ф2
@@ -107,6 +109,21 @@ void InitInterface(string iniName)
     SetEventHandler("ievnt_command","ProcessCommandExecute",0);
     SetEventHandler("MouseRClickUP","HideInfo",0);
 	SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
+
+	// Vex: adding colony management -->
+	bPlayerColonies = PlayerHasColonies();
+	
+	CreateString(true, "buttonColonyManagement", XI_ConvertString("buttonColonyManagement"), "INTERFACE_TITLE", COLOR_NORMAL, 700, 15, SCRIPT_ALIGN_LEFT, 0.7);
+	if (bPlayerColonies==true)
+	{
+		ChangeStringColor("buttonColonyManagement", COLOR_NORMAL);
+	}
+	else
+	{
+		int greyColor = argb(255, 128, 128, 128);
+		ChangeStringColor("buttonColonyManagement", greyColor);
+	}
+	// <-- Vex: adding colony management
     
     /////////////
     CreateString(true,"titul", XI_ConvertString("Hunter_type"),"DIALOG2",COLOR_NORMAL,609,100,SCRIPT_ALIGN_LEFT,1.0);
@@ -256,6 +273,16 @@ void ProcessCommandExecute()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
+
+	// Vex: adding colony management -->
+	if(nodName == "I_COLONIES" || nodName == "I_COLONIES_2")
+	{
+		if(comName=="click" && bPlayerColonies == false){
+			return;
+		}
+	}
+	// <-- Vex: adding colony management
+
     switch(nodName)
 	{
         case "LEFTCHANGE_NATION":
@@ -313,11 +340,19 @@ void ProcessCommandExecute()
 			    nodName = "I_ITEMS";
 			}
 		break;
+		// Vex: adding colony management -->
+		case "I_COLONIES_2":
+			if(comName=="click")
+			{
+			    nodName = "I_COLONIES";
+			}
+		break;
+		// <-- Vex: adding colony management
 	}
 	// boal new menu 31.12.04 -->
 	if (nodName == "I_CHARACTER" || nodName == "I_SHIP" ||
 	    nodName == "I_QUESTBOOK" || nodName == "I_TRADEBOOK" ||
-		nodName == "I_NATIONS" || nodName == "I_ITEMS")
+		nodName == "I_NATIONS" || nodName == "I_ITEMS" || nodName == "I_COLONIES") // Vex: adding colony management
 	{
 		if(comName=="click")
 		{
