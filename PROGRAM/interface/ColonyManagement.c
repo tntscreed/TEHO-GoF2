@@ -67,7 +67,7 @@ void InitInterface(string iniName)
 		SCRIPT_ALIGN_LEFT, true, 1.0, 420);
 	
 	string sText;
-	sText = " " + XI_ConvertString("Hovernor");
+	sText = " " + XI_ConvertString("COL_MAN_Governor");
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO_TEXT", 0,&sText);
 	sText = " ";
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE,"CHARACTER_INFO", 0,&sText);
@@ -1371,7 +1371,7 @@ void ShowHovernorInfo( int nIdx )
 		else{
 			charidx = -1;
 		}
-		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 3, "#("+XI_ConvertString("Hovernor")+")" );
+		SendMessage( &GameInterface,"lslls",MSG_INTERFACE_MSG_TO_NODE,"SETHOVERNOR_STRINGS", 1, 3, "#("+XI_ConvertString("COL_MAN_Governor")+")" );
 	}
 
 	if( charidx >= 0 ) {
