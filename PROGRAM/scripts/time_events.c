@@ -126,9 +126,7 @@ void WorldSituationsUpdate()
 	int 	iStep = GetEventData();
 	float 	dayRandom;
 
-	if(bBettaTestMode){
-		Log_SetStringToLog("WorldSituationUpdate: iStep: " + iStep);
-	}
+	//Log_TestInfo("WorldSituationUpdate: iStep: " + iStep);
 
 	switch(iStep)
 	{
