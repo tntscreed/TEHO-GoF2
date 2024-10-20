@@ -452,8 +452,23 @@ void ProcessDialogEvent()
 			Link.l11 = "Ship management.";
 			Link.l11.go = "VEX_DEBUG_SHIP_MANAGEMENT";
 
+			Link.l20 = "RUN SCRIPT!";
+			Link.l20.go = "VEX_DEBUG_RUN_SCRIPT";
+
 			Link.l99 = "Exit";
 			Link.l99.go = "exit";
+		break;
+
+		case "VEX_DEBUG_RUN_SCRIPT":
+			Dialog.Text = "Run script!";
+			string sColony = "Tortuga";
+			int iColony = FindColony(sColony);
+			colonies[iColony].loyality = 99;
+			colonies[iColony].morale = 99;
+			colonies[iColony].population = 5000;
+
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_PERSONAL":
