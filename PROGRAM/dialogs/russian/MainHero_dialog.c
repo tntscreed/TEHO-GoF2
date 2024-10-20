@@ -460,12 +460,16 @@ void ProcessDialogEvent()
 		break;
 
 		case "VEX_DEBUG_RUN_SCRIPT":
-			Dialog.Text = "Run script!";
-			string sColony = "Tortuga";
+			Dialog.Text = "Refreshing weather.";
+			Whr_LoadNextWeather(0);
+
+			/*string sColony = "Tortuga";
 			int iColony = FindColony(sColony);
 			colonies[iColony].loyality = 99;
 			colonies[iColony].morale = 99;
-			colonies[iColony].population = 5000;
+			colonies[iColony].population = 5000;*/
+
+
 
 			Link.l1 = "Exit";
 			Link.l1.go = "exit";
@@ -661,7 +665,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "VEX_DEBUG_COLONY_GET_LOCATION":
-			Dialog.Text = "Current location: " + pchar.location;
+			Dialog.Text = "Current location: " + pchar.location + "\nLocation type: " + Locations[FindLocation(pchar.location)].type;
 			Link.l1 = "Exit";
 			Link.l1.go = "exit";
 		break;
