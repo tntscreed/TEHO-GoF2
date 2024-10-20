@@ -814,6 +814,9 @@ bool LoadLocation(ref loc)
 		}
 	}
 
+	// TODO: test rigorously
+	Whr_LoadNextWeather(0);
+
 	return 1;
 }
 
