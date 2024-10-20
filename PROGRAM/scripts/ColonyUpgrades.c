@@ -191,10 +191,13 @@ int BuildUpgrade(int iColony, int iUpgrade, bool isRealBuild)
 
 	string sBuildModel = ColonyUpgrades[iUpgrade].id;
 
+	// TODO: Figure out what this did originally
+	/*
 	if(isRealBuild == true)
 	{
 		colonies[iColony].(sBuildModel) = sti(colonies[iColony].(sBuildModel)) + 1;
 	}
+	*/
 
 	//if(sti(ColonyUpgrades[iUpgrade].model) == 1)
 	if(false)
