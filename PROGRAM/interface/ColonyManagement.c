@@ -426,7 +426,7 @@ void FillColoniesScroll()
 			GameInterface.COLONY_SCROLL.(attributeName).tex1 = 0;
 			sColony = Colonies[i].id;
 
-			if (CheckAttribute(Colonies[i], "commander"))
+			if (CheckAttribute(Colonies[i], "commander") && Colonies[i].commander != -1)
 			{
 				pRef2.str1 = "#" + XI_ConvertString("Colony" + sColony);
 				pRef2.str2 = "#" + characters[GetCharacterIndex(Colonies[i].commander)].name;
