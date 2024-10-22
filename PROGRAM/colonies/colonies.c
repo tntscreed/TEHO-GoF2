@@ -202,6 +202,7 @@ int GetGovernorOfColony(string sColony)
 {
 	int iColony = FindColony(sColony);
 	if(iColony == -1) return -1;
+	if(!CheckAttribute(&colonies[iColony], "commander")) return -1;
 
 	return sti(colonies[iColony].commander);
 }
