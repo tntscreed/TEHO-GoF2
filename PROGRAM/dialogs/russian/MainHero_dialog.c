@@ -762,7 +762,7 @@ void ProcessDialogEvent()
 			//n = n + 1;
 			//CONQUERABLE_COLONIES[n] = "LaVega";
 
-			for(i=0; i<n; i++){
+			for(i=0; i<=n; i++){
 				PlayerCaptureColony(CONQUERABLE_COLONIES[i]);
 				Log_TestInfo("Conquered colony from self-dialogue: " + CONQUERABLE_COLONIES[i]);
 			}
