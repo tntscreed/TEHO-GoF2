@@ -395,7 +395,7 @@ void FillColoniesScroll()
 		
 	nCurScrollNum = -1;
 	GameInterface.COLONY_SCROLL.current = 0;
-	GameInterface.COLONY_SCROLL.ImagesGroup.t1 = "ISLANDSICON";
+	GameInterface.COLONY_SCROLL.ImagesGroup.t1 = "COLONYICONS";
 	
 	GameInterface.COLONY_SCROLL.BadPicture1 = "interfaces\empty_colony.tga";
 	
@@ -422,7 +422,7 @@ void FillColoniesScroll()
 		{
 			attributeName = "pic" + (listsize+1);
 			makearef(pRef2,GameInterface.COLONY_SCROLL.(attributeName));
-			GameInterface.COLONY_SCROLL.(attributeName).img1 = Colonies[i].island;
+			GameInterface.COLONY_SCROLL.(attributeName).img1 = Colonies[i].id;
 			GameInterface.COLONY_SCROLL.(attributeName).tex1 = 0;
 			sColony = Colonies[i].id;
 
