@@ -345,7 +345,7 @@ void ProcCommand()
 	CalculateCheatsInfo(); 
 }
 
-string descF1 = "Cheat 1";
+string descF1 = "Delete Sea!";
 
 void CalculateInfoDataF1()
 {
@@ -353,10 +353,13 @@ void CalculateInfoDataF1()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	DeleteSea();
+
 	Statistic_AddValue(PChar, "Cheats.F1", 1);
 }
 
-string descF2 = "Cheat 2";
+string descF2 = "Create Sea!";
 
 void CalculateInfoDataF2()
 {
@@ -364,10 +367,13 @@ void CalculateInfoDataF2()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	CreateSea(EXECUTE, REALIZE);
+
 	Statistic_AddValue(PChar, "Cheats.F2", 1);
 }
 
-string descF3 = "Cheat 3";
+string descF3 = "Create Sea Environment!";
 
 void CalculateInfoDataF3()
 {
@@ -375,6 +381,9 @@ void CalculateInfoDataF3()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	CreateSeaEnvironment();
+
 	Statistic_AddValue(PChar, "Cheats.F3", 1);
 }
 
