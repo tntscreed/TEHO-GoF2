@@ -429,8 +429,8 @@ void FillColoniesScroll()
 			if (CheckAttribute(Colonies[i], "commander") && Colonies[i].commander != -1)
 			{
 				pRef2.str1 = "#" + XI_ConvertString("Colony" + sColony);
-				pRef2.str2 = "#" + characters[GetCharacterIndex(Colonies[i].commander)].name;
-				pRef2.str3 = "#" + characters[GetCharacterIndex(Colonies[i].commander)].lastname;
+				pRef2.str2 = "#" + characters[Colonies[i].commander].name;
+				pRef2.str3 = "#" + characters[Colonies[i].commander].lastname;
 				GameInterface.COLONY_SCROLL.(attributeName).colony = i;
 				GameInterface.COLONY_SCROLL.(attributeName).character = colonies[i].commander;
 				listsize = listsize +  1;
