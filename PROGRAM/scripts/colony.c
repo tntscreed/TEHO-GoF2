@@ -219,6 +219,10 @@ void CreateColonyCommanders()
 		if (colonies[i].nation == "none") continue; // необитайки
 		// зададим базовых мэров городов
 		iChar = GetCharacterIndex(colonies[i].id + "_Mayor");
+		if(iChar == -1)
+		{
+			trace("Colony has no commander at game start: " + colonies[i].id);
+		}
 		if (iChar != -1)
 		{   // мэр есть
         	SetTownMayor(&characters[iChar], sti(colonies[i].nation));
