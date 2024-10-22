@@ -54,6 +54,10 @@ void InitInterface_gm(string iniName)
 	{
 		SetSelectable("MB_SAVE", false);
 	}
+
+	if(bBettaTestMode){
+		SetSelectable("MB_SAVE", true);
+	}
 	
 	string Vers = VERSION_NUMBER1 + GetVerNum();	
 	SetFormatedText("VERSION_TEXT", Vers);
