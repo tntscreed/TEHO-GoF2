@@ -67,7 +67,7 @@ void ProcessDialogEvent()
 				dialog.text = "You are back, captain, at last! Thanks God, we have almost lost any hope.";
 				if (bBettaTestMode)
 				{
-					link.l0 = "BetaTest - пропустить и начать игру";
+					link.l0 = "[BetaTest - Skip and start the game]";
 					link.l0.go = "Finish_2";
 				}
 				link.l1 = "Sandro? What the hell has happened? And why I have got so terrible headache?";
@@ -78,7 +78,7 @@ void ProcessDialogEvent()
 				dialog.text = "Well, captain, now you look like yourself. How do you feel?";
 				if (bBettaTestMode)
 				{
-					link.l0 = "BetaTest - пропустить и начать игру";
+					link.l0 = "[BetaTest - Skip and start the game]";
 					link.l0.go = "Finish_2";
 				}
 				link.l1 = "Hm... and how was I looking before?";
