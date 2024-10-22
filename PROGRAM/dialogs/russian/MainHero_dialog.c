@@ -665,6 +665,110 @@ void ProcessDialogEvent()
 			Link.l2.go = "VEX_DEBUG_COLONY_GET_LOCATION";
 			Link.l3 = "Get data about current colony!";
 			Link.l3.go = "VEX_DEBUG_COLONY_GET_DATA";
+			Link.l4 = "Take over all colonies!";
+			Link.l4.go = "VEX_DEBUG_COLONY_TAKEOVER_ALL";
+		break;
+
+		case "VEX_DEBUG_COLONY_TAKEOVER_ALL":
+			Dialog.Text = "Take over all colonies!";
+
+			/*string CONQUERABLE_COLONIES [28] = {
+				"SentJons",
+				"Bridgetown",
+				"Beliz",
+				"Pirates",
+				"Caracas",
+				"Cartahena",
+				"Charles",
+				"Cumana",
+				"Villemstad",
+				"FortFrance",
+				"BasTer",
+				"Havana",
+				"Maracaibo",
+				"Marigo",
+				"Panama",
+				"Portobello",
+				"PortSpein",
+				"PortRoyal",
+				"PortPax",
+				"SanJuan",
+				"SantaCatalina",
+				"Santiago",
+				"SantoDomingo",
+				"Tortuga",
+				"FortOrange",
+				"PuertoPrincipe",
+				"LeFransua",
+				"LaVega",
+			};*/ 
+
+			// Colonies that cause problems are commented out
+			string CONQUERABLE_COLONIES[50];
+			int n = 0;
+			CONQUERABLE_COLONIES[n] = "SentJons";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Bridgetown";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Beliz";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Caracas";
+			n = n + 1;
+			//CONQUERABLE_COLONIES[n] = "Pirates";
+			//n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Cartahena";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Charles";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Cumana";
+			n = n + 1;
+			//CONQUERABLE_COLONIES[n] = "Villemstad";
+			//n = n + 1;
+			CONQUERABLE_COLONIES[n] = "FortFrance";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "BasTer";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Havana";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Maracaibo";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Marigo";
+			n = n + 1;
+			//CONQUERABLE_COLONIES[n] = "Panama";
+			//n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Portobello";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "PortSpein";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "PortRoyal";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "PortPax";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "SanJuan";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "SantaCatalina";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Santiago";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "SantoDomingo";
+			n = n + 1;
+			CONQUERABLE_COLONIES[n] = "Tortuga";
+			//n = n + 1;
+			//CONQUERABLE_COLONIES[n] = "FortOrange";
+			//n = n + 1;
+			//CONQUERABLE_COLONIES[n] = "PuertoPrincipe";
+			//n = n + 1;
+			//CONQUERABLE_COLONIES[n] = "LeFransua";
+			//n = n + 1;
+			//CONQUERABLE_COLONIES[n] = "LaVega";
+
+			for(i=0; i<n; i++){
+				PlayerCaptureColony(CONQUERABLE_COLONIES[i]);
+				Log_TestInfo("Conquered colony from self-dialogue: " + CONQUERABLE_COLONIES[i]);
+			}
+			Dialog.Text = "All colonies taken over!";
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_COLONY_GET_DATA":
