@@ -1297,7 +1297,8 @@ void SetCaptureTownByHero(string sColony)
 	Colonies[iColony].capture_flag = "1";
 	RemoveGovernor(sColony);
     // выкупленность города не меняем, тк отбив от мятежа дело ГГ
-    SaveCurrentNpcQuestDateParam(&Colonies[iColony], "CaptureDate");
+	SaveCurrentNpcQuestDateParam(&Colonies[iColony], "CaptureDate");
+	ReplaceColonyCharactersAfterCapture(sColony);
 }
 
 
@@ -1992,4 +1993,26 @@ void RechargeColonyCaptureEx(string sColony)
 	Colonies[iColony].capture_month = 0;
 	Colonies[iColony].capture_year = 0;
 	Colonies[iColony].resquetime = "";
+}
+
+void ReplaceColonyCharactersAfterCapture(string sColony)
+{
+	int iColony = FindColony(sColony);
+	if(iColony == -1){
+		Log_TestInfo("ReplaceColonyCharactersAfterCapture: couldn't find colony: " + sColony);
+		return;
+	}
+
+	// Harbour-Master
+	string sPortman = sColony + "_Portman";
+	int iPortman = GetCharacterIndex(sPortman);
+	if (iPortman == -1){
+		Log_TestInfo("Couldn't find colony's harbour-master after capture: " + sPortman);
+	}
+	else{
+		ref rPortman = GetCharacter(iPortman);
+		rPortman.nation = Colonies[FindColony(sColony)].nation;
+	}
+
+	// TODO: expand this to other characters
 }
