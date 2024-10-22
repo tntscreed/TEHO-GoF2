@@ -494,11 +494,33 @@ void ProcessDialogEvent()
 			}
 			Link.l2.go = "VEX_DEBUG_PERSONAL_GOD";
 
-			Link.l3 = "Add 10,000,000 gold!";
-			Link.l3.go = "VEX_DEBUG_PERSONAL_GOLD";
+			if(CheckAttribute(pchar, "worldmapencountersoff") && pchar.worldmapencountersoff == 1){
+				Link.l3 = "Enable worldmap encounters!";
+			}
+			else{
+				Link.l3 = "Disable worldmap encounters!";
+			}
+			Link.l3.go = "VEX_DEBUG_PERSONAL_WORLDMAP_ENCOUNTERS";
+
+			Link.l4 = "Add 10,000,000 gold!";
+			Link.l4.go = "VEX_DEBUG_PERSONAL_GOLD";
 
 			Link.l99 = "Exit";
 			Link.l99.go = "exit";
+		break;
+
+		case "VEX_DEBUG_PERSONAL_WORLDMAP_ENCOUNTERS":
+			if(CheckAttribute(pchar, "worldmapencountersoff") && pchar.worldmapencountersoff == 1){
+				pchar.worldmapencountersoff = 0;
+				Dialog.Text = "Worldmap encounters enabled!";
+			}
+			else{
+				pchar.worldmapencountersoff = 1;
+				Dialog.Text = "Worldmap encounters disabled!";
+			}
+
+			Link.l1 = "Exit";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_PERSONAL_HERCULES":
