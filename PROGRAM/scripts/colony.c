@@ -1580,17 +1580,17 @@ void SetTownOfficForts(ref ChOf, int fnat)
 
     SetCaptanModelByEncType(ChOf, "war");
     // отношения как у губера нации
-	if (fnat != PIRATE)
+
+	int iGovernor = GetCharacterIndex(NationShortName(fnat)+"_guber");
+	if (fnat != PIRATE && iGovernor != -1)
 	{
-	    ref govenour = CharacterFromID(NationShortName(fnat)+"_guber"); // пираты не захватывают города сами.
-	    SetCharacterRelationAsOtherCharacter(sti(ChOf.index), sti(govenour.index));
+	     // пираты не захватывают города сами.
+	    SetCharacterRelationAsOtherCharacter(sti(ChOf.index), &Characters[iGovernor]);
     }
     else
     {
         SetCharacterRelationAsOtherCharacter(sti(ChOf.index), -1);
     }
-    /*   to_do тут нации сторожевиков
-    */
 }
 ///////////////////////////////////////////////////////////   ОТБИВ ГОРОДА //////////////////////////////////
 //  прерывания
