@@ -31,7 +31,7 @@ bool    bDisableCharacterMenu  = false;
 // флаг - игрок читер
 bool    bPlayerIsCheater =  false;  // на перспективу, патчем
 // режим супер читов
-bool    bBettaTestMode = false; // в релизе убрать!!!!!!!!!!!!!
+bool    bBettaTestMode = true; // в релизе убрать!!!!!!!!!!!!!
 // показывать quest_reaction Log
 bool    bQuestLogShow  = false;
 // показывать инфу по балансу
