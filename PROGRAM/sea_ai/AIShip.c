@@ -4251,7 +4251,7 @@ void Ship_UpdateTmpSkills(ref rCharacter)
         if (sti(rCharacter.index) == GetMainCharacterIndex())
         {
             //if (SeaCameras.Camera == "SeaDeckCamera")
-			if(Scene.Camera == DECK_CAMERA)
+			if(Scene.Camera == DECK_CAMERA) // Vex camera fix
 			{
 				aTmpSkill.Accuracy = Clampf(stf(aTmpSkill.Accuracy) + 0.15);
 			}
