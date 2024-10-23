@@ -4250,7 +4250,11 @@ void Ship_UpdateTmpSkills(ref rCharacter)
 
         if (sti(rCharacter.index) == GetMainCharacterIndex())
         {
-            if (SeaCameras.Camera == "SeaDeckCamera")
+            //if (SeaCameras.Camera == "SeaDeckCamera")
+			if(Scene.Camera == DECK_CAMERA)
+			{
+				aTmpSkill.Accuracy = Clampf(stf(aTmpSkill.Accuracy) + 0.15);
+			}
         	{
         		aTmpSkill.Accuracy = Clampf(stf(aTmpSkill.Accuracy) + 0.15); // было 0.4
         	}
