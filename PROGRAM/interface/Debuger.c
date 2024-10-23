@@ -373,7 +373,7 @@ void CalculateInfoDataF2()
 	Statistic_AddValue(PChar, "Cheats.F2", 1);
 }
 
-string descF3 = "Create Sea Environment!";
+string descF3 = "Weather Create Sea Environment!";
 
 void CalculateInfoDataF3()
 {
@@ -382,12 +382,12 @@ void CalculateInfoDataF3()
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
 
-	CreateSeaEnvironment();
+	WhrCreateSeaEnvironment();
 
 	Statistic_AddValue(PChar, "Cheats.F3", 1);
 }
 
-string descF4 = "Cheat 4";
+string descF4 = "Reload Sea!";
 
 void CalculateInfoDataF4()
 {
@@ -395,10 +395,13 @@ void CalculateInfoDataF4()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	Sea_ReloadStart();
+
 	Statistic_AddValue(PChar, "Cheats.F4", 1);
 }
 
-string descF5 = "Cheat 5";
+string descF5 = "Delete Weather";
 int BOAL_debug_num = 1;
 void CalculateInfoDataF5()
 {
@@ -406,10 +409,14 @@ void CalculateInfoDataF5()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	DeleteWeatherEnvironment();
+	DeleteWeather();
+
 	Statistic_AddValue(PChar, "Cheats.F5", 1);
 }
 
-string descF6 = "Cheat 6";
+string descF6 = "Update Weather";
 
 void CalculateInfoDataF6()
 {
@@ -417,10 +424,13 @@ void CalculateInfoDataF6()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	Whr_UpdateWeather();
+
 	Statistic_AddValue(PChar, "Cheats.F6", 1);
 }
 
-string descF7 = "Cheat 7";
+string descF7 = "Recreate Weather Environment";
 
 void CalculateInfoDataF7()
 {
@@ -428,6 +438,9 @@ void CalculateInfoDataF7()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	CreateWeatherEnvironment();
+
 	Statistic_AddValue(PChar, "Cheats.F7", 1);
 }
 
