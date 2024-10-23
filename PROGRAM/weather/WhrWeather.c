@@ -598,7 +598,7 @@ void CreateWeatherEnvironment()
 
 void Whr_UpdateWeather()
 {
-	if (!isEntity(&Weather)) { return; }
+	//if (!isEntity(&Weather)) { return; }
 
 	CreateWeatherEnvironment();
 	MoveWeatherToLayers(sNewExecuteLayer, sNewRealizeLayer);
