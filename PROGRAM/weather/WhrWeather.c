@@ -628,7 +628,7 @@ void Whr_LoadNextWeather(int nPlus)
 			return;
 		}
 	}
-	trace("ПОГОДА: " + Weathers[iCurWeatherNum].id + " ОСВЕЩЕНИЕ: " + Weathers[iCurWeatherNum].Lighting);
+	Log_TestInfo("Weather: " + Weathers[iCurWeatherNum].id + " Lighting: " + Weathers[iCurWeatherNum].Lighting);
 	trace("Sun: HeightAngle: " + Weathers[iCurWeatherNum].Sun.HeightAngle);
 
 	iNextWeatherNum = iCurWeatherNum;
