@@ -444,18 +444,19 @@ void CalculateInfoDataF7()
 	Statistic_AddValue(PChar, "Cheats.F7", 1);
 }
 
-string descF8 = "Cheat 8";
+string descF8 = "Output Weather";
 
 void CalculateInfoDataF8()
 {
-	totalInfo = descF8;
-	PlaySound("interface\knock.wav");
-    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
-    SetFormatedText("INFO_TEXT",totalInfo);
-	Statistic_AddValue(PChar, "Cheats.F8", 1);
+	if(GetAttributesNum(&Weather) > 0){
+		Log_SetStringToLog("Weather has attributes");
+	}
+	else{
+		Log_SetStringToLog("Weather has no attributes");
+	}
 }
 
-string descF9 = "Cheat 9";
+string descF9 = "Fix Weather";
 
 void CalculateInfoDataF9()
 {
@@ -463,10 +464,24 @@ void CalculateInfoDataF9()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	DeleteWeatherEnvironment();
+	//CreateWeatherEnvironment();
+	//WhrDeleteSkyEnvironment();
+	//WhrCreateSkyEnvironment();
+	//CreateSea(EXECUTE, REALIZE);
+	CreateSea(EXECUTE, REALIZE);
+	Whr_UpdateWeather();
+	SetEventHandler("frame", "LoadNextWeather_frame", 1);
 	Statistic_AddValue(PChar, "Cheats.F9", 1);
 }
 
-string descF10 = "Cheat 10";
+void LoadNextWeather_frame(){
+	DelEventHandler("frame", "LoadNextWeather_frame");
+	Whr_LoadNextWeather(0);
+}
+
+string descF10 = "Load 'next' weather 0";
 
 void CalculateInfoDataF10()
 {
@@ -474,10 +489,13 @@ void CalculateInfoDataF10()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	Whr_LoadNextWeather(0);
+
 	Statistic_AddValue(PChar, "Cheats.F10", 1);
 }
 
-string descF11 = "Cheat 11";
+string descF11 = "Dump Weather and Sky";
 
 void CalculateInfoDataF11()
 {
@@ -485,6 +503,12 @@ void CalculateInfoDataF11()
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	trace("====DUMPING WEATHER====")
+	DumpAttributes(&Weather);
+	trace("====DUMPING SKY====")
+	DumpAttributes(&Sky);
+
 	Statistic_AddValue(PChar, "Cheats.F11", 1);
 }
 
