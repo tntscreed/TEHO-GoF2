@@ -37,6 +37,20 @@ RESOURCE/Textures/INTERFACES/PORTRAITS/*
 !RESOURCE/Textures/INTERFACES/empty_colony.tga.tx
 !RESOURCE/Textures/Characters/
 
+!RESOURCE/Textures/Weather
+RESOURCE/Textures/Weather/*
+!RESOURCE/Textures/Weather/SUN
+RESOURCE/Textures/Weather/SUN/*
+!RESOURCE/Textures/Weather/SUN/GLOW
+RESOURCE/Textures/Weather/SUN/GLOW/*
+!RESOURCE/Textures/Weather/SUN/GLOW/moonglow.tga.tx
+!RESOURCE/Textures/Weather/SUN/GLOW/moonglowfull.tga.tx
+!RESOURCE/Textures/Weather/SUN/GLOW/moonglownew.tga.tx
+!RESOURCE/Textures/Weather/SUN/GLOW/moonglowwan.tga.tx
+!RESOURCE/Textures/Weather/SUN/GLOW/moonglowwanc.tga.tx
+!RESOURCE/Textures/Weather/SUN/GLOW/moonglowwax.tga.tx
+!RESOURCE/Textures/Weather/SUN/GLOW/moonglowwaxc.tga.tx
+
 # Exclude all GoF "Ammo" textures
 !RESOURCE/Textures/Ammo/axe.tga.tx
 !RESOURCE/Textures/Ammo/bastard.tga.tx
