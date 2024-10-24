@@ -214,7 +214,7 @@ void FindScrshotClass()
 {
 	string layerName;
 	if(bSeaActive && !bAbordageStarted) layerName = SEA_REALIZE;
-	else layerName = "realize";
+	else layerName = "realize"; // TODO: Investigate whether this works. Shouldn't it be just REALIZE?
 
 	if( !GetEntity(&scrshot, "scrshoter") ) {
 		makearef(scrshot,emptyscrshot);
