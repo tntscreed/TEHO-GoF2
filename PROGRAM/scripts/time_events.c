@@ -292,7 +292,7 @@ void Tut_StartGame(string sQuest)
 	DeleteWeatherEnvironment();
 	CreateSea(EXECUTE, REALIZE);
 	Whr_UpdateWeather();
-	SetEventHandler("frame", "LoadNextWeather_frame", 1);
+	SetEventHandler("frame", "LoadNextWeather_frame", 1); // Hacky solution, but I'm out of ideas for now (rare starting deck weather bug)
 	Statistic_AddValue(PChar, "Cheats.F9", 1);
 
     InterfaceStates.Buttons.Save.enable = false;
@@ -304,12 +304,6 @@ void Tut_StartGame(string sQuest)
 	LAi_LocationFightDisable(loadedLocation, true);
 	InterfaceStates.Buttons.Save.enable = false;
 	DoQuestFunctionDelay("Tut_locCamera_1", 0.1);
-}
-
-
-void LoadNextWeather_frame(){ // Hacky solution, but I'm out of ideas for now (rare starting deck weather bug)
-	DelEventHandler("frame", "LoadNextWeather_frame");
-	Whr_LoadNextWeather(0);
 }
 
 void Tut_locCamera_1(string _tmp)

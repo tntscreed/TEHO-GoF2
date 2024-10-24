@@ -1366,3 +1366,8 @@ bool Whr_isRainEnable()
 	}
 	pchar.GenQuest.Storm.Island = sTemp;
 }*/
+
+void LoadNextWeather_frame(){ 
+	DelEventHandler("frame", "LoadNextWeather_frame");
+	Whr_LoadNextWeather(0);
+}

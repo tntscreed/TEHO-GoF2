@@ -476,11 +476,6 @@ void CalculateInfoDataF9()
 	Statistic_AddValue(PChar, "Cheats.F9", 1);
 }
 
-void LoadNextWeather_frame(){
-	DelEventHandler("frame", "LoadNextWeather_frame");
-	Whr_LoadNextWeather(0);
-}
-
 string descF10 = "Load 'next' weather 0";
 
 void CalculateInfoDataF10()
