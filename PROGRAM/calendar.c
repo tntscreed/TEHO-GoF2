@@ -6,6 +6,17 @@
 #define DAY_TIME_DAY		"Day"
 #define DAY_TIME_EVENING	"Evening"
 
+//Levis moon calculations
+#define	MOON_CYCLE			29.530588853
+#define FULL_MOON_DAYS		3
+//Moon States
+#define NEW_MOON			"New Moon"
+#define	QUARTER_ONE			"Waxing crescent moon";
+#define	QUARTER_TWO			"Waxing moon";
+#define FULL_MOON			"Full Moon"
+#define	QUARTER_THREE		"Waning moon"
+#define QUARTER_FOUR		"Waning crescent moon"
+
 float  GetTime(){ return stf(Environment.time); }
 float  GetHour(){ return stf(Environment.date.hour); }
 float  GetMinute(){ return stf(Environment.date.min); }

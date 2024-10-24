@@ -11,6 +11,8 @@ void WhrDeleteSunGlowEnvironment()
 
 void WhrCreateSunGlowEnvironment()
 {
+	//if (sti(aSun.Glow.Enable) == false && sti(aSun.Flare.Enable) == false)) return;
+
 	// create sunglow
 	if (!isEntity(&SunGlow))
 	{
@@ -34,6 +36,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 	aref aOverflow1;	makearef(aOverflow1, aSun1.Overflow);
 	aref aReflection1;	makearef(aReflection1, aSun1.Reflection);
 
+	string moonpath = Whr_getMoonTexture();
 	aref aFlares,aFlareN;
 	int iNumFlares, i;
 	string sTemp;
@@ -46,22 +49,22 @@ void WhrFillSunGlowData(int nw1, int nw2)
 			{
 				SunGlow.Glow.Dist = Whr_GetFloat(aGlow1,"Dist");
 				SunGlow.Glow.Size = Whr_GetFloat(aGlow1,"Size");
-				SunGlow.Glow.RotateSpeed = Whr_GetColor(aGlow1,"RotateSpeed");
 				SunGlow.Glow.Texture = Whr_GetString(aGlow1,"Texture");
-				SunGlow.Glow.DecayTime = Whr_GetColor(aGlow1,"DecayTime");
-				SunGlow.Glow.TechniqueNoZ = Whr_GetString(aGlow1,"TechniqueNoZ");
-				SunGlow.Glow.TechniqueZ = Whr_GetString(aGlow1,"TechniqueZ");
 				SunGlow.Glow.Color = Whr_GetColor(aGlow1,"Color");
+				SunGlow.Glow.RotateSpeed = Whr_GetColor(aGlow1,"RotateSpeed");
+				SunGlow.Glow.DecayTime = Whr_GetColor(aGlow1,"DecayTime");
+				SunGlow.Glow.TechniqueZ = Whr_GetString(aGlow1,"TechniqueZ");
+				SunGlow.Glow.TechniqueNoZ = Whr_GetString(aGlow1,"TechniqueNoZ");
 			}
 
 			if (sti(aSun1.Flare.Enable) != false)
 			{
+				SunGlow.Flare.Dist = Whr_GetFloat(aFlare1,"Dist");
+				SunGlow.Flare.Technique = Whr_GetString(aFlare1,"Technique");
+				SunGlow.Flare.Scale = Whr_GetFloat(aFlare1,"Scale");
 				SunGlow.Flare.Texture = Whr_GetString(aFlare1,"Texture");
 				SunGlow.Flare.TexSizeX = Whr_GetString(aFlare1,"TexSizeX");
 				SunGlow.Flare.TexSizeY = Whr_GetString(aFlare1,"TexSizeY");
-				SunGlow.Flare.Technique = Whr_GetString(aFlare1,"Technique");
-				SunGlow.Flare.Scale = Whr_GetFloat(aFlare1,"Scale");
-				SunGlow.Flare.Dist = Whr_GetFloat(aFlare1,"Dist");
 
 				makearef(aFlares,aSun1.Flares);
 				iNumFlares = GetAttributesNum(aFlares);
@@ -72,13 +75,12 @@ void WhrFillSunGlowData(int nw1, int nw2)
 					SunGlow.Flares.(sTemp) = GetAttributeValue(aFlareN);
 				}
 			}
-
 			if (sti(aSun1.Overflow.Enable) != false)
 			{
 				SunGlow.Overflow.Texture = Whr_GetString(aOverflow1,"Texture");
-				SunGlow.Overflow.Color = Whr_GetColor(aOverflow1,"Color");
-				SunGlow.Overflow.Size = Whr_GetFloat(aOverflow1,"Size");
 				SunGlow.Overflow.Technique = Whr_GetString(aOverflow1,"Technique");
+				SunGlow.Overflow.Size = Whr_GetFloat(aOverflow1,"Size");
+				SunGlow.Overflow.Color = Whr_GetColor(aOverflow1,"Color");
 				SunGlow.Overflow.Start = Whr_GetFloat(aOverflow1,"Start");
 			}
 
@@ -86,15 +88,15 @@ void WhrFillSunGlowData(int nw1, int nw2)
 			{
 				SunGlow.Reflection.Texture = Whr_GetString(aReflection1, "Texture");
 				SunGlow.Reflection.Technique = Whr_GetString(aReflection1, "Technique");
-				SunGlow.Reflection.Dist = Whr_GetFloat(aReflection1, "Dist");
 				SunGlow.Reflection.Size = Whr_GetFloat(aReflection1, "Size");
+				SunGlow.Reflection.Dist = Whr_GetFloat(aReflection1, "Dist");
 				SunGlow.Reflection.Color = Whr_GetColor(aReflection1, "Color");
 			}
 			SunGlow.Moon = aSun1.Moon;
 		}
 	}
 	else
-	{	
+	{
 		if (sti(aSun1.Glow.Enable) != false)
 		{
 			SunGlow.Glow.Dist = Whr_GetFloat(aGlow1,"Dist");
@@ -106,15 +108,14 @@ void WhrFillSunGlowData(int nw1, int nw2)
 			SunGlow.Glow.TechniqueZ = Whr_GetString(aGlow1,"TechniqueZ");
 			SunGlow.Glow.TechniqueNoZ = Whr_GetString(aGlow1,"TechniqueNoZ");
 		}
-
 		if (sti(aSun1.Flare.Enable) != false)
 		{
+			SunGlow.Flare.Dist = Whr_GetFloat(aFlare1,"Dist");
+			SunGlow.Flare.Technique = Whr_GetString(aFlare1,"Technique");
+			SunGlow.Flare.Scale = Whr_GetFloat(aFlare1,"Scale");
 			SunGlow.Flare.Texture = Whr_GetString(aFlare1,"Texture");
 			SunGlow.Flare.TexSizeX = Whr_GetString(aFlare1,"TexSizeX");
 			SunGlow.Flare.TexSizeY = Whr_GetString(aFlare1,"TexSizeY");
-			SunGlow.Flare.Technique = Whr_GetString(aFlare1,"Technique");
-			SunGlow.Flare.Dist = Whr_GetFloat(aFlare1,"Dist");
-			SunGlow.Flare.Scale = Whr_GetFloat(aFlare1,"Scale");
 
 			makearef(aFlares,aSun1.Flares);
 			iNumFlares = GetAttributesNum(aFlares);
@@ -125,16 +126,14 @@ void WhrFillSunGlowData(int nw1, int nw2)
 				SunGlow.Flares.(sTemp) = GetAttributeValue(aFlareN);
 			}
 		}
-
 		if (sti(aSun1.Overflow.Enable) != false)
 		{
 			SunGlow.Overflow.Texture = Whr_GetString(aOverflow1,"Texture");
-			SunGlow.Overflow.Color = Whr_GetColor(aOverflow1,"Color");
-			SunGlow.Overflow.Size = Whr_GetFloat(aOverflow1,"Size");
 			SunGlow.Overflow.Technique = Whr_GetString(aOverflow1,"Technique");
+			SunGlow.Overflow.Size = Whr_GetFloat(aOverflow1,"Size");
+			SunGlow.Overflow.Color = Whr_GetColor(aOverflow1,"Color");
 			SunGlow.Overflow.Start = Whr_GetFloat(aOverflow1,"Start");
 		}
-
 		if (sti(aSun1.Reflection.Enable) != false)
 		{
 			SunGlow.Reflection.Texture = Whr_GetString(aReflection1, "Texture");
@@ -143,13 +142,12 @@ void WhrFillSunGlowData(int nw1, int nw2)
 			SunGlow.Reflection.Dist = Whr_GetFloat(aReflection1, "Dist");
 			SunGlow.Reflection.Color = Whr_GetColor(aReflection1, "Color");
 		}
-
 		SunGlow.Moon = aSun1.Moon;
 	}
-
+	
 	if( stf(Environment.Time) < 4.5 || stf(Environment.Time) > 23.5 ) {
 		SunGlow.Moon = true;
-		SunGlow.Reflection.Texture = "weather\sun\reflection\refl_night.tga.tx";
+		SunGlow.Reflection.Texture = "weather\sun\reflection\refl_night.tga";
 	} else {
 		SunGlow.Moon = false;
 	}
@@ -157,41 +155,39 @@ void WhrFillSunGlowData(int nw1, int nw2)
 	if( nw2 >= 0)
 	{
 		SunGlow.Glow.SunTexture = "weather\sun\glow\sun.tga.tx";
+		SunGlow.Glow.MoonTexture = moonpath;
 		SunGlow.Glow.GlowTexture = "weather\sun\glow\sunglow.tga.tx";
-		
-		if (stf(Environment.date.day) > 0 && stf(Environment.date.day) < 4) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon00.tga.tx";
-		if (stf(Environment.date.day) > 3 && stf(Environment.date.day) < 8) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon01.tga.tx";
-		if (stf(Environment.date.day) > 7 && stf(Environment.date.day) < 12) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon02.tga.tx";
-		if (stf(Environment.date.day) > 11 && stf(Environment.date.day) < 16) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon03.tga.tx";
-		if (stf(Environment.date.day) > 15 && stf(Environment.date.day) < 20) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon04.tga.tx";
-		if (stf(Environment.date.day) > 19 && stf(Environment.date.day) < 24) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon05.tga.tx";
-		if (stf(Environment.date.day) > 23 && stf(Environment.date.day) < 28) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon06.tga.tx";
-		if (stf(Environment.date.day) > 27 && stf(Environment.date.day) < 32) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon07.tga.tx";
-		
 		SunGlow.Glow.SunSize = 400;
 		SunGlow.Glow.MoonSize = 110;
-		SunGlow.Glow.Color = argb(255,255,255,255);
+		SunGlow.Glow.Color = argb(0,255,255,255);
 	}
 	else
 	{
 		if (sunIsShine)
 		{
-			SunGlow.Glow.SunTexture = "weather\sun\glow\sun.tga";
-			SunGlow.Glow.GlowTexture = "weather\sun\glow\sunglow.tga";
-
-			if (stf(Environment.date.day) > 0 && stf(Environment.date.day) < 4) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon00.tga.tx";
-			if (stf(Environment.date.day) > 3 && stf(Environment.date.day) < 8) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon01.tga.tx";
-			if (stf(Environment.date.day) > 7 && stf(Environment.date.day) < 12) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon02.tga.tx";
-			if (stf(Environment.date.day) > 11 && stf(Environment.date.day) < 16) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon03.tga.tx";
-			if (stf(Environment.date.day) > 15 && stf(Environment.date.day) < 20) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon04.tga.tx";
-			if (stf(Environment.date.day) > 19 && stf(Environment.date.day) < 24) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon05.tga.tx";
-			if (stf(Environment.date.day) > 23 && stf(Environment.date.day) < 28) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon06.tga.tx";
-			if (stf(Environment.date.day) > 27 && stf(Environment.date.day) < 32) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon07.tga.tx";
-
+			SunGlow.Glow.SunTexture = "weather\sun\glow\sun.tga.tx";
+			SunGlow.Glow.MoonTexture = moonpath;
+			SunGlow.Glow.GlowTexture = "weather\sun\glow\sunglow.tga.tx";
 			SunGlow.Glow.SunSize = 400;
 			SunGlow.Glow.MoonSize = 110;
-			SunGlow.Glow.Color = argb(255,255,255,255);
+			SunGlow.Glow.Color = argb(0,255,255,255);
 		}
+	}
+	if (CheckAttribute(&SunGlow, "Glow"))
+        SunGlow.Glow.skipFade = true;
+	//#20180615-01
+	if(bSeaActive) {
+        if (CheckAttribute(&SunGlow, "Flare.Dist"))
+            SunGlow.Flare.Dist = 6500.0;
+        if (CheckAttribute(&SunGlow, "Glow")) {
+            SunGlow.Glow.Dist = 6500.0;
+
+            SunGlow.Glow.Size = sti(SunGlow.Glow.Size) * 2.15;
+            SunGlow.Glow.SunSize = sti(SunGlow.Glow.SunSize) * 2.15;
+            SunGlow.Glow.MoonSize = sti(SunGlow.Glow.MoonSize) * 2.15;
+        }
+        if (CheckAttribute(&SunGlow, "Overflow.Size"))
+            SunGlow.Overflow.Size = sti(SunGlow.Overflow.Size) * 2.15;
 	}
 }
 
@@ -204,4 +200,13 @@ void MoveSunGlowToLayers(int sExecuteLayer, int sRealizeLayer)
 
 	LayerAddObject(sExecuteLayer, &SunGlow, -2);
 	LayerAddObject(sRealizeLayer, &SunGlow, -2);
+}
+
+void SetSunriseHours()
+{
+	float fBeginTime = 6.75;
+	float fEndTime = 20.5;
+
+	Weather.Sun.BeginTime = fBeginTime;
+    Weather.Sun.EndTime = fEndTime;
 }

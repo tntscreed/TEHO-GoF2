@@ -1,6 +1,7 @@
 // BOAL 07.09.03  Mods on_off mode -->
 #include "_LSC_on_off.h"
 // BOAL 07.09.03  Mods on_off mode <--
+#include "InternalSettings.h" // where the more esoteric/programmerly things from BS.h got moved. JA
 #include "storm-engine\layers.h"
 #include "storm-engine\events.h"
 #include "globals.c"

@@ -14,6 +14,7 @@
 #define SUPERIOR_SPYGLASS		"spyglass4"
 #define POTION					"potion1"
 #define INVALID_SUIT			"NoSuit" // Warship 25.10.08
+#define COMPASS_ITEM_TYPE		"compass"		// PB
 
 // items group id
 #define GUN_ITEM_TYPE			"gun"		

@@ -48,6 +48,10 @@ bool	bStorm, bTornado;
 bool	bSeaQuestGroupHere = false;
 bool 	bSeaCanGenerateShipSituation = true; 
 
+bool	bDeckStarted = false;
+bool	bCrewStarted = false;
+bool	bMutinyDeckStarted = false;
+
 int		iStormLockSeconds = 0;
 
 object	Island, IslandReflModel, sLightModel, lighthouseLightModel;
@@ -1562,6 +1566,8 @@ void Sea_LoadIsland(string sIslandID)
 		SendMessage(&SeaLocatorShow, "a", &Islands[iIslandIndex]);
 		Fort_Login(iIslandIndex);	
 		SetTexturePath(0, "");
+		if(!bstorm) Sea.MaxSeaHeight = 12.0; // mirsaneli: small waves around islands in normal conditions
+		if (bWeatherIsStorm) {Sea.Sea2.Transparency = 0;}	// mirsaneli: sets the transparency to 0 when storm is active (fixes transparent water near towns/beaches during storms)																																								
 
 		CreateCoastFoamEnvironment(sIslandID, SEA_EXECUTE, SEA_REALIZE);
 		//eddy. запишем в переменные координаты форта
@@ -1892,3 +1898,15 @@ void Sea_LoginGroupCurrentSea(string sGroupID)
 	RefreshBattleInterface();
 }
 
+bool ownDeckStarted()//MAXIMUS
+{
+	if(bDeckStarted || bCabinStarted || bCrewStarted || bMutinyDeckStarted) return true;
+// KK -->
+	ref mchr = GetMainCharacter();
+	if (CheckAttribute(mchr, "location")) {
+		if (mchr.location == "Tutorial_Deck") return true;
+		if (HasSubStr(mchr.location, "Companion_Cabin_")) return true;
+	}
+// <-- KK
+	return false;
+}
