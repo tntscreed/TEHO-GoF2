@@ -124,8 +124,9 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 	
 	if(sInterfaceType == INTERFACETYPE_CHEST || sInterfaceType == INTERFACETYPE_BARREL) // Только если сундук - у него никаких кнопок нету
 	{
-		CreateString(true, "VersionInfo", VERSION_NUMBER1 + GetVerNum(), FONT_CAPTION, COLOR_NORMAL, 400, 550, SCRIPT_ALIGN_CENTER, 0.8);
-		CreateString(true, "DevTeam", VERSION_NUMBER3, FONT_CAPTION, COLOR_NORMAL, 400, 566, SCRIPT_ALIGN_CENTER, 0.8);
+		CreateString(true, "GameName", VERSION_NUMBER1, FONT_CAPTION, COLOR_NORMAL, 400, 548, SCRIPT_ALIGN_CENTER, 0.8);
+		//CreateString(true, "VersionInfo", GetVerNum(), FONT_NORMAL, COLOR_NORMAL, 400, 560, SCRIPT_ALIGN_CENTER, 0.8);
+		CreateString(true, "HelpInfo", GAME_HELP_INFO, FONT_NORMAL, COLOR_NORMAL, 400, 568, SCRIPT_ALIGN_CENTER, 0.8);
 		
 		if(sInterfaceType == INTERFACETYPE_CHEST)	Tab3Caption = "Chest items";
 		if(sInterfaceType == INTERFACETYPE_BARREL)	Tab3Caption = "Barrel items";		

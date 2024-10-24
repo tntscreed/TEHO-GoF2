@@ -64,8 +64,8 @@ void InitInterface_gm(string iniName)
 
 	string sText = "";
 
-	sText = "BlackMark Studio, Akella ";
-	sText = sText + "- 2019";
+	sText = "PiratesAhoy!, BlackMark Studio ";
+	sText = sText + "- 2024";
 	SetFormatedText("COPYRIGHTS_TEXT", sText);
 	
 	string sDLC = "";

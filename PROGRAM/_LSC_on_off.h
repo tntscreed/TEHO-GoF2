@@ -1,15 +1,16 @@
 // BOAL 07.09.03  Mods on_off mode
 // здесь и далее ник boal - это разработческий ник ALexusB
 
-#define VERSION_NUMBER1       "Sea Dogs: To Each His Own  " // Корсары: КС modding base #1
-#define VERSION_NUMBER2       "ver. 1.7.3.ENG (26.11.21) x64"
-#define VERSION_NUMBER3       "BlackMark.bz"
+#define VERSION_NUMBER1       "Gentlemen of Fortune: Reborn  " // Корсары: КС modding base #1
+#define VERSION_NUMBER2       "ver. 1.0 x64"
+#define VERSION_NUMBER3       "PirateHorizons.com"
+#define GAME_HELP_INFO        "Need help? Join our Discord or visit PirateHorizons.com!"
 
 #define VERSION_NUM      99940  // текущий номер
 #define VERSION_NUM_PRE  99940  // последний совместмый
 
 //Сайт: http://seadogs.4fans.org
-#define VERSION_WWW     "http://www.blackmark.bz"
+#define VERSION_WWW     "https://www.PirateHorizons.com"
 
 // Show special message for test game statment
 #define MOD_BETTATESTMODE			"On"  // On -DEV version; Test - TST ver; Off - relize
