@@ -17,6 +17,7 @@ void WhrCreateRainEnvironment()
 	{
 		CreateEntity(&Rain,"rain");
 	}
+
 	FillRainData(iCurWeatherNum,iBlendWeatherNum);
 	Rain.isDone = "";
 
@@ -90,22 +91,23 @@ void FillRainData(int nw1, int nw2)
 		Rain.WindSpeedJitter = Whr_BlendFloat( fBlend, Whr_GetFloat(aRain1,"WindSpeedJitter"), Whr_GetFloat(aRain2,"WindSpeedJitter") );
 		Rain.TimeBlend = Whr_BlendLong( fBlend, Whr_GetLong(aRain1,"TimeBlend"), Whr_GetLong(aRain2,"TimeBlend") );
 		Rain.MaxBlend = Whr_BlendLong( fBlend, Whr_GetLong(aRain1,"MaxBlend"), Whr_GetLong(aRain2,"MaxBlend") );
-
+		
 		Rain.RainDrops.DropsNearNum = Whr_BlendLong( fBlend, Whr_GetLong(aRain1, "DropsNearNum"), Whr_GetLong(aRain2, "DropsNearNum"));
 		Rain.RainDrops.DropsFarNum = Whr_BlendLong( fBlend, Whr_GetLong(aRain1, "DropsFarNum"), Whr_GetLong(aRain2, "DropsFarNum"));
 		Rain.RainDrops.DropsNearRadius = Whr_BlendFloat( fBlend, Whr_GetFloat(aRain1, "DropsNearRadius"), Whr_GetFloat(aRain2, "DropsNearRadius"));
 		Rain.RainDrops.DropsFarRadius = Whr_BlendFloat( fBlend, Whr_GetFloat(aRain1, "DropsFarRadius"), Whr_GetFloat(aRain2, "DropsFarRadius"));
 		Rain.RainDrops.DropsLifeTime = Whr_BlendFloat( fBlend, Whr_GetFloat(aRain1, "DropsLifeTime"), Whr_GetFloat(aRain2, "DropsLifeTime"));
-		Rain.RainDrops.DropsSize = Whr_BlendFloat( fBlend, Whr_GetFloat(aRain1, "DropsSize"), Whr_GetFloat(aRain2, "DropsSize"));77
+		Rain.RainDrops.DropsSize = Whr_BlendFloat( fBlend, Whr_GetFloat(aRain1, "DropsSize"), Whr_GetFloat(aRain2, "DropsSize"));
 		Rain.RainDrops.DropsColor = Whr_GetLong(aRain1, "DropsColor"); //Whr_BlendColor( fBlend, Whr_GetColor(aRain1, "DropsColor"), Whr_GetColor(aRain2, "DropsColor"));
 		Rain.RainDrops.DropsTexture = Whr_GetString(aRain1, "DropsTexture");
 
 		Rain.Rainbow.Enable = Whr_GetLong(aRainbow1,"Enable") || Whr_GetLong(aRainbow2,"Enable");
 		Rain.Rainbow.Texture = Whr_GetString(aRainbow1,"Texture");
+
 	}
 }
 
-void MoveRainToLayers(string sExecuteLayer, string sRealizeLayer)
+void MoveRainToLayers(int sExecuteLayer, int sRealizeLayer)
 {
 	LayerDelObject(EXECUTE,&Rain);
 	LayerDelObject(REALIZE,&Rain);
@@ -118,5 +120,5 @@ void MoveRainToLayers(string sExecuteLayer, string sRealizeLayer)
 
 void ShowRain(int bShow)
 {
-	SendMessage(Rain,"ll",1,bShow);
+	SendMessage(&Rain,"ll",1,bShow);
 }

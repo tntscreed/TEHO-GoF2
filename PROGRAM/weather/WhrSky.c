@@ -4,15 +4,13 @@ object Sky;
 
 float fPrevCameraAX = 0;
 
-//float fPrevCameraAX = 0;
-
 void WhrDeleteSkyEnvironment()
 {
 	if(isEntity(&Sky))
 	{
 		DeleteClass(&Sky);
 	}
-
+	
 	DeleteAttribute(&Sky, "");
 }
 
@@ -26,48 +24,46 @@ void WhrCreateSkyEnvironment()
 	if(!isEntity(&Sky))
 	{
 		CreateEntity(&Sky, "Sky");
-		//#20180613-01, #20180615-01
 		if(bSeaActive)
-            LayerAddObject(SEA_REFLECTION, &Sky, 1);
+            LayerAddObject(SEA_REFLECTION,&Sky,1);
         else
-            LayerAddObject(SEA_REFLECTION, &Sky, 11);
+            LayerAddObject(SEA_REFLECTION,&Sky,11);
 	}
-
 	FillSkyDir(&Sky);
 	//Sky.Dir = Whr_GetString(aSky, "Dir");
 
 	Sky.Color = Whr_GetColor(aSky, "Color");
-	Sky.RotateSpeed = Whr_GetFloat(aSky, "Rotate"); // Warship 02.06.09
+	Sky.RotateSpeed = Whr_GetFloat(aSky, "Rotate"); // Warship 02.06.09 - ротация неба ниже
 	Sky.Angle = Whr_GetFloat(aSky, "Angle");
 	Sky.Size = Whr_GetFloat(aSky, "Size");
 
-	//#20180615-01
-
-    if(bSeaActive) {
+    if(bSeaActive) 
+	{
         Sky.Size = Whr_GetFloat(aSky, "Size");
         Sky.techSky = "Sky";
         Sky.techSkyBlend = "SkyBlend";
         Sky.techskyAlpha = "skyblend_alpha";
         Sky.techSkyFog = "SkyFog";
 	}
-	else {
-	    Sky.Size = 2048; // == 512.0 * 4;
+	else 
+	{
+	    Sky.Size = 2048; 
 	    Sky.techSky = "SkyLand";
         Sky.techSkyBlend = "SkyBlendLand";
         Sky.techskyAlpha = "skyblend_alphaLand";
         Sky.techSkyFog = "SkyFogLand";
 	}
-
 	Sky.isDone = "";
 }
 
-// Warship 02.06.09
+// Warship 02.06.09 - апдейт параметров неба (например, скорость ротации в зависимости от силы ветра)
 void UpdateSky()
 {
 	float windSpeed = 5.0;
-	float timeScale = 1.0 + TimeScaleCounter * 0.25;
+	float timeScale = 1.0 + TimeScaleCounter * 0.25; // Текущее ускорение времени
 
-	if(timeScale <= 2.0)
+	// Вычисление делителя для ускорения, чтоб на x8 бешенно не крутились
+	if(timeScale <= 2)
 	{
 		timeScale = 1.0;
 	}
@@ -75,13 +71,21 @@ void UpdateSky()
 	{
 		timeScale /= 2.0;
 	}
+	
 	if(CheckAttribute(Weather, "Wind.Speed"))
 	{
 		windSpeed = stf(Weather.Wind.Speed);
 	}
-
-	// Sky.RotateSpeed == 0.05
-	Sky.RotateSpeed = windSpeed / 3000 / timeScale;
+	
+	if(CheckAttribute(&InterfaceStates,"ROTATESKY") && sti(InterfaceStates.ROTATESKY) == 1) // belamour ( ROTATE_SKY == 1)
+	{	
+		// Sky.RotateSpeed == 0.05 - это уже много
+		Sky.RotateSpeed = windSpeed / 8000 / timeScale;
+	}
+	else
+	{
+		Sky.RotateSpeed = 0.0;
+	}	
 }
 
 void FillSkyDir(aref aSky)
@@ -105,8 +109,7 @@ void FillSkyDir(aref aSky)
 
 			satr = "d" + sti(Weathers[i].Hour.Min);
 			if( satr=="d24" ) {continue;}
-
-//navy -->
+            //navy -->
 			sDir = Weathers[i].Sky.Dir;
 			if (CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
 			{
@@ -117,7 +120,7 @@ void FillSkyDir(aref aSky)
 					sDir = "weather\skies\Storm01\";
 				}
 			}
-//navy <--
+            //navy <--
 			aSky.Dir.(satr) = sDir;
 		}
 		aSky.Dir = GetTime();
@@ -130,14 +133,7 @@ void MoveSkyToLayers(int sExecuteLayer, int sRealizeLayer)
 	LayerDelObject(REALIZE,&Sky);
 	LayerDelObject(SEA_EXECUTE,&Sky);
 	LayerDelObject(SEA_REALIZE,&Sky);
-
-	//#20180615-01
-	if(bSeaActive) {
+	
         LayerAddObject(sExecuteLayer,&Sky,2);
         LayerAddObject(sRealizeLayer,&Sky,3);
 	}
-    else {
-        LayerAddObject(sExecuteLayer,&Sky,12);
-        LayerAddObject(sRealizeLayer,&Sky,13);
-    }
-}
