@@ -1,0 +1,775 @@
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1.gm
+objects: 13, textures: 12, materials: 14
+triangles: 6202, vertices: 9481
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 3.049824,1.700787,7.678562, radius: 3.916842
+-----------------------------------
+traverses/vertex: 24.655487, max depth: 78
+trg: 6202, nodes: 14043, depth: 42, byte/trg: 64, time: 2
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast1.gm
+objects: 6, textures: 6, materials: 6
+triangles: 380, vertices: 655
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.191611,5.311992,0.331161, radius: 2.661186
+-----------------------------------
+traverses/vertex: 8.912281, max depth: 78
+trg: 380, nodes: 697, depth: 36, byte/trg: 60, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast4.gm
+objects: 2, textures: 3, materials: 3
+triangles: 174, vertices: 266
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.360246,0.501551,0.360247, radius: 0.308760
+-----------------------------------
+traverses/vertex: 8.168582, max depth: 78
+trg: 174, nodes: 171, depth: 34, byte/trg: 36, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast3.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 78
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast2.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 78
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a1.gm
+objects: 5, textures: 5, materials: 5
+triangles: 188, vertices: 314
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 3.202435,0.984532,2.046136, radius: 1.953501
+-----------------------------------
+traverses/vertex: 7.384752, max depth: 78
+trg: 188, nodes: 271, depth: 49, byte/trg: 50, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 78
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a3.gm
+objects: 2, textures: 3, materials: 3
+triangles: 137, vertices: 132
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.962031,0.915623,0.033945, radius: 1.080449
+-----------------------------------
+traverses/vertex: 12.282238, max depth: 78
+trg: 137, nodes: 159, depth: 28, byte/trg: 42, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a2.gm
+objects: 2, textures: 2, materials: 2
+triangles: 275, vertices: 228
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.968484,0.899593,0.073438, radius: 1.079993
+-----------------------------------
+traverses/vertex: 13.164848, max depth: 78
+trg: 275, nodes: 338, depth: 29, byte/trg: 45, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_c4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 78
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 78
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d5.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 78
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d6.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 78
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d7.gm
+objects: 1, textures: 1, materials: 1
+triangles: 16, vertices: 17
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.292177,0.000000,0.292178, radius: 0.146089
+-----------------------------------
+traverses/vertex: 3.187500, max depth: 78
+trg: 16, nodes: 3, depth: 2, byte/trg: 7, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1.gm
+objects: 12, textures: 11, materials: 13
+triangles: 6178, vertices: 7577
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 3.049824,1.700787,7.678562, radius: 3.916842
+-----------------------------------
+traverses/vertex: 21.845797, max depth: 53
+trg: 6178, nodes: 13992, depth: 46, byte/trg: 64, time: 2
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast1.gm
+objects: 6, textures: 6, materials: 6
+triangles: 380, vertices: 655
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.191611,5.311992,0.331161, radius: 2.661186
+-----------------------------------
+traverses/vertex: 8.912281, max depth: 53
+trg: 380, nodes: 697, depth: 36, byte/trg: 60, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast4.gm
+objects: 2, textures: 3, materials: 3
+triangles: 174, vertices: 266
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.360246,0.501551,0.360247, radius: 0.308760
+-----------------------------------
+traverses/vertex: 8.168582, max depth: 53
+trg: 174, nodes: 171, depth: 34, byte/trg: 36, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast3.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 53
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast2.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 53
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_path.gm
+objects: 1, textures: 2, materials: 2
+triangles: 24, vertices: 24
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.885556,0.062538,4.642392, radius: 2.396618
+-----------------------------------
+traverses/vertex: 6.111111, max depth: 53
+trg: 24, nodes: 16, depth: 5, byte/trg: 23, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_locator1.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 53
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a1.gm
+objects: 5, textures: 5, materials: 5
+triangles: 188, vertices: 314
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 3.202435,0.984532,2.046136, radius: 1.953501
+-----------------------------------
+traverses/vertex: 7.384752, max depth: 53
+trg: 188, nodes: 271, depth: 49, byte/trg: 50, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 53
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a3.gm
+objects: 2, textures: 3, materials: 3
+triangles: 137, vertices: 132
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.962031,0.915623,0.033945, radius: 1.080449
+-----------------------------------
+traverses/vertex: 12.282238, max depth: 53
+trg: 137, nodes: 159, depth: 28, byte/trg: 42, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a2.gm
+objects: 2, textures: 2, materials: 2
+triangles: 275, vertices: 228
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.968484,0.899593,0.073438, radius: 1.079993
+-----------------------------------
+traverses/vertex: 13.164848, max depth: 53
+trg: 275, nodes: 338, depth: 29, byte/trg: 45, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_c4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 53
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 53
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d5.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 53
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d6.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 53
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d7.gm
+objects: 1, textures: 1, materials: 1
+triangles: 16, vertices: 17
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.292177,0.000000,0.292178, radius: 0.146089
+-----------------------------------
+traverses/vertex: 3.187500, max depth: 53
+trg: 16, nodes: 3, depth: 2, byte/trg: 7, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1.gm
+objects: 12, textures: 11, materials: 13
+triangles: 6178, vertices: 7577
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 3.049824,1.700787,7.678562, radius: 3.916842
+-----------------------------------
+traverses/vertex: 20.381947, max depth: 51
+trg: 6178, nodes: 13992, depth: 46, byte/trg: 64, time: 2
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast1.gm
+objects: 6, textures: 6, materials: 6
+triangles: 380, vertices: 655
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.191611,5.311992,0.331161, radius: 2.661186
+-----------------------------------
+traverses/vertex: 8.912281, max depth: 51
+trg: 380, nodes: 697, depth: 36, byte/trg: 60, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast4.gm
+objects: 2, textures: 3, materials: 3
+triangles: 174, vertices: 266
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.360246,0.501551,0.360247, radius: 0.308760
+-----------------------------------
+traverses/vertex: 8.168582, max depth: 51
+trg: 174, nodes: 171, depth: 34, byte/trg: 36, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast3.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast2.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_path.gm
+objects: 1, textures: 2, materials: 2
+triangles: 24, vertices: 24
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.885556,0.062538,4.642392, radius: 2.396618
+-----------------------------------
+traverses/vertex: 6.111111, max depth: 51
+trg: 24, nodes: 16, depth: 5, byte/trg: 23, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_locator1.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a1.gm
+objects: 5, textures: 5, materials: 5
+triangles: 188, vertices: 314
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 3.202435,0.984532,2.046136, radius: 1.953501
+-----------------------------------
+traverses/vertex: 7.384752, max depth: 51
+trg: 188, nodes: 271, depth: 49, byte/trg: 50, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a3.gm
+objects: 2, textures: 3, materials: 3
+triangles: 137, vertices: 132
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.962031,0.915623,0.033945, radius: 1.080449
+-----------------------------------
+traverses/vertex: 13.092457, max depth: 51
+trg: 137, nodes: 159, depth: 28, byte/trg: 42, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a2.gm
+objects: 2, textures: 2, materials: 2
+triangles: 275, vertices: 228
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.968484,0.899593,0.073438, radius: 1.079993
+-----------------------------------
+traverses/vertex: 17.654545, max depth: 51
+trg: 275, nodes: 338, depth: 29, byte/trg: 45, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_c4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d5.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d6.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d7.gm
+objects: 1, textures: 1, materials: 1
+triangles: 16, vertices: 17
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.292177,0.000000,0.292178, radius: 0.146089
+-----------------------------------
+traverses/vertex: 3.187500, max depth: 51
+trg: 16, nodes: 3, depth: 2, byte/trg: 7, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1.gm
+objects: 12, textures: 11, materials: 13
+triangles: 6178, vertices: 7577
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 3.049824,1.700787,7.678562, radius: 3.916842
+-----------------------------------
+traverses/vertex: 20.381947, max depth: 51
+trg: 6178, nodes: 13992, depth: 46, byte/trg: 64, time: 2
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast1.gm
+objects: 6, textures: 6, materials: 6
+triangles: 380, vertices: 655
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.191611,5.311992,0.331161, radius: 2.661186
+-----------------------------------
+traverses/vertex: 8.912281, max depth: 51
+trg: 380, nodes: 697, depth: 36, byte/trg: 60, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast4.gm
+objects: 2, textures: 3, materials: 3
+triangles: 174, vertices: 266
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.360246,0.501551,0.360247, radius: 0.308760
+-----------------------------------
+traverses/vertex: 8.168582, max depth: 51
+trg: 174, nodes: 171, depth: 34, byte/trg: 36, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast3.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_mast2.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_path.gm
+objects: 1, textures: 2, materials: 2
+triangles: 24, vertices: 24
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.885556,0.062538,4.642392, radius: 2.396618
+-----------------------------------
+traverses/vertex: 6.111111, max depth: 51
+trg: 24, nodes: 16, depth: 5, byte/trg: 23, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_locator1.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a1.gm
+objects: 5, textures: 5, materials: 5
+triangles: 188, vertices: 314
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 3.202435,0.984532,2.046136, radius: 1.953501
+-----------------------------------
+traverses/vertex: 7.384752, max depth: 51
+trg: 188, nodes: 271, depth: 49, byte/trg: 50, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a3.gm
+objects: 1, textures: 2, materials: 2
+triangles: 137, vertices: 132
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.962031,0.915623,0.033945, radius: 1.080449
+-----------------------------------
+traverses/vertex: 14.119221, max depth: 51
+trg: 137, nodes: 159, depth: 28, byte/trg: 42, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_a2.gm
+objects: 1, textures: 1, materials: 1
+triangles: 275, vertices: 228
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 1.968484,0.899593,0.073438, radius: 1.079993
+-----------------------------------
+traverses/vertex: 18.660606, max depth: 51
+trg: 275, nodes: 338, depth: 29, byte/trg: 45, time: 0
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_c4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d4.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d5.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d6.gm
+objects: 0, textures: 0, materials: 0
+triangles: 0, vertices: 0
+2-sided triangles: 0
+-----------------------------------
+bbox_size: -200000004008175470000.000000,-200000004008175470000.000000,-200000004008175470000.000000, radius: 0.000000
+-----------------------------------
+traverses/vertex: -1.#IND00, max depth: 51
+
+
+
+
+D:/Games/Корсары Город Потерянных Кораблей/RESOURCE/MODELS/Ships/WarTartane1/wartartane1_rey_d7.gm
+objects: 1, textures: 1, materials: 1
+triangles: 16, vertices: 17
+2-sided triangles: 0
+-----------------------------------
+bbox_size: 0.292177,0.000000,0.292178, radius: 0.146089
+-----------------------------------
+traverses/vertex: 3.395833, max depth: 51
+trg: 16, nodes: 3, depth: 2, byte/trg: 7, time: 0

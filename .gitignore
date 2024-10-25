@@ -17,6 +17,11 @@ RESOURCE/Textures/*
 !RESOURCE/Textures/Ammo
 RESOURCE/Textures/Ammo/*
 
+# GOF Ship models
+!RESOURCE/MODELS/Ships
+RESOURCE/MODELS/Ships/*
+!RESOURCE/MODELS/Ships/GOF_*
+
 # MNH Weather
 !RESOURCE/Particles
 !RESOURCE/Sea
