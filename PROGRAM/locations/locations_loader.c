@@ -4,6 +4,15 @@
 #define EVENT_LOCATION_LOAD		"EventLoadLocation"
 #define EVENT_LOCATION_UNLOAD	"EventUnloadLocation"
 
+#define LOC_JUNGLE 1
+#define LOC_DUNGEON 2
+#define LOC_JAIL 3
+#define LOC_TOWN 4
+#define LOC_RESIDENCE 5
+#define LOC_SEASHORE 6
+#define LOC_MAYAK 7
+#define LOC_PORT 8
+
 #define MAX_SHIPS_IN_LOCATION	32
 
 ref loadedLocation;
@@ -81,6 +90,7 @@ bool LoadLocation(ref loc)
 
 	int i;
 	bool res;
+	int nLocConst = 0;
 	
 	for (i = 0; i < MAX_SHIPS_IN_LOCATION; i++) { iShips[i] = -1; }
 	
@@ -157,6 +167,8 @@ bool LoadLocation(ref loc)
 	
 	bool isNoBoarding = true;
 	bool isFort = false;
+	//#20190613-01
+	bool dropSea = false;
 	if(CheckAttribute(loc, "boarding") == true)
 	{
 		if(loc.boarding == "true") isNoBoarding = false;
@@ -169,13 +181,32 @@ bool LoadLocation(ref loc)
 	if(isNoBoarding)
 	{
 		//Sea
-		if(loc.environment.sea == "true") 
+		//#20190613-01
+		if(loc.environment.sea == "true")
 		{
 			CreateSea(EXECUTE, REALIZE);
 			if (!CheckAttribute(loc, "notCrateFoam"))
 			{
 				CreateCoastFoamEnvironment(loc.id, EXECUTE, REALIZE);
 			}
+		}
+		else {
+            if(nLocConst != LOC_TOWN) {
+                dropSea = true;
+                switch(nLocConst) {
+                    case LOC_JUNGLE:
+                        dropSea = false;
+                    break;
+                    case LOC_DUNGEON:
+                        dropSea = false;
+                    break;
+                    case LOC_JAIL:
+                        dropSea = false;
+                    break;
+                }
+                if(dropSea)
+                    CreateSea("execute","realize");
+            }
 		}
 		//Weather
 		if(loc.environment.weather == "true") CreateWeather(EXECUTE,REALIZE);//CreateEntity(&locWeather, "weather");
@@ -396,14 +427,26 @@ bool LoadLocation(ref loc)
 	ReloadProgressUpdate();
 
 	//Locators=============================================================================
-	Sea.MaxSeaHeight = 0.5;
-	if(CheckAttribute(loc, "MaxWaveHeigh"))
-	{
-		if(stf(loc.MaxWaveHeigh) > 0.0)
-		{
-			Sea.MaxSeaHeight = stf(loc.MaxWaveHeigh);
-		}
+	//#20190613-01
+	if(dropSea) {
+        dropSeaHt();
 	}
+    else {	// Mirsaneli (bumpscale fix for some shores)
+			Sea.MaxSeaHeight = 1.4;
+			Sea.Sea2.Bumpscale = 0.03;
+			Sea.Sea2.Transparency = 0.5;
+            Sea.Sea2.LodScale = 1.0; //0.22;
+            Sea.Sea2.GridStep = 0.0375; //0.07
+            Sea.Sea2.PosShift = 0.005;
+			
+        if(CheckAttribute(loc, "MaxWaveHeigh"))
+        {
+            if(stf(loc.MaxWaveHeigh) > 0.0)
+            {
+                Sea.MaxSeaHeight = stf(loc.MaxWaveHeigh);
+            }
+        }
+    }
 	//Locator's radiuses
 	int j, k, gnum, lnum;
 	aref locator_rad;
@@ -694,21 +737,23 @@ bool LoadLocation(ref loc)
 	// ADDED BY VANO
 	else
 	{
-		if(loc.type == "seashore" || loc.type == "port")
-		{
-			Sea.MaxSeaHeight 	= 1.01;
-            Sea.Sea2.LodScale 	= 1.0; 
-            Sea.Sea2.GridStep 	= 0.0375; 
-            Sea.Sea2.PosShift 	= 0.005;
-            Sea.Sea2.Amp1 		= 1.5; 
-            Sea.Sea2.Scale1 	= 2.50; 
-            Sea.Sea2.Amp2 		= 0.02;
-            Sea.Sea2.Scale2 	= 7.0; 
+		 //#20180102-01 Port/Shore sea change
+        if(nLocConst == LOC_TOWN || nLocConst == LOC_SEASHORE) {
+            Sea.MaxSeaHeight = 1.01;
+			Sea.Sea2.Bumpscale = 0.03;
+			Sea.Sea2.Transparency = 0.5;
+            Sea.Sea2.LodScale = 1.0; //0.22;
+            Sea.Sea2.GridStep = 0.0375; //0.07
+            Sea.Sea2.PosShift = 0.005;
+            Sea.Sea2.Amp1 = 1.5; //1.0
+            Sea.Sea2.Scale1 = 2.50; //2.0
+            Sea.Sea2.Amp2 = 0.02;
+            Sea.Sea2.Scale2 = 7.0; //11.0
             Sea.Sea2.AnimSpeed1 = 0.003;
             Sea.Sea2.MoveSpeed1 = "0.6, 0.0, 0.003";
             Sea.Sea2.AnimSpeed2 = 0.002;
             Sea.Sea2.MoveSpeed2 = "0.7, 0.0, 0.003";
-            Sea.isDone = "";			
+            Sea.isDone = "";
 		}			
 	}		
 	/////
@@ -1382,4 +1427,22 @@ void HideAllLocators()
     HideLocatorsGroup("quest");
     HideLocatorsGroup("patrol");
     HideLocatorsGroup("tables");
+}
+
+void dropSeaHt()
+{
+    Sea.MaxSeaHeight = -25.0;
+    Sea.Sea2.LodScale = 2.0;
+    Sea.Sea2.GridStep = 0.25;
+    Sea.Sea2.BumpScale = 0.0;
+    Sea.Sea2.PosShift = 0.0;
+    Sea.Sea2.Amp1 = 0.0;
+    Sea.Sea2.Scale1 = 0.0;
+    Sea.Sea2.Amp2 = 0.0;
+    Sea.Sea2.Scale2 = 0.0;
+    Sea.Sea2.AnimSpeed1 = 0.0;
+    Sea.Sea2.MoveSpeed1 = "0.0, 0.0, 0.0";
+    Sea.Sea2.AnimSpeed2 = 0.0;
+    Sea.Sea2.MoveSpeed2 = "0.0, 0.0, 0.0";
+    Sea.isDone = "";
 }

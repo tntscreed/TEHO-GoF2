@@ -127,6 +127,7 @@ void FillSkyDir(aref aSky)
 	}
 }
 
+/*
 void MoveSkyToLayers(int sExecuteLayer, int sRealizeLayer)
 {
 	LayerDelObject(EXECUTE,&Sky);
@@ -136,4 +137,23 @@ void MoveSkyToLayers(int sExecuteLayer, int sRealizeLayer)
 	
         LayerAddObject(sExecuteLayer,&Sky,2);
         LayerAddObject(sRealizeLayer,&Sky,3);
+}
+*/
+
+void MoveSkyToLayers(string sExecuteLayer, string sRealizeLayer)		// Mirsaneli add from GoF 1.2
+{
+	LayerDelObject("execute",&Sky);
+	LayerDelObject("realize",&Sky);
+	LayerDelObject(SEA_EXECUTE,&Sky);
+	LayerDelObject(SEA_REALIZE,&Sky);
+
+	//#20180615-01
+	if(bSeaActive) {
+        LayerAddObject(sExecuteLayer,&Sky,2);
+        LayerAddObject(sRealizeLayer,&Sky,3);
 	}
+    else {
+        LayerAddObject(sExecuteLayer,&Sky,12);
+        LayerAddObject(sRealizeLayer,&Sky,13);
+    }
+}

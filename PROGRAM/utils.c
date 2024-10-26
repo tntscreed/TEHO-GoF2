@@ -377,20 +377,19 @@ void CalcLocalTime(float _inc)
 }
 void RefreshWeather()
 {
-//>>>>>    Whr_UpdateWeather();
-	// звуки
+    Whr_UpdateWeather();
+	Whr_UpdateWeatherHour();	// Mirsaneli 27.8.2024.
 	/*
 	if (bSeaActive && !bAbordageStarted)
 	{
 	    SetSchemeForSea();
 	    if (Whr_IsDay() && sti(pchar.Ship.Lights) == 1)
 	    {
-	        //выключаем фонари.
-			Ship_SetLightsOff(pchar, 15.0, true, true, false);
+	        Ship_SetLightsOff(pchar, 15.0, true, true, false);
 	    }
 	}
 	else
-	{ // суша
+	{
 	    LoadSceneSound();
 	} */
 }
