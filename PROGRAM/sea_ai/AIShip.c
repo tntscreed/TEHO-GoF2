@@ -4458,6 +4458,7 @@ void Ship_LoadShipActivateFirePlace()
 
 void SetTextureForShip(aref refBaseShip, aref rCharacter)
 {
+	Log_TestInfo("SetTextureForShip(): start for ship type: " + refBaseShip.name);
 	if(!CheckAttribute(refBaseShip, "name"))
 	{
 		trace("SetTextureForShip(): ship " + refBaseShip.basetype + " have no name! NPCid = "+ rCharacter.id);
@@ -4470,6 +4471,7 @@ void SetTextureForShip(aref refBaseShip, aref rCharacter)
 	if(CheckAttribute(refBaseShip, "ship.Upgrades.hull"))  // boal 16/07/06 просто разные корпуса, без НПС
 	{
 		sPath = sPath + "hull" + refBaseShip.ship.upgrades.hull + "\";
+		Log_TestInfo("Path for hull: " + sPath);
 	}
 	
 	SetTexturePath(0, sPath);
