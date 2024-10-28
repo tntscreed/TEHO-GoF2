@@ -520,7 +520,7 @@ void ProcessDialogEvent()
 			}
 
 			Link.l1 = "Exit";
-			Link.l1.go = "exit";
+			Link.l1.go = "VEX_DEBUG_PERSONAL";
 		break;
 
 		case "VEX_DEBUG_PERSONAL_HERCULES":
@@ -534,7 +534,7 @@ void ProcessDialogEvent()
 			}
 
 			Link.l1 = "Exit";
-			Link.l1.go = "exit";
+			Link.l1.go = "VEX_DEBUG_PERSONAL";
 		break;
 
 		case "VEX_DEBUG_PERSONAL_GOD":
@@ -550,14 +550,14 @@ void ProcessDialogEvent()
 			}
 
 			Link.l1 = "Exit";
-			Link.l1.go = "exit";
+			Link.l1.go = "VEX_DEBUG_PERSONAL";
 		break;
 
 		case "VEX_DEBUG_PERSONAL_GOLD":
 			AddMoneyToCharacter(pchar, 10000000);
 			Dialog.Text = "10,000,000 gold added!";
 			Link.l1 = "Exit";
-			Link.l1.go = "exit";
+			Link.l1.go = "VEX_DEBUG_PERSONAL";
 		break;
 
 		case "VEX_DEBUG_SHIP_MANAGEMENT":
