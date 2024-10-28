@@ -2757,7 +2757,8 @@ void InitShips()
 	refShip.SP              			= 100;
 
 	refship.Type.Merchant				= true;
-	refship.Type.War					= true;	
+	refship.Type.War					= true;
+	refship.QuestShip					= true;
 	refShip.lowpolycrew 				= 8;
 	
 	refship.Rocking.y 					= 0.45;
@@ -2895,6 +2896,7 @@ void InitShips()
 
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;	
+	refship.QuestShip					= true;
 	refShip.lowpolycrew 				= 12;
 
 	refship.Rocking.y 					= 0.5;
@@ -3039,6 +3041,7 @@ void InitShips()
 	
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
+	refship.QuestShip					= true;
 	refShip.lowpolycrew 				= 16;
 
 	refship.Rocking.y 					= 0.8;
@@ -3183,6 +3186,7 @@ void InitShips()
 	
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
+	refship.QuestShip					= true;
 	
 	refShip.lowpolycrew 				= 20;
 	
@@ -3257,6 +3261,7 @@ void InitShips()
 	refShip.SP              			= 100;
 	refship.Type.Merchant				= false;
 	refship.Type.War					= true;
+	refship.QuestShip					= true;
 	
 	refShip.lowpolycrew 				= 24;
 
