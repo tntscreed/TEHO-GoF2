@@ -283,3 +283,245 @@ NoneBoat2
 {
 No ship.
 }
+
+GOF_Bermsloop {
+With its small hull and great sailing properties, the Bermuda sloop is a very effective recon ship, good for coastal patrolling and trade between the islands.
+}
+
+GOF_Lyon {
+The 'Lyon' Hoy was built in 1709 and was wrecked in 1752. A 'hoy' is a type of small, shallow draft merchant vessel used as a lighter or coastal trader by the English and the Dutch. The term 'hoy' refers to her single mast rig, similar to that of the 'Hiorten' Galeas.
+}
+
+GOF_CaravelR {
+In the first half of the 16th century, the Portuguese created a specialized fighting ship also called caravela redonda to act as an escort in Brazil and in the East Indies route. It had a foremast with square sails and three other masts with a lateen each, for a total of 4 masts. The hull was galleon-shaped, and some experts consider this vessel a forerunner of the fighting galleon.
+}
+
+GOF_Yacht {
+Yacht is a small ship, made for transporting cargo and protecting small convoys. Although the lugger is modestly armed and crewed, it is specially designed for trade and battle. Many captains value the lugger for its speed and maneuverability. The small size prevents its use on long sea journeys.
+}
+
+GOF_Ketch {
+With its small hull and great sailing properties, the Ketch can be used as a small trade ship however she is better used for scouting since she is so fast and agile.
+}
+
+GOF_Empress {
+With its small hull and great sailing properties, the Empress can be used as a small trade ship however she is better used for scouting since she is so fast and agile.
+}
+
+GOF_Lugger_h {
+Heavy Lugger - with its increased cargo capacity it is ideal for transporting cargo and protecting small convoys. Although the lugger is modestly armed and crewed, it is specially designed for trade and battle. Many captains value the lugger for its speed and maneuverability.
+}
+
+GOF_Galeoth_h {
+Galeoth - a small ship, made for transporting cargo and protecting small convoys. Although the galeoth is modestly armed and crewed, it is specially designed for trade and is armed only for self defense.
+}
+
+GOF_Neptunus {
+The Neptunus's solid sailing characteristics and a roomy hold have made it one of the most attractive medium-grade trading ships. Perfect for those unable to afford a flute.
+}
+
+GOF_Hannah {
+The Armed Schooner Hannah was one of the first ships of the US navy. She was purchased by George Washington and refitted as an armed schooner to help counter the British navy.
+She first sailed in her new guise on September 5th 1775.
+}
+
+GOF_Brig3 {
+Brigs are often used as trade vessels, though more often as warships. High speed and maneuverability make them amongst the most balanced vessels. The weapons do affect maneuverability, however.
+}
+
+GOF_PinnaceBerlin {
+Frigate Berlin are often used as trade vessels, though more often as warships. High speed and maneuverability make them amongst the most balanced vessels. The weapons do affect maneuverability, however.
+}
+
+GOF_Speedy {
+Brigs are often used as trade vessels, though more often as warships. High speed and maneuverability make them amongst the most balanced vessels. The weapons do affect maneuverability, however.
+}
+
+GOF_Bounty {
+Known to historians as HM Armed Vessel Bounty, popularly as HMAV Bounty, and to many simply as "The Bounty", famous as the scene of the Mutiny on the Bounty on 28 April 1789, was originally a three-masted cargo ship, the Bethia, purchased by the British Admiralty, then modified and commissioned as His Majesty's Armed Vessel the Bounty for a botanical mission to the Pacific Ocean.
+}
+
+GOF_Packet_Brig {
+Packet Brig -Post office hired small brigs to transport letters,  packets etc.
+}
+
+GOF_Enterprise {
+USS Enterprise (sometimes spelled Enterprize) was a 24-gun sixth-rate frigate of the US Navy, originally the French frigate L'Entreprise before her capture in May 1705.
+}
+
+GOF_Felipe {
+The galleon is, without a doubt, the most versatile ship class in history. A close relative to the caravel, the galleon is a clumsy yet dependable vessel, serving sailors for almost two hundred years. Easy prey for a real pirate.
+}
+
+GOF_Hooker1 {
+The Hooker is very similar to the Sloop With its small hull and great sailing properties, its a very effective recon ship, good for coastal patrolling and trade.
+}
+
+GOF_Brig_20_Gun1_18 {
+Brig are often used as trade vessels, though the 20 Gun Brig is more often used as warships. High speed and maneuverability make them amongst the most balanced vessels. The weapons do affect maneuverability, however.
+}
+
+GOF_Interceptor {
+The HMS Interceptor is first seen when Jack Sparrow attempts to board it (with the intention of stealing it) while most of the Royal Navy is attending Commodore James Norrington's promotion ceremony. After Will Turner frees him from prison, Jack schemes to commandeer the Interceptor by pretending to hijack Norrington's command ship, the Dauntless.
+}
+
+GOF_Sophie {
+Jack Aubrey's first command, described in Master and Commander is the brig-rigged "sloop" HMS Sophie, operating out of Port Mahon in the western Mediterranean.  Towards the end of the novel, the first book in the series, Sophie is captured on the Spanish coast by a French squadron led by Admiral Linois.
+}
+
+GOF_Galeon1 {
+The galleon is, without a doubt, the most ship class in history. A close relative to the caravel, the galleon is a clumsy yet dependable vessel, serving sailors for almost two hundred years. Easy prey for a real pirate.
+}
+
+GOF_FastGalleon1 {
+The 300-ton vessel, originally named Concord, was built by Britain in 1710, this ship was later captained by Blackbeard who named it The Queen Anne's Revenege
+}
+
+GOF_PO_Fleut50 {
+The Whydah was built in London 1715 as a slave ship for the triangular trade route, this ship could reach speeds in access of 13 to 14 knots. in February of 1717, on only her second voyage of the the triangular trade route, she was chased down by two pirate vessels where she was captured and on April 26, 1717 she was sank by a storm near Cape Cod.
+}
+
+GOF_CorvFrig2_50 {
+The corvette was designed as a highly-armed, yet light and fast vessel. Trade-offs being trade-offs, corvettes therefore have a weak hull. Still, they are able to keep up with lighter vessels and trade blows with heavier ones. As a rule, the corvette is used for patrol and escort missions.
+}
+
+GOF_SloopofWar {
+The SloopofWar is a 22 gunner Sloop, perfect for carrying more cargo than mosts ships in its class. The Sloop Of War is a favourite of the pirates because of the speed and agility.
+}
+
+GOF_RaaFrigate {
+The Raa is a Common Fighting ship. The usual tactic is to pull alongside an ship and open fire. With its many and quick guns most unsuspecting merchants surender well before doing serious damage.
+}
+
+GOF_TheBlackPearl {
+Originally a merchant ship owned and operated by the East India Trading Company under the name Wicked Wench. Command was first given to Jack Sparrow who fulfilled many contracts on the Company's behalf. However, after Jack refused to carry out a certain task for his East India Trading Company superior Cutler Beckett, Beckett ordered the Wench set alight and sunk and her captain forever branded as a pirate.
+}
+
+GOF_Revenge {
+Type: Galleon \n Usage: used as Merchantman and as Warship \n\n An four-masted galleon as used by the british at the end of the 16th century.
+}
+
+GOF_BlackPearl {
+The Black Pearl is a fast and maneuverable pirate galeon that is a feared site for all but the most powerful ships. It has excellent speed, sailing qualities and impressive firepower. The first encounter with the Black Pearl for many is their last.
+}
+
+GOF_TheBlackPearl {
+The Wicked Wench is a fast galeon that is a feared site for all but the most ships. It has impressive firepower good speed and agility for a ship of its kind.
+}
+
+GOF_QueenAnnesRevenge {
+The 300-ton vessel, originally named Concord, was a frigate built in England in 1710. She was captured by the French one year later. The ship was modified to hold more cargo, including slaves, and renamed La Concorde de Nantes. Sailing as a slave ship, she was captured by the pirate Captain Benjamin Hornigold on November 28, 1717, near the island of Martinique. Hornigold turned her over to one of his men —Edward Teach, later known as Blackbeard—and made him her captain.
+}
+
+GOF_Linefrigate {
+Fast and maneuverable, frigates like this have high speed and when close huledroad, performance and fire power can take the advantage. A squadron of frigates can crush a fort and plunder a city.
+}
+
+GOF_Salamander {
+This reknowned frigate has a distinctve overhanging stern similiar to that of an xebec. It is fast and maneuverable with good sailing properties and firepower.
+}
+
+GOF_CursedDutchman {
+The Flying Dutchman is a dreaded supernatural galleon captained by the legendary Davy Jones. The Dutchman was first gifted to Jones by his love, the sea goddess Calypso, who granted Jones captaincy of the ship with the intention that he would ferry the souls of drowned seamen into the next world for at least ten years.
+}
+
+GOF_La_Licorne {
+The La Licorne is a massive warship. Large caliber cannons, a solid hull, and a huge crew make it a reliable defense for any cargo.
+}
+
+GOF_Nightmare {
+Reknowned pirate vessel. Its name explains everything.
+}
+
+GOF_Surprise {
+Unité was a corvette of the French Navy built in 1794, the lead ship of her class. She was captured by the Royal Navy in 1796 and renamed HMS Surprise. In 1799 she famously recaptured HMS Hermione and in 1802 was sold out of the service.
+}
+
+GOF_PDN {
+The 'Prince de Neufchatel' from the war of 1812.The Prince de Neufchatel was a fast sailing United States schooner-rigged privateer, built in New York by Noah and Adam Brown in approximately 1812. She is a fine example of the peak of development of the armed schooner. Neufchatel operated in mainly European waters, damaging British shipping during the War of 1812. Noted for her speed, at one time she outran seventeen men-of-war. In 1813, operating in the English channel, she took nine British prizes in quick succession. She also delivered a crushing defeat to the boats of a British frigate that tried to capture her.
+}
+
+GOF_Boussole {
+The Boussole was a ship of the French Navy, famous for its exploration of the Pacific with Jean-François de Galaup, comte de La Pérouse. It departed Brest on 1 August 1785 under La Pérouse, accompanied by the Astrolabe under Paul Antoine Fleuriot de Langle. The expedition vanished mysteriously in 1788 after leaving Botany Bay on 10 March 1788.
+}
+
+GOF_TwoDecker1_47 {
+The fast and maneuverable frigate is liked by many for its nice sailing properties and its firepower. A squadron of frigates can easily destroy a fort and loot a city.
+}
+
+GOF_BattleFrigate {
+The battle frigate is a reinforced warship with only 1 purpose in mind. Cargo space has been sacrificed for increased firepower and more marines for boarding operations.
+}
+
+GOF_RN_BattleFrigate {
+The Fast frigate is a reinforced warship with only 1 purpose in mind. Cargo space has been sacrificed for increased firepower and more marines for boarding operations.
+}
+
+GOF_USS_Constitution {
+Launched in 1797, Constitution was one of the six original frigates authorized for construction by the Naval Act of 1794. Joshua Humphreys designed these frigates to be the young Navy's capital ships, and so Constitution and her sisters were larger and more heavily armed and built than the standard frigates of the period.
+}
+
+GOF_Unicorn {
+HMS Unicorn was a 28-gun Lyme-class sixth rate frigate of the Royal Navy. She was originally ordered as a 24-gun ship to the draft of the French privateer Tyger. The third vessel of the Royal Navy to bear the name, the Unicorn, as well as HMS Lyme which was a near-sister, were the first true frigates built for the Royal Navy.
+}
+
+GOF_Warship {
+The ship-of-the-line presents itself as a terrible force. Armed with the mightiest and longest-range cannons to protect its sturdy hull, it can stand up to any ship in the sea and easily destroy shore fortifications.
+}
+
+GOF_Link {
+A 1-st rank and most powerful of all the marine courts created. On the three decks it bears 85 heavy cannons, and its body is almost impenetrable for shot. Unfortunately, the huge sizes and displacement limit its application for greater marine battles and bombardment of forts.
+}
+
+GOF_Neptune {
+HMS Neptune was a 90-gun second rate ship of the line of the Royal Navy. She was built under the 1677 "Thirty Great Ships" Programme and launched in 1683 at Deptford Dockyard.[1] She was first commissioned in 1690 under Captain Thomas Gardiner, as the flagship of Vice-Admiral George Rooke. In that capacity she took part in the Battle of Barfleur in May 1692.
+}
+
+GOF_Couronne {
+La Couronne was a war Galleon built by the French themselves in accordance to Richelieu's plans to renew the French Navy, after a series of ships built by the Dutch. The Couronne took part in the siege of Hondarribia in 1638, and another expedition to Spain in 1639 under Henri de Sourdis.
+}
+
+GOF_FR_SuperiorWarship1 {
+The ship-of-the-line presents itself as a terrible force. Armed with the mightiest and longest-range cannons to protect its sturdy hull, it can stand up to any ship in the sea and easily destroy shore fortifications.
+}
+
+GOF_Superbe {
+Le Superbe was designed by the most renowned marine engineer of the eighteenth century, Jacques Sane. She was launched at the shipyard in Brest in 1784, representing a class of famous French battleships built during the waning years of the monarchy. Although she carried 74 cannon and was one of the largest warships afloat at the time, she was considered to be as fast and maneuverable as a frigate.
+}
+
+GOF_Bellona {
+HMS Bellona was a 74-gun Bellona-class third-rate ship of the line of the Royal Navy. Designed by Sir Thomas Slade, she was a prototype for the iconic 74-gun ships of the latter part of the 18th century. Bellona was built at Chatham, starting on 10 May 1758, launched on 19 February 1760, and commissioned three days later. She was the second ship of the Royal Navy to bear the name.
+}
+
+GOF_Poseidon {
+Poseidon was a 66-gun third-rate ship of the line. Designed for speed and shear firpower, she was part of the 18th century fast warship class.
+}
+
+GOF_Battleship {
+The battleship is a progression of the warship: bigger, and even more well-reinforced. Huge and unwieldy, it carries a few batteries of heavy cannons and is manned by an enormous crew.
+}
+
+GOF_Manowar {
+The man-o-war is the mightiest vessel born of man. Amongst its three decks it holds a hundred heavy cannons, and its hull is nigh-on impervious to shells. Unfortunately, the huge size and displacement limits its use to big naval battles and fort bombardment.
+}
+
+GOF_HMS_Victory {
+HMS Victory is a first rate ship of the line of the Royal Navy, started in 1759 and launched in 1765, most famous as Lord Nelson's flagship at the Battle of Trafalgar.
+}
+
+GOF_BattleManowar {
+The battle man-o-war is a reinforced warship with only 1 purpose in mind.
+}
+
+GOF_SoleyRu {
+A royal line ship, first class: horrifying firepower, mixed with a refined hull and inspiring sailing properties. A grand ship for the ages.
+}
+
+GOF_Flyingdutchman {
+The Flying Dutchman is a dreaded supernatural galleon captained by the legendary Davy Jones. The Dutchman was first gifted to Jones by his love, the sea goddess Calypso, who granted Jones captaincy of the ship with the intention that he would ferry the souls of drowned seamen into the next world for at least ten years.
+}
+
+GOF_DutchPinnace {
+The pinnace was widely used during the pirate infested 17th century, mostly in the Caribbean area.The Dutch used them as raiders. Pirates frequently used them as scouts and for night attacks since they were small, reliable, and extremely quick, even against the wind.She had a hull form resembling a small "race built" galleon, and was usually rigged as a ship (square rigged on three masts), or carried a similar rig on two masts (in a fashion akin to the later "brig"). Pinnaces saw use as merchant vessels, pirate vessels and small warships.
+}
+
