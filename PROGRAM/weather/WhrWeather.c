@@ -997,12 +997,24 @@ void Whr_UpdateWeatherHour()
 	Astronomy.isDone = true;
 	Astronomy.TimeUpdate = 1;
 
+	bool changedToNight = false;
+	bool changedToDay = false;
+
 	if( Whr_IsDay() != bOldIsDay )
 	{ // меняем источники освещения
 		Whr_ChangeDayNight();
 		Event("eChangeDayNight");
         doLightChange = true;
  	}
+
+	if(Whr_IsDay() && !bOldIsDay){
+		changedToDay = true;
+	}
+
+	if(!Whr_IsDay() && bOldIsDay){
+		changedToNight = true;
+	}
+
  	if (bSeaActive && !bAbordageStarted)
 	{
 	    bool isSeaEnt = false;
@@ -1038,7 +1050,12 @@ void Whr_UpdateWeatherHour()
                 if (iCharIdx < 0 || iCharIdx >= MAX_CHARACTERS) continue;
                 rChar = GetCharacter(Ships[j]);
                 Ship_SetLightsAndFlares(rChar);
-                SendMessage(&characters[iCharIdx], "l", MSG_SHIP_LIGHTSRESET);
+				if(changedToDay){
+                	SendMessage(&characters[iCharIdx], "ll", MSG_SHIP_LIGHTSRESET, 0);
+				}
+				if(changedToNight){
+                	SendMessage(&characters[iCharIdx], "ll", MSG_SHIP_LIGHTSRESET, 1);
+				}
             }
         }
  	}
