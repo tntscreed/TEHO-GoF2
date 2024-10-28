@@ -78,19 +78,52 @@ int Fantom_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string
 	string sAttr;
 	bool bOk;
 
-	for (i = SHIP_TARTANE; i <= SHIP_LSHIP_ENG; i++)  //энкаунтеры только до линкора, квестовые корабли отдельно
+	// TODO: Rewrite ship selection logic?
+	for (i = 0; i <= SHIP_TYPES_QUANTITY-1; i++)  //Quest-ships are handled separately
 	{
 		object rShip = GetShipByType(i);
+
+		//if(bBettaTestMode){
+		//	trace("[Fantom_GetShipTypeExt] Ship selection started. Evaluating ship '" + rShip.name + "'");
+		//}
+
+		if(CheckAttribute(rShip, "QuestShip") && rShip.QuestShip == true) {
+			//if(bBettaTestMode){
+			//	trace("[Fantom_GetShipTypeExt] Ship '" +  rShip.name + "' is a quest ship. Skipping.");
+			//}
+			continue;
+		}
+		if(CheckAttribute(rShip, "CanEncounter") && rShip.CanEncounter != true ) {
+			//if(bBettaTestMode){
+			//	trace("[Fantom_GetShipTypeExt] Ship '" +  rShip.name + "' is not allowed to be encountered. Skipping.");
+			//}
+			continue;
+		}
+
 		if (!CheckAttribute(rship, "class"))
 		{
-			trace ("bad ship is: " + rship.name);
+			trace("[Fantom_GetShipTypeExt] Ship has no class: " + rship.name);
 		}
 		int iClass = MakeInt(rShip.Class);
 		
-		if (iClass > iClassMin) { continue; }
-		if (iClass < iClassMax) { continue; }
-		if (sti(rShip.CanEncounter) != true) { continue; }
-		if (sti(rShip.Type.(sShipType)) != true) { continue; }
+		if (iClass > iClassMin) {
+			//if(bBettaTestMode){
+			//	trace("[Fantom_GetShipTypeExt] Ship '" +  rShip.name + "' has class " + iClass + " which is higher than the minimum class " + iClassMin + ". Skipping.");
+			//}
+			continue;
+		}
+		if (iClass < iClassMax) {
+			//if(bBettaTestMode){
+			//	trace("[Fantom_GetShipTypeExt] Ship '" +  rShip.name + "' has class " + iClass + " which is lower than the maximum class " + iClassMax + ". Skipping.");
+			//}
+			continue;
+		}
+		if (sti(rShip.Type.(sShipType)) != true) {
+			//if(bBettaTestMode){
+			//	trace("[Fantom_GetShipTypeExt] Ship '" +  rShip.name + "' is not of type '" + sShipType + "'. Skipping.");
+			//}
+			continue;
+		}
 
 		bOk = false;
 		if(CheckAttribute(rShip, "nation"))
@@ -103,7 +136,15 @@ int Fantom_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string
 				if(GetNationTypeByName(sAttr) == iNation && rShip.nation.(sAttr) == true ) bOk = true;
 			}
 		}	
-		if(!bOk) { continue; }
+		if(!bOk) {
+			//if(bBettaTestMode){
+			//	trace("[Fantom_GetShipTypeExt] Ship '" +  rShip.name + "' didn't pass the nation check. Skipping.");
+			//}
+			continue;
+		}
+		//if(bBettaTestMode){
+		//	trace("[Fantom_GetShipTypeExt] Ship '" +  rShip.name + "' is a valid candidate.");
+		//}
 		iShips[iShipsNum] = i;
 		iShipsNum++;
 	}
