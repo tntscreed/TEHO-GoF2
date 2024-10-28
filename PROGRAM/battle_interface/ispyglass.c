@@ -189,6 +189,10 @@ void SetSpyGlassData()
 				if (CheckAttribute(arScopeItm,"scope.show.ship_type") && sti(arScopeItm.scope.show.ship_type)!=0 )
 				{
 					shipType = XI_ConvertString(GetShipTypeName(chref));
+					if(bBettaTestMode && findsubstr(GetShipTypeName(chref), "GOF_", 0) == 0)
+					{
+						shipType = "(GoF) " + shipType;
+					}
 				}		
 				if (CheckAttribute(arScopeItm,"scope.show.hull") && sti(arScopeItm.scope.show.hull) == true )
 				{

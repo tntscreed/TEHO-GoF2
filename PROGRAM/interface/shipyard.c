@@ -720,7 +720,13 @@ void FillShipyardTable()
     	GameInterface.TABLE_SHIPYARD.(row).td1.icon.height = 46;
     	GameInterface.TABLE_SHIPYARD.(row).td1.icon.offset = "0, 1";
     	GameInterface.TABLE_SHIPYARD.(row).td1.textoffset = "53,0";
-		GameInterface.TABLE_SHIPYARD.(row).td1.str = XI_Convertstring(sShip) + "\n\n"+refNPCShipyard.ship.name;
+
+		string sShipType = XI_ConvertString(sShip);
+		if(bBettaTestMode && findsubstr(sShip, "GOF_", 0) == 0){
+			sShipType = "(GoF) " + sShipType;
+		}
+
+		GameInterface.TABLE_SHIPYARD.(row).td1.str = sShipType + "\n\n" + refNPCShipyard.ship.name;
 		GameInterface.TABLE_SHIPYARD.(row).td1.align = "left";
 		GameInterface.TABLE_SHIPYARD.(row).td1.scale = 0.82;
 		GameInterface.TABLE_SHIPYARD.(row).td2.str = refBaseShip.Class;
