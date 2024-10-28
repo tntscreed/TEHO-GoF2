@@ -547,6 +547,12 @@ RESOURCE/Textures/INTERFACES/PORTRAITS/*
 !RESOURCE/Textures/INTERFACES/empty_colony.tga.tx
 !RESOURCE/Textures/Characters/
 
+# Ship icons
+!RESOURCE/Textures/INTERFACES/Ships
+RESOURCE/Textures/INTERFACES/Ships/*
+!RESOURCE/Textures/INTERFACES/Ships/GOF_*
+
+
 !RESOURCE/Textures/Weather
 RESOURCE/Textures/Weather/*
 !RESOURCE/Textures/Weather/SUN
