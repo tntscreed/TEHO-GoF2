@@ -3618,11 +3618,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";	
 
 	 //Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	/////////////////////////////////////////////////////////////////////////
 	//// Schooner - Hannah
@@ -3687,11 +3687,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	//// Ketch - Nonsuch
@@ -3755,11 +3755,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Bounty
@@ -3829,11 +3829,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Empress - Empress
@@ -3898,11 +3898,11 @@ void InitShips()
 	refship.Track2.Speed				= "0.15, 0.25";
 
 	 //Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	//// Lyon Hoy 
@@ -3963,11 +3963,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 
 	///////////////////////////////////////////////////////////////////////////
@@ -4036,11 +4036,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
         ///////////////////////////////////////////////////////////////////////////
 	//// Galeoth_h
@@ -4104,11 +4104,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	//// Yacht
@@ -4172,11 +4172,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";	
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Brig - Merchant Brig
@@ -4246,11 +4246,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// HMS SOPHIE
@@ -4320,11 +4320,11 @@ void InitShips()
 	refship.Track2.Speed = "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Castel Friedrichsburg - Brigantine Heavy
@@ -4395,11 +4395,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Interceptor
@@ -4469,11 +4469,11 @@ void InitShips()
 	refship.Track2.Speed = "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Fleut - Derfflinger
@@ -4534,11 +4534,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Sloop of war
@@ -4605,11 +4605,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Caravel Redonda
@@ -4675,11 +4675,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= true; //
 
 
 	///////////////////////////////////////////////////////////////////////////
@@ -4752,11 +4752,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Pinnace - Fregatte Berlin
@@ -4824,11 +4824,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 	
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// HMS Greyhound - English Corvette
@@ -4898,11 +4898,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// 28GUNFRIGATE - 28 Gun Frigate
@@ -4975,11 +4975,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// PDN - 24 gun privateer schooner
@@ -5052,11 +5052,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// PacketBrig
@@ -5126,11 +5126,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 	
 	///////////////////////////////////////////////////////////////////////////
 	/// ENTERPRISE - Frigate L'Enterprise
@@ -5200,11 +5200,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	// Privateer
@@ -5275,11 +5275,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// 20 Gun Brig - Light Brig
@@ -5349,11 +5349,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	//// schooner_L - Gaff Schooner
@@ -5418,11 +5418,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 
 	///////////////////////////////////////////////////////////////////////////
@@ -5487,11 +5487,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Brig SS - Fast Brig
@@ -5561,11 +5561,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 
 	///////////////////////////////////////////////////////////////////////////
@@ -5638,11 +5638,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Frigate Surprise
@@ -5715,11 +5715,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Fast Frigate - Light Corvette
@@ -5792,11 +5792,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// RaaFrigate
@@ -5869,11 +5869,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	// Nightmare
@@ -5944,11 +5944,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	///  Unicorn - Frigate
@@ -6023,11 +6023,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Fast Galleon - Golden Hind
@@ -6093,11 +6093,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Galeon1 - Carrack
@@ -6165,11 +6165,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";	
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Light Galleon - Whydah
@@ -6230,11 +6230,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// TheBlackPearl - Wicked Wench 
@@ -6310,11 +6310,11 @@ void InitShips()
 	refship.Track2.Speed				= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 	
 	///////////////////////////////////////////////////////////////////////////
 	//class 3
@@ -6391,11 +6391,11 @@ void InitShips()
 	refship.Track2.Speed = "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	// Salamander
@@ -6466,11 +6466,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Linefrigate
@@ -6544,11 +6544,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 	
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 	///////////////////////////////////////////////////////////////////////////
 	// Dutch Two-decker
 	///////////////////////////////////////////////////////////////////////////
@@ -6618,11 +6618,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 	
 	///////////////////////////////////////////////////////////////////////////
 	/// USS_CONSTITUTION - Constitution
@@ -6696,11 +6696,11 @@ void InitShips()
 	refship.Track2.Speed = "0.15, 0.25"; 
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// La Licorne 
@@ -6774,11 +6774,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// RN Battle Frigate - Fast Battle Frigate
@@ -6852,11 +6852,11 @@ void InitShips()
 	refship.Track2.Speed = "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	// Battle Frigate 
@@ -6930,11 +6930,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 
 	///////////////////////////////////////////////////////////////////////////
@@ -7009,11 +7009,11 @@ void InitShips()
 	refship.Track2.Speed	= "1.0, 2.0";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 	
 	///////////////////////////////////////////////////////////////////////////
 	/// Warship Poseidon
@@ -7082,11 +7082,11 @@ void InitShips()
 	refship.Track2.Speed		= "1.0, 2.0";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 	
 	///////////////////////////////////////////////////////////////////////////
 	/// Couronne - La Couronne
@@ -7154,11 +7154,11 @@ void InitShips()
 	refship.Track2.Speed		= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	// Superior Warship
@@ -7229,11 +7229,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Warship - Le Superbe
@@ -7302,11 +7302,11 @@ void InitShips()
 	refship.Track2.Speed		= "1.0, 2.0";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Link - 2nd Rate Ship of the line
@@ -7374,11 +7374,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 
 	///////////////////////////////////////////////////////////////////////////
@@ -7452,11 +7452,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Warship Bellona
@@ -7525,11 +7525,11 @@ void InitShips()
 	refship.Track2.Speed		= "1.0, 2.0";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Neptune
@@ -7598,11 +7598,11 @@ void InitShips()
 	refship.Track2.Speed		= "1.0, 2.0";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Manowar
@@ -7670,11 +7670,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// HMS_Victory - Victory
@@ -7742,11 +7742,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	// Battle Manowar
@@ -7817,11 +7817,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 0.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= false; //
+	refShip.nation.spain	= true; //
 
 	// fantasy ships
 
@@ -7899,11 +7899,11 @@ void InitShips()
 	refship.Track2.Speed				= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// QueenAnnesRevenge
@@ -7980,11 +7980,11 @@ void InitShips()
 	refship.Track2.Speed				= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Revenge                       
@@ -8061,11 +8061,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Cursed Flying Dutchman - The Flying Dutchman
@@ -8136,11 +8136,11 @@ void InitShips()
 	refship.Track2.Speed	= "1.0, 2.0";
 
 	//Nation
-        refShip.england = 0.0; //
-        refShip.france = 0.0; //
-        refShip.holland = 0.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 0.0; //
+	refShip.nation.england	= false; //
+	refShip.nation.france	= false; //
+	refShip.nation.holland	= false; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= false; //
 
 	//quest ships
 
@@ -8421,11 +8421,11 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 
 	//Nation
-        refShip.england = 1.0; //
-        refShip.france = 1.0; //
-        refShip.holland = 1.0; //
-        refShip.pirate = 1.0; //
-        refShip.spain = 1.0; //
+	refShip.nation.england	= true; //
+	refShip.nation.france	= true; //
+	refShip.nation.holland	= true; //
+	refShip.nation.pirate	= true; //
+	refShip.nation.spain	= true; //
 
 	///////////////////////////////////////////////////////////////////////////
 	/// Flyingdutchman 
