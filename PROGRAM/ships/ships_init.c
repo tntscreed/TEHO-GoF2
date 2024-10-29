@@ -2802,7 +2802,7 @@ void InitShips()
 	///////////////////////////////////////////////////////////////////////////
 	//// квестовый корабль №2 - 4-ый класс
 	///////////////////////////////////////////////////////////////////////////
-	makeref(refShip,ShipsTypes[SHIP_QUEST3]);
+	makeref(refShip,ShipsTypes[SHIP_QUEST2]);
 	refShip.Name				= "QuestShip2";
 	refship.Soundtype			= "lugger";
 	refShip.Class				= 4;
