@@ -2,6 +2,7 @@
 #define LOCCAMERA_FOLLOW	1
 #define LOCCAMERA_TOPOS		2
 #define LOCCAMERA_FREE		3
+#define LOCCAMERA_MODERN	4
 
 // Warship 20.07.09 Новое
 #define LOCCAMERA_MAX_STATES 15
@@ -57,6 +58,14 @@ bool locCameraFree()
 	if(IsEntity(&locCamera) == 0) return false;
 	bool res = SendMessage(&locCamera, "l", MSG_CAMERA_FREE);
 	locCameraCurMode = LOCCAMERA_FREE;
+	return res;
+}
+
+bool locCameraModern()
+{
+	if(IsEntity(&locCamera) == 0) return false;
+	bool res = SendMessage(&locCamera, "l", MSG_CAMERA_MODERN);
+	locCameraCurMode = LOCCAMERA_MODERN;
 	return res;
 }
 

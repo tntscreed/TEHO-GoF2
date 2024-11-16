@@ -684,23 +684,29 @@ void CalculateInfoDataF28()
 
 }
 
-string descF29 = "Cheat 29";
+string descF29 = "Set to Follow Camera";
 void CalculateInfoDataF29()
 {
     totalInfo = descF29;
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	locCameraFollow();
+
 	Statistic_AddValue(PChar, "Cheats.F29", 1);
 }
 
-string descF30 = "Cheat 30";
+string descF30 = "Set to Modern Camera";
 void CalculateInfoDataF30()
 {
     totalInfo = descF30;
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	locCameraModern();
+
 	Statistic_AddValue(PChar, "Cheats.F30", 1);
 }
 
