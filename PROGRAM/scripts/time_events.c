@@ -288,6 +288,9 @@ void WorldSituationsUpdate()
 //////////////////////////////// начало игры - туториал ////////////////////////////////
 void Tut_StartGame(string sQuest)
 {
+	// Reinit sound (bug fix)
+	DeleteClass(&sound);
+	ResumeAllSounds();
 
 	DeleteWeatherEnvironment();
 	CreateSea(EXECUTE, REALIZE);

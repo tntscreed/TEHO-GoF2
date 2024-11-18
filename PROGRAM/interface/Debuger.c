@@ -663,23 +663,30 @@ void CalculateInfoDataF26()
 	Statistic_AddValue(PChar, "Cheats.26", 1);
 }
 
-string descF27 = "Cheat 27";
+string descF27 = "Delete Sounds";
 void CalculateInfoDataF27()
 {
    totalInfo = descF27;
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	DeleteClass(&sound);
+
 	Statistic_AddValue(PChar, "Cheats.F27", 1);
 }
 
-string descF28 = "Cheat 28";
+string descF28 = "Resume sounds and play tavern music";
 void CalculateInfoDataF28()
 {
     totalInfo = descF28;
 	PlaySound("interface\knock.wav");
     totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	ResumeAllSounds();
+	SetMusicAlarm("music_tavern");
+
 	Statistic_AddValue(PChar, "Cheats.F28", 1);
 
 }
