@@ -65,6 +65,13 @@ bool ProcessCondition(aref condition, int n)
 
 	switch(sConditionName)
 	{
+		case "Ready_Fight":
+		if (GetCharacterEquipByGroup(refCharacter, GUN_ITEM_TYPE) != "" && GetCharacterEquipByGroup(refCharacter, BLADE_ITEM_TYPE) != "")
+		{
+		return true;	
+		}
+		return false;
+		break;
 		// boal оптимизация -->
 		case "MapEnter":
     		return IsEntity(&worldMap);
@@ -82,6 +89,10 @@ bool ProcessCondition(aref condition, int n)
 			}
     		return false;
     	break;
+		
+	case "item_equip":
+		return IsEquipCharacterByItem(refCharacter,condition.item_equip);
+	break;
 
         case "Timer":
     		if( GetDataYear() < sti(condition.date.year) ) return false;
@@ -465,6 +476,8 @@ void OnQuestComplete(aref quest, string sQuestname)
             quest.over = "yes";
         }
 		QuestComplete(quest.win_condition, sQuestName);
+		MythQuestComplete(quest.win_condition, sQuestName);
+		TraceQuestFiles(quest.win_condition, sQuestName);
 	}
 }
 
@@ -474,6 +487,8 @@ void OnQuestFailed(aref quest, string sQuestName)
 	{
 		quest.over = "yes";
 		QuestComplete(quest.fail_condition, sQuestName);
+		MythQuestComplete(quest.fail_condition, sQuestName);
+		TraceQuestFiles(quest.fail_condition, sQuestName);
 	}
 }
 

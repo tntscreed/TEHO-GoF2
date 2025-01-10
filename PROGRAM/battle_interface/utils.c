@@ -525,4 +525,6 @@ void CloseTimerInterface()
 void procTimerTimeOut()
 {
 	QuestComplete(objTimerInterface.questtype, objTimerInterface.questname);
+	MythQuestComplete(objTimerInterface.questtype, objTimerInterface.questname);
+	TraceQuestFiles(objTimerInterface.questtype, objTimerInterface.questname);
 }

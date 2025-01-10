@@ -1314,6 +1314,8 @@ void FantomMakeCoolFighter(ref _Character, int _Rank, int _Fencing, int _Pistol,
 		}
 		else
 		{
+			if(_Gun !="")
+			{
 			GiveItem2Character(_Character, _Gun);
 			EquipCharacterbyItem(_Character, _Gun);
 			LAi_SetCharacterBulletType(_Character, _Bullet);
@@ -1323,6 +1325,7 @@ void FantomMakeCoolFighter(ref _Character, int _Rank, int _Fencing, int _Pistol,
 			{
 				AddItems(_Character, sGunpowder, 30 + rand(20)); // Warship. Порох
 			}	
+		}
 		}
 	}
 

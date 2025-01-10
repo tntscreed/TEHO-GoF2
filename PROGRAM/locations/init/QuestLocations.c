@@ -146,7 +146,7 @@ int LocationInitQuestLocations(int n)
 	locations[n].filespath.models = "locations\Estate";
 	locations[n].image = "loading\EstateN.tga";
 	//Sound
-	locations[n].type = "europe";
+	locations[n].type = "house";
 	//Models
 	//Always
 	locations[n].models.always.estate = "estate";
@@ -182,22 +182,16 @@ int LocationInitQuestLocations(int n)
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Bedroom";
 
-	locations[n].reload.l2.name = "reload2";
-	locations[n].reload.l2.go = "EstateBadRoom2";
+	locations[n].reload.l2.name = "reload5";
+	locations[n].reload.l2.go = "EstateOffice";
 	locations[n].reload.l2.emerge = "reload1";
 	locations[n].reload.l2.autoreload = "0";
-	locations[n].reload.l2.label = "Bedroom";
-
-	locations[n].reload.l3.name = "reload5";
-	locations[n].reload.l3.go = "EstateOffice";
-	locations[n].reload.l3.emerge = "reload1";
-	locations[n].reload.l3.autoreload = "0";
-	locations[n].reload.l3.label = "Cabinet";
+	locations[n].reload.l2.label = "Cabinet";
 	locations[n].locators_radius.item.item1 = 1.0;
 	
 	locations[n].private1.key = "key3";
 	locations[n].private1.key.delItem = true;
-	locations[n].private1.items.blade_03 = 1;
+	locations[n].private1.items.GOF_blade2 = 1;
 	locations[n].private1.items.pistol1 = 1;
 	locations[n].private1.items.bullet = 10;
 	locations[n].private1.items.GunPowder = 10;
@@ -207,34 +201,26 @@ int LocationInitQuestLocations(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "EstateBadRoom1";
 	locations[n].id.label = "Bedroom";
-	locations[n].filespath.models = "locations\EstateRooms\EstateBadRoom1";
-	locations[n].image = "loading\EstateRoomN.tga";		
+	Locations[n].filespath.models = "locations\inside\ResBedRoom";
+	locations[n].image = "loading\EstateN.tga";
 	//Models
 	//Sound
 	locations[n].type = "house";
-	//Always
-	locations[n].models.always.estateBadRoom = "estateBadRoom1";	
-	locations[n].models.always.windows = "estateBadRoom1_windows";
-	Locations[n].models.always.windows.tech = "LocationWindows";
-	Locations[n].models.always.windows.level = 66532;	
-	//VolumeLight	
-	Locations[n].models.always.vlight = "estateBadRoom1_vlight";
-	Locations[n].models.always.vlight.uvslide.v0 = 0.05;
-    Locations[n].models.always.vlight.uvslide.v1 = 0.0;
-	Locations[n].models.always.vlight.tech = "LocationWaterFall";
-	Locations[n].models.always.vlight.level = 99950;
-	
-	locations[n].models.always.locators = "estateBadRoom1_locators";
-	locations[n].models.always.grassPatch = "estateRooms_grass";
+	Locations[n].models.always.locators = "bed_l";
+	Locations[n].models.always.l1 = "bed";
+	Locations[n].models.always.window = "bed_w";
+	Locations[n].models.always.window.tech = "LocationWindows";
+	Locations[n].models.always.window.level = 50;
 	//Day
-	locations[n].models.day.charactersPatch = "estateBadRoom1_patch";
-	locations[n].models.day.fonar = "estateRooms_fd";
+	Locations[n].models.day.charactersPatch = "bed_p";
 	//Night
-	locations[n].models.night.charactersPatch = "estateBadRoom1_patch";
-	locations[n].models.night.fonar = "estateRooms_fn";
+	Locations[n].models.night.charactersPatch = "bed_p";
 	//Environment
+	locations[n].lockWeather = "Inside";
+	Locations[n].environment.sea = "false";
+	Locations[n].models.back = "back\redb_";
 	locations[n].environment.weather = "true";
-	locations[n].environment.sea = "true";
+	locations[n].environment.sea = "false";
 	Locations[n].QuestlockWeather = "20 Hour";	
 	//Reload map
 	locations[n].reload.l1.name = "reload1";
@@ -243,6 +229,49 @@ int LocationInitQuestLocations(int n)
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Estate";
 	n = n + 1;
+	
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Кабинет #1 Оглторпа
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "EstateOffice";
+	locations[n].id.label = "Cabinet";
+	locations[n].filespath.models = "locations\EstateRooms\EstateOffice";
+	locations[n].image = "loading\EstateRoomN.tga";
+	//Sound
+	locations[n].type = "residence";
+	//Models
+	//Always
+	locations[n].models.always.EstateOffice = "estateOffice";
+	locations[n].models.always.windows = "estateOffice_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 66532;
+	//VolumeLight	
+	Locations[n].models.always.vlight = "estateOffice_vlight";
+	Locations[n].models.always.vlight.uvslide.v0 = 0.05;
+   	Locations[n].models.always.vlight.uvslide.v1 = 0.0;
+	Locations[n].models.always.vlight.tech = "LocationWaterFall";
+	Locations[n].models.always.vlight.level = 99950;
+	
+	locations[n].models.always.locators = "estateOffice_locators";
+	locations[n].models.always.grassPatch = "estateOffice_grass";
+	//Day
+	locations[n].models.day.charactersPatch = "estateOffice_patch";
+	locations[n].models.day.fonar = "estateOffice_fd";
+	//Night
+	locations[n].models.night.charactersPatch = "estateOffice_patch";
+	locations[n].models.night.fonar = "estateOffice_fn";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "true";
+	Locations[n].QuestlockWeather = "20 Hour";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Estate";
+	locations[n].reload.l1.emerge = "reload5";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Estate";
+	n = n + 1;
+
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Подводная Локация
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

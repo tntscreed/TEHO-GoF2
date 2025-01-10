@@ -2,7 +2,7 @@
 // здесь и далее ник boal - это разработческий ник ALexusB
 
 #define VERSION_NUMBER1       "Gentlemen of Fortune: Reborn  " // Корсары: КС modding base #1
-#define VERSION_NUMBER2       "ver. 0.1 x64"
+#define VERSION_NUMBER2       "ver. 1.0 x64"
 #define VERSION_NUMBER3       "PirateHorizons.com"
 #define GAME_HELP_INFO        "Need help? Join our Discord or visit PirateHorizons.com!"
 

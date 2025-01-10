@@ -104,6 +104,15 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
+			       if (Pchar.questTemp.CapBloodLine == true)
+            {
+                dialog.Text = LinkRandPhrase("Hey, Doctor Blood! " + TimeGreeting() + ".",
+                                    "Great to see you, Peter Blood.",
+                                    "It's good that you've come around here, " + GetFullName(pchar) + ". How's Colonel Bishop doing these days?");
+                Link.l1 = "Alas, I am leaving, " + NPChar.name + ". 'Til we meet again.";
+				Link.l1.go = "exit";
+				break;
+            }
 			//фрахт
 			//--> Jason Бремя гасконца
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Lock"))

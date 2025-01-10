@@ -373,6 +373,7 @@ void FillItemsSelected()
 					case BLADE_ITEM_TYPE:
 						SetNewGroupPicture("ITEM_1", Items[i].picTexture, "itm" + Items[i].picIndex);
 						SetNodeUsing("ITEM_1" , true);
+						SetCurrentNode("TABLE_ITEMS");
 					break;
 					case GUN_ITEM_TYPE:
 						if(CheckAttribute(xi_refCharacter, "IsMushketer"))

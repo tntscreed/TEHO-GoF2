@@ -40,7 +40,7 @@
 #include "controls\hotkey_modify.c" // belamour альтернативнивный модификатор
 #include "migrations.c"
 #include "camera.c"
-
+#include "MythFunction.c"
 extern void InitBaseCannons();
 extern void InitCharacters();
 extern void InitBaseInterfaces();
@@ -567,12 +567,6 @@ void InterfaceDoExit()
 		case RC_INTERFACE_LAUNCH_GAMEMENU:
 			LaunchGameMenuScreen();
 			break;
-	
-		// boal -->
-  		case RC_INTERFACE_DO_BOAL_BETA:
-		     LaunchBoalBetaScreen();
-        break;
-		// boal <--
 		
 		// Warship -->
 		case RC_INTERFACE_BEST_MAP:
@@ -842,8 +836,22 @@ void NewGame_continue()
 	pchar = GetMainCharacter(); //fix
 		
 	initNewMainCharacter(); // все там
+	if(pchar.name == "Peter" && pchar.lastname == "Blood")
+	{	
+		RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
+		RemoveCharacterEquip(pchar, GUN_ITEM_TYPE);
+		RemoveCharacterEquip(pchar, SPYGLASS_ITEM_TYPE);
+		RemoveCharacterEquip(pchar, PATENT_ITEM_TYPE);
+		RemoveCharacterEquip(pchar, CIRASS_ITEM_TYPE);
+		RemoveCharacterEquip(pchar, MAPS_ITEM_TYPE);
+		DeleteAttribute(pchar, "items");
+		InterfaceStates.startGameWeather = FindWeather("20 Hour");
+		LoadMainCharacterInFirstLocationGroup("Estate", "reload", "reload1");
+		}
+	else
+	{
 	LoadMainCharacterInFirstLocationGroup("Ship_deck_Low", "goto", "goto4");
-
+	}
 	
 	ReloadProgressUpdate();
 		

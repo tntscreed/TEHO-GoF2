@@ -64,6 +64,34 @@ void ProcessDialogEvent()
 				pchar.quest.pirate_in_town.function = "TownPirate_battle";
 				break;
 			}
+			
+			   if (Pchar.questTemp.CapBloodLine == true)
+            {
+                dialog.Text = LinkRandPhrase("Hey, Doctor Blood! " + TimeGreeting() + ".",
+                                    "Great to see you, Peter Blood.",
+                                    "It's good that you've come around here, " + GetFullName(pchar) + ". How's Colonel Bishop doing these days?");
+                Link.l1 = "Alas, I am leaving, " + NPChar.name + ". 'Til we meet again.";
+				Link.l1.go = "exit";
+
+                if(Pchar.questTemp.CapBloodLine.stat == "WakerOffer")
+                {
+            		link.l2 = "Can you tell me, my dear " + NPChar.name + ", where to find Doctor Whacker?";
+            		link.l2.go = "TStep_0";
+                }
+                
+                if(Pchar.questTemp.CapBloodLine.stat == "PrepareToEscape")
+                {
+            		link.l2 = "I need to discuss one matter with you.";
+            		link.l2.go = "TStep_1";
+                }
+                
+                if(Pchar.questTemp.CapBloodLine.stat == "needMoney" && CheckAttribute(pchar, "questTemp.CapBloodLine.QuestRaff") && pchar.questTemp.CapBloodLine.QuestRaff == true)
+                {
+            		link.l2 = "I'm interested in a man named Raphael Guinness. How can I find him?";
+            		link.l2.go = "TStep_5";
+                }
+                break;
+    		}
 			//Jason, Бремя гасконца
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "crew" && npchar.city == "FortFrance")
 			{
@@ -1475,6 +1503,106 @@ void ProcessDialogEvent()
 			pchar.quest.mtraxx_retribution_room.win_condition.l1.locator_group = "reload";
 			pchar.quest.mtraxx_retribution_room.win_condition.l1.locator = "reload2_back";
 			pchar.quest.mtraxx_retribution_room.function = "Mtraxx_RetributionToRoom";
+		break;
+		case "TStep_0":
+			dialog.text = "Up the stairs. Not that you heard it from me.";
+			link.l1 = "Many thanks.";
+			link.l1.go = "Exit";
+			int n = FindLocation("Bridgetown_tavern");
+            locations[n].reload.l2.disable = false;
+		break;
+		
+		case "TStep_1":
+			dialog.text = "What have you got for me, my dear Doctor?";
+			link.l1 = "Nothing special... I wouldn't mind obtaining some cutlasses and a few guns, just in case. My dearest friend, you could swing them for me, could you not? Elsewise, point out an individual who could? As you know, mainstream routes of commerce are a bit out of my league...";
+			link.l1.go = "TStep_2";
+		break;
+		
+		case "TStep_2":
+			dialog.text = "Er... Well, yes. Of course.";
+			link.l1 = "Out of your league how, exactly? You mean, you would have trouble getting your stuff?";
+			link.l1.go = "TStep_3";
+            if (makeint(pchar.money) >= 2500)
+            {
+    			link.l1 = "Did I not mention the reward? I am of course willing to pay for the information, and pay well. Shall we say, one thousand piasters? And dear sir, surely you remember how I tended your daughter, how I spared neither time nor sweat?";
+    			link.l1.go = "TStep_4";
+            }
+		break;
+		
+		case "TStep_3":
+			dialog.text = "There's nothing I can do for you, Doctor.";
+			link.l1 = "All the best to you.";
+			link.l1.go = "exit";
+		break;
+		
+		case "TStep_4":
+			dialog.text = "Why Doctor Blood, of course I've got what you need. In fact, Mr. Griffin, whose bone you so recently tended, is an old weapons dealer by trade. His house is by Governor Steed's estate. Go see him; I'm plumb certain he won't let you down.";
+			link.l1 = "Well, all the best.";
+			link.l1.go = "exit";
+			AddMoneyToCharacter(pchar, -1000);
+			Pchar.questTemp.CapBloodLine.stat = "PrepareToEscape1";
+			AddQuestRecord("WeaponsForEscape", "2");
+
+		break;
+		
+		case "TStep_5":
+            pchar.questTemp.CapBloodLine.QuestRaff = false;
+			dialog.text = "Yeah, I remember him. Actually... No, maybe that wasn't him... No, don't reckon it was...";
+            if (makeint(pchar.money) >= 500)
+            {
+    			link.l1 = "What would an even five hundred do for your memory?";
+    			link.l1.go = "TStep_6";
+            }
+			link.l2 = "So is it him or not?";
+			link.l2.go = "TStep_7";
+		break;
+		
+		case "TStep_6":
+            AddMoneyToCharacter(pchar, -500);
+			dialog.text = "Why... Yes, of course! I mean, of course it's him! He came by just recently, in fact. Said something about buying a ship... I'm not really sure what ship or from whom.";
+			link.l1 = "What are you sure about, then? Seems to me that five hundred piasters ought to dislodge a few more details than 'Oh yeah, he came by!'";
+			link.l1.go = "TStep_8";
+		break;
+		
+		case "TStep_7":
+			dialog.text = "No, I'm afraid it's definitely not him. I got mixed up. It happens.";
+			link.l1 = "Of all the aggravating...";
+			link.l1.go = "TStep_10";
+		break;
+		
+		case "TStep_8":
+			dialog.text = "If you hurry, you should find him at the shipyard.";
+			link.l1 = "You have my thanks.";
+			link.l1.go = "TStep_9";
+		break;
+		
+		case "TStep_9":
+            AddQuestRecord("UsurerQuest", "2");
+            sld = GetCharacter(NPC_GenerateCharacter("QStranger", "citiz_7", "man", "man", 10, ENGLAND, 1, false, "quest"));
+			sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+			sld.greeting = "Gr_bankeer";
+			sld.name = "Alex";
+			sld.lastname = "Winner";
+            sTemp = GetNationNameByType(ENGLAND) + "_citizens";
+            LAi_group_MoveCharacter(sld, sTemp);
+            LAi_SetStayTypeNoGroup(sld);
+            ChangeCharacterAddressGroup(sld, "Bridgetown_Shipyard", "goto", "goto1");
+			DialogExit();
+			NextDiag.CurrentNode = NextDiag.TempNode;
+		break;
+		
+		case "TStep_10":
+            sld = GetCharacter(NPC_GenerateCharacter("QStranger", "citiz_7", "man", "man", 10, ENGLAND, 1, false, "quest"));
+			sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+			sld.greeting = "Gr_bankeer";
+			sld.name = "Alex";
+			sld.lastname = "Winner";
+            sTemp = GetNationNameByType(ENGLAND) + "_citizens";
+            LAi_group_MoveCharacter(sld, sTemp);
+            LAi_SetStayTypeNoGroup(sld);
+            ChangeCharacterAddressGroup(sld, "CommonRoom_MH7", "goto", "goto1");
+			DialogExit();
+			NextDiag.CurrentNode = NextDiag.TempNode;
 		break;
 	}
 }

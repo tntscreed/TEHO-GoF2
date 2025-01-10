@@ -3600,9 +3600,19 @@ void initNewMainCharacter()//инициализация главного гер�
 	// ch.ship.SP = sti(ch.ship.SP) - 10; <-- этот код не имеет смысла
 	ch.ship.HP = sti(ch.ship.HP) - makeint(sti(ch.ship.HP) / 2);
 	// Tutorial - НАЧАЛО ИГРЫ
-	ch.quest.Tut_start.win_condition.l1 = "location";
-	ch.quest.Tut_start.win_condition.l1.location = "Ship_deck_Low";
-	ch.quest.Tut_start.function = "Tut_StartGame";
+	if(ch.name == "Peter" && ch.lastname == "Blood")
+    {
+    	pchar.quest.Tut_start.win_condition.l1          = "location";
+    	pchar.quest.Tut_start.win_condition.l1.location = "Estate";
+    	pchar.quest.Tut_start.function                  = "Blood_StartGame";
+    }
+    else
+    {
+    	pchar.quest.Tut_start.win_condition.l1          = "location";
+    	pchar.quest.Tut_start.win_condition.l1.location = "Ship_deck_Low";
+    	pchar.quest.Tut_start.function                  = "Tut_StartGame";
+        Pchar.questTemp.CapBloodLine = false;
+    }
 
 	// Warship Для разных квестов
 	// Важно: функция MaryCelesteInit() должна быть тут, а не в initStartState2Character()
@@ -3611,6 +3621,8 @@ void initNewMainCharacter()//инициализация главного гер�
 	MaryCelesteInit(); // Warship 07.07.09 Пасхалка "Мэри Селест"
 	// Установим начальный дневной рандом
 	ch.DayRandom = Random();
+	DeleteClass(&sound);
+	ResumeAllSounds();
 }
 
 void initMainCharacterItem()

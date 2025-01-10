@@ -37,6 +37,15 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
+			   if (Pchar.questTemp.CapBloodLine == true)
+            {
+                dialog.Text = LinkRandPhrase("Hey, Doctor Blood! " + TimeGreeting() + ".",
+                                    "Goodness, Doctor Peter Blood. Happy to see you!",
+                                    "It's so good that you came by, " + GetFullName(pchar) + ". Pray, how is Colonel Bishop?");
+                Link.l1 = "Ah! Alas, I am on my way out, " + NPChar.name + ". Next time, perhaps.";
+				Link.l1.go = "exit";
+				break;
+            }
 			//Jason --> Заносчивый аристократ
 			if (!CheckAttribute(pchar, "GenQuest.Badboy") && !CheckAttribute(npchar, "quest.Badboy") && makeint(environment.time) > 15.0 && makeint(environment.time) < 21.0 && sti(pchar.questTemp.HorseQty) > 4)
 			{

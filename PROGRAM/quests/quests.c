@@ -4,8 +4,10 @@
 #include "quests\quests_movie.c"
 #include "quests\characters_task.c"
 #include "quests\quests_scenes.c"
+#include "quests\myth_quests.c"
 #include "quests\quests_reaction.c"
 #include "quests\reaction_functions.c"
+#include "quests\Coas_quests\CapBloodStart.c"
 
 #event_handler("LocationWaitNihgtEnd","WaitDatePostEventControl");
 #event_handler("evntQuestCameraRestore","QuestCameraRestore");
@@ -628,6 +630,7 @@ void QuestCameraRestore()
 	locCameraFollow();
 	if(sCameraQuestCheckName!="")
 	{
+		MythQuestComplete(sCameraQuestCheckName, "");
 		CompleteQuestName(sCameraQuestCheckName, "");
 		QuestsCheck();
 	}
@@ -1505,6 +1508,8 @@ void CompleteQuestName(string sQuestName, string qname)
 	else
 	{
 		QuestComplete(sQuestName, qname);
+		MythQuestComplete(sQuestName, qname);
+		TraceQuestFiles(sQuestName, qname);
 	}
 }
 

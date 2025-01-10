@@ -511,10 +511,10 @@ void SoundInResidenceBattle()
 	switch (rand(1))
     {
         case 0:
-            PlaySound("VOICE\" + LanguageGetLanguage() + "\soldier_arest_4.WAV");
+            PlaySound("VOICE\soldier_arest_4.WAV");
         break;
         case 1:
-            PlaySound("VOICE\" + LanguageGetLanguage() + "\soldier_common_4.WAV");
+            PlaySound("VOICE\soldier_common_4.WAV");
         break;
     }
 }

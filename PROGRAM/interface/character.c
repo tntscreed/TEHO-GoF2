@@ -77,14 +77,15 @@ void IDoExit(int exitCode)
 	if (bChangePIRATES)
 	{
 		xi_refCharacter.skill.FreeSPECIAL = 0; // если не все распределил, сам дурак		
-		
-    	ref sld = characterFromID("Sailor_1");
-    	LAi_SetActorTypeNoGroup(pchar);
-    	LAi_SetActorTypeNoGroup(sld);
-    	SetActorDialogAny2Pchar(sld.id, "", 0.0, 0.0);
-    	LAi_ActorFollow(pchar, sld, "ActorDialog_Any2Pchar", 0.5);        
-    }
-		    
+		if (Pchar.questTemp.CapBloodLine != true)
+		{
+			ref sld = characterFromID("Sailor_1");
+			LAi_SetActorTypeNoGroup(pchar);
+			LAi_SetActorTypeNoGroup(sld);
+			SetActorDialogAny2Pchar(sld.id, "", 0.0, 0.0);
+			LAi_ActorFollow(pchar, sld, "ActorDialog_Any2Pchar", 0.5);        
+    	}
+	}   
 	DelEventHandler("InterfaceBreak","ProcessExitCancel");
 	DelEventHandler("exitCancel","ProcessExitCancel");
     DelEventHandler("ievnt_command","ProcessCommandExecute");

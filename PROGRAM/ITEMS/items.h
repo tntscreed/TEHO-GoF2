@@ -50,8 +50,8 @@
 // indexes for items` array
 #define TOTAL_ITEMS				  1000 // Warship 08.05.09 - Новая система предметов
 #define TEHO_ITEMS_QUANTITY       500   // Vex 2024-09-27 - Porting GoF 2.0 to TEHO
-#define GOF_ITEMS_QUANTITY        300   // Vex 2024-09-27 - Porting GoF 2.0 to TEHO
-#define ITEMS_QUANTITY			  800  // Sum of GOF and TEHO items
+#define GOF_ITEMS_QUANTITY        305   // Vex 2024-09-27 - Porting GoF 2.0 to TEHO
+#define ITEMS_QUANTITY			  805  // Sum of GOF and TEHO items
 #define MAX_BUTTONS               64
 #define RANDITEMS_QUANTITY    	  52
 #define BUTTON_ACTIVATION_TIME	  1000

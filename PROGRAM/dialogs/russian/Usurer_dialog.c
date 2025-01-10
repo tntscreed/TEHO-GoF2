@@ -73,6 +73,27 @@ void ProcessDialogEvent()
 				}
 				//<-- работорговец
 			
+			         if (Pchar.questTemp.CapBloodLine == true )
+            {
+                if(Pchar.questTemp.CapBloodLine.stat == "needMoney" && !CheckAttribute(pchar, "questTemp.CapBloodLine.QuestRaff"))
+                {
+                    dialog.text = "G'day, Doctor Blood. Would you mind helping me in a particular affair? Of course, you will be compensated generously for your time. ";
+                    Link.l1 = "What kind of affair is that, then?";
+    				Link.l1.go = "CapBloodUsurer_5";
+                    break;
+                }
+                dialog.Text = LinkRandPhrase("Hey, Doctor Blood! " + TimeGreeting() + ".",
+                                    "Great to see you, Peter Blood.",
+                                    "It's good that you've come around to see me, " + GetFullName(pchar) + ". Pray, how is Colonel Bishop?");
+                Link.l1 = "Ah! Alas, " + NPChar.name + ", I am on my way out. Next time, perhaps.";
+				Link.l1.go = "exit";
+                if(CheckAttribute(Pchar, "questTemp.CapBloodLine.Ogl") && Pchar.questTemp.CapBloodLine.Ogl == false)//homo линейка Блада
+                {
+                    Link.l2 = "I have some business for you.";
+    				Link.l2.go = "CapBloodUsurer_1";
+                }
+				break;
+            }
        			dialog.text = NPCharRepPhrase(pchar, 
 					LinkRandPhrase("The town is on alarm and they are searching for you everywhere! If I were you I would not stay here for long.", "All guards are looking for you. I am not an idiot and won't risk talking to you!", "Run, "+ GetSexPhrase("pal","girl") +", until soldiers will make a sieve from you..."), 
 					LinkRandPhrase("What do you want, vile creature?! Town guards are aware of your position and you won't run away, "+ GetSexPhrase("filthy pirate","") +"!", "Dirty murderer, get away from my place! Guards!", "I don't fear you, vile creature! Soon you'll be hanged in our for, you won't get away..."));
@@ -2751,6 +2772,94 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "Sailing", 200);
 			bQuestDisableMapEnter = false;//открыть карту
 			DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
+		break;
+				case "CapBloodUsurer_1":
+			dialog.text = "I give nothing, sir, to the Colonel's live property.";
+			link.l1 = "Nevertheless, you have done so.";
+			link.l1.go = "CapBloodUsurer_2";
+		break;
+		
+		case "CapBloodUsurer_2":
+			dialog.text = "What? What are you talking about?";
+			if (sti(pchar.money) >= 5000)
+			{
+    			link.l1 = "Steady on. I brought you your loan from the old gunner Ogle. Exactly five thousand.";
+    			link.l1.go = "CapBloodUsurer_3";
+            }
+            else
+            {
+    			link.l1 = "I'm talking about the loan you gave to the old gunner, Ogle. Exactly five thousand. I am prepared to pay his debt.";
+    			link.l1.go = "CapBloodUsurer_4";
+            }
+		break;
+		
+		
+		case "CapBloodUsurer_3":
+            AddMoneyToCharacter(pchar, -5000);
+            Pchar.questTemp.CapBloodLine.Ogl = true;
+            AddQuestRecord("OglQuest", "2");
+			dialog.text = "Ah... Oh. I, er, thank you, sir.";
+			link.l1 = "All the best.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
+		break;
+		
+		case "CapBloodUsurer_4":
+			dialog.text = "You brought me money for Ogle?";
+			if (sti(pchar.money) >= 5000)
+			{
+    			link.l1 = "Quite right.";
+    			link.l1.go = "CapBloodUsurer_3";
+            }
+            else
+            {
+    			link.l1 = "Unfortunately, no. But soon!";
+    			link.l1.go = "Exit";
+    			NextDiag.TempNode = "CapBloodUsurer_4";
+            }
+		break;
+		
+		case "CapBloodUsurer_5":
+			dialog.text = "Early this morning, a certain townsman took out a loan with me. Nothing unusual there. The problem is... he deceived me. He gave his name as Raphael Guinness, a man who quite often comes here. To his credit, he was a fair likeness. I gave him a loan of thirty thousand piasters, and thought no more of it - but then Raphael himself stopped in...";
+			link.l1 = "So you want me to hunt down this imposter? What makes you think he's still around here? ";
+			link.l1.go = "CapBloodUsurer_6";
+		break;
+		
+		case "CapBloodUsurer_6":
+			dialog.text = "Oh, he is in the city, I assure you. No ships have sailed yet today. I can offer you ten percent, as a reward. That's three thousand piasters. What do you say?";
+			link.l1 = "You know, perhaps I will help you.";
+			link.l1.go = "CapBloodUsurer_7";
+			link.l2 = "Don't count on me, mac.";
+			link.l2.go = "Exit";
+			NextDiag.TempNode = "First time";
+			PChar.questTemp.CapBloodLine.QuestRaff = false;
+		break;
+		
+		case "CapBloodUsurer_7":
+		
+            AddQuestRecord("UsurerQuest", "1");
+            PChar.questTemp.CapBloodLine.QuestRaff = true;
+            NextDiag.CurrentNode = "CapBloodUsurer_8";
+			DialogExit();
+		break;
+		
+		case "CapBloodUsurer_8":
+			dialog.text = "Well, did you succeed?";
+			if (sti(pchar.money) >= 27000)
+			{
+    			link.l1 = "Yes, here's your money - minus my ten percent, of course.";
+    			link.l1.go = "exit";
+    			AddMoneyToCharacter(pchar, -27000);
+                Pchar.quest.QUsurer.over = "yes";
+                NextDiag.TempNode = "First time"; // fix многократной отдачи денег
+		   		CloseQuestHeader("UsurerQuest");
+            }
+            else
+            {
+    			link.l1 = "Not yet, I fear. Hang on, though. I will, presently!";
+    			link.l1.go = "Exit";
+    			NextDiag.TempNode = "CapBloodUsurer_8";
+            }
 		break;
 	}	
 }
