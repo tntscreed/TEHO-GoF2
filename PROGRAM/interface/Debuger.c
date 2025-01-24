@@ -596,7 +596,7 @@ void CalculateInfoDataF8()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 ////////////////////////////////////////////////////////////////////////
-string descF9 = "Wind == 9.5"//"DumpAttributes(&Weather)";//"��������� � �����";
+string descF9 = "Set wind to 9.5."//"DumpAttributes(&Weather)";//"��������� � �����";
 
 void CalculateInfoDataF9()
 {
@@ -642,14 +642,14 @@ void CalculateInfoDataF10()
 	totalInfo = descF10;
 	ref mc;
 	mc = GetMainCharacter();
-			if(LAi_IsImmortal(mc))
-			{
-				LAi_SetImmortal(mc, false);
-				Log_SetStringToLog("God mode OFF");
-			}else{
-				LAi_SetImmortal(mc, true);
-				Log_SetStringToLog("God mode ON");
-			}
+	if(CheckAttribute(mc, "godmode")){
+		DeleteAttribute(mc, "godmode");
+		LAi_SetImmortal(mc, false);
+	}
+	else{
+		mc.godmode = true;
+		LAi_SetImmortal(mc, true);
+	}
     // <--
     totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
                 "The command is executed successfully!";
@@ -686,7 +686,7 @@ void CalculateInfoDataF11()
     //
 }
 ////////////////////////////////////////////////////////////////////////
-string descF12 = "award for a head for all nation +50";//�������� ������� ������� �� ��";  //"LaunchMunityCapture";;
+string descF12 = "Decrease reputation in all nations.";//�������� ������� ������� �� ��";  //"LaunchMunityCapture";;
 
 void CalculateInfoDataF12()
 {
@@ -729,7 +729,7 @@ void CalculateInfoDataF12()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF13 = "Worldmap encounters ON/OFF";
+string descF13 = "Worldmap encounters ON/OFF.";
 
 void CalculateInfoDataF13()
 {
@@ -764,7 +764,7 @@ void CalculateInfoDataF13()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF14 = "Shotgun mode ON\OFF";
+string descF14 = "Shotgun mode ON\OFF.";
 
 void CalculateInfoDataF14()
 {
@@ -786,7 +786,7 @@ void CalculateInfoDataF14()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF15 = "call change relations of the nations";
+string descF15 = "Call for change to relations of nations.";
 
 void CalculateInfoDataF15()
 {
@@ -803,7 +803,7 @@ void CalculateInfoDataF15()
     ProcessCancelExit();
 }
 
-string descF16 = "add 5 day";
+string descF16 = "Add 5 days.";
 
 void CalculateInfoDataF16()
 {
@@ -895,7 +895,7 @@ void CalculateInfoDataF17()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF18 = "ChangeShowIntarface - for screenshot without interface inscriptions";
+string descF18 = "ChangeShowIntarface - for screenshots without GUI.";
 
 void CalculateInfoDataF18()
 {
@@ -919,7 +919,7 @@ void CalculateInfoDataF18()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF19 = "Officer-skipper +1 rang (35 skills)";
+string descF19 = "Give navigator +35 free personal skills.";
 void CalculateInfoDataF19()
 {
     totalInfo = descF19;
@@ -940,21 +940,18 @@ void CalculateInfoDataF19()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF20 = "Add skills �307";
+string descF20 = "empty";
 void CalculateInfoDataF20()
 {
     totalInfo = descF20;
 	// -->
-    ref chr = GetCharacter(302);
-
-	chr.Skill.FreeSkill  = sti(chr.Skill.FreeSkill) + 35;
     // <--
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "The command is executed successfully!";
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF21 = "To start gold fleet";
+string descF21 = "Start gold fleet.";
 void CalculateInfoDataF21()
 {
     totalInfo = descF21;
@@ -974,33 +971,19 @@ void CalculateInfoDataF21()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF22 = "Ascold info";
+string descF22 = "empty";
 void CalculateInfoDataF22()
 {
     totalInfo = descF22;
 	// -->
-    {
-		totalInfo = "Random shop owner: " + pchar.questTemp.Ascold.TraderId + NewStr() +
-					"Random trader (colony): " + pchar.questTemp.Ascold.MerchantColony + NewStr() +
-					"Random shipyarder: " + pchar.questTemp.Ascold.ShipyarderId + NewStr()+
-					"Annals location: " + Items[GetItemIndex("Rock_letter")].startLocation + NewStr()+
-					"Annals locator: " + Items[GetItemIndex("Rock_letter")].startLocator;
-					if (pchar.questTemp.BlueBird.City != "")
-					{
-						totalInfo = totalInfo + NewStr()+ "Here will be hearings on a flute of the trader: " + pchar.questTemp.BlueBird.City;
-					}
-					else
-					{
-						totalInfo = totalInfo + NewStr()+ "Hearings on a flute of the trader not activated.";
-					}
-    }
+
     // <--
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "The command is executed successfully!";
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF23 = "Patent";
+string descF23 = "Cycle nation and give patent.";
 void CalculateInfoDataF23()
 {
     totalInfo = descF23;
@@ -1039,19 +1022,19 @@ void CalculateInfoDataF23()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF24 = "Licence";
+string descF24 = "Give nation license.";
 void CalculateInfoDataF24()
 {
     totalInfo = descF24;
 	// -->
-    GiveNationLicence(sti(pchar.nation), 30);
+    GiveNationLicence(sti(pchar.nation), 30); // TODO: does it even make sense to give a license for your own country?
     // <--
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "The command is executed successfully!";
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF25 = "Reload location - for CALLS";
+string descF25 = "empty";
 void CalculateInfoDataF25()
 {
     totalInfo = descF25;
@@ -1060,16 +1043,6 @@ void CalculateInfoDataF25()
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "The command is executed successfully!";
     SetFormatedText("INFO_TEXT",totalInfo);
-    
-    ProcessCancelExit();
-    if( bSeaActive && !bAbordageStarted )
-    {
-    	Sea_ReloadStart();
-	}
-	else
-	{
-	    DoQuestReloadToLocation(pchar.location, pchar.location.group, pchar.location.locator, "");
-	}
 }
 
 string descF26 = "empty";
@@ -1120,7 +1093,7 @@ void CalculateInfoDataF29()
     SetFormatedText("INFO_TEXT",totalInfo);
 }
 
-string descF30 = "add 20 days";
+string descF30 = "Add 20 days.";
 void CalculateInfoDataF30()
 {
     totalInfo = descF30;
