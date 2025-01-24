@@ -345,792 +345,376 @@ void ProcCommand()
 	CalculateCheatsInfo(); 
 }
 
-string descF1 = "Gold + 50 000";
+string descF1 = "Delete Sea!";
 
 void CalculateInfoDataF1()
 {
-	// ��� ����������� ������ ���������� � ������� � totalInfo - ������������� -->
 	totalInfo = descF1;
-	Pchar.money = sti(Pchar.money) + 50000;
-	/*Pchar.quest.SetTreasureHunter.win_condition.l1          = "location";
-                Pchar.quest.SetTreasureHunter.win_condition.l1.location = Pchar.location.from_sea;
-                Pchar.quest.SetTreasureHunter.win_condition             = "SetTreasureHunter";
-      */
-	//Characters[GetCharacterIndex("Luisa Drake")].perks.list.Ciras = "1";
-	totalInfo = totalInfo + GetAssembledString(" #sName#� has #dmoney# money ",	Pchar);
-    // ��� ����������� ������ ���������� � ������� � totalInfo <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	DeleteSea();
+
+	Statistic_AddValue(PChar, "Cheats.F1", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF2 = "CreateSiege";
+
+string descF2 = "Create Sea!";
 
 void CalculateInfoDataF2()
 {
-	// -->
 	totalInfo = descF2;
-	//TraderHunterOnMap();
-	CreateSiege("");
-    // <
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
 
-	ProcessCancelExit();
+	CreateSea(EXECUTE, REALIZE);
+
+	Statistic_AddValue(PChar, "Cheats.F2", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF3 = "ID current location and position     ";
+
+string descF3 = "Weather Create Sea Environment!";
 
 void CalculateInfoDataF3()
 {
-	// -->
 	totalInfo = descF3;
-	ref mc;
-	mc = GetMainCharacter();
-
-	float locx, locy, locz;
-	if (bSeaActive && !bAbordageStarted)
-	{
-	    if (CheckAttribute(mc, "Ship.pos.x"))
-		{
-		    totalInfo = totalInfo + NewStr() + mc.location + "     ship(x,z)= "+mc.Ship.pos.x +", "+mc.Ship.pos.z;
-		    if (false)//CheckAttribute(mc, "WMShip.Pos.x") && worldMap.island != "")
-	        {
-	            string sTemp = mc.curIslandId;
-	            float r1 = stf(worldMap.islands.(sTemp).GoMapRadius);
-
-				r1 *= WDM_MAP_TO_SEA_SCALE;
-	            float d2 = GetDistance2D(stf(mc.Ship.Pos.x),
-	                              stf(mc.Ship.Pos.z),
-	                              stf(worldMap.islands.(sTemp).position.rx),
-	                              stf(worldMap.islands.(sTemp).position.rz));
-
-	            totalInfo = totalInfo + "         Position for map: radius= " + r1 + "   GetDistance2D= " + d2 + "      ";
-	        }
-		}
-	}
-	else
-	{
-  		if (IsEntity(loadedLocation))
-  		{
-			GetCharacterPos(GetMainCharacter(), &locx, &locy, &locz);
-			totalInfo = totalInfo + "id = " + mc.location + " (x,y,z)= "+locx + ", " +locy + ", "+locz;
-			totalInfo = totalInfo + NewStr() + "filespath.models = " + loadedLocation.filespath.models;
-			totalInfo = totalInfo + NewStr() + "image = " + loadedLocation.image;
-			totalInfo = totalInfo + NewStr() + "models.locators = " + loadedLocation.models.always.locators;
-		}
-	}
-	
-	//aref rootItems;
-    //makearef(rootItems, worldMap);  //Islands[0]
-	//DumpAttributes(rootItems);
-	
-	totalInfo = totalInfo + NewStr() + " MapShipX " +	worldMap.playerShipX + " MapShipZ " + worldMap.playerShipZ + " X " + worldMap.island.x + " Z " + worldMap.island.z;
-	
-    // <
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	WhrCreateSeaEnvironment();
+
+	Statistic_AddValue(PChar, "Cheats.F3", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF4 = "+10 to all crew experience.";
+
+string descF4 = "Reload Sea!";
 
 void CalculateInfoDataF4()
 {
-	// -->
 	totalInfo = descF4;
-	//locCameraLock(3);    ������ ������������� �� ���� (������ ������)
-	///mc.model.animation = "man";
-	//mc.model = "napitan";
-	//SetNewModelToChar(mc);
-    ChangeCrewExp(pchar, "Sailors", 10);
-	ChangeCrewExp(pchar, "Cannoners", 10);
-	ChangeCrewExp(pchar, "Soldiers", 10);
-
-	//float mhp = LAi_GetCharacterMaxHP(mc) + 5;
-	//LAi_SetHP(mc,mhp,mhp);
-	//totalInfo = totalInfo+ " iNumShips="+iNumShips+" iNumFantoms="+iNumFantoms;
-	//ddCharacterExp(mc, 3000);
-    // <
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	Sea_ReloadStart();
+
+	Statistic_AddValue(PChar, "Cheats.F4", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF5 = "+35 free personal skills.";
+
+string descF5 = "Delete Weather";
 int BOAL_debug_num = 1;
 void CalculateInfoDataF5()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF5;
-    /*  pchar.PatentNation = "eng";
-      GiveItem2Character(pchar, "patent_" + pchar.PatentNation);
-      EquipCharacterbyItem(pchar, "patent_" + pchar.PatentNation);
-      */
-    pchar.Skill.FreeSkill = sti(pchar.Skill.FreeSkill) + 35;
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
-}
-////////////////////////////////////////////////////////////////////////
 
-string descF6 = "Spyglass 5, pistol 7, blade, manowar, hero reputation, idol in shop.";
+	DeleteWeatherEnvironment();
+	DeleteWeather();
+
+	Statistic_AddValue(PChar, "Cheats.F5", 1);
+}
+
+string descF6 = "Update Weather";
+
 void CalculateInfoDataF6()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF6;
-	ref mc = GetMainCharacter();
-    mc.Ship.Type = GenerateShip(GOF_SHIP_MANOWAR, true);
-    SetBaseShipData(mc);
-    mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS42;
-    SetCrewQuantityFull(mc);
-
-    SetCharacterGoods(mc,GOOD_FOOD,1500);
-	SetCharacterGoods(mc,GOOD_BALLS,1500);//2000);
-    SetCharacterGoods(mc,GOOD_GRAPES,1500);//700);
-    SetCharacterGoods(mc,GOOD_KNIPPELS,1500);//700);
-    SetCharacterGoods(mc,GOOD_BOMBS,1500);//1500);
-    SetCharacterGoods(mc,GOOD_POWDER,2000);
-    SetCharacterGoods(mc,GOOD_PLANKS,200);
-    SetCharacterGoods(mc,GOOD_SAILCLOTH,200);
-    SetCharacterGoods(mc,GOOD_RUM,1500);//600);
-    SetCharacterGoods(mc,GOOD_WEAPON,1500);//2000);
-
-    if (mc.location.from_sea == "")
-    {
-        //setCharacterShipLocation(mc, mc.HeroParam.Location);
-    }
-
-	GiveItem2Character(mc,"spyglass5");
-	GiveItem2Character(mc,"pistol7");
-	aref arItm;
-	Items_FindItem("pistol7",&arItm);
-	arItm.chargespeed = 3;
-	arItm.dmg_min = 1600.0;
-	arItm.dmg_max = 2650.0;
-
-	GiveItem2Character(mc,"blade15");
-	//GiveItem2Character(mc,"indian11");
-	//GiveItem2Character(mc,"cirass5");
-	TakeNItems(mc,"bullet", 180);
-	mc.perks.list.Gunman = "1";
-	mc.perks.list.BasicDefense = "1";
-	mc.perks.list.AdvancedDefense = "1";
-	mc.perks.list.Ciras = "1";
-	mc.perks.list.FlagPir = "1";
-	mc.perks.list.FlagEng = "1";
-	mc.perks.list.FlagHol = "1";
-	mc.perks.list.FlagSpa = "1";
-	mc.perks.list.FlagFra = "1";
-	//mc.reputation = "89";
-
-	EquipCharacterbyItem(mc, "spyglass5");
-	EquipCharacterbyItem(mc, "pistol7");
- 	EquipCharacterbyItem(mc, "blade32");
- 	//EquipCharacterbyItem(mc, "map_good");
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	Whr_UpdateWeather();
+
+	Statistic_AddValue(PChar, "Cheats.F6", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF7 = "empty";
+
+string descF7 = "Recreate Weather Environment";
 
 void CalculateInfoDataF7()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
-
-    // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	totalInfo = descF7;
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	CreateWeatherEnvironment();
+
+	Statistic_AddValue(PChar, "Cheats.F7", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF8 = "Teleport to a tavern.";
+
+string descF8 = "Output Weather";
 
 void CalculateInfoDataF8()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
-	totalInfo = descF8;
-	ref mc, ch;
-	int n, idx;
-	mc = GetMainCharacter();
-    idx = GetCharIDXByParam("TavernMan", "location", mc.location);
-    bool ok = true;
-    while (ok)
-    {
-        for(n=0; n<MAX_CHARACTERS; n++)
-    	{
-    		makeref(ch,Characters[n]);
-    		if (CheckAttribute(ch, "TavernMan"))
-    		{
-                if (ch.location == "none") continue; // ���� ��� �����, ��������� �� ���� ��������
-                if (n > idx)
-                {
-                    ok = false;
-                    if (GetCityFrom_Sea(ch.City) != "")
-                    {
-                        setCharacterShipLocation(mc, GetCityFrom_Sea(ch.City));
-                        setWDMPointXZ(GetCityFrom_Sea(ch.City));
-                    }
-                    DoQuestReloadToLocation(ch.location,"reload","reload1", "");
-                    Log_Info(ch.location);
-                    break;
-                }
-    		}
-        }
-        idx = -1;
-    }
-	// <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
-    SetFormatedText("INFO_TEXT",totalInfo);
+	if(GetAttributesNum(&Weather) > 0){
+		Log_SetStringToLog("Weather has attributes");
+	}
+	else{
+		Log_SetStringToLog("Weather has no attributes");
+	}
 }
-////////////////////////////////////////////////////////////////////////
-string descF9 = "Wind == 9.5"//"DumpAttributes(&Weather)";//"��������� � �����";
+
+string descF9 = "Fix Weather";
 
 void CalculateInfoDataF9()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF9;
-    /*aref	aCurWeather = GetCurrentWeather();
-    trace("----------------------GetCurrentWeather()------------------");
-    DumpAttributes(aCurWeather);
-    trace("--------------------DumpAttributes(&Weather)------------------");
-    DumpAttributes(&Weather)
-    trace("--------------------     end dump       ------------------");      */
-
-    Weather.Wind.Speed = 9.5;
-	pchar.wind.speed = Weather.Wind.Speed;
-	fWeatherSpeed = stf(Weather.Wind.Speed);
-	
-    /*
-    ref mc;
-	mc = GetMainCharacter();
-	if ( sti(mc.reputation) > REPUTATION_MIN)
-	{
-	   mc.reputation = sti(mc.reputation) -10;
-	   if (sti(mc.reputation) < REPUTATION_MIN)
-	   {
-	       mc.reputation = REPUTATION_MIN;
-	   }
-	}
-	*/
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	DeleteWeatherEnvironment();
+	//CreateWeatherEnvironment();
+	//WhrDeleteSkyEnvironment();
+	//WhrCreateSkyEnvironment();
+	//CreateSea(EXECUTE, REALIZE);
+	CreateSea(EXECUTE, REALIZE);
+	Whr_UpdateWeather();
+	SetEventHandler("frame", "LoadNextWeather_frame", 1);
+	Statistic_AddValue(PChar, "Cheats.F9", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF10 = "God mode on/off";
+
+string descF10 = "Load 'next' weather 0";
 
 void CalculateInfoDataF10()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF10;
-	ref mc;
-	mc = GetMainCharacter();
-			if(LAi_IsImmortal(mc))
-			{
-				LAi_SetImmortal(mc, false);
-				Log_SetStringToLog("God mode OFF");
-			}else{
-				LAi_SetImmortal(mc, true);
-				Log_SetStringToLog("God mode ON");
-			}
-    // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	Whr_LoadNextWeather(0);
+
+	Statistic_AddValue(PChar, "Cheats.F10", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF11 = "add reputation";
+
+string descF11 = "Dump Weather and Sky";
 
 void CalculateInfoDataF11()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-
 	totalInfo = descF11;
-	// -->
-
-    int i, cn;
-    ref mc;
-	mc = GetMainCharacter();
-
-    if ( sti(mc.reputation) < REPUTATION_MAX)
-	{
-	   mc.reputation = sti(mc.reputation) + 10;
-	   if (sti(mc.reputation) > REPUTATION_MAX)
-	   {
-	       mc.reputation = REPUTATION_MAX;
-	   }
-	}
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
-    //
+
+	trace("====DUMPING WEATHER====")
+	DumpAttributes(&Weather);
+	trace("====DUMPING SKY====")
+	DumpAttributes(&Sky);
+
+	Statistic_AddValue(PChar, "Cheats.F11", 1);
 }
-////////////////////////////////////////////////////////////////////////
-string descF12 = "award for a head for all nation +50";//�������� ������� ������� �� ��";  //"LaunchMunityCapture";;
+
+string descF12 = "Cheat 12";
 
 void CalculateInfoDataF12()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF12;
-    for (int j=0; j< MAX_NATIONS; j++)
-	{
-        ChangeCharacterNationReputation(pchar, j, -50);
-    }
-/*	PChar.Ship.Type = SHIP_CYCLOPUS;
-	SetBaseShipData(PChar);
-	PChar.Ship.Crew.Quantity = 1400;
-	PChar.Ship.Cannons.Type          = CANNON_TYPE_CULVERINE_LBS42;
-
-	SetCharacterGoods(PChar,GOOD_BALLS,2000);
-    SetCharacterGoods(PChar,GOOD_GRAPES,2000);
-    SetCharacterGoods(PChar,GOOD_KNIPPELS,2000);
-    SetCharacterGoods(PChar,GOOD_BOMBS,1500);
-    SetCharacterGoods(PChar,GOOD_POWDER,1500);
-    SetCharacterGoods(PChar,GOOD_SAILCLOTH,200);
-    SetCharacterGoods(PChar,GOOD_PLANKS,200);
-    SetCharacterGoods(PChar,GOOD_FOOD,2000);
-    SetCharacterGoods(PChar,GOOD_WEAPON,2000);
-	PChar.SystemInfo.CabinType = "My_Cabin";          */
-
-	//ref rNames;
-	//rNames = &sFrWomenNames;
-	//makeref(rNames, sRndShpEnName);
-    //totalInfo = GetArraySize(rNames) + "---- " +rNames[20];
-
-    //LAi_SetActorType(PChar);
-    //LAi_ActorAnimation(PChar, "attack_left_1", "", -1);
-    //DoQuestCheckDelay("pchar_back_to_player", 15.0);
-
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully! ";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F12", 1);
 }
 
-string descF13 = "Worldmap encounters ON/OFF";
-
+string descF13 = "Cheat 13";
 void CalculateInfoDataF13()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF13;
-
-    ref mc;
-	mc = GetMainCharacter();
-    if(CheckAttribute(mc,"worldmapencountersoff") == 0)
-	{
-		mc.worldmapencountersoff = "1";
-		Log_SetStringToLog("Worldmap encounters OFF");
-	}
-	else
-	{
-		if(mc.worldmapencountersoff == "1")
-		{
-			mc.worldmapencountersoff = "0";
-			Log_SetStringToLog("Worldmap encounters ON");
-		}
-		else
-		{
-			mc.worldmapencountersoff = "1";
-			Log_SetStringToLog("Worldmap encounters OFF");
-		}
-	}
-    // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F13", 1);
 }
 
-string descF14 = "Shotgun mode ON\OFF";
+string descF14 = "Cheat 14";
 
 void CalculateInfoDataF14()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF14;
-    if(globalSGMode != false)
-	{
-		globalSGMode = false;
-		Log_SetStringToLog("Shotgun mode OFF");
-	}else{
-		globalSGMode = true;
-		Log_SetStringToLog("Shotgun mode ON");
-	}
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully! Qfreze=";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F14", 1);
 }
 
-string descF15 = "call change relations of the nations";
+string descF15 = "Cheat 15";
 
 void CalculateInfoDataF15()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF15;
-
-    DoQuestCheckDelay("Nation_Legend_Map", 2.0);
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
-    ProcessCancelExit();
+	Statistic_AddValue(PChar, "Cheats.F15", 1);
 }
 
-string descF16 = "add 5 day";
+string descF16 = "Cheat 16";
 
 void CalculateInfoDataF16()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF16;
-
-    LAi_Fade("", "");
-    for (int i = 1; i<=5; i++)
-    {
-		AddDataToCurrent(0, 0, 1);
-	}
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F16", 1);
 }
 
-string descF17 = "quest list to PCHAR";
+string descF17 = "Cheat 17";
 
 void CalculateInfoDataF17()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF17;
-
-    aref  curItem;
-	aref  arItem;
-	aref rootItems;
-	int i, j, n;
-	string attributeName;
-	ref ch;
-
-	//makeref(ch,Characters[GetCharacterIndex("Oxbay Commander")]);
-	//makearef(rootItems,ch.Ship);
-    //makearef(rootItems,Characters[GetMainCharacterIndex()].Items);
-    //makearef(rootItems,ShipsTypes[Characters[GetMainCharacterIndex()].Ship.Type].Cannons.Borts.cannonl);
-
-    makearef(rootItems, pchar.quest);
-
-    //aref qst = makearef(qst, pchar.quest);
-
-    trace("=================================================");
-    DumpAttributes(rootItems);//&GameInterface);
-    trace("=================================================");
-    Log_Info("DumpAttributes");
-    /*for(i=0; i<GetAttributesNum(rootItems); i++)
-    {
-		curItem = GetAttributeN(rootItems, i);
-		j = sti(GetAttributeValue(curItem));
-		totalInfo = totalInfo+"   "+i+"= "+//LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                    GetAttributeName(curItem)+" value="+j;
-
-        for(n=0; n<GetAttributesNum(curItem); n++)
-        {
-                 arItem = GetAttributeN(curItem,n);
-		         j = sti(GetAttributeValue(arItem));
-		         totalInfo = totalInfo+//LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                    "   --> "+n+"= "+GetAttributeName(arItem)+" value="+j;
-        }
-
-    }*/
-    remInt++;
-    totalInfo = totalInfo + " page " + remInt;
-    for(i=0; i<GetAttributesNum(rootItems); i++)
-    {
-        if (i > remInt*60 || i < (remInt-1)*60) continue;
-
-        curItem = GetAttributeN(rootItems, i);
-		j = sti(GetAttributeValue(curItem));
-		totalInfo = totalInfo+"   "+i+"= "+//LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                    GetAttributeName(curItem);// + " : " + GetAttributeValue(curItem);
-
-        /*for(n=0; n<GetAttributesNum(curItem); n++)
-        {
-                 arItem = GetAttributeN(curItem,n);
-		         j = sti(GetAttributeValue(arItem));
-		         totalInfo = totalInfo+//LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                    "   --> "+n+"= "+GetAttributeName(arItem)+" value="+j;
-        } */
-
-    }
-    if (i <= remInt*60) remInt = 0;
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F17", 1);
 }
 
-string descF18 = "ChangeShowIntarface - for screenshot without interface inscriptions";
+string descF18 = "Cheat 18";
 
 void CalculateInfoDataF18()
 {
-	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	// -->
 	totalInfo = descF18;
-
-    //LandEncTemplate[4].enc1.chance = 1.0;
-    //LandEncTemplate[4].enc2.chance = 1.0;
-    //
-    /*if (bSeaActive)
-    {
-        Weathers[iCurWeatherNum].Wind.Speed.Min = 9.9;
-    	Weathers[iCurWeatherNum].Wind.Speed.Max = 10.1;
-	} */
-	ChangeShowIntarface();
-    // <
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                "The command is executed successfully!";
-    LanguageCloseFile(idLngFile);
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F18", 1);
 }
 
-string descF19 = "Officer-skipper +1 rang (35 skills)";
+string descF19 = "Cheat 19";
 void CalculateInfoDataF19()
 {
     totalInfo = descF19;
-	// -->
-    if (sti(pchar.Fellows.Passengers.navigator) != -1)
-	{
-	    ref chr = GetCharacter(sti(pchar.Fellows.Passengers.navigator));
-
-    	chr.Skill.FreeSkill  = sti(chr.Skill.FreeSkill) + 35;
-    }
-    else
-    {
-        totalInfo = "No officer";
-    }
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F19", 1);
 }
 
-string descF20 = "Add skills �307";
+string descF20 = "Cheat 20";
 void CalculateInfoDataF20()
 {
     totalInfo = descF20;
-	// -->
-    ref chr = GetCharacter(302);
-
-	chr.Skill.FreeSkill  = sti(chr.Skill.FreeSkill) + 35;
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F20", 1);
 }
 
-string descF21 = "To start gold fleet";
+string descF21 = "Cheat 21";
 void CalculateInfoDataF21()
 {
-    totalInfo = descF21;
-	// -->
-    /*{
-      pchar.PatentNation = "eng";
-      GiveItem2Character(pchar, "patent_" + pchar.PatentNation);
-      EquipCharacterbyItem(pchar, "patent_" + pchar.PatentNation);
-    } */
-    isGoldFleet = true;
-    GoldMonth = XI_ConvertString("target_month_"+GetAddingDataMonth(0, 0, 0));
-    AddTemplRumour("Init_GoldFleet", id_counter+1);
-    StartGoldFleet("");
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+   totalInfo = descF21;
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F21", 1);
 }
 
-string descF22 = "Ascold info";
+string descF22 = "Cheat 22";
 void CalculateInfoDataF22()
 {
-    totalInfo = descF22;
-	// -->
-    {
-		totalInfo = "Random shop owner: " + pchar.questTemp.Ascold.TraderId + NewStr() +
-					"Random trader (colony): " + pchar.questTemp.Ascold.MerchantColony + NewStr() +
-					"Random shipyarder: " + pchar.questTemp.Ascold.ShipyarderId + NewStr()+
-					"Annals location: " + Items[GetItemIndex("Rock_letter")].startLocation + NewStr()+
-					"Annals locator: " + Items[GetItemIndex("Rock_letter")].startLocator;
-					if (pchar.questTemp.BlueBird.City != "")
-					{
-						totalInfo = totalInfo + NewStr()+ "Here will be hearings on a flute of the trader: " + pchar.questTemp.BlueBird.City;
-					}
-					else
-					{
-						totalInfo = totalInfo + NewStr()+ "Hearings on a flute of the trader not activated.";
-					}
-    }
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	totalInfo = descF22;
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F22", 1);
 }
 
-string descF23 = "Patent";
+string descF23 = "Cheat 23";
 void CalculateInfoDataF23()
 {
-    totalInfo = descF23;
-	// -->
-    {
-      if (!CheckAttribute(pchar, "PatentNation")) pchar.PatentNation = "eng";
-	  else 
-	  {
-		  switch (pchar.PatentNation)
-		  {
-			  case "eng": 
-				  TakeItemFromCharacter(pchar, "patent_" + pchar.PatentNation);
-				  pchar.PatentNation = "fra"; 				  
-				  break;
-			  case "fra": 
-				  TakeItemFromCharacter(pchar, "patent_" + pchar.PatentNation);
-				  pchar.PatentNation = "spa"; 
-				  break;
-			  case "spa":
-				  TakeItemFromCharacter(pchar, "patent_" + pchar.PatentNation);
-				  pchar.PatentNation = "hol"; 
-				  break;
-			  case "hol": 
-				  TakeItemFromCharacter(pchar, "patent_" + pchar.PatentNation);
-				  pchar.PatentNation = "eng"; 
-				  break;
-		  }
-	  }      
-	  GiveItem2Character(pchar, "patent_" + pchar.PatentNation);
-      EquipCharacterbyItem(pchar, "patent_" + pchar.PatentNation);
-	  totalInfo = "Patent: " + pchar.PatentNation + NewStr();
-	}
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	totalInfo = descF23;
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F23", 1);
 }
 
-string descF24 = "Licence";
+string descF24 = "Cheat 24";
 void CalculateInfoDataF24()
 {
-    totalInfo = descF24;
-	// -->
-    GiveNationLicence(sti(pchar.nation), 30);
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+   totalInfo = descF24;
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.F24", 1);
 }
 
-string descF25 = "Reload location - for CALLS";
+string descF25 = "Cheat 25";
 void CalculateInfoDataF25()
 {
-    totalInfo = descF25;
-	// -->
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+   totalInfo = descF25;
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
-    
-    ProcessCancelExit();
-    if( bSeaActive && !bAbordageStarted )
-    {
-    	Sea_ReloadStart();
-	}
-	else
-	{
-	    DoQuestReloadToLocation(pchar.location, pchar.location.group, pchar.location.locator, "");
-	}
+	Statistic_AddValue(PChar, "Cheats.F25", 1);
 }
 
-string descF26 = "empty";
+string descF26 = "Cheat 26";
 void CalculateInfoDataF26()
 {
-    totalInfo = descF26;
-	// -->
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	totalInfo = descF26;
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+	Statistic_AddValue(PChar, "Cheats.26", 1);
 }
 
-string descF27 = "empty";
+string descF27 = "Delete Sounds";
 void CalculateInfoDataF27()
 {
-    totalInfo = descF27;
-	// -->
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+   totalInfo = descF27;
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	DeleteClass(&sound);
+
+	Statistic_AddValue(PChar, "Cheats.F27", 1);
 }
 
-string descF28 = "empty";
+string descF28 = "Resume sounds and play tavern music";
 void CalculateInfoDataF28()
 {
     totalInfo = descF28;
-	// -->
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	ResumeAllSounds();
+	SetMusicAlarm("music_tavern");
+
+	Statistic_AddValue(PChar, "Cheats.F28", 1);
+
 }
 
-string descF29 = "Increase reputation in all nations.";
+string descF29 = "Set to Follow Camera";
 void CalculateInfoDataF29()
 {
     totalInfo = descF29;
-	// -->
-	for (int j=0; j< MAX_NATIONS; j++)
-	{
-        ChangeCharacterNationReputation(pchar, j, 50);
-    }
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	locCameraFollow();
+
+	Statistic_AddValue(PChar, "Cheats.F29", 1);
 }
 
-string descF30 = "add 20 days";
+string descF30 = "Set to Modern Camera";
 void CalculateInfoDataF30()
 {
     totalInfo = descF30;
-	// -->
-	LAi_Fade("", "");
-	AddDataToCurrent(0, 0, 20);
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "The command is executed successfully!";
+	PlaySound("interface\knock.wav");
+    totalInfo = totalInfo + NewStr() + NewStr() + "Success";
     SetFormatedText("INFO_TEXT",totalInfo);
+
+	locCameraModern();
+
+	Statistic_AddValue(PChar, "Cheats.F30", 1);
 }
 
 string descF31 = "Cheat 31";
@@ -1162,10 +746,6 @@ void CalculateInfoDataF33()
     SetFormatedText("INFO_TEXT",totalInfo);
 	Statistic_AddValue(PChar, "Cheats.F33", 1);
 }
-
-
-
-
 
 void ShipRepair(ref chr)
 {
