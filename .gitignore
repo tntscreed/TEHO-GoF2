@@ -17,12 +17,18 @@ RESOURCE/Textures/*
 !RESOURCE/Textures/Ammo
 RESOURCE/Textures/Ammo/*
 
-
-
 # GOF Ship models
 !RESOURCE/MODELS/Ships
 RESOURCE/MODELS/Ships/*
 !RESOURCE/MODELS/Ships/GOF_*
+
+
+# Ship model fixes (sails)
+!RESOURCE/MODELS/Ships/Mayfang1
+RESOURCE/MODELS/Ships/Mayfang1/*
+!RESOURCE/MODELS/Ships/Mayfang1/mayfang1_rey_b2.gm
+!RESOURCE/MODELS/Ships/Mayfang1/mayfang1_mast101.gm
+
 
 # GOF Ship walk files
 !RESOURCE/MODELS/Ships/SAILORSPOINTS
