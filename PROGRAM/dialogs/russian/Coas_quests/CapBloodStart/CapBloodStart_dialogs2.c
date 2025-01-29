@@ -56,7 +56,7 @@ DialogExit();
 RestoreBridgetown();
 initMainCharacterItem();
 ref mc = GetMainCharacter();
-mc.Ship.Type = GenerateShip(SHIP_ARABELLA, true);
+mc.Ship.Type = GenerateShip(GOF_SHIP_ARABELLA, true);
 mc.Ship.name = "Arabella";
 SetBaseShipData(mc);
 mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
@@ -71,6 +71,11 @@ SetCharacterGoods(mc,GOOD_PLANKS,10);
 SetCharacterGoods(mc,GOOD_RUM,40);
 SetCharacterGoods(mc,GOOD_WEAPON,2000);
 DoReloadCharacterToLocation(Pchar.HeroParam.Location, Pchar.HeroParam.Group, Pchar.HeroParam.Locator);
+break;
+case "plantation_slave":
+dialog.text = RandPhraseSimple(RandPhraseSimple("I am so tired, already falling down...", "Can't keep living like that!"), RandPhraseSimple("This work is killing me.", "Guards want us all dead!"));				
+link.l1 = RandPhraseSimple("What a pity.", "I am sorry.");
+link.l1.go = "exit";				
 break;
 case "Man_FackYou":
 dialog.text = LinkRandPhrase("Robbery, in broad daylight! What the hell's going on?! Hang about there, buddy...", "Heh, what're you digging around there for?! You aren't thinking of robbing me? Well, then you're finished!", "Wait, where you reaching into? Oh, turns out you're a thief! Consider yourself finished, pal...");
@@ -102,7 +107,7 @@ link.l1.go = "SQStep_0";
 Pchar.questTemp.CapBloodLine.stat = "PrepareToEscape2_2";
 break;
 }
-if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY || ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) < = -15)
+if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY || ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -15)
 {
 dialog.text = RandPhraseSimple("Stop! Turn over your weapons! Follow me!", "Runaway slave! Grab him at once!");
 link.l1 = RandPhraseSimple("Shut up, weirdo!", "Oh no you don't!");
@@ -163,7 +168,7 @@ if (CheckAttribute(npchar, "CityType") && npchar.CityType == "citizen" && npchar
 {
 if(findsubstr(Pchar.questTemp.CapBloodLine.stat, "PrepareToEscape" , 0) != -1)
 {
-if (CheckAttribute(npchar, "quest.bGoodMerch") && sti(Pchar.reputation) > = 55)
+if (CheckAttribute(npchar, "quest.bGoodMerch") && sti(Pchar.reputation) >= 55)
 {
 dialog.text = "Oh, Doctor Blood! Hello. I didn't thank you"+NPCharSexPhrase(NPChar, " ", "")+" for saving my little son, which I still often remember and regret. How wonderful that I've met you today!";
 link.l1 = "It really is wonderful that people want to return the favor at the most appropriate moment. Won't you tell me, "+NPCharSexPhrase(NPChar, "my friend ", "my dear ")+", where I might find some boarding sabers and two-three pistols, quick as possible, without any unnecessary noise or trouble?";
@@ -214,11 +219,13 @@ if(npchar.location == "Bridgetown_Brothel_room")
 dialog.text = "What the hell do you need here?! Get out, immediately!";
 link.l1 = "Begging your pardon, but that woman's mine.";
 link.l1.go = "WWStep_7";
-break;
 }
+else
+{
 dialog.text = "What the hell do you need here?! Get out immediately!";
 link.l1 = "You don't need to me rude! I have business for you.";
 link.l1.go = "WWStep_0";
+}
 }
 if (npchar.id == "Quest_Habitue")
 {
@@ -331,11 +338,11 @@ Pchar.questTemp.sLocator = "reload1_back";
 Pchar.questTemp.iTime = 40;
 RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
 RemoveCharacterEquip(pchar, GUN_ITEM_TYPE);
-while (FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) != "" && FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) != "blade5")
+while (FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) != "" && FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) != "blade_05")
 {
 TakeItemFromCharacter(pchar, FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE));
 }
-while (FindCharacterItemByGroup(pchar, GUN_ITEM_TYPE) != "")
+while (FindCharacterItemByGroup(pchar, GUN_ITEM_TYPE) != "" && FindCharacterItemByGroup(pchar, GUN_ITEM_TYPE) != "pistol1")
 {
 TakeItemFromCharacter(pchar, FindCharacterItemByGroup(pchar, GUN_ITEM_TYPE));
 }
@@ -417,7 +424,7 @@ Pchar.questTemp.iTime = 20;
 string smodel = NPChar.model;
 if (findsubstr(smodel, "eng_mush" , 0) != -1) smodel = "sold_eng_"+(rand(7)+1);
 sld = GetCharacter(NPC_GenerateCharacter("CPBQuest_Solder", smodel, "man", "man", 10, ENGLAND, 1, false, "quest"));
-sld.dialog.filename = "Quest\CapBloodLine\questNPC.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 SetFantomParamHunter(sld);
 sld.SaveItemsForDead = true;
 sld.DontClearDead = true;
@@ -425,12 +432,12 @@ LAi_SetActorTypeNoGroup(sld);
 LAi_ActorSetLayMode(sld);
 LAi_SetImmortal(sld, true);
 ChangeCharacterAddressGroup(sld, "CommonFlamHouse", "reload","reload3");
-sld = &characters[GetCharacterIndex("Griffin")];
+sld = characterFromID("Griffin");
 ChangeCharacterAddressGroup(sld, "CommonRoom_MH4", "barmen","bar1");
 LAi_SetActorTypeNoGroup(sld);
 LAi_ActorTurnToLocator(sld, "goto","goto2");
 LAi_SetStayTypeNoGroup(sld);
-sld = &characters[GetCharacterIndex("Spain_spy")];
+sld = characterFromID("Spain_spy");
 ChangeCharacterAddressGroup(sld, "CommonRoom_MH4", "goto","goto2");
 sld.dialog.currentnode = "SSStep_3";
 LAi_SetActorType(sld);
@@ -474,11 +481,13 @@ link.l1.go = "Exit";
 NextDiag.TempNode = "SLQStep_2";
 break;
 case "SLQStep_3":
-dialog.text = "Thank you, Doctor. As a token of my gratitude, please accept this dagger. I've long hid it from the overseers, but I think it'll be of more use to you.";
+dialog.text = "Thank you, Doctor. As a token of my gratitude, please accept this small gun. I've long hid it from the overseers, but I think it'll be of more use to you.";
 link.l1 = "Yes, but slaves aren't allowed to keep weapons!";
 link.l1.go = "SLQStep_4";
 TakeItemFromCharacter(Pchar, "migraine_potion");
-GiveItem2Character(Pchar, "blade5");
+GiveItem2Character(Pchar, "pistol1");
+TakeNItems(pchar, "bullet", 5);
+AddItems(Pchar, "gunpowder", 5);
 break;
 case "SLQStep_4":
 dialog.text = "Don't worry, Doctor. It's easy to hide under your clothes, in a way that no else will notice. Just don't you wave it around in front of soldiers, hear?";
@@ -503,9 +512,14 @@ link.l1 = "I knew it. Such things are better done without witnesses Come to the 
 link.l1.go = "WWStep_3";
 break;
 case "WWStep_3":
-Dialog.Text = "All right, let's meet by the gates in an hour. I'll even bring you an iron stick, so it will at least somewhat resemble a duel.";
+Dialog.Text = "All right, let's meet by the gates in an hour.";
 link.l1 = "See you soon.";
 link.l1.go = "WWStep_4";
+if (GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) != "")
+{
+link.l2 = "I don't have much time. I want to finish with you right now!";
+link.l2.go = "WWStep_5_1";
+}
 break;
 case "WWStep_4":
 PChar.quest.CapBloodLineTimer_3.win_condition.l1 = "Timer";
@@ -534,8 +548,6 @@ case "talk_off_town":
 Dialog.Text = "Well then, ready to meet your maker?";
 link.l1 = "Sure. How about you introduce us? I'll catch up later!";
 link.l1.go = "WWStep_6";
-GiveItem2Character(Pchar, "blade_07");
-EquipCharacterByItem(Pchar, "blade_07");
 chrDisableReloadToLocation = false;
 break;
 case "WWStep_6":
@@ -598,22 +610,24 @@ rItem.Action_date = GetCurrentDate();
 rItem.Validity = FindRussianDaysString(60);
 rItem.Validity.QtyDays = 60;
 n = FindLocation("CommonStoneHouse");
-locations[n].private1.items.indian1 = 1;
+locations[n].private1.items.jewelry4 = 20;
 locations[n].private1.items.EngTradeLicence = 1;
 locations[n].private1.money = 6000;
 sld = GetCharacter(NPC_GenerateCharacter("Weston", "trader_3", "man", "man", 10, ENGLAND, 1, false, "quest"));
-sld.dialog.filename = "Quest\CapBloodLine\questNPC.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.name = "Charles";
 sld.lastname = "Weston";
 sld.greeting = "Gr_bankeer";
-FantomMakeCoolFighter(sld, 7, 100, 50, "topor_02", "", 10);
+SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 LAi_SetImmortal(sld, true);
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
 LAi_SetOwnerTypeNoGroup(sld);
 ChangeCharacterAddressGroup(sld, "CommonStoneHouse", "barmen","stay");
-pchar.quest.MoneyForDieke.win_condition.l1 = "item";
-pchar.quest.MoneyForDieke.win_condition.l1.item = "EngTradeLicence";
+pchar.quest.MoneyForDieke.win_condition.l1 = "Money_in_box";
+pchar.quest.MoneyForDieke.win_condition.l1.Location = "CommonStoneHouse";
+pchar.quest.MoneyForDieke.win_condition.l1.Box = "private1";
+pchar.quest.MoneyForDieke.win_condition.l1.Money = "0";
 pchar.quest.MoneyForDieke.function = "MoneyForDieke";
 AddQuestRecord("DiekeQuest", "3");
 break;
@@ -718,7 +732,7 @@ AddCharacterExpToSkill(pchar, "Fortune", 30);
 break;
 case "FStep_1":
 dialog.text = "Hmm... I suppose today it's my treat. As it was yesterday... and the day before, and every other day since... well, it doesn't matter.";
-if(makeint(Pchar.money) > = 4)
+if(makeint(Pchar.money) >= 4)
 {
 link.l1 = "No, no! Allow me to treat the greatest fisherman in Barbados!";
 link.l1.go = "FStep_1_2";

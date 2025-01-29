@@ -2034,7 +2034,7 @@ void ProcessDialogEvent()
 				dialog.text = RandPhraseSimple(RandPhraseSimple("I am exhausted, help me.", "I have no more strength to live like that!"), RandPhraseSimple("This work is eating us alive.", "Fucking guards left no piece of skin on my back!"));				
 				link.l1 = RandPhraseSimple("What a shame.", "Yes, life is a bitch.");
 				link.l1.go = "exit";				
-    		} 
+    		}
 		break;
 		
 		//=====================================================================================================================================

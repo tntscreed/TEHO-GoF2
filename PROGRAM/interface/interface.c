@@ -233,15 +233,6 @@ void LaunchDebuderMenu()
 	}
 }
 
-void LaunchBoalBetaScreen()
-{
-	if(procInterfacePrepare(INTERFACE_BOAL_BETA))
-	{
-		nPrevInterface = -1;
-		CurrentInterface = INTERFACE_BOAL_BETA;
-		InitInterface(Interfaces[CurrentInterface].IniFile);
-	}
-}
 // boal <--
 
 /*
@@ -503,17 +494,10 @@ void LaunchGameMenuContinue()
 	{
 		nPrevInterface = -1;
 		CurrentInterface = INTERFACE_GAMEMENU;
-		if(LanguageGetLanguage() != "Russian")
-		{
-			InitInterface_GM(Interfaces[CurrentInterface].ENG_IniFile);
-		}
-		else
-		{
 			InitInterface_GM(Interfaces[CurrentInterface].IniFile);
 		}
 		//InitInterface_GM(Interfaces[CurrentInterface].IniFile);
 	}
-}
 
 void CreateScreenShoter()
 {

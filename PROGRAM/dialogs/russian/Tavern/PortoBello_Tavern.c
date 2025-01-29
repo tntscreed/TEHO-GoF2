@@ -26,7 +26,24 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "Look, I am in a search of a man named Bertrand Pinette, have you heard of him? He arrived to Portobello not long ago. An imposing gentleman in a curving wig. A trader. He might had been here...";
                 link.l1.go = "FMQG";
             }
+				if (pchar.RomanticQuest == "SeekInPortoBello")
+			{
+				link.l1 = "Hey, do you know if anyone here is waiting for the arrival of the brig 'Enraptured'?";
+				link.l1.go = "Romantic_1";
+			}
 		break;
+		
+		case "Romantic_1":
+            dialog.text = "No, no one asked me.";
+            link.l1 = "I understand... Tell me, does anyone rent a room from you?";
+			link.l1.go = "Romantic_2";
+		break;	
+		case "Romantic_2":
+            dialog.text = "Not at the moment, " + GetAddress_Form(pchar) + ". Everything's empty.";
+            link.l1 = "I see... Well then, thanks anyway.";
+			link.l1.go = "exit";
+			pchar.RomanticQuest = "ToRositaInBeliz";
+		break;	
 		
 		case "Portobello_rat_1":
 			dialog.text = NPCStringReactionRepeat("No, I don't know. He didn't stop by the tavern and I didn't see him in town either.", "You've already asked about that and I've answered you.", "I told you 'you've already asked about that Gontier'.", "Listen, walk away and stop bothering me! Have you completely lost your noggin?", "block", 0, npchar, Dialog.CurrentNode);

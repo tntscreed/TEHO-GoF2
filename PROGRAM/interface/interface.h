@@ -1,4 +1,4 @@
-#define INTERFACE_QUANTITY				59
+#define INTERFACE_QUANTITY				58
 
 #define INTERFACE_STORE					0
 #define INTERFACE_SHIPYARD				1
@@ -44,26 +44,24 @@
 #define INTERFACE_QUICK_SAVE			41
 #define INTERFACE_NET_NETMENU			42
 #define INTERFACE_DEBUGER   			43 //boal
-#define INTERFACE_BOAL_BETA             44
-#define INTERFACE_DICE_GAME             45
-#define INTERFACE_CARDSGAME             46
-//#define INTERFACE_BOAL_CHARACTER        47
-#define INTERFACE_FRAMEFORM             48
-#define INTERFACE_LEAVE_BATTLE          49
+#define INTERFACE_DICE_GAME             44
+#define INTERFACE_CARDSGAME             45
+#define INTERFACE_FRAMEFORM             46
+#define INTERFACE_LEAVE_BATTLE          47
 // Warship -->
-#define INTERFACE_BEST_MAP			50	// Интерфейс отличной карты
-#define INTERFACE_TAVERN_WAIT			51	// Интерфейс отдыха
-#define INTERFACE_GOODS_TRANSFER		52	// Интерфейс закупки товара казначеем
+#define INTERFACE_BEST_MAP			48	// Интерфейс отличной карты
+#define INTERFACE_TAVERN_WAIT			49	// Интерфейс отдыха
+#define INTERFACE_GOODS_TRANSFER		50	// Интерфейс закупки товара казначеем
 // <-- Warship
 // Ugeen -->
-#define INTERFACE_MAPVIEW				53 // Интерфейс атласа карт 
-#define INTERFACE_STORAGE				54 // Интерфейс склада
-#define INTERFACE_ALCHEMY				55 // Интерфейс мультиобъектов
-#define INTERFACE_CONTRATRADE			56 // Интерфейс торговли с контрабандистами
-#define INTERFACE_REPAIR					57 // Интерфейс ремонта
-#define INTERFACE_DIRSAILENC			58
+#define INTERFACE_MAPVIEW				51 // Интерфейс атласа карт 
+#define INTERFACE_STORAGE				52 // Интерфейс склада
+#define INTERFACE_ALCHEMY				53 // Интерфейс мультиобъектов
+#define INTERFACE_CONTRATRADE			54 // Интерфейс торговли с контрабандистами
+#define INTERFACE_REPAIR					55 // Интерфейс ремонта
+#define INTERFACE_DIRSAILENC			56
 // <-- Ugeen
-#define INTERFACE_COLONY_MANAGEMENT        59
+#define INTERFACE_COLONY_MANAGEMENT        57
 
 #define RC_INTERFACE_DO_NOTHING			-1
 
@@ -140,7 +138,6 @@
 #define RC_INTERFACE_LAUNCH_GAMEMENU			45074
 #define RC_INTERFACE_QUICK_SAVE					45075
 // boal -->
-#define RC_INTERFACE_DO_BOAL_BETA               45101
 // boal <--
 // Warship -->
 #define RC_INTERFACE_BEST_MAP					45076	// Интерфейс отличной карты

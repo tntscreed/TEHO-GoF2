@@ -1,0 +1,231 @@
+#QUEST CapBloodLine_q1
+The Doctor
+#TEXT  1
+I must immediately make for the Governor's estate, and see if I can somehow help Mrs. Steed.
+#TEXT  2
+Governor Steed told me that his wife was suffering from yet another migraine attack, and he despaired to calm her. I think I should examine her. She is in a bedroom on the second floor, to the right.
+#TEXT  3
+I must urgently go to the port and visit Mr. Dan, the apothecary. I remember him mentioning that his house was not far from the Governor's residence.
+#TEXT  4
+The Governor has allocated some money for purchasing the medicine. I was given @<iMoney> piasters.
+#TEXT  5
+The governor has doled me the sum of 2500 piasters, such that I might purchase medicine for his wife, but he demanded that I report my expenditure on my return...
+#TEXT  6
+As Mr. Dan was not at home, I had to find the medicine on my own. Now I must hurry back to the estate...
+#TEXT  7
+Everything is all right; I helped the governor's wife. Since it is already late, and the gates to that accursed Bishop's plantation are long closed, I was allowed to stay in the city and allocated a bedroom in the tavern. Oh, how good it is, even for one night, to feel like a man again, not a slave...
+
+#QUEST CapBloodLine_q2
+Whacker's Offer
+#TEXT  1
+I met Doctor Whacker at the apothecary's; he wished to discuss something with me, away from curious eyes and ears. Tomorrow I'll have to drop by the tavern, when I have the time.
+#TEXT  2
+So, the morning came. Now the Bishop will find me and probably send me off somewhere for the whole day. For instance, to put those innocent slaves on their feet; I imagine he woke them up last night and punished for some nonsense, simply because I didn't return before the gates were closed...
+Still, I should inquire with Whacker as to his business with me. Mustn't waste time. God waits for no man.
+#TEXT  3
+I came to the tavern, but Whacker wasn't there. The Devil, I must find him...
+#TEXT  4
+It seems that I really am a considerable hindrance for the honorable Messrs. Whacker and Bronson, as the subject of our chilly dialog is the my potential escape from here. There are no doubts that Doctor Bronson knows all about this, and that Whacker is coordinating with him. Nevertheless, as they say, beggars can't be choosers. I should go find Jeremy Pitt.
+#TEXT  5
+Pitt is in. Now the task is to get enough people, prepare all that we need, and, tomorrow, go to Whacker and claim the money for a sloop. Only three slaves have some grasp of seafaring - Hagthorpe, Ogle, and Nicolas Dyke. I must speak to each of them.
+#TEXT  6
+Time to go back to the tavern and speak to Whacker. Not that there's anything left to speak about, but the money for the sloop would be nice. 
+#TEXT  7
+Doctor Whacker was only able to supply 18 000 piasters. I still need around 7000 more to purchase a sloop.
+#TEXT  8
+I collected the necessary sum, and sent Nettall for the sloop. Now I can only wait...
+
+
+#QUEST WeaponsForEscape
+Arms of Freedom
+#TEXT  1
+All should be done quietly, but some weapons will always be handy. Hardly anyone in the city will sell me weapons, and I simply can't risk stealing at such a crucial moment... I'll have to solve this problem some other way.
+#TEXT  2
+The innkeeper suggested that I speak to Mr. Griffin about weapons; he's the old armorer who lives not far from the Governor's estate.
+#TEXT  3
+The armorer, Griffin, has been boldly robbed: some Spanish bandit took his samples with the master's name engraved on the blades, then went to the house of Hells the fisherman. If he is caught or seen with the weapons of Mr. Griffin, both of them will be hanged at dawn. I must immediately seek the robber and disarm him, then return his stolen goods to their rightful owner. If I do this, Mr. Griffin will provide me with unmarked boarding sabers and pistols by today's nightfall, all for only @<iMoney> piasters.
+#TEXT  4
+Me and the armorer couldn't agree on terms. I won't say that I'm upset, since doing business with this old goat wouldn't do me any good. I will find another source for the weapons.
+#TEXT  5
+I had no choice - the fisherman just got in my way; it's not like I expecting him to stand there. Still, in a way I should be grateful to him; after all, he relieved me of the necessity of fighting the Spaniard. Hells had 2000 piasters on him, part of which certainly belonged to the bandit. Besides, I found a bundle with Griffin's samples on the Spaniard. It's high time to be back at the armorer.
+#TEXT  6
+In an hour, I should be at Mr. Griffin's place to receive my order.
+#TEXT  7
+In the street I met a person, probably Spanish. I don't know how he got here, but I have doubts about his intentions. He needed something from Mr. Griffin, the armorer.
+#TEXT  8
+More than ten minutes have already passed without news. Obviously, I have no other choice but to go back.
+#TEXT  9
+Mr. Griffin has given me all that I need, in gratitude for saving his life.
+#TEXT  10
+The trader from the market square, the one whose son I was lucky enough to rescue from a gruesome fate, gave me a bundle with all that that I might need in case of unforeseen circumstances. Fortune is on my side - it's incredibly difficult to acquire weapons in my kind of situation; I'd have said nigh on impossible. But I do have some remaining problems...
+#TEXT  11
+In the tavern I had the pleasure of speaking with a queer old smuggler. Queer in that, not only has he the weapons I need, in the quantity I'm after, but also in that all he asks in exchange is some ring from the Governor's house. How could he know what rings the Governor has lying around? And why is he so interested in it that he is ready to trade a slave a veritable armory in exchange for it? Well, all right; now my is in finding this ring.
+#TEXT  12
+I couldn't get to the Governor. Unless I've an invitation, the guards will refuse to let me in. And he won't extend me the courtesy so long as both he and his wife are well. Therefore, I need an outside pretext...
+#TEXT  13
+Thanks to Mr. Dan's naivety, I now have opportunity to enter the residence. Let's waste no more time, then...
+#TEXT  14
+To my bewilderment, that precise ring that the smuggler mentioned lays there for all to see, on the table surface. Mrs. Steed doesn't really wear it.
+#TEXT  15
+Fortunately, this business was limited to a small deceit, without the need to resort to stealing. Mrs. Steed willingly gave me the ring, which, as she said, was found beside her bed this morning.
+The ring itself looks absolutely ordinary - golden, without any facets - yet is improbably heavy for the size and shape. 
+How did the smuggler know of the ring? And why does he need it? But then, is it any of my business? I should just return to the tavern and ask for my reward.
+#TEXT  16
+The smuggler got his ring, and I got my money and armaments. That certainly was an interesting trinket, but I simply have no time to study it. Whatever it was, I've done my part and gotten what I need. Time to be on!
+
+#QUEST HugtorpTrouble
+Hagthorpe's Quandary
+#TEXT  1
+In Bridgetown there is a person by the name of Stewart Winterwood. For Hagthorpe to accompany me, all that he requires is the death of the Englishman who took his life and made him a slave. I don't know all the details, but looks like I have no choice - I must kill Winterwood. I can find him either in the tavern or in the brothel.
+#TEXT  2
+Hagthorpe didn't want to sail with me. His sworn enemy, Stewart Winterwood, resides in the city. At one point, this fellow disgraced the old seadog by taking all that he had: his family, his good name, his freedom. He had Hagthorpe put in shackles. But I persuaded him not to proceed with his mad revenge fantasies, and he agreed to sail with me, temporarily postponing the villain's execution.
+Still, I should investigate this business that Whacker has for me. Mustn't waste time.
+#TEXT  3
+I challenged Winterwood for a duel, and slew him. I think that Stuart won't be needing the thousand piasters that he had on his person. I must return to Hagthorpe.
+#TEXT  4
+Having learned of the death of Winterwood, Hagthorpe has agreed to join me.
+
+#QUEST DiekeQuest
+Junior Officer Nicolas Dyke
+#TEXT  1
+At the most crucial moment, Colonel Bishop has decided to resell Nicolas Dyke, who was a junior officer in his time. Nicolas believes that it's too late to do anything about it, but... by all means, I should prevent this deal from transpiring.
+#TEXT  2
+The buyer is a certain Weston; I must quickly learn who and where he is.
+#TEXT  3
+Recently a Jamaican merchant arrived in the city with some cargo. He's an old friend of the Bishop's. It may stand to conjecture that he is that Weston. I'll need to find his house, then see where I might go from there.
+#TEXT  4
+It seems that Charlie Weston was going to get Dyke on the cheap side. He's got 6000 piasters and a few gemstones ready for Bishop. Perhaps I should keep all this stuff for myself; I'm sure I'll find a use for it. It's not like Bishop needs any of it, anyway...
+
+#QUEST OglQuest
+The One-Eyed Gunner
+#TEXT  1
+The only artillery gunner available to me took out a loan of five thousand piasters from the moneylender. I simply can't sail away without Ogle - the risk is too great. I must find the money, and pay the old man's debt.
+#TEXT  2
+I have repaid Ogle's debt. I should go let him know. 
+#TEXT  3
+Ogle is in.
+
+#QUEST FishermanQuest
+The Fish Place
+#TEXT  1
+Fisherman Hells has given me some work: I need to learn the spot where Arnold Summerlite, a rival fisherman, has been catching all his fish. For this, Hells promised me 2000 piasters.
+#TEXT  2
+I uncovered Summerlite's secret fishing spot. Now I only need inform Hells, and claim my money.
+
+#QUEST UsurerQuest
+The Anonymous Debtor
+#TEXT  1
+The moneylender offered me three thousand piasters to find an impostor who took out a loan on behalf of Raphael Guinness, having taken advantage of his morning absent-mindedness. I don't even know where to begin. The innkeeper himself will ask at least a thousand for the information... Who else might help me?
+#TEXT  2
+I had to slip the innkeeper five hundred for the information on this Guinness fellow. He told me that somehow Raphael found enough money for a ship, and then went on to seal the deal. It seems that the innkeeper himself doesn't know him that well; he was under the impression that the impostor was the real Guinness. I'll have to drop by the shipyard.
+#TEXT  3
+I played the role well... Mom always said I should have been an actor. Why was it I joined the service, again? Anyway, the terrified impostor - his real name is Alex Winner - has given me all his savings. That's 55,000 piasters, a piece of which belongs to the moneylender... Perhaps.
+#TEXT  4
+Overwhelmed by my righteousness, Raphael/Alex returned me the loan money. Now I should return the money to the moneylender and receive my share. Or... should I? 
+
+#QUEST PirateQuest
+The Fallen Pirate
+#TEXT  1
+In the shop, I met a peculiar pirate by the name of Swallow - Jacques Swallow. Now, where have I heard that name before... Well, I'm sure 1500 piasters will make a good friend of anyone. That will be my recompense, should I find a captain to take Swallow to Tortuga for no more than 3000.
+#TEXT  2
+The shipbuilder mentioned a certain Captain Mayner, who just bought a corvette from him. Look at that, I didn't even have to mention Swallow's name. Now I only need find this happy new corvette owner.
+#TEXT  3
+Having learned the passenger's name, the shipbuilder told me the story of this pirate's fall. When he gave his first mate a treasure map, Swallow didn't even conceive that his crew might choose use it for tobacco paper. When they woke and sobered up, the pirates accused Jacques of everything under the sun, then left him on an island to die. When by some miracle he escaped, Jacques Swallow found himself in a sticky situation: not only did he need to find his ship, the Ebony Oyster, but also to punish its captain as an example. Well, I will wish him good luck, but for now I must speak with Captain John Mayner, who just bought a corvette on the shipyard and will soon be sailing away.
+#TEXT  4
+John Mayner, the captain of the Sailing Briton, has agreed to deliver Jacques Swallow to Tortuga for three thousand piasters. Now I need only find the pirate and tell him about it, then claim my reward.
+#TEXT  5
+I received my money from Swallow, though he obviously was in little hurry to part with it. What an odd bird...
+
+#QUEST EscapeFormBarbados
+Escape from Barbados
+#TEXT  1
+Our escape plan is on the verge of failure. Colonel Bishop tracked down Jeremy Pitt when as was undergoing the final preparations for our departure. I decided to free our navigator as soon as night falls. Incidentally, Jeremy hid some weapons in a chest amongst the planks at the edge of the plantation; they might come in handy. The others will make their way to the city, and will await us there, ensconced at the shipyard.
+#TEXT  2
+When I rescued Pitt from the Bishop's men, he informed me that Nettall had ran away with our sloop. I must immediately warn Hagthorpe, Dyke, Ogle, and the others before they all get caught.
+#TEXT  3
+Dumb chance has complicated our plans at the most crucial of moments. It was a big ship; looked like Spanish caper, under a a foreign flag. In planning their raid, they chose a moment when not a single warship remained in the bay. The ship's cunning actions remained absolutely unnoticed until, arousing no suspicion, she quietly slipped into the bay and saluted the fort at point-blank with a twenty-cannon broadside. By sunset, two hundred and fifty Spaniards had become the new owners of Bridgetown.
+#TEXT  4
+When we all reunited, we decided to capture the Spanish ship under cover of night.
+#TEXT  5
+We captured a fine Spanish vessel, the Cinco Liagas. Now we can finally leave Barbados and regain our freedom.
+#QUEST Romantic_Line
+A Story of Beautiful Isabella
+#TEXT 1
+As a response for my arrival Doña Isabella has created a great noise and called upon her husband who refused to listen to me. I had to calm him down in a different way - with a steel blade. i am afraid I will not be ab;e to get into contact with beautiful Spanish lady...
+#TEXT 2
+As a response for my arrival Doña Isabella has created a great noise and called upon her husband, but we had got acquainted with each other before that and resolved the issue in a peacefully.
+#TEXT 3
+God damn me if I can't get the treasure stolen by Salvatore! But how is it possible to get into the house? It would be nice to to befriend the hosts and get to the wife's room without a problem. Um, I can only dream that Don Salvatore himself is absent - it will have made the situation much easier. Although, first of all I have to find their house. For sure, the lady visits a church. I shall try the priest in the town of San Juan.
+#TEXT 4
+It looks like Don Salvatore faces some problems with money. Pretty strange. It seemed to me that Isabella's glance contained something greater, maybe something more than just ordinary gratitude?
+#TEXT  5
+What have have I come to San Juan for? Oh, yeah, Atila's treasures, I have just forgotten about them... What is the matter? I have just forgotten about everything in the world just by looking at that beautiful lady. What has happened to me? I am ready to rush to the end of the world just to gain her favor..
+I presume that the storm has forced Five Jesus wounds to some harbor. Perhaps, it had to go back to Cumana.
+#TEXT  6
+I have found the skipper of the brig the 'Five Holy Wounds of Jesus'. Indeed the ship has suffered a great deal during the storm and I have got hired to meet Miguel de Valdez at the port and take him to his sister.
+#TEXT  7
+Don Miguel de Valdez is on the board of my ship. I am hurrying to San Juan to meet beautiful Isabella and to gain the promised smile!
+#TEXT  8
+Events are developingcin a tragic way. Unknown cheats had robbed Isabella's father. I hope I could be of some help for Isabella at her difficult time. She has invited me to pay her a visit this evening.
+#TEXT  9
+Thus the secret with promissory notes was disclosed. Salvatore had robbed Isabella's father and has killed her brother. I think I need to speak to Isabella before contacting the authorities.
+#TEXT  10
+Well, what the hell is going on! The dirty scum Salvatore has accused me of the murder of Isabella's brother, and he has vanished into thin air. I had to abandon San Juan otherwise I could have been arrested. I could not find Salvatore. I just cannot imagine what I must do next...
+If I have a chance I should talk with Atila, after all, everything began with him...
+#TEXT  11
+Atila promised to find Salvatore's hiding place. He has set up a meeting at his house two months later.
+Perhaps, I shall have to get into Isabella's house in San Juan once more? Quire a venture...
+#TEXT  12
+Hired killers were waiting for me in Salvatore's house.
+#TEXT  13
+Atila had learn that bastard Salvatore has arrange shipment of Isabella from San Juan on brig Enthusiastic. The brig has taken course to Portobelo.
+If I want to see Isabella alive I have to run it down in the course of 15 -16 days near Portobelo.
+#TEXT  14
+I could not catch up the pirate brig with Isabella. The worst fears are becoming true.
+#TEXT  15
+I had caught up brig Enthusiastic near Portobelo shore. In the course of the battle the brig has gone to the bottom and dark water closed above my Isabella. What a tragedy...
+#TEXT  16
+I caught the Enthusiastic near the Portobelo shore, yet failed to board it. The brig has escaped, and I have lost Isabella forever...
+#TEXT  17
+I have boarded and captured the Enthusiastic. Isabella was onboard but the meeting was even worse than it was possible to imagine. Isabella did not trust a single word of mine and preferred death on the sinking ship. A sad end of a romantic story...
+#TEXT  18
+I have boarded and captured the Enthusiastic. Hosanna! Isabella was onboard. We have talked and now I will have to bring beautiful lady Isabella to her cousin Rosita Fernandez in Belize.
+But first of all I have to find the one who is waiting for Isabella in Portobelo. I presume I shall have to search the whole town scrupulously..
+#TEXT  19
+Isabella is delivered to her cousin Fernandez in Belize. We have cleared our relations and now I was sure that Isabella experiences responding feelings in my respect. I have to make her a widow really quick.
+I presume that it is going to be Atila, only, who could help me to find Salvatore and I shall go for him...
+#TEXT  20
+Atila told me that Salvatore left for Belize two days ago! It seems that he has smell out the current Isabella's location. I must hurry...
+#TEXT  21
+It seems that everything is much worse that it was possible to imagine - Isabella had vanished from her house yesterday together with her maid. I have to search the whole town and its suburbs right away.
+#TEXT  22
+After long last Salvatore is dead. Isabella has accepted my proposition to marry me under a small condition - to forget about privateering. I assume that had had enough blood and the bride is great and honest. I have had enough money, so, - charge!
+One month later, Isabella will be waiting for me in San Juan. We shall get married in the local church. Great times are waiting for me...
+#TEXT  23
+Tomorrow I shall have to arrive to the local church for my wedding ceremony . Isabella is a great lady...
+#TEXT  24
+I found the house Salvatore's hired killers were hiding in waiting for the brig with Isabella. I have deal with them besides, Isabella visited this house and could see wit her own eyes what was waiting for her.
+#TEXT  25
+My heart is broken with grief! At the very most formal moment of the wedding ceremony Salvatore's hired gang has got rushed into the church. They killed my wife Isabella...
+I don't even know who I shall have to launch the revenge to - Salvatore is dead already, the gangsters were killed by me right on the spot...
+Caramba, I am the poorest man on Earth!
+#TEXT  26
+Yeah, it was difficult to imagine such a thing! We had been attacked just at the wedding moment in the church! I have defend ourself and I hope that it was the last Salvatore's surprise...
+#TEXT  27
+I have got everything clear with the local Governor about the fight in the church. It's all settled in the best way, now I may go to Isabella.
+#TEXT  28
+Isabella was a tough lady. There are the following conditions conferred upon myself:
+1. To pay the town and other taxes and duties monthly to the house I have to bring @<IsabellaBuget>.
+2. To forget about privateering. It means neither to capture towns and forts nor to sink ships...
+The life, nevertheless, has changed a great deal.
+#TEXT  29
+The door is locked I am not allowed to get inside the house! Here we are...
+I figure I shall have to speak to cousin Rosita who lives in Belize. I shall learn what happened.
+#TEXT  30
+Well, cousin Fernandez promised to take measures to make Isabella to open the door for me after all. It seems that the problem is because of my extended absence at home.
+#TEXT  31
+Well, whaddaya know! That petty prankster Salvatore has accused me of murdering Isabella's brother, and disappeared into thin air! I couldn't find Salvatore. As for what to do now... I haven't a clue.
+I'll need to tell Atila all about this when I get the chance. After all, it did start with him...
+#TEXT  31_NONE
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+

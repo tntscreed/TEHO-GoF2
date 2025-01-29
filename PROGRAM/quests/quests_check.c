@@ -66,11 +66,23 @@ bool ProcessCondition(aref condition, int n)
 	switch(sConditionName)
 	{
 		case "Ready_Fight":
-		if (GetCharacterEquipByGroup(refCharacter, GUN_ITEM_TYPE) != "" && GetCharacterEquipByGroup(refCharacter, BLADE_ITEM_TYPE) != "")
+		if (GetCharacterEquipByGroup(refCharacter, GUN_ITEM_TYPE) != "" && GetCharacterEquipByGroup(refCharacter, BLADE_ITEM_TYPE) != "" && condition.type == "Full")
 		{
 		return true;	
 		}
+		else
+		{
+		if (GetCharacterEquipByGroup(refCharacter, BLADE_ITEM_TYPE) != "" && condition.type == "Blade")
+		{
+		return true;	
+		}
+		}
 		return false;
+		break;
+		case "Money_in_box":
+		n = FindLocation(condition.location);
+		locGroup = condition.box;
+		return (locations[n].(locGroup).money == condition.money);
 		break;
 		// boal оптимизация -->
 		case "MapEnter":

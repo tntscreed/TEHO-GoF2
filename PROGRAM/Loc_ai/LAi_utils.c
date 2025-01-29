@@ -750,12 +750,15 @@ void LAi_SetDefaultLayAnimation(aref chr)
 {
 	if(IsEntity(&chr))
 	{
-		chr.chr_ai.type.mode = "lay";
 		BeginChangeCharacterActions(chr);
-		chr.actions.idle.i1 = "Lay_1";
+	SetDefaultLayIdle(chr);
+	//SetDefaultNormWalk(chr);
+	//SetDefaultFight(chr);
+	SetLayDead(chr);
+	//SetDefaultFightDead(chr);
 		EndChangeCharacterActions(chr);
 	}
-}
+	}
 
 
 //Вывести экран в темноту, выполнить квест questFadeOut, вернуть всё обратно, выполнить квест questFadeIn

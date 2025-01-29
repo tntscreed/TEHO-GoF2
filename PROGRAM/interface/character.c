@@ -85,6 +85,10 @@ void IDoExit(int exitCode)
 			SetActorDialogAny2Pchar(sld.id, "", 0.0, 0.0);
 			LAi_ActorFollow(pchar, sld, "ActorDialog_Any2Pchar", 0.5);        
     	}
+	else
+	{
+   	LAi_SetStayTypeNoGroup(pchar);
+	}
 	}   
 	DelEventHandler("InterfaceBreak","ProcessExitCancel");
 	DelEventHandler("exitCancel","ProcessExitCancel");

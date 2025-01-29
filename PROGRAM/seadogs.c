@@ -852,6 +852,7 @@ void NewGame_continue()
 	{
 	LoadMainCharacterInFirstLocationGroup("Ship_deck_Low", "goto", "goto4");
 	}
+	DoQuestCheckDelay("RomanticQuest_Bermudes", 0.1);
 	
 	ReloadProgressUpdate();
 		

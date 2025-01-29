@@ -725,7 +725,8 @@ void FillShipyardTable()
 		if(bBettaTestMode && findsubstr(sShip, "GOF_", 0) == 0){
 			sShipType = "(GoF) " + sShipType;
 		}
-		GameInterface.TABLE_SHIPYARD.(row).td1.str = sShipType + "\n\n"+refNPCShipyard.ship.name;
+
+		GameInterface.TABLE_SHIPYARD.(row).td1.str = sShipType + "\n\n" + refNPCShipyard.ship.name;
 		GameInterface.TABLE_SHIPYARD.(row).td1.align = "left";
 		GameInterface.TABLE_SHIPYARD.(row).td1.scale = 0.82;
 		GameInterface.TABLE_SHIPYARD.(row).td2.str = refBaseShip.Class;

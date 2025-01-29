@@ -8,6 +8,7 @@
 #include "quests\quests_reaction.c"
 #include "quests\reaction_functions.c"
 #include "quests\Coas_quests\CapBloodStart.c"
+#include "quests\Coas_quests\Isabella.c"
 
 #event_handler("LocationWaitNihgtEnd","WaitDatePostEventControl");
 #event_handler("evntQuestCameraRestore","QuestCameraRestore");

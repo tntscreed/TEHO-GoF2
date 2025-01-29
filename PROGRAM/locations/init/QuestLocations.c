@@ -146,7 +146,7 @@ int LocationInitQuestLocations(int n)
 	locations[n].filespath.models = "locations\Estate";
 	locations[n].image = "loading\EstateN.tga";
 	//Sound
-	locations[n].type = "house";
+	locations[n].type = "town";
 	//Models
 	//Always
 	locations[n].models.always.estate = "estate";
@@ -172,6 +172,7 @@ int LocationInitQuestLocations(int n)
 	//Environment
 	locations[n].environment.weather = "true";
 	locations[n].environment.sea = "true";
+	locations[n].environment.weather.rain = false;
 	Locations[n].QuestlockWeather = "20 Hour";
 	Locations[n].QuestlockWeather.hours = 20;
 	Locations[n].QuestlockWeather.minutes = 00;

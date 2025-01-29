@@ -824,6 +824,42 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 {
 	ref sld;
 	int i;
+	
+		//=======> Квест Изабеллы, детектор на скрипт базара Сальватора с братом
+	if (_location.id == "SanJuan_town" && pchar.RomanticQuest == "SeeTalkNearHouse") 
+	{
+        pchar.quest.Romantic_DeadBrother_Cancel.over = "yes"; //убираем таймер на вовремя не явлился
+		StartQuestMovie(true, true, true);
+		pchar.RomanticQuest = "BrotherIsDead";
+		LAi_SetActorType(pchar);
+		SetMainCharacterIndex(GetCharacterIndex("Husband"));
+		locCameraTarget(pchar);
+		locCameraFollow();
+		LAi_SetActorType(PChar);
+		PChar.BaseNation = SPAIN; //скрипт в городе, иначе глючит опрос патрулями
+		PChar.RomanticQuest = "";
+		LAi_SetActorType(CharacterFromID("MigelDeValdes"));
+		SetActorDialogAny2Pchar("MigelDeValdes", "", 1.0, 0.0);
+		LAi_ActorFollow(pchar, CharacterFromID("MigelDeValdes"), "ActorDialog_Any2Pchar", 0.0);
+	}
+	//=======> Квест Изабеллы, закрываем дверь дома, если прошлялся не заходя домой более 3 месяцев
+	if (_location.id == "SanJuan_town" && pchar.RomanticQuest == "NewLifeForHero") 
+	{
+		if (GetQuestPastMonthParam("RomanticQuest") > 3) 
+		{
+			LocatorReloadEnterDisable("SanJuan_town", "houseSp6", true);
+			pchar.RomanticQuest = "TheDoosIsClosed";
+			AddQuestRecord("Romantic_Line", "29");
+		}
+	}
+	//=======> Квест Изабеллы, закрываем дверь дома, если был у шлюх
+	if (_location.id == "SanJuan_town" && CheckAttribute(pchar, "RomanticQuest.HorseCheck") && pchar.RomanticQuest.HorseCheck != "-1" && sti(pchar.questTemp.HorseQty) > sti(pchar.RomanticQuest.HorseCheck))
+	{
+		LocatorReloadEnterDisable("SanJuan_town", "houseSp6", true);
+		pchar.RomanticQuest = "over";
+		pchar.RomanticQuest.HorseCheck = -1;
+		AddQuestRecord("Romantic_Line", "29");
+	}
 
 	//======> Генератор маяка Порт Рояля.
 	if (_location.id == "Mayak3") 	
@@ -1122,6 +1158,37 @@ void QuestCheckExitLocItem(aref _location, string _locator) /// <<<провер�
     {
 		DeleteAttribute(pchar, "GenQuest.OpenTheRopeExit");
 		LocatorReloadEnterDisable(pchar.location, "reload2", false);
+	}
+	    if (_location.id == "SanJuan_houseSp6" && pchar.RomanticQuest == "exitFromDetector")
+    {
+		pchar.RomanticQuest = "executeFromDetector";
+		StartQuestMovie(true, true, true);
+		// ГГ теперь Сальватор
+		//sGlobalTemp = GetMainCharacterIndex();
+		SetMainCharacterIndex(GetCharacterIndex("MigelDeValdes"));
+        PChar   = GetMainCharacter();			
+		locCameraTarget(pchar);
+		locCameraFollow();
+		SetActorDialogAny2Pchar("Isabella", "", 3.0, 0.0);
+		LAi_ActorFollow(PChar, CharacterFromID("Isabella"), "ActorDialog_Any2Pchar", 4.0);
+	}
+	//=======> Изабелла, в доме Роситы после смерти мужа
+    if (_location.id == "Beliz_houseS4" && pchar.RomanticQuest == "Beliz_exitFromDetector")
+    {
+		pchar.RomanticQuest = "Beliz_executeFromDetector";
+		StartQuestMovie(true, true, true);
+        // ГГ теперь Изабелла
+		ChangeCharacterAddressGroup(CharacterFromID("Isabella"), pchar.location, "goto",  "goto3");
+		ChangeCharacterAddressGroup(CharacterFromID("Rosita"), pchar.location, "goto",  "goto1");
+        SetMainCharacterIndex(GetCharacterIndex("Isabella"));
+        PChar   = GetMainCharacter();			
+		locCameraTarget(pchar);
+		locCameraFollow();
+		LAi_SetActorType(CharacterFromID("Rosita"));
+		LAi_SetActorType(pchar);
+		PChar.BaseNation = SPAIN; //скрипт в городе, иначе глючит опрос патрулями
+		SetActorDialogAny2Pchar("Rosita", "", 1.0, 0.0);
+		LAi_ActorFollow(PChar, CharacterFromID("Rosita"), "ActorDialog_Any2Pchar", 0.0);
 	}
 }
 

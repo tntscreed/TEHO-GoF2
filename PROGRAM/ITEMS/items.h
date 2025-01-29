@@ -5,7 +5,7 @@
 #define BLADE_SABER				"blade_11"
 #define BLADE_SHORT				"blade_05"// boal 27.03.2004
 #define BLADE_NORMAL			"blade_12"// boal 27.03.2004
-#define BLADE_LONG				"blade_07"// boal 27.03.2004
+#define BLADE_LONG				"GOF_blade9"// boal 27.03.2004
 
 #define GUN_COMMON				"pistol1"
 #define CHEAP_SPYGLASS			"spyglass1"
@@ -50,7 +50,7 @@
 // indexes for items` array
 #define TOTAL_ITEMS				  1000 // Warship 08.05.09 - Новая система предметов
 #define TEHO_ITEMS_QUANTITY       500   // Vex 2024-09-27 - Porting GoF 2.0 to TEHO
-#define GOF_ITEMS_QUANTITY        305   // Vex 2024-09-27 - Porting GoF 2.0 to TEHO
+#define GOF_ITEMS_QUANTITY        306   // Vex 2024-09-27 - Porting GoF 2.0 to TEHO
 #define ITEMS_QUANTITY			  805  // Sum of GOF and TEHO items
 #define MAX_BUTTONS               64
 #define RANDITEMS_QUANTITY    	  52

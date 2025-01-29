@@ -214,11 +214,59 @@ int LocationInitBeliz(int n)
 	locations[n].reload.l33.label = "House";
 	
 	locations[n].reload.l34.name = "houseS4";
-	locations[n].reload.l34.go = "CommonStoneHouse";
+	locations[n].reload.l34.go = "Beliz_houseS4";
 	locations[n].reload.l34.emerge = "reload1";
 	locations[n].reload.l34.autoreload = "0";
-	locations[n].reload.l34.label = "House";
+	locations[n].reload.l34.label = "Rosita's House";
+	locations[n].reload.l34.disable = true;
 	n = n + 1;
+ 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// дом кузины Изабеллы Роситы Фернандес
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "Beliz_houseS4";
+	locations[n].filespath.models = "locations\inside\StoneHouse";
+	locations[n].id.label = "Rosita's House";
+	locations[n].image = "loading\inside\stonehouse.tga";
+	//Town sack
+	locations[n].townsack = "Beliz";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "Beliz";
+	locations[n].islandId = "Mein";
+	//Models
+	//Always
+	locations[n].models.always.locators = "StoneHouse_lBelizIsa";
+	locations[n].models.always.tavern = "StoneHouse";
+	locations[n].models.always.tavern.level = 65538;
+	locations[n].models.always.window = "StoneHouse_window";
+	locations[n].models.always.window.tech = "LocationWindows";
+	locations[n].models.always.window.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	locations[n].models.day.charactersPatch = "StoneHouse_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "StoneHouse_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Beliz_town";
+	locations[n].reload.l1.emerge = "houseS4";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+
+	locations[n].reload.l2.name = "reload2";
+	locations[n].reload.l2.go = "CommonRoom_MH5";
+	locations[n].reload.l2.emerge = "reload1";
+	locations[n].reload.l2.autoreload = "0";
+	locations[n].reload.l2.label = "Room";
+	LAi_LocationFightDisable(&locations[n], true);
+	n = n + 1;
+
 
   	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ТАВЕРНА

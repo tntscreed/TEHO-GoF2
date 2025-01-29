@@ -226,10 +226,98 @@ int LocationInitPuertoRico(int n)
 	locations[n].reload.l34.label = "House";
 	
 	locations[n].reload.l35.name = "houseSp6";
-	locations[n].reload.l35.go = "CommonCobHouse";
+	locations[n].reload.l35.go = "SanJuan_houseSp6";
 	locations[n].reload.l35.emerge = "reload1";
 	locations[n].reload.l35.autoreload = "0";
-	locations[n].reload.l35.label = "House";
+	locations[n].reload.l35.label = "Isabella's House";
+	locations[n].reload.l35.disable = true; //закроем до встречи Атиллы
+	locations[n].locators_radius.item.detector1 = 6.0; //детектор
+	n = n + 1;
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Дом Изабеллы Олеварес
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "SanJuan_houseSp6";
+	locations[n].filespath.models = "locations\inside\CobHouse";
+	locations[n].id.label = "Isabella's House";
+	locations[n].image = "loading\inside\CobHouse.tga";
+	//Town sack
+	locations[n].townsack = "SanJuan";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "SanJuan";
+	locations[n].islandId = "PuertoRico";
+	//Models
+	//Always
+	locations[n].models.always.locators = "CobHouse_lIsabella";
+	locations[n].models.always.tavern = "CobHouse";
+	locations[n].models.always.tavern.level = 65538;
+	locations[n].models.always.window = "CobHouse_window";
+	locations[n].models.always.window.tech = "LocationWindows";
+	locations[n].models.always.window.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	locations[n].models.day.charactersPatch = "CobHouse_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "CobHouse_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "SanJuan_town";
+	locations[n].reload.l1.emerge = "houseSp6";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+
+	locations[n].reload.l2.name = "reload2";
+	locations[n].reload.l2.go = "SanJuan_houseS1Bedroom";
+	locations[n].reload.l2.emerge = "reload1";
+	locations[n].reload.l2.autoreload = "0";
+	locations[n].reload.l2.label = "Room";
+	locations[n].locators_radius.item.detector1 = 1.1;
+	n = n + 1;
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "SanJuan_houseS1Bedroom";
+	locations[n].id.label = "Bedroom";
+	locations[n].image = "loading\inside\Bedroom.tga";
+	//Town sack
+	locations[n].townsack = "SanJuan";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "SanJuan";
+	locations[n].islandId = "PuertoRico";
+	//Models
+	locations[n].filespath.models = "locations\inside\bedRoom1";
+	locations[n].models.always.bedRoom1 = "bedRoom1";
+	locations[n].models.always.bedRoom1.level = 65538;
+	Locations[n].models.always.bedRoom1windows = "mediumhouse01_windows";
+	Locations[n].models.always.bedRoom1windows.tech = "LocationWindows";
+	locations[n].models.always.bedRoom1windows.level = 65539;
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	locations[n].models.day.locators = "bedRoom1_lIsabella";
+	Locations[n].models.day.bedRoom1rand = "bedRoom1_rand";
+	locations[n].models.day.charactersPatch = "bedRoom1_patch";
+	//Night
+	locations[n].models.night.locators = "bedRoom1_lNIsabella";
+	locations[n].models.night.charactersPatch = "bedRoom1_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "SanJuan_houseSp6";
+	locations[n].reload.l1.emerge = "reload2";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Room";
+	LAi_LocationFightDisable(&locations[n], true);
 	n = n + 1;
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

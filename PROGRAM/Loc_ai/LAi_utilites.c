@@ -1721,7 +1721,7 @@ void CreateIncquisitio(aref loc)
 					LocatorGroup = "sit";
 					LocatorName = "sit"+(rand(3)+1);			
 				}
-				sld = GetCharacter(NPC_GenerateCharacter("Incquisitor_"+i, "priest_sp"+i, "man", "man2", 20, SPAIN, 1, false, "citizen"));
+				sld = GetCharacter(NPC_GenerateCharacter("Incquisitor_"+i, "priest_sp"+i, "man", "man", 20, SPAIN, 1, false, "citizen"));
 				sld.Dialog.Filename = "Incquistors.c";									
 				LAi_LoginInCaptureTown(sld, true);
 				LAi_SetLoginTime(sld, 0.0, 24.0);
@@ -1770,7 +1770,7 @@ void CreateIncquisitio(aref loc)
 			{
 				if (rand(100)<70)
 				{
-					sld = GetCharacter(NPC_GenerateCharacter("Prisoner_"+i, "Prison_"+(rand(4)+1), "man", "man2", 10, SPAIN, 30, false, "slave"));							
+					sld = GetCharacter(NPC_GenerateCharacter("Prisoner_"+i, "Prison_"+(rand(4)+1), "man", "man", 10, SPAIN, 30, false, "slave"));							
 					sld.Dialog.Filename = "Incquistors.c";
 					sld.greeting = "Gr_prison";
 					LAi_LoginInCaptureTown(sld, true);
@@ -2801,7 +2801,7 @@ void CreateJail(aref loc)
 			{
 				if (rand(100)<70)
 				{
-					sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"Prisoner_"+i, "Prison_"+(rand(4)+1), "man", "man2", 10, iNation, 2, false, "slave"));							
+					sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"Prisoner_"+i, "Prison_"+(rand(4)+1), "man", "man", 10, iNation, 2, false, "slave"));							
 					sld.Dialog.Filename = "Common_prison.c";
 					sld.dialog.currentnode = "First_prisoner";
 					sld.City = loc.parent_colony;

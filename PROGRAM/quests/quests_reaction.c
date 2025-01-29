@@ -12,6 +12,65 @@ void QuestComplete(string sQuestName, string qname)
 
 	switch(sQuestName)
 	{	
+	
+			case "PlaySex_1":
+			ResetSound();
+			iTemp = rand(13)+1;
+			switch (iTemp)
+			{
+				case 1: fTemp = 18.2; break;
+				case 2: fTemp = 5.1;  break;
+				case 3: fTemp = 19.3; break;
+				case 4: fTemp = 8.2;  break;
+				case 5: fTemp = 11.3; break;
+				case 6: fTemp = 18.2; break;
+				case 7: fTemp = 18.2; break;
+				case 8: fTemp = 9.3;  break;
+				case 9: fTemp = 19.4; break;
+				case 10:fTemp = 12.2; break;
+				case 11:fTemp = 19.4; break;
+				case 12:fTemp = 12.3; break;
+				case 13:fTemp = 10.2; break;
+				case 14:fTemp = 11.2; break;
+			}
+			sGlobalTemp = iTemp;
+			SetLaunchFrameFormParam("", "", 0, fTemp);
+			SetLaunchFrameFormPic("loading\inside\censored1.tga");
+            LaunchFrameForm();
+			DoQuestCheckDelay("PlaySex_2", 1.0);			
+		break;
+
+		case "PlaySex_2":
+			PlayStereoSound("sex\sex" + sGlobalTemp + ".wav");
+            AddTimeToCurrent(2, rand(30));
+			if (pchar.location == "SanJuan_houseS1Bedroom")
+			{
+			    QuestSetCurrentNode("Isabella", "NewLife_afterSex");
+			    LAi_SetStayType(CharacterFromID("Isabella"));
+			}
+			if (pchar.questTemp.different == "FackWaitress_facking")
+			{
+				sld = characterFromId("WairessQuest");
+				ChangeCharacterAddress(sld, "none", "");
+				AddCharacterExpToSkill(pchar, "Loyality", 20);
+				if (sti(pchar.questTemp.different.FackWaitress.Kick) != 1) 
+				{
+					pchar.questTemp.different = "FackWaitress_fackNoMoney";
+					AddCharacterExpToSkill(pchar, "Fortune", 100);
+				}
+				pchar.money = sti(pchar.money) / sti(pchar.questTemp.different.FackWaitress.Kick);
+				chrDisableReloadToLocation = false;
+			}
+			if (pchar.questTemp.different == "HostessSex" && CheckAttribute(pchar, "questTemp.different.HostessSex.city"))
+			{
+				sld = characterFromId(pchar.questTemp.different.HostessSex.city + "_Hostess");
+				ChangeCharacterAddressGroup(sld, pchar.questTemp.different.HostessSex.city + "_SecBrRoom", "goto", "goto8");
+				LAi_SetOwnerTypeNoGroup(sld);
+				DeleteAttribute(pchar, "questTemp.different.HostessSex");
+				pchar.questTemp.different = "free";
+			}
+		break;
+		
 		// boal -->
 		// смена отношений от времени
         // boal все теперь проверяется 15-25 день при расчете состояния мира = изменение в 5% - ранд(100) > 95
@@ -618,8 +677,6 @@ void QuestComplete(string sQuestName, string qname)
 		break;
 
         case "God_hit_us": // это такой прикол - задействовать в ловушки для сундуков(boal)
-			if(Pchar.questTemp.CapBloodLine != true)
-			{	
 		iTemp = 10+rand(15);
 			if ((MakeInt(pchar.chr_ai.hp)-iTemp) > 0)
             {
@@ -629,7 +686,6 @@ void QuestComplete(string sQuestName, string qname)
 			LAi_ApplyCharacterDamage(pchar, iTemp, "other");
 			if(bDrawBars) SendMessage(pchar, "lfff", MSG_CHARACTER_VIEWDAMAGE, iTemp, MakeFloat(MakeInt(pchar.chr_ai.hp)), MakeFloat(MakeInt(pchar.chr_ai.hp_max)));
 			LAi_CheckKillCharacter(pchar);
-			}
 		break;
 		// диалог с ГГ генератор
         case "TalkSelf_Start":

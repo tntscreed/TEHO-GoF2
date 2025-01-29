@@ -1,4 +1,4 @@
-//#include "DIALOGS\convoy_traider.h"
+//#include "DIALOGS\russian\convoy_traider.h"
 void ProcessDialogEvent()
 {
 	ref NPChar, d;

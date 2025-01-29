@@ -115,12 +115,56 @@ int LocationInitBermudes(int n)
 	locations[n].reload.l22.label = "House";
 	
 	locations[n].reload.l23.name = "houseF1";
-	locations[n].reload.l23.go = "CommonRoom_MH";
+	locations[n].reload.l23.go = "Pirates_houseF1";
 	locations[n].reload.l23.emerge = "reload1";
 	locations[n].reload.l23.autoreload = "0";
-	locations[n].reload.l23.label = "House";
+	locations[n].reload.l23.label = "Atilla's house";
+	locations[n].reload.l23.disable = true;
 	n = n + 1;
 
+	locations[n].id = "Pirates_houseF1";
+	locations[n].id.label = "Atilla's house";
+	locations[n].image = "loading\inside\mediumhouse01.tga";
+	//Town sack
+	locations[n].townsack = "Pirates";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "Pirates";
+ 	locations[n].islandId = "Bermudes";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\mediumhouse01";
+	locations[n].models.always.mediumhouse01 = "mediumhouse01";
+	locations[n].models.always.mediumhouse01.level = 65538;
+	locations[n].models.day.locators = "mediumhouse01_locators";
+	locations[n].models.night.locators = "mediumhouse01_Nlocators";
+
+	Locations[n].models.always.mediumhouse01windows = "mediumhouse01_windows";
+	Locations[n].models.always.mediumhouse01windows.tech = "LocationWindows";
+	locations[n].models.always.mediumhouse01windows.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.always.mediumhouse01rand= "mediumhouse01_rand";
+	locations[n].models.day.charactersPatch = "mediumhouse01_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "mediumhouse01_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+    //Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Pirates_town";
+	locations[n].reload.l1.emerge = "houseF1";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+	n = n + 1;
+	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ТАВЕРНА
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

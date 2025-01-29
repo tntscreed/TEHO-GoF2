@@ -3512,3 +3512,25 @@ itmdescr_blackpearl
 {
 Legendary black pearl.
 }
+itmname_migraine_potion {Migraine Medicine}
+itmdescr_migraine_potion {
+This mixture soothes sharp head pains.
+}
+itmname_MsStid_ring {Strange Ring}
+itmdescr_MsStid_ring {
+A simple and unremarkable finger-bangle.
+}
+itmname_Weapon_for_escape {Weapon Bundle}
+itmdescr_Weapon_for_escape {
+A bundle of boarding sabers and pistols, without any weapons master's marks.
+}
+itmname_Griffins_Weapon {Mister Griffin's Weapon Samples}
+itmdescr_Griffins_Weapon {
+A few swords, engraved with the name of Master Griffin.
+}
+itmname_HugtorpRing {Hagthorpe's Engagement Ring}
+itmdescr_HugtorpRing {
+On a severed finger, no less. Charming.}
+
+itmname_order {False promissory note}
+itmdescr_order {A false promissory note, with Isabella's entire estate as collateral. With the help of these notes, Salvatore stole his wife's money.}

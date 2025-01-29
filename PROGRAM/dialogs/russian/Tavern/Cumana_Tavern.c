@@ -10,10 +10,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = HeroStringReactionRepeat("You know, " + NPChar.name + ", maybe next time.", "Right, I've forgotten for some reason...",
                       "Yes, it really is the third time...", "Yup...", npchar, Dialog.CurrentNode);
 			link.l1.go = "exit";
-			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "utensil" && !CheckAttribute(npchar, "quest.utensil"))
+
+		 if (CheckAttribute(pchar, "RomanticQuest.ShipToCumana"))
 			{
-				link.l1 = "Tell me, where can I find seniora Belinda de Ribero?";
-                link.l1.go = "guardoftruth";
+    			link.l1 = "Do you know where I could find the captain of the brig 'Five Wounds of Christ'?";
+    			Link.l1.go = "RomanticQuest_1";
 			}
 		break;
 		
@@ -41,6 +42,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			ChangeCharacterAddressGroup(sld, "Cumana_TownhallRoom", "barmen", "stay");
 			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
 		break;
+		case "RomanticQuest_1":
+			dialog.text = "Yes, he dropped in, this captain. Been repairing his ship for some days now. He's not here at the moment. Try looking in town.";
+			link.l1 = "Thanks!";
+			link.l1.go = "exit";
+			ref rChar = GetCharacter(NPC_GenerateCharacter("BrigCaptain", "shipowner_13", "man", "man", 20, SPAIN, -1, true, "quest"));
+			rChar.Dialog.Filename = "Coas_quests\Isabella\BrigCaptain.c";
+			LAi_SetCitizenType(rChar);
+			LAi_SetImmortal(rChar, true);
+			ChangeCharacterAddressGroup(rChar, "Cumana_town", "goto", "goto10");
+		break;		
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

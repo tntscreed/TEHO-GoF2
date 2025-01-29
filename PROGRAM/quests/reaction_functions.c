@@ -11410,7 +11410,7 @@ void Tieyasal_VinsentoChapel(string qName) // ставим отца Винсен
 
 void Tieyasal_SetAdrianInChapel(string qName) // ставим падре Адриана
 {
-	sld = GetCharacter(NPC_GenerateCharacter("Adrian", "priest_sp1", "man", "man2", 25, SPAIN, -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("Adrian", "priest_sp1", "man", "man", 25, SPAIN, -1, true, "quest"));
 	SetFantomParamFromRank(sld, 25, true);
 	sld.name = "father Adrian";
 	sld.lastname = "";

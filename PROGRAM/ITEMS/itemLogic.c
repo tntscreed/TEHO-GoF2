@@ -665,9 +665,12 @@ void OpenBoxProcedure()
 	// токо сундуки и дома
 	if (sti(chr.GenQuest.God_hit_us) == 1 && rand(100) >= (85 + GetCharacterSkillToOld(chr, SKILL_FORTUNE)) && chr.location != "SentJons_HouseF3_Room2" && chr.location != "IslaMona_TwoFloorHouse" && chr.location != "IslaMona_TwoFloorRoom") // 280313 лесник сняты ловушки с исла моны.
 	{
+	if(Pchar.questTemp.CapBloodLine != true)
+	{	
 		Log_Info("A trap!");
 		PlaySound("people\clothes1.wav");
 		DoQuestCheckDelay("God_hit_us", 0.2);
+	}
 	}
 	else
 	{

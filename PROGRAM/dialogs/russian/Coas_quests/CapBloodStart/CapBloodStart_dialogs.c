@@ -28,6 +28,13 @@ LAi_ActorGoToLocation(npchar, "reload", Pchar.questTemp.CapBloodLine.sLocator, "
 NextDiag.CurrentNode = NextDiag.TempNode;
 DialogExit();
 break;
+case "Exit_AwayPW":
+LAi_SetPlayerType(pchar);
+LAi_SetActorTypeNoGroup(npchar);
+LAi_ActorGoToLocation(npchar, "reload", Pchar.questTemp.CapBloodLine.sLocator, "none", "", "", "pchar_back_to_player", sti(Pchar.questTemp.CapBloodLine.iTime));
+NextDiag.CurrentNode = NextDiag.TempNode;
+DialogExit();
+break;
 case "Exit_RunAway":
 LAi_SetActorTypeNoGroup(npchar);
 LAi_ActorRunToLocation(npchar, "reload", Pchar.questTemp.CapBloodLine.sLocator, "none", "", "", "", sti(Pchar.questTemp.CapBloodLine.iTime));
@@ -38,7 +45,7 @@ case "GFight":
 DialogExit();
 LAi_SetPlayerType(Pchar);
 NextDiag.CurrentNode = NextDiag.TempNode;
-sld = &characters[GetCharacterIndex("Dragun_0")];
+sld = characterFromID("Dragun_0");
 LAi_SetCheckMinHP(sld, 1, true, "Blood17");
 LAi_SetImmortal(sld, false);
 LAi_SetWarriorTypeNoGroup(sld);
@@ -57,7 +64,9 @@ LAi_SetWarriorType(NPChar);
 LAi_group_MoveCharacter(NPChar, "TmpEnemy");
 LAi_group_FightGroups("TmpEnemy", LAI_GROUP_PLAYER, true)
 AddDialogExitQuest("MainHeroFightModeOn");
-Spain_spyDie("");
+GiveItem2Character(npchar, "Griffins_Weapon");
+chrDisableReloadToLocation = true;
+LAi_group_SetCheck("TmpEnemy", "Blood_add6");
 AddQuestRecord("WeaponsForEscape", "5");
 break;
 case "fight":
@@ -66,6 +75,7 @@ NextDiag.CurrentNode = NextDiag.TempNode;
 LAi_SetWarriorType(NPChar);
 LAi_group_MoveCharacter(NPChar, "TmpEnemy");
 LAi_group_FightGroups("TmpEnemy", LAI_GROUP_PLAYER, true);
+LAi_group_SetCheck("TmpEnemy", "Blood_add5");
 AddDialogExitQuest("MainHeroFightModeOn");
 break;
 case "Finish":
@@ -114,6 +124,9 @@ link.l1.go = "Exit";
 npchar.quest.meeting = "1";
 if (npchar.id == "Pitt")
 {
+dialog.text = "I'm sorry, Peter, but I must go and work now.";
+link.l1 = "Fine. Go.";
+link.l1.go = "Exit";
 if (bBettaTestMode)
 {
 link.l0 = "Beta Test - Keep on going, to start the game.";
@@ -131,25 +144,19 @@ if (bBettaTestMode)
 link.l3 = "Beta Test - To the second quest.";
 link.l3.go = "NextQuest";
 }
-break;
 }
 if (Pchar.questTemp.CapBloodLine.stat == "CureMisStid")
 {
 dialog.text = "Peter, Colonel Bishop has been searching for you all evening. The Governor's wife is having another attack. You must go to Governor Steed's residency, immediately.";
 link.l1 = "Thank you, Pitt. He's told me.";
 link.l1.go = "Exit";
-break;
 }
 if (Pchar.questTemp.CapBloodLine.stat == "WakerOfferComplited")
 {
 dialog.text = "How are things, my friend?";
 link.l1 = "Talk lower, colleague, for now our fates are on the line.";
 link.l1.go = "PStep_0";
-break;
 }
-dialog.text = "I'm sorry, Peter, but I must go and work now.";
-link.l1 = "Fine. Go.";
-link.l1.go = "Exit";
 }
 if (npchar.id == "Beyns")
 {
@@ -166,6 +173,10 @@ DragunInvansion4();
 }
 if (npchar.id == "Bridgetown_Mayor")
 {
+dialog.text = "What do you want, Doctor Blood?";
+link.l1 = "Oh, nothing. Sorry for the disturbance.";
+link.l1.go = "Exit";
+NextDiag.TempNode = "First time";
 if(Pchar.questTemp.CapBloodLine.stat == "CureMisStid")
 {
 dialog.text = "I wanted to send for Whacker, already. What's the holdup?";
@@ -173,19 +184,13 @@ link.l1 = "I was delayed. Please forgive me, Governor.";
 link.l1.go = "SStep_0";
 link.l2 = "Your people delayed me, Governor Steed. It turns out that your orders are apt to be questioned. Also, some individuals are actively blocking me from healing Spanish soldiers.";
 link.l2.go = "SStep_1";
-break;
 }
 if(Pchar.questTemp.CapBloodLine.stat == "PrepareToEscape3")
 {
 dialog.text = "Greetings, Doctor Blood. To what do I owe this visit?";
 link.l1 = "Good day, Governor. I've brought some prophylactic extract for your spouse, and wanted to have a chance to examine her.";
 link.l1.go = "SStep_9";
-break;
 }
-dialog.text = "What do you want, Doctor Blood?";
-link.l1 = "Oh, nothing. Sorry for the disturbance.";
-link.l1.go = "Exit";
-NextDiag.TempNode = "First time";
 }
 if (npchar.id == "MisStid" && Pchar.questTemp.CapBloodLine.stat == "CureMisStid")
 {
@@ -239,58 +244,56 @@ link.l3.go = "DStep_2";
 }
 if (npchar.id == "Griffin")
 {
+dialog.text = "What did you forget here, the devil take you?!";
+link.l1 = "I'm Doctor Blood, and I'm already gone." ;
+link.l1.go = "Exit";	
 if(Pchar.questTemp.CapBloodLine.stat == "PrepareToEscape1")
 {
 dialog.text = "Why the devil are you bouncing in here without a knock, you cursed... Oh, it's you, Doctor Blood!";
 link.l1 = "Good day, Mr. Griffin. I'll ask you to pardon such an uncouth entry, but I have business for you that can't wait.";
 link.l1.go = "GRStep_0";
-break;
 }
 if(Pchar.questTemp.CapBloodLine.stat == "PrepareToEscape")
 {
 dialog.text = "Who are you, the Devil take you?!";
 link.l1 = "I'm Doctor Blood, a physician from Bridgetown." ;
 link.l1.go = "GRStep_10";
-break;
 }
-dialog.text = "What did you forget here, the devil take you?!";
-link.l1 = "I'm Doctor Blood, and I'm already gone." ;
-link.l1.go = "Exit";
 }
 if (npchar.id == "Hells")
 {
+dialog.text = "What did you forget here, the devil take you?!";
+link.l1 = "I'm Doctor Blood, and I'm already gone." ;
+link.l1.go = "Exit";	
 if(Pchar.questTemp.CapBloodLine.stat == "PrepareToEscape1_1")
 {
 dialog.text = "What the hell do all of you need?! Protect yourself!";
 link.l1 = "Calm down, sir. I'm Peter Blood, a physician from Bridgetown. I mean no harm.";
 link.l1.go = "HStep_0";
+if (GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) != "")
+{	
 link.l2 = "Well, if you're asking for it...";
 link.l2.go = "fight1";
-break;
+}
 }
 if(Pchar.questTemp.CapBloodLine.stat == "needMoney" && !CheckAttribute(Pchar, "questTemp.CapBloodLine.fishplace"))
 {
 dialog.text = "Oh, how good that you're here...";
 link.l1 = "How may I help?";
 link.l1.go = "HStep_5";
-break;
 }
-dialog.text = "What did you forget here, the devil take you?!";
-link.l1 = "I'm Doctor Blood, and I'm already gone." ;
-link.l1.go = "Exit";
 }
 if (npchar.id == "Quest_Smuggler")
 {
+dialog.text = "Hello, Doctor Blood. If they find out that you were talking with me, then you'll be flogged to death. So it's better for you to go your own way.";
+link.l1 = "I could be flogged to death even without that... Though you're right, it's time to go." ;
+link.l1.go = "Exit";
 if(Pchar.questTemp.CapBloodLine.stat == "PrepareToEscape" && sti(Pchar.reputation) >= 50)
 {
 dialog.text = "I heard about you, Doctor Blood. You've become a real star among the slaves rotting on the plantations. How may I be of service?";
 link.l1 = "With you permission, we'll talk lower. The matter is that I need weapons...";
 link.l1.go = "QSStep_0";
-break;
 }
-dialog.text = "Hello, Doctor Blood. If they find out that you were talking with me, then you'll be flogged to death. So it's better for you to go your own way.";
-link.l1 = "I could be flogged to death even without that... Though you're right, it's time to go." ;
-link.l1.go = "Exit";
 }
 if (npchar.id == "Spain_spy")
 {
@@ -300,42 +303,39 @@ link.l1.go = "SSStep_0";
 }
 if(npchar.id == "Hugtorp")
 {
+dialog.text = "Greetings, Peter. The hand that you've treated has fully healed. Thank you.";
+link.l1 = "I'm happy that you're better.";
+link.l1.go = "Exit";	
 if(Pchar.questTemp.CapBloodLine.statcrew == "find")
 {
 dialog.text = "I'm informed, Peter. Jeremy briefly told me what the matter was, but alas I have to decline.";
 link.l1 = "Why? Do you doubt something?";
 link.l1.go = "HTStep_1";
-break;
 }
-dialog.text = "Greetings, Peter. The hand that you've treated has fully healed. Thank you.";
-link.l1 = "I'm happy that you're better.";
-link.l1.go = "Exit";
 }
 if(npchar.id == "Dieke")
 {
+dialog.text = "How can I be of service to you, doctor?";
+link.l1 = "No, nothing. Just passing by.";
+link.l1.go = "Exit";	
 if(Pchar.questTemp.CapBloodLine.statcrew == "find")
 {
 dialog.text = "How can I be of service to you, doctor?";
 link.l1 = "You can be of much service, Nicolas. Pitt has already told you what we're planning?";
 link.l1.go = "DKStep_0";
-break;
 }
-dialog.text = "How can I be of service to you, doctor?";
-link.l1 = "No, nothing. Just passing by.";
-link.l1.go = "Exit";
 }
 if(npchar.id == "Ogl")
 {
+dialog.text = TimeGreeting() + ", Doctor Blood.";
+link.l1 = "Kind.";
+link.l1.go = "Exit";	
 if(Pchar.questTemp.CapBloodLine.statcrew == "find")
 {
 dialog.text = TimeGreeting() + ", Doctor Blood.";
 link.l1 = "What about the mission, Ogle? Is there still powder in the powder kegs?";
 link.l1.go = "OGLStep_0";
-break;
 }
-dialog.text = TimeGreeting() + ", Doctor Blood.";
-link.l1 = "Kind.";
-link.l1.go = "Exit";
 }
 break;
 case "First Bishop":
@@ -362,6 +362,7 @@ chrDisableReloadToLocation = false;
 LAi_LocationFightDisable(loadedLocation, false);
 Pchar.questTemp.CapBloodLine.stat = "CureMisStid";
 NextDiag.TempNode = "First Bishop";
+LAi_SetPlayerType(pchar);
 PChar.quest.CapBloodLineTimer_1.win_condition.l1 = "Timer";
 PChar.quest.CapBloodLineTimer_1.win_condition.l1.date.hour = 4;
 PChar.quest.CapBloodLineTimer_1.win_condition.l1.date.day = GetAddingDataDay(0, 0, 1);
@@ -497,7 +498,7 @@ LocatorReloadEnterDisable("BridgeTown_town", "reloadR1", false);
 LAi_SetLoginTime(npchar, 6.0, 23.0);
 npchar.protector = false;
 npchar.protector.CheckAlways = 0;
-npchar.dialog.filename = "Quest\CapBloodLine\questNPC.c";
+npchar.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 break;
 case "GStep_1":
 dialog.text = "Oh, Doctor Blood! This time I don't remember hearing that Governor Steed has sent for you. What do you need?";
@@ -509,7 +510,7 @@ LocatorReloadEnterDisable("BridgeTown_town", "reload3_back", false);
 LocatorReloadEnterDisable("BridgeTown_town", "reloadR1", false);
 npchar.protector = false;
 npchar.protector.CheckAlways = 0;
-npchar.dialog.filename = "Quest\CapBloodLine\questNPC.c";
+npchar.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 }
 else
 {
@@ -534,7 +535,7 @@ LocatorReloadEnterDisable("BridgeTown_town", "reload3_back", false);
 LocatorReloadEnterDisable("BridgeTown_town", "reloadR1", false);
 npchar.protector = false;
 npchar.protector.CheckAlways = 0;
-npchar.dialog.filename = "Quest\CapBloodLine\questNPC.c";
+npchar.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 NextDiag.TempNode = "First time";
 }
 else
@@ -559,10 +560,11 @@ case "SStep_2":
 dialog.text = "Yes, yes, of course. She's in the bedroom on the upper floor. Go through the door on my left, up the stairs. Go ahead.";
 link.l1.go = "Exit";
 NextDiag.TempNode = "SStep_3";
-sld = GetCharacter(NPC_GenerateCharacter("MisStid", "AnnaDeLeiva", "woman", "towngirl2", 10, ENGLAND, 3, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld = GetCharacter(NPC_GenerateCharacter("MisStid", "AnnaDeLeiva", "woman", "towngirl", 10, ENGLAND, 3, false, "quest"));
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.name = "Alice";
 sld.lastname = "Steed";
+sld.talker = 10;
 sld.greeting = "Gr_Dama";
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
@@ -571,7 +573,7 @@ ChangeCharacterAddressGroup(sld, "CommonBedroom", "goto","goto5");
 AddQuestRecord("CapBloodLine_q1", "2");
 break;
 case "SStep_3":
-sld = &characters[GetCharacterIndex("MisStid")];
+sld = characterFromID("MisStid");
 if (sld.quest.meeting != "1")
 {
 dialog.text = "Doctor Blood! Hurry and examine my wife.";
@@ -595,9 +597,9 @@ NextDiag.TempNode = "SStep_4";
 break;
 case "SStep_5":
 dialog.text = "Oh, of course... How much do you need?";
-link.l1 = "500 piasters";
+link.l1 = "500 piasters.";
 link.l1.go = "SStep_6";
-link.l2 = "1000 piasters";
+link.l2 = "1000 piasters.";
 link.l2.go = "SStep_7";
 link.l3 = "2500 piasters, sir. It's a very expensive healing extract.";
 link.l3.go = "SStep_8";
@@ -642,23 +644,22 @@ dialog.text = "You can do something, Doctor?";
 link.l1 = "It looks like it won't work without medicine, but the pharmacy has long since closed. I will have to go to Mr. Dan's house, to get what's required. Drink warm water, and wait for me. I'll return as quickly as I can!";
 link.l1.go = "Exit";
 NextDiag.TempNode = "MSStep_1";
+LocatorReloadEnterDisable("CommonPirateHouse", "reload1", true);
 sld = GetCharacter(NPC_GenerateCharacter("Waker", "usurer_5", "man", "man", 7, ENGLAND, 3, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.name = "Markus";
 sld.lastname = "Whacker";
 sld.greeting = "Gr_medic";
+LAi_SetStayType(sld);
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
 ChangeCharacterAddressGroup(sld, "CommonPirateHouse", "goto","goto6");
-LAi_SetActorTypeNoGroup(sld);
-LAi_ActorDialog(sld, pchar, "", 2.0, 0);
 pchar.quest.CureMisStid.win_condition.l1 = "item";
 pchar.quest.CureMisStid.win_condition.l1.item = "migraine_potion";
 pchar.quest.CureMisStid.function = "CapBloodLine_q1_End";
-sld = ItemsFromID("migraine_potion");
-sld.shown = true;
-sld.startLocation = "CommonPirateHouse";
-sld.startLocator = "item1";
+pchar.quest.CureMisStid2.win_condition.l1 = "location";
+pchar.quest.CureMisStid2.win_condition.l1.location = "CommonPirateHouse";
+pchar.quest.CureMisStid2.win_condition = "Blood_add0";
 AddQuestRecord("CapBloodLine_q1", "3");
 break;
 case "MSStep_1":
@@ -705,8 +706,17 @@ link.l1.go = "MSStep_7";
 break;
 case "MSStep_7":
 dialog.text = "Then let it be so. And now, I must ask you to leave me.";
+if (GetCharacterItem(pchar,"migraine_potion") > 0)
+{
+AddCharacterExpToSkill(pchar, "LeaderShip", 50);
 link.l1 = "Here, I've brought some more miracle extract - which was the point of my visit. All the best.";
 TakeItemFromCharacter(Pchar, "migraine_potion");
+}
+else
+{
+link.l1 = "Goodbye.";
+}
+GiveItem2Character(pchar, "MsStid_ring");
 AddQuestRecord("WeaponsForEscape", "15");
 link.l1.go = "Exit";
 NextDiag.TempNode = "MSStep_8";
@@ -809,19 +819,22 @@ break;
 case "WStep_2":
 dialog.text = "Well, then. I'm not in much of a mood to discuss that which doesn't need to discussed here and now. So I'll go, and if you like you can wait for Dan. We'll talk tomorrow. As soon as you have a free moment, drop by the tavern. I'm really counting on you.";
 link.l1 = "Goodbye.";
-link.l1.go = "Exit_Away";
+link.l1.go = "Exit_AwayPW";
+LocatorReloadEnterDisable("CommonPirateHouse", "reload1", false);
 Pchar.questTemp.CapBloodLine.sLocator = "reload1";
 Pchar.questTemp.CapBloodLine.iTime = 5;
 sld = GetCharacter(NPC_GenerateCharacter("Den", "usurer_1", "man", "man", 7, ENGLAND, 3, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.name = "Henry";
 sld.lastname = "Dan";
 sld.greeting = "Gr_medic";
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
 ChangeCharacterAddressGroup(sld, "BridgeTown_town", "goto","goto3");
-LAi_SetActorTypeNoGroup(sld);
-LAi_ActorDialog(sld, pchar, "", 2.0, 0);
+LAi_SetStayTypeNoGroup(sld);
+n = FindLocation("CommonPirateHouse");
+Locations[n].box1.items.migraine_potion = 3;
+DoQuestCheckDelay("Blood_add1", 0.5);
 AddQuestRecord("CapBloodLine_q2", "1");
 break;
 case "WStep_3":
@@ -925,7 +938,8 @@ break;
 case "DStep_0":
 dialog.text = "What a nightmare! I've got a vial with me, take it. This would not be the first day I suffered without. It's okay, I've got more stored away. Take it, Doctor - it's my civilian duty!";
 link.l1 = "All the best.";
-link.l1.go = "Exit_Away";
+link.l1.go = "Exit_AwayP";
+chrDisableReloadToLocation = false;
 GiveItem2Character(Pchar, "migraine_potion");
 Pchar.questTemp.CapBloodLine.sLocator = "houseSp1";
 Pchar.questTemp.CapBloodLine.iTime = -1;
@@ -933,7 +947,8 @@ break;
 case "DStep_1":
 dialog.text = "What! Mrs. Steed's health is at stake?! You acted correctly! Hurry then!";
 link.l1 = "All the best.";
-link.l1.go = "Exit_Away";
+link.l1.go = "Exit_AwayP";
+chrDisableReloadToLocation = false;
 ChangeCharacterReputation(PChar, 5);
 Pchar.questTemp.CapBloodLine.sLocator = "houseSp1";
 Pchar.questTemp.CapBloodLine.iTime = -1;
@@ -941,7 +956,8 @@ break;
 case "DStep_2":
 dialog.text = "Hm... It's clear.";
 link.l1 = "All the best.";
-link.l1.go = "Exit_Away";
+link.l1.go = "Exit_AwayP";
+chrDisableReloadToLocation = false;
 Pchar.questTemp.CapBloodLine.sLocator = "houseSp1";
 Pchar.questTemp.CapBloodLine.iTime = -1;
 break;
@@ -1041,7 +1057,7 @@ break;
 case "PStep_8":
 dialog.text = "The blacksmith, he was lucky he only had to face the beatings. \nStill, I'm not here to grouse about hard times. Bishop is looking for you. Why, I dunno. Try not to irritate him, because we do need a doctor around here...";
 link.l1 = "Thanks, Jeremy. I'll be meek as a lamb.";
-link.l1.go = "Exit_AwayP";
+link.l1.go = "Exit_AwayPW";
 Pchar.questTemp.CapBloodLine.sLocator = "reload1";
 Pchar.questTemp.CapBloodLine.iTime = -1;
 NextDiag.TempNode = "First time";
@@ -1188,20 +1204,6 @@ link.l1 = "I will return soon, dear Mr. Griffin. Make the necessary preparations
 link.l1.go = "GRStep_7_1";
 link.l2 = "Wait, hold on... I'm already risking my life to save your reputation. One thousand, not a penny more.";
 link.l2.go = "GRStep_7_2";
-sld = GetCharacter(NPC_GenerateCharacter("Spain_spy", "shipowner_13", "man", "man", 7, ENGLAND, -1, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
-sld.name = "Spaniard";
-sld.lastname = "";
-GiveItem2Character(sld, "Griffins_Weapon");
-sld.SaveItemsForDead = true;
-sld.DontClearDead = true;
-LAi_SetActorTypeNoGroup(sld);
-LAi_ActorSetLayMode(sld);
-LAi_SetImmortal(sld, true);
-ChangeCharacterAddressGroup(sld, "CommonRoom_MH2", "goto","goto2");
-sld = &characters[GetCharacterIndex("Hells")];
-LAi_SetActorTypeNoGroup(sld);
-LAi_ActorDialog(sld, pchar, "", 1.0, 0);
 break;
 case "GRStep_7_1":
 dialog.text = "Fine, but hurry.";
@@ -1212,6 +1214,8 @@ NextDiag.TempNode = "GRStep_8";
 Pchar.questTemp.CapBloodLine.stat = "PrepareToEscape1_1";
 AddQuestRecord("WeaponsForEscape", "3");
 AddQuestUserData("WeaponsForEscape", "iMoney", 1500);
+sld = characterFromID("Hells");
+sld.talker = 10;
 break;
 case "GRStep_7_2":
 dialog.text = "Fine, but hurry.";
@@ -1222,6 +1226,8 @@ NextDiag.TempNode = "GRStep_8";
 Pchar.questTemp.CapBloodLine.stat = "PrepareToEscape1_1";
 AddQuestRecord("WeaponsForEscape", "3");
 AddQuestUserData("WeaponsForEscape", "iMoney", 1000);
+sld = characterFromID("Hells");
+sld.talker = 10;
 break;
 case "GRStep_8":
 dialog.text = "That was fast. What happened?";
@@ -1326,6 +1332,7 @@ case "GRStep_17":
 dialog.text = "Hmm... All right then. I have these. Take them. I hope that's enough.";
 link.l1 = "More than enough. Thank you very much.";
 link.l1.go = "Exit";
+LocatorReloadEnterDisable("CommonFlamHouse", "reload1", false);
 GiveItem2Character(Pchar, "Weapon_for_escape");
 AddQuestRecord("WeaponsForEscape", "9");
 CloseQuestHeader("WeaponsForEscape");
@@ -1350,7 +1357,10 @@ break;
 case "HStep_3":
 dialog.text = "Oh. Well, get on with it, then. Doubt he'll be needing them any more.";
 link.l1 = "Many thanks.";
+GiveItem2Character(pchar, "Griffins_Weapon");
 link.l1.go = "HStep_4";
+sld = characterFromID("Griffin");
+sld.talker = 10;
 NextDiag.TempNode = "First time";
 Pchar.questTemp.CapBloodLine.stat = "PrepareToEscape1_2";
 break;
@@ -1360,7 +1370,6 @@ sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(NPChar, sTemp);
 LAi_SetOwnerTypeNoGroup(NPChar);
 DialogExit();
-Spain_spyDie("");
 break;
 case "HStep_5":
 dialog.text = "Look, I've got some work for you, if you're interested. Well, sure you are. Everybody here needs money.";
@@ -1377,7 +1386,7 @@ NextDiag.TempNode = "HStep_8";
 break;
 case "HStep_7":
 AddQuestRecord("FishermanQuest", "1");
-sld = &characters[GetCharacterIndex("Fisherman")];
+sld = characterFromID("Fisherman");
 sld.dialog.currentnode = "FStep_1";
 NextDiag.TempNode = "HStep_9";
 NextDiag.CurrentNode = NextDiag.TempNode;
@@ -1425,7 +1434,6 @@ link.l1.go = "SSStep_1";
 link.l2 = "Why should I tell you? What do you want with a gunsmith?";
 link.l2.go = "SSStep_2";
 Pchar.questTemp.CapBloodLine.stat = "PrepareToEscape2_1";
-chrDisableReloadToLocation = false;
 LocatorReloadEnterDisable("BridgeTown_town", "houseSp2", true);
 break;
 case "SSStep_1":
@@ -1453,8 +1461,6 @@ case "SSStep_4":
 dialog.text = "Well fine, since you're here already, you're next!";
 link.l1 = "Oh, can't I be even earlier than that?";
 link.l1.go = "fight";
-sld = &characters[GetCharacterIndex("Griffin")];
-sld.dialog.currentnode = "GRStep_14";
 break;
 case "QSStep_0":
 dialog.text = "Stop, stop, stop... To ask such a favor is no better than asking me to deliver you from this place. Even under threat of death, I wouldn't consider it. If I were learned, I would suffer far worse... But weapons! As a privileged slave, you must be not only bold but mad to speak openly in a tavern. And I would be even madder to help you...";
@@ -1487,28 +1493,24 @@ link.l1 = "All right. I'll be back as soon as I can. Get the goods and money rea
 link.l1.go = "Exit";
 NextDiag.TempNode = "QSStep_6";
 sld = &characters[GetCharacterbyLocation("Bridgetown_town", "soldiers", "soldier2")];
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.Dialog.CurrentNode = "GStep_1";
 sld.protector = true;
-sld.protector.CheckAlways = 1 ;
+sld.protector.CheckAlways = 1;
 LocatorReloadEnterDisable("BridgeTown_town", "reload3_back", true);
 LocatorReloadEnterDisable("Bridgetown_Townhall", "reload3", true);
 LocatorReloadEnterDisable("BridgeTown_town", "reloadR1", true);
 sld = characterFromID("MisStid");
 sld.Dialog.CurrentNode = "MSStep_3";
 sld.talker = 10;
-ChangeCharacterAddressGroup(sld, "Bridgetown_TownhallRoom", "barmen","bar1");
+ChangeCharacterAddressGroup(sld, "CommonBedroom", "goto","goto5");
 sld = characterFromID("Den");
 LAi_SetCitizenTypeNoGroup(sld);
 LAi_SetOwnerTypeNoGroup(sld);
 sld.Dialog.CurrentNode = "DStep_3";
 ChangeCharacterAddressGroup(sld, "CommonPirateHouse", "goto","goto6");
-sld = ItemsFromID("MsStid_ring");
-sld.shown = true;
-sld.startLocation = "Bridgetown_TownhallRoom";
-sld.startLocator = "item1";
 pchar.quest.PrepareToEscape3.win_condition.l1 = "location";
-pchar.quest.PrepareToEscape3.win_condition.l1.location = "Bridgetown_TownhallRoom";
+pchar.quest.PrepareToEscape3.win_condition.l1.location = "CommonBedroom";
 pchar.quest.PrepareToEscape3.function = "FindMsStid_ring";
 AddQuestRecord("WeaponsForEscape", "11");
 Pchar.questTemp.CapBloodLine.stat = "PrepareToEscape3";
@@ -1599,7 +1601,8 @@ link.l1 = "Sound good to me. So where do I find him?";
 link.l1.go = "HTStep_5";
 break;
 case "HTStep_5":
-dialog.text = "I don't know, the tavern? Bordello? He's around somewhere. Having a merry old time, drinking, hustling... And on his finger, my very own wedding ring. In his house, my wife! Bring me the ring... along with its finger.";
+GiveItem2Character(Pchar, "blade_05");
+dialog.text = "I don't know, the tavern? Bordello? He's around somewhere. Having a merry old time, drinking, hustling... And on his finger, my very own wedding ring. In his house, my wife! Bring me the ring... along with its finger. I hid that blade just in case. It'll come in handy.";
 link.l1 = "You want his head too? I can bring that, if you like.";
 link.l1.go = "HTStep_13";
 NextDiag.TempNode = "HTStep_10";
@@ -1646,11 +1649,11 @@ CloseQuestHeader("HugtorpTrouble");
 break;
 case "HTStep_10":
 dialog.text = "Back already? Is he dead?";
-if (GetCharacterItem(pchar,"DOjeronRing") > 0)
+if (GetCharacterItem(pchar,"HugtorpRing") > 0)
 {
 link.l1 = "Can't be deader. This what you wanted?";
 link.l1.go = "HTStep_11";
-TakeItemFromCharacter(Pchar, "DOjeronRing");
+TakeItemFromCharacter(Pchar, "HugtorpRing");
 }
 else
 {

@@ -37,7 +37,7 @@ LAi_ActorSetLayMode(sld);
 sld = GetCharacter(NPC_GenerateCharacter("Beyns", "trader_8", "man", "man", 7, ENGLAND, 1, false, "quest"));
 sld.name = "Andrew";
 sld.lastname = "Baynes";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.dialog.currentnode = "First time";
 sld.greeting = "cit_common";
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
@@ -50,7 +50,7 @@ sld = GetCharacter(NPC_GenerateCharacter("Pitt", "Pitt", "man", "man", 1, ENGLAN
 sld.name = "Jeremy";
 sld.lastname = "Pitt";
 sld.Dialog.CurrentNode = "First time";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.greeting = "Gr_YoungMan";
 SetSPECIAL(sld, 5,9,7,5,10,7,4);
 sld.rank = 12;
@@ -87,7 +87,7 @@ LAi_ActorGoToLocator(Pchar, "goto", "goto6", "CureLordMovie_Con1", 10.0);
 void DragunInvansion()
 {
 ref sld;
-sld = &characters[GetCharacterIndex("Pitt")];
+sld = characterFromID("Pitt");
 sld.dialog.currentnode = "PStep_5";
 ChangeCharacterAddressGroup(sld, "EstateOffice", "reload", "reload1");
 LAi_SetActorTypeNoGroup(sld);
@@ -108,10 +108,10 @@ ch = GetCharacter(NPC_GenerateCharacter("CapGobart", "Hobart", "man", "man", 10,
 ch.name = "George";
 ch.lastname = "Hobart";
 ch.Dialog.CurrentNode = "First time";
-ch.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+ch.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 ch.greeting = "soldier_arest";
 ch.location = "none";
-FantomMakeCoolFighter(ch, 25, 70, 70, "blade_22", "pistol2", "bullet", 20);
+SetFantomParamFromRank(sld, 20, true);
 LAi_SetImmortal(ch, true);
 ch.BreakTmplAndFightGroup = true;
 LAi_group_MoveCharacter(ch, "TmpEnemy");
@@ -132,17 +132,19 @@ LAi_SetImmortal(sld, true);
 GiveItem2Character(sld, "blade_04");
 EquipCharacterByItem(sld, "blade_04");
 sld.Dialog.CurrentNode = "Draguns_0";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 LAi_group_MoveCharacter(sld, "TmpEnemy");
 ChangeCharacterAddressGroup(sld, "Estate", "reload", "reload1");
 LAi_SetActorTypeNoGroup(sld);
-if(i < 3)
-{
-if(i > 1)
+if(i == 1 || i == 2)
 {
 GiveItem2Character(sld, "pistol2");
 EquipCharacterByItem(sld, "pistol2");
-TakeNItems(sld, "bullet", 30);
+TakeNItems(sld, LAi_GetCharacterBulletType(sld), 30);
+string sGunpowder = LAi_GetCharacterGunpowderType(sld);
+if(sGunPowder != "")
+{
+AddItems(sld, sGunpowder, 30);
 }
 LAi_ActorFollow(sld, ch, "", -1);
 }
@@ -157,17 +159,17 @@ void DragunInvansion4()
 ref ch, sld;
 LAi_LockFightMode(pchar, false);
 LAi_LocationFightDisable(loadedLocation, false);
-ch = &characters[GetCharacterIndex("Pitt")];
+ch = characterFromID("Pitt");
 ChangeCharacterAddressGroup(ch, "Estate", "reload", "reload5");
 LAi_SetActorType(ch);
 LAi_ActorGoToLocator(ch, "goto", "goto5", "", -1);
-sld = &characters[GetCharacterIndex("Beyns")];
+sld = characterFromID("Beyns");
 ChangeCharacterAddressGroup(sld, "Estate", "reload", "reload5");
 LAi_SetActorType(sld);
 LAi_ActorFollow(sld, ch, "", -1);
 for (i = 1; i<5; i++)
 {
-sld = &characters[GetCharacterIndex("Dragun_"+i)];
+sld = characterFromID("Dragun_"+i);
 if(i == 3 || i == 4)
 {
 ChangeCharacterAddressGroup(sld, "Estate", "reload", "reload5");
@@ -210,13 +212,14 @@ SendMessage(&LAi_QuestFader, "lfl", FADER_OUT, 0.5, false);
 LAi_QuestFader.oldSaveState = InterfaceStates.Buttons.Save.enable;
 InterfaceStates.Buttons.Save.enable = 0;
 Pchar.model = "blood_bomj";
+TakeNItems(pchar, "potion1", 5);
 DoQuestCheckDelay("Blood15", 0.1);
 }
 void CapBloodLine_firstEnterHome(string qName)
 {
 sld = characterFromID("Pitt");
 sld.Dialog.CurrentNode = "PStep_7";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
 ChangeCharacterAddressGroup(sld, "Plantation_S1", "reload", "reload1");
@@ -237,7 +240,7 @@ sld = GetCharacter(NPC_GenerateCharacter("Bishop", "trader_2", "man", "man", 1, 
 sld.name = "William";
 sld.lastname = "Bishop";
 sld.Dialog.CurrentNode = "First Bishop";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.greeting = "Gr_Bishop";
 SetSPECIAL(sld, 9,8,10,3,6,10,4);
 InitStartParam(sld);
@@ -249,10 +252,11 @@ EquipCharacterByItem(sld, "pistol2");
 LAi_SetImmortal(sld, true);
 ChangeCharacterAddressGroup(sld, "BridgeTown_Plantation", "reload", "houseSp1");
 LAi_SetActorType(sld);
+LAi_SetStayTypeNoGroup(pchar);
 LAi_ActorDialog(sld, pchar, "", -1, 0);
 sld = characterFromID("Pitt");
 sld.Dialog.CurrentNode = "First time";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 LAi_SetCitizenType(sld);
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
@@ -260,7 +264,7 @@ ChangeCharacterAddressGroup(sld, "BridgeTown_Plantation", "officers", "houseS1_3
 sld = GetCharacter(NPC_GenerateCharacter("Griffin", "shipowner_11", "man", "man", 10, ENGLAND, 3, false, "quest"));
 sld.name = "Ed";
 sld.lastname = "Griffin";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.greeting = "Gr_Master";
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_SetOwnerType(sld);
@@ -268,26 +272,25 @@ LAi_group_MoveCharacter(sld, sTemp);
 ChangeCharacterAddressGroup(sld, "CommonFlamHouse", "goto","goto1");
 LAi_SetImmortal(sld, true);
 sld = GetCharacter(NPC_GenerateCharacter("Hells", "shipowner_9", "man", "man", 10, PIRATE, 3, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.name = "Tobias";
 sld.lastname = "Hells";
 sld.SaveItemsForDead = true;
 sld.DontClearDead = true;
 sld.greeting = "Gr_Fisher";
 AddMoneyToCharacter(sld, 2000);
-FantomMakeCoolFighter(sld, 7, 25, 50, "topor_01", "", "bullet", 10);
-TakeItemFromCharacter(sld, "spyglass3");
+SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 LAi_SetOwnerTypeNoGroup(sld);
 ChangeCharacterAddressGroup(sld, "CommonRoom_MH2", "goto","goto4");
 sld = GetCharacter(NPC_GenerateCharacter("Quest_Smuggler", "Pirate_4", "man", "man", 10, ENGLAND, 3, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.greeting = "Gr_Smuggler Agent";
 LAi_SetSitTypeNoGroup(sld);
 ChangeCharacterAddressGroup(sld, "Bridgetown_tavern", "sit","sit2");
 int i = rand(2);
 sld = GetCharacter(NPC_GenerateCharacter("Quest_Habitue", "citiz_"+(rand(11)+1), "man", "man", 10, ENGLAND, 3, false, "quest"));
 sld.greeting = "Gr_Tavern_Mate";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.Default = "Bridgetown_tavern";
 sld.Default.group = "sit";
 sld.Default.ToLocator = "sit_front" + (i+1);
@@ -298,7 +301,7 @@ sld = GetCharacter(NPC_GenerateCharacter("Hugtorp", "officer_16", "man", "man", 
 sld.name = "Nathaniel";
 sld.lastname = "Hagthorpe";
 sld.Dialog.CurrentNode = "First time";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.greeting = "Gr_Officer";
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
@@ -323,7 +326,7 @@ sld = GetCharacter(NPC_GenerateCharacter("Dieke", "officer_19", "man", "man", 10
 sld.name = "Nicolas";
 sld.lastname = "Dyke";
 sld.Dialog.CurrentNode = "First time";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.greeting = "Gr_Officer";
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
@@ -348,7 +351,7 @@ sld = GetCharacter(NPC_GenerateCharacter("Ogl", "Chard3a", "man", "man", 10, ENG
 sld.name = "Ned";
 sld.lastname = "Ogle";
 sld.Dialog.CurrentNode = "First time";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.greeting = "Gr_Ogl";
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
@@ -374,8 +377,8 @@ SetEnergyToCharacter(sld);
 SetFantomHP(sld);
 LAi_SetImmortal(sld, true);
 ChangeCharacterAddressGroup(sld, "Plantation_S2", "barmen", "stay");
-sld = GetCharacter(NPC_GenerateCharacter("Slave_Quest", "shipowner_6", "man", "man", 7, ENGLAND, 2, false));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld = GetCharacter(NPC_GenerateCharacter("Slave_Quest", "shipowner_6", "man", "man", 7, ENGLAND, 2, false, "quest"));
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.Dialog.CurrentNode = "SLQStep_0";
 sld.greeting = "Gr_slave";
 sld.talker = 10;
@@ -397,7 +400,7 @@ void PrepareBridgeTown(string qName)
 {
 ChangeBridgeTownDialogs(false);
 sld = &characters[GetCharacterbyLocation("Bridgetown_town", "soldiers", "soldier2")];
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.Dialog.CurrentNode = "First Guard";
 sld.protector = true;
 sld.protector.CheckAlways = 1;
@@ -406,7 +409,7 @@ LoginCharacter(sld, "BridgeTown_town");
 LoginNettl("");
 LocatorReloadEnterDisable("BridgeTown_town", "reload3_back", true);
 LocatorReloadEnterDisable("BridgeTown_fort", "reload2", true);
-sld = &characters[GetCharacterIndex("Bridgetown_Smuggler")]
+sld = characterFromID("Bridgetown_Smuggler");
 LoginCharacter(sld, "Bridgetown_tavern");
 }
 void DetectBlades()
@@ -414,8 +417,9 @@ void DetectBlades()
 if (Pchar.questTemp.CapBloodLine == true && Pchar.questTemp.CapBUnarmed == true)
 {
 string sweapon = FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE);
+string sgun = FindCharacterItemByGroup(pchar, GUN_ITEM_TYPE);
 bool bblades = (sweapon != "unarmed") && (sweapon != "blade_05" ) && (sweapon!= "");
-bool bguns = (FindCharacterItemByGroup(pchar, GUN_ITEM_TYPE) != "");
+bool bguns = (sgun != "") && (sgun != "pistol1");
 if(bblades || bguns)
 {
 pchar.quest.CapBloodDetectBlades1.win_condition.l1 = "location";
@@ -425,16 +429,12 @@ pchar.quest.CapBloodDetectBlades2.win_condition.l1 = "location";
 pchar.quest.CapBloodDetectBlades2.win_condition.l1.location = "BridgeTown_Plantation";
 pchar.quest.CapBloodDetectBlades2.function = "TakeBlades";
 }
-else
-{
-EquipCharacterByItem(Pchar,GetCharacterEquipByGroup(Pchar, BLADE_ITEM_TYPE));
-}
 }
 }
 void TakeBlades(string qName)
 {
 sld = GetCharacter(NPC_GenerateCharacter("SolderTakeBlades", "sold_eng_"+(rand(7)+1), "man", "man", 10, ENGLAND, 0, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.dialog.currentnode = "First time";
 sld.city = "Bridgetown_town";
 sld.greeting = "soldier_arest";
@@ -471,7 +471,7 @@ if(CheckAttribute(sld, "CityType") && sld.CityType == "soldier")
 {
 if (!restore)
 {
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 }
 else
 {
@@ -483,7 +483,7 @@ if(CheckAttribute(sld, "CityType") && sld.CityType == "citizen")
 {
 if (!restore)
 {
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 if(sld.location.group == "merchant")
 {
 num++;
@@ -510,7 +510,7 @@ if(sld.id == "Bridgetown_Poorman")
 {
 if (!restore)
 {
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 }
 else
 {
@@ -521,7 +521,7 @@ if(sld.id == "QuestCitiz_Bridgetown")
 {
 if (!restore)
 {
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.Dialog.CurrentNode = "First time";
 }
 else
@@ -538,7 +538,7 @@ Pchar.questTemp.CapBloodLine.TalkWithNettl = false;
 sld = GetCharacter(NPC_GenerateCharacter("Nettl", "shipowner_2", "man", "man", 7, ENGLAND, 3, false, "quest"));
 sld.name = "James";
 sld.lastname = "Nettall";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.dialog.currentnode = "First time";
 sld.city = "Bridgetown_town";
 sld.greeting = "Gr_Tavern_Mate";
@@ -562,9 +562,9 @@ void CapBloodLine_q1_Complited(string qName)
 {
 ref sld;
 pchar.quest.CapBloodLineTimer_1.over = "yes";
-sld = &characters[GetCharacterIndex("MisStid")];
+sld = characterFromID("MisStid");
 sld.location = "none";
-sld = &characters[GetCharacterIndex("Bridgetown_Mayor")];
+sld = characterFromID("Bridgetown_Mayor");
 sld.Dialog.CurrentNode = "First time";
 int n = FindLocation("Bridgetown_town");
 locations[n].reload.l3.close_for_night = true;
@@ -582,7 +582,7 @@ CapBloodLine_q2();
 void CapBloodLine_q2()
 {
 ref sld;
-sld = &characters[GetCharacterIndex("Waker")];
+sld = characterFromID("Waker");
 sld.dialog.currentnode = "First time";
 Pchar.questTemp.CapBloodLine.stat = "WakerOffer";
 ChangeCharacterAddressGroup(sld, "Bridgetown_tavern_upstairs", "goto","goto1");
@@ -600,29 +600,28 @@ PChar.quest.CapBloodLineTimer_2.function = "CapBloodLine_q2_Late";
 void Spain_spyDie(string qName)
 {
 ref sld;
-sld = &characters[GetCharacterIndex("Spain_spy")];
+sld = characterFromID("Spain_spy");
 LAi_KillCharacter(sld);
 }
 void LoginSpain_spy(string qName)
 {
+LAi_SetStayType(pchar);
 ref sld;
 sld = GetCharacter(NPC_GenerateCharacter("Spain_spy", "shipowner_13", "man", "man", 7, SPAIN, 2, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 sld.name = "Sergio";
 sld.lastname = "Crespo";
 sld.dialog.currentnode = "First time";
 sld.city = "Bridgetown_town";
 sld.greeting = "Gr_HUNTER";
 sld.location = "none";
-FantomMakeCoolFighter(sld, 7, 30, 50, "blade10", "", "bullet", 20);
-TakeItemFromCharacter(sld, "spyglass3");
+SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 LAi_SetCitizenType(sld);
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_group_MoveCharacter(sld, sTemp);
-PlaceCharacter(sld, "goto", "random_must_be_near");
-LAi_SetActorTypeNoGroup(sld);
-LAi_ActorDialog(sld, pchar, "", -1.0, 0);
-chrDisableReloadToLocation = true;
+ChangeCharacterAddressGroup(sld, "Bridgetown_town", "goto","goto3");
+LAi_SetActorTypeNoGroup(pchar);
+LAi_ActorDialog(pchar, sld, "pchar_back_to_player", -1.0, 0);
 }
 void SpainSpyAttack(string qName)
 {
@@ -640,11 +639,30 @@ DoQuestFunctionDelay("DeadSolder", 1.0);
 }
 void DeadSolder(string qName)
 {
+LocatorReloadEnterDisable(pchar.location, "reload1", true);
 ref sld;
-sld = &characters[GetCharacterIndex("CPBQuest_Solder")];
-TakeItemFromCharacter(sld, FindCharacterItemByGroup(sld, BLADE_ITEM_TYPE));
+sld = characterFromID("CPBQuest_Solder");
+DeleteAttribute(sld, "money");
+DeleteAttribute(sld, "equip");
+DeleteAttribute(sld, "items");
+TakeNItems(sld, "potion1", 5);
 GiveItem2Character(sld, "blade_07");
+if (rand (3) == 2)
+{
+GiveItem2Character(sld, "pistol1");
+TakeNItems(sld, "bullet", 5);
+string sGunpowder = LAi_GetCharacterGunpowderType(sld);
+if(sGunPowder != "")
+{
+AddItems(sld, sGunpowder, 5);
+}
+if(GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "")
+{
+chrDisableReloadToLocation = true;
+DoQuestCheckDelay("Blood_add3", 1.0)	
+}
 LAi_KillCharacter(sld);
+}
 }
 void FindMsStid_ring(string qName)
 {
@@ -656,10 +674,9 @@ ref sld, ch, itm;
 sld = GetCharacter(NPC_GenerateCharacter("Winterwood", "officer_20", "man", "man", 10, PIRATE, 3, false, "quest"));
 sld.name = "Stuart";
 sld.lastname = "Winterwood";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.greeting = "pirat_common";
-FantomMakeCoolFighter(sld, 7, 25, 20, "blade_10", "pistol3", "bullet", 10);
-TakeItemFromCharacter(sld, "spyglass3");
+SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 GiveItem2Character(sld, "HugtorpRing");
 AddMoneyToCharacter(sld, 1000);
 sld.SaveItemsForDead = true;
@@ -771,8 +788,11 @@ if (CheckAttribute(pchar, "questTemp.LocationClone") && sti(pchar.questTemp.Loca
 DoQuestCheckDelay("TalkSelf_Start", 0.2);
 }
 DoQuestCheckDelay("hide_weapon", 2.0);
-chrDisableReloadToLocation = false;
 AddQuestRecord("HugtorpTrouble", "3");
+pchar.quest.WinterwoodDieR.win_condition.l1 = "item";
+pchar.quest.WinterwoodDieR.win_condition.l1.item = "HugtorpRing";
+pchar.quest.WinterwoodDieR.win_condition = "Blood_add4";
+LAi_group_SetAlarm("DUEL_FIGHTER", LAI_GROUP_PLAYER, 0);
 }
 void MoneyForDieke(string qName)
 {
@@ -792,7 +812,7 @@ Pchar.quest.CapBloodLineTimer_2.over = "yes";
 AddQuestRecord("CapBloodLine_q2", "6");
 int n = FindLocation("Bridgetown_tavern");
 locations[n].reload.l2.disable = false;
-sld = &characters[GetCharacterIndex("Waker")];
+sld = characterFromID("Waker");
 sld.Dialog.CurrentNode = "WStep_11";
 LAi_SetStayTypeNoGroup(sld);
 bQuestCheckProcessFreeze = true;
@@ -801,9 +821,8 @@ Environment.date.day = 3;
 SetCurrentTime(7, 0);
 bQuestCheckProcessFreeze = false;
 sld = GetCharacter(NPC_GenerateCharacter("MoneySpy", "shipowner_5", "man", "man", 10, ENGLAND, 1, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
-FantomMakeCoolFighter(sld, 10, 25, 50, "blade_09", "","bullet", 10);
-TakeItemFromCharacter(sld, "spyglass3");
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
+SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 sld.quest.meeting = 0;
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
 LAi_SetOwnerType(sld);
@@ -811,7 +830,7 @@ LAi_group_MoveCharacter(sld, sTemp);
 sld.talker = 10;
 ChangeCharacterAddressGroup(sld, "CommonDoubleFlourHouse_1", "barmen", "stay");
 sld = GetCharacter(NPC_GenerateCharacter("Fisherman", "shipowner_8", "man", "man", 10, ENGLAND, 1, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.name = "Arnold";
 sld.lastname = "Summerlite";
 sld.greeting = "Gr_Fisher";
@@ -826,8 +845,8 @@ sld = GetCharacter(NPC_GenerateCharacter("Jack", "pirate_5", "man", "man", 10, E
 sld.name = "Jacques";
 sld.lastname = "Swallow";
 sld.greeting = "Gr_Solovey";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
-FantomMakeCoolFighter(sld, 10, 25, 50, "blade_07", "", "bullet", 10);
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
+SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 sld.dialog.currentnode = "JSTStep_0";
 sld.talker = 10;
 sTemp = GetNationNameByType(ENGLAND) + "_citizens";
@@ -857,7 +876,7 @@ Pchar.questTemp.CapBloodLine.ShipForJack = false;
 sld = GetCharacter(NPC_GenerateCharacter("Mainer", "officer_1", "man", "man", 7, ENGLAND, 3, false, "quest"));
 sld.name = "John";
 sld.lastname = "Mayner";
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.dialog.currentnode = "MNStep_0";
 sld.city = "Bridgetown_town";
 LAi_SetCitizenType(sld);
@@ -876,7 +895,7 @@ void ReturnToPlantation1(string qName)
 {
 ref sld;
 sld = GetCharacter(NPC_GenerateCharacter("SolderTakeBlades", "sold_eng_"+(rand(7)+1), "man", "man", 10, ENGLAND, 0, false, "quest"));
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 sld.dialog.currentnode = "STBStep_2";
 sld.city = "Bridgetown_town";
 sld.greeting = "Gr_HUNTER";
@@ -906,11 +925,11 @@ void ReturnToPlantation3()
 ref sld;
 SetLocationCapturedState("BridgeTown_Plantation", true);
 string sTemp = "TmpEnemy";
+LAi_group_SetAlarm("TmpEnemy", LAI_GROUP_PLAYER, 1);
 LAi_group_SetHearRadius(sTemp, LAI_GROUP_GRD_HEAR - 3);
 LAi_group_SetSayRadius(sTemp, LAI_GROUP_GRD_SAY - 1);
 LAi_group_SetLookRadius(sTemp, LAI_GROUP_GRD_LOOK - 1);
 LAi_group_SetRelation(sTemp, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-LAi_group_SetAlarm(sTemp, LAI_GROUP_PLAYER, 0);
 SetShipInBridgetown();
 Pchar.questTemp.CapBUnarmed = false;
 sld = characterFromID("Hugtorp");
@@ -996,6 +1015,7 @@ void ReturnToPlantation4(string qName)
 {
 ref sld;
 string sTemp = "TmpEnemy";
+LAi_group_SetAlarm("TmpEnemy", LAI_GROUP_PLAYER, 1);
 LAi_group_SetHearRadius(sTemp, 3);
 LAi_group_SetSayRadius(sTemp, 4);
 LAi_group_SetLookRadius(sTemp, 5);
@@ -1008,6 +1028,7 @@ LAi_group_Attack(sld, Pchar);
 sld = characterFromID("Pitt");
 sld.Dialog.CurrentNode = "PStep_11";
 LAi_SetGroundSitTypeNoGroup(sld);
+LAi_group_MoveCharacter(sld, "Pitt");
 SetLocationCapturedState("Bridgetown_town", true);
 pchar.quest.CapBloodEscape4.win_condition.l1 = "location";
 pchar.quest.CapBloodEscape4.win_condition.l1.location = "Bridgetown_town";
@@ -1024,7 +1045,7 @@ LAi_group_SetHearRadius(slai_group, LAI_GROUP_GRD_HEAR - 3);
 LAi_group_SetSayRadius(slai_group, LAI_GROUP_GRD_SAY - 1);
 LAi_group_SetLookRadius(slai_group, LAI_GROUP_GRD_LOOK - 1);
 LAi_group_SetAlarm(sTemp, LAI_GROUP_PLAYER, 0);
-for (i = 0; i < 11; i++)
+for (i = 1; i < 12; i++)
 {
 chr = GetCharacter(NPC_GenerateCharacter("SpaSolder_"+i, "sold_spa_"+(rand(7)+1), "man", "man", sti(pchar.rank)+rand(2)+1, SPAIN, 1, false, "quest"));
 chr.City = "Bridgetown";
@@ -1036,13 +1057,12 @@ LAi_SetWarriorType(chr);
 LAi_SetPatrolType(chr);
 LAi_group_MoveCharacter(chr, slai_group);
 chr.greeting = "soldier_common";
-ChangeCharacterAddressGroup(chr, "Bridgetown_town", "officers", "houseF2_2");
+ChangeCharacterAddressGroup(chr, "Bridgetown_town", "goto", "goto"+i);
 chr.dialog.filename = "Common_Soldier.c";
 chr.dialog.currentnode = "first time";
 }
 sld = GetCharacter(NPC_GenerateCharacter("SpaRaider", "off_spa_2", "man", "man", 10, SPAIN, 1, false, "quest"));
-FantomMakeCoolFighter(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, 25, 20, "blade30", "pistol2", "bullet", 10);
-TakeItemFromCharacter(sld, "spyglass3");
+SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 sld.SaveItemsForDead = true;
 sld.DontClearDead = true;
 sld.BreakTmplAndFight = true;
@@ -1062,7 +1082,7 @@ pchar.quest.(sQuest).win_condition.l1.character = sld.id;
 pchar.quest.(sQuest).function = "SaveArabelaService";
 chr = GetCharacter(NPC_GenerateCharacter("ArabelaService", "Girl_8", "woman", "towngirl", 10, ENGLAND, 1, false, "quest"));
 chr.greeting = "Enc_RapersGirl_1";
-chr.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+chr.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 chr.dialog.currentnode = "ASStep_0";
 LAi_SetActorType(chr);
 LAi_LoginInCaptureTown(chr, true);
@@ -1120,7 +1140,7 @@ else
 {
 sld = GetCharacter(NPC_GenerateCharacter("FreeSlave_"+(i-6), model[rand(5)], "man", "man", 10, SPAIN, 1, false, "quest"));
 SetFantomParamFromRank(sld, sti(pchar.rank)+makeint(2*MOD_SKILL_ENEMY_RATE/3), true);
-sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart.c";
+sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs.c";
 LAi_LoginInCaptureTown(sld, true);
 LAi_SetActorType(sld);
 LAi_ActorStay(sld);
@@ -1129,7 +1149,7 @@ ChangeCharacterAddressGroup(sld, "Bridgetown_town", "quest", "quest"+i);
 }
 }
 sld = GetCharacter(NPC_GenerateCharacter("SpaFirstMate", "off_spa_1", "man", "man", 12, SPAIN, 1, false, "quest"));
-FantomMakeCoolFighter(sld, 12, 30, 30, "blade30", "pistol3", "bullet", 10);
+SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 LAi_LoginInCaptureTown(sld, true);
 LAi_SetWarriorType(sld);
 ChangeCharacterAddressGroup(sld, "Cabin", "rld", "aloc0");
@@ -1140,6 +1160,7 @@ pchar.quest.SpaFirstMateDie.function = "SpaFirstMateDie";
 void SaveArabelaService(string qName)
 {
 ref sld;
+LAi_SetFightMode(pchar, false);
 sld = characterFromID("ArabelaService");
 LAi_SetActorType(sld);
 LAi_ActorDialog(sld, pchar, "", -1.0, 0);
@@ -1343,7 +1364,7 @@ ref rColony;
 Pchar.questTemp.CapBloodLine = false;
 Pchar.model = "Blood5";
 ref sld;
-sld = &characters[GetCharacterIndex("Bridgetown_Mayor")];
+sld = characterFromID("Bridgetown_Mayor");
 sld.Dialog.Filename = "Common_Mayor.c";
 sld.Dialog.CurrentNode = "First time";
 int n = FindLocation("Bridgetown_town");
@@ -1404,6 +1425,8 @@ LAi_group_RemoveCheck("EnemyFight");
 CloseQuestHeader("FishermanQuest");
 CloseQuestHeader("UsurerQuest");
 CloseQuestHeader("PirateQuest");
+TakeNItems(pchar, "migraine_potion", -1);
+TakeNItems(pchar, "Weapon_for_escape", -1);
 }
 void SetShipInBridgetown()
 {

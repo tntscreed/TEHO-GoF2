@@ -388,9 +388,7 @@ void CreatePlantation(aref loc)
 				iMassive = rand(9);
 				if (model[iMassive] != "")
 				{
-					sAnime = "man_B"
-					if(model[iMassive] == "prison_5") sAnime = "man2";
-					chr = GetCharacter(NPC_GenerateCharacter("Slave_"+i, model[iMassive], "man", sAnime, 7, iNation, 2, false, "slave"));
+					chr = GetCharacter(NPC_GenerateCharacter("Slave_"+i, model[iMassive], "man", "man_B", 7, iNation, 2, false, "slave"));
 
 					chr.dialog.filename = "Quest\ForAll_dialog.c";
 					chr.dialog.currentnode = "plantation_slave";

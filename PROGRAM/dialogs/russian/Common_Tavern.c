@@ -1542,7 +1542,8 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, -1000);
 			Pchar.questTemp.CapBloodLine.stat = "PrepareToEscape1";
 			AddQuestRecord("WeaponsForEscape", "2");
-
+			sld = characterFromID("Griffin");
+			sld.talker = 10;
 		break;
 		
 		case "TStep_5":
@@ -1579,7 +1580,7 @@ void ProcessDialogEvent()
 		case "TStep_9":
             AddQuestRecord("UsurerQuest", "2");
             sld = GetCharacter(NPC_GenerateCharacter("QStranger", "citiz_7", "man", "man", 10, ENGLAND, 1, false, "quest"));
-			sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+			sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 			sld.greeting = "Gr_bankeer";
 			sld.name = "Alex";
 			sld.lastname = "Winner";
@@ -1593,7 +1594,7 @@ void ProcessDialogEvent()
 		
 		case "TStep_10":
             sld = GetCharacter(NPC_GenerateCharacter("QStranger", "citiz_7", "man", "man", 10, ENGLAND, 1, false, "quest"));
-			sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart2.c";
+			sld.dialog.filename = "Coas_quests\CapBloodStart\CapBloodStart_dialogs2.c";
 			sld.greeting = "Gr_bankeer";
 			sld.name = "Alex";
 			sld.lastname = "Winner";

@@ -73,6 +73,16 @@ void ProcessDialogEvent()
 				}
 				//<-- работорговец
 			
+			    
+       			dialog.text = NPCharRepPhrase(pchar, 
+					LinkRandPhrase("The town is on alarm and they are searching for you everywhere! If I were you I would not stay here for long.", "All guards are looking for you. I am not an idiot and won't risk talking to you!", "Run, "+ GetSexPhrase("pal","girl") +", until soldiers will make a sieve from you..."), 
+					LinkRandPhrase("What do you want, vile creature?! Town guards are aware of your position and you won't run away, "+ GetSexPhrase("filthy pirate","") +"!", "Dirty murderer, get away from my place! Guards!", "I don't fear you, vile creature! Soon you'll be hanged in our for, you won't get away..."));
+				link.l1 = NPCharRepPhrase(pchar,
+					RandPhraseSimple("Heh, it's not a problem for me...", "They'll never get me."), 
+					RandPhraseSimple("Shut your mouth, " + GetWorkTypeOfMan(npchar, "") + ", or I will cut you bloody tongue!", "Heh, , " + GetWorkTypeOfMan(npchar, "") + ", want to catch a pirate too? Listen, lad, sit here quietly and you will live…"));
+				link.l1.go = "fight";
+				break;
+			}
 			         if (Pchar.questTemp.CapBloodLine == true )
             {
                 if(Pchar.questTemp.CapBloodLine.stat == "needMoney" && !CheckAttribute(pchar, "questTemp.CapBloodLine.QuestRaff"))
@@ -94,15 +104,6 @@ void ProcessDialogEvent()
                 }
 				break;
             }
-       			dialog.text = NPCharRepPhrase(pchar, 
-					LinkRandPhrase("The town is on alarm and they are searching for you everywhere! If I were you I would not stay here for long.", "All guards are looking for you. I am not an idiot and won't risk talking to you!", "Run, "+ GetSexPhrase("pal","girl") +", until soldiers will make a sieve from you..."), 
-					LinkRandPhrase("What do you want, vile creature?! Town guards are aware of your position and you won't run away, "+ GetSexPhrase("filthy pirate","") +"!", "Dirty murderer, get away from my place! Guards!", "I don't fear you, vile creature! Soon you'll be hanged in our for, you won't get away..."));
-				link.l1 = NPCharRepPhrase(pchar,
-					RandPhraseSimple("Heh, it's not a problem for me...", "They'll never get me."), 
-					RandPhraseSimple("Shut your mouth, " + GetWorkTypeOfMan(npchar, "") + ", or I will cut you bloody tongue!", "Heh, , " + GetWorkTypeOfMan(npchar, "") + ", want to catch a pirate too? Listen, lad, sit here quietly and you will live…"));
-				link.l1.go = "fight";
-				break;
-			}
 		//Jason ---------------------------------------Бремя гасконца------------------------------------
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.location == "Fortfrance_bank")
 			{

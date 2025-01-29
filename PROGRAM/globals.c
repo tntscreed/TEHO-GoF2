@@ -90,7 +90,7 @@ int     GlobalCharacters = 0;  // номер, с которого идут фа�
 int     MAX_CHARACTERS   = 10;
 #define TOTAL_CHARACTERS			1200
 
-#define MAX_LOCATIONS		1002 // boal //700
+#define MAX_LOCATIONS		1007 // boal //700
 #define MAX_ISLANDS   38
 #define MAX_COLONIES  43
 

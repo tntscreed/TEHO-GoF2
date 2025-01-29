@@ -543,11 +543,9 @@ void LAi_ActorSetSitMode(aref chr)
 //Установить анимацию лежачего персонажа
 void LAi_ActorSetLayMode(aref chr)
 {
-	if(LAi_type_actor_Error(chr, false)) return;
+	if(LAi_type_actor_Error(chr, false))return;
 	chr.chr_ai.type.mode = "lay";
-	BeginChangeCharacterActions(chr);
-	chr.actions.idle.i1 = "Lay_1";
-	EndChangeCharacterActions(chr);
+	LAi_SetDefaultLayAnimation(chr);
 }
 
 //------------------------------------------------------------------------------------------

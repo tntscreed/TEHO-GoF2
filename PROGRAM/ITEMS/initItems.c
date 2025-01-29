@@ -1525,7 +1525,46 @@ int InitItems()
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
 	n++;
-
+	
+	//homo
+    makeref(itm,Items[n]);
+	itm.id = "MsStid_ring"; // Колечко
+	itm.name = "itmname_MsStid_ring";
+	itm.describe = "itmdescr_MsStid_ring";
+	itm.model = "RingJew";//pursel
+	itm.picIndex = 10;
+	itm.picTexture = "ITEMS_7";
+	itm.shown = 0;
+	itm.Weight = 0.4;
+	itm.price = 0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	//homo лекарство по линейке Блада
+    makeref(itm,Items[n]);
+	itm.id = "migraine_potion"; // лекарство от Мигрени
+	itm.name = "itmname_migraine_potion";
+	itm.describe = "itmdescr_migraine_potion";
+	itm.model = "balsam";
+	itm.picIndex = 4;
+	itm.picTexture = "ITEMS_1";
+	itm.shown = 0;
+	itm.Weight = 0.4;
+	itm.price = 0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); //вексель
+	itm.id = "Order";
+	itm.name = "itmname_order";
+	itm.describe = "itmdescr_order";
+	itm.model = "";
+	itm.picIndex = 15;
+	itm.picTexture = "ITEMS_8";
+	itm.price = 0;
+	itm.Weight = 0.1;
+	itm.ItemType = "QUESTITEMS";
+	n++;
 	////////////////////////////////////////////////////////////////////////////////////////////		
 	//здесь начинаются квестовые предметы, заюзаные в локаторах item
 	//оформлять эти предметы ТОЛЬКО ЗДЕСЬ, до конца сектора квестовых предметов
@@ -1662,33 +1701,6 @@ int InitItems()
 	itm.Weight = 0.3;
 	itm.ItemType = "QUESTITEMS";
 	n++; 
-	
-	   //homo лекарство по линейке Блада
-    makeref(itm,Items[n]);
-	itm.id = "migraine_potion"; // лекарство от Мигрени
-	itm.name = "itmname_migraine_potion";
-	itm.describe = "itmdescr_migraine_potion";
-	itm.model = "balsam";
-	itm.picIndex = 4;
-	itm.picTexture = "ITEMS_1";
-	itm.shown = 0;
-	itm.Weight = 0.4;
-	itm.price = 0;
-	itm.ItemType = "QUESTITEMS";
-	n++;
-	//homo
-    makeref(itm,Items[n]);
-	itm.id = "MsStid_ring"; // Колечко
-	itm.name = "itmname_MsStid_ring";
-	itm.describe = "itmdescr_MsStid_ring";
-	itm.model = "RingJew";//pursel
-	itm.picIndex = 10;
-	itm.picTexture = "ITEMS_7";
-	itm.shown = 0;
-	itm.Weight = 0.4;
-	itm.price = 0;
-	itm.ItemType = "QUESTITEMS";
-	n++;
 	
 	// кошельки
 	makeref(itm,Items[n]);

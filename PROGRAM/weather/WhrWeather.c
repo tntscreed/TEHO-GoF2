@@ -671,7 +671,7 @@ void Whr_LoadNextWeather(int nPlus)
 	aref	aCurWeather = GetCurrentWeather();
 	iCurWeatherHour = sti(aCurWeather.Hour.Min);
 
-	SetCurrentTime(iCurWeatherHour, 0);
+	//SetCurrentTime(iCurWeatherHour, 0);
 	Weather.Time.time = GetTime();
 }
 

@@ -317,6 +317,25 @@ void SetDialogStayIdle(ref character)
 	character.actions.idle.i7 = "dialog_stay7";
 	character.actions.idle.i8 = "dialog_stay8";
 }
+void SetDefaultLayIdle(ref character)
+{
+	character.actions.idle.i1 = "Lay_1";
+	character.actions.idle.i2 = "Lay_1";
+	character.actions.idle.i3 = "Lay_1";
+	character.actions.idle.i4 = "Lay_1";
+	character.actions.idle.i5 = "Lay_1";
+	character.actions.idle.i6 = "Lay_1";
+	character.actions.idle.i7 = "Lay_1";
+	character.actions.idle.i8 = "Lay_1";
+	character.actions.idle.i9 = "Lay_1";
+	character.actions.idle.i10 = "Lay_1";
+	character.actions.HitNoFight = "Lay_1";
+}
+void SetLayDead(ref character)
+{
+	character.actions.dead.d1 = "Lay_1";
+	character.actions.dead.d2 = "Lay_1";
+}
 // boal -->
 void SetOverloadNormWalk(ref character)
 {

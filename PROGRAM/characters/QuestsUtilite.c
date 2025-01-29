@@ -2080,6 +2080,10 @@ void SetQuestAboardCabinDialog(ref refChar)
 		    LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
 			refChar.Dialog.CurrentNode = "SeekCap"; //даем абордажную ноду
 		}
+			if (refChar.CaptanId == "IsaAttackCap" && pchar.RomanticQuest == "AttackBrig")
+		{
+		    LAi_SetCheckMinHP(refChar, 5, true, "QuestAboardCabinDialog");  // сколько НР мин
+		}
 		//поисковый генератор
 		if (findsubstr(refChar.CaptanId, "SeekCitizCap_" , 0) != -1)
 		{

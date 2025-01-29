@@ -71,7 +71,7 @@ void InitInterface_gm(string iniName)
 	string sDLC = "";
 	SetFormatedText("DLC_TEXT", sDLC);
 
-	SetNewPicture("LOGO", "Interfaces\SL_logo.tga");
+	SetNewPicture("LOGO", "MainMenu\russian\TextLSC00.tga");
 
 	if(LAi_IsBoardingProcess())	SetSelectable("MB_RESUME",false);
 

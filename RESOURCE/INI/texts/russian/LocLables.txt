@@ -431,3 +431,6 @@ River {River shore}
 Jungle Fort {Jungle fort}
 Basement {Basement}
 Ruins {Ruins}
+Isabella's House {Isabella's Residence}
+Rosita's House {House of Rosita Fernandez}
+Atilla's house {Atilla's house}

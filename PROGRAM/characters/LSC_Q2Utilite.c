@@ -670,6 +670,56 @@ void QuestActions()
     		}
 		}
 	}
+		if (CheckAttribute(pchar, "RomanticQuest") && pchar.RomanticQuest == "DelivMigel")
+	{		
+		pchar.RomanticQuest = "SeeTalkNearHouse"; //детектор на итеме теперь сработает        
+        sld = CharacterFromID("MigelDeValdes");
+		LAi_SetImmortal(sld, false);
+		//Мигель
+        sld.dialog.currentnode = "TalkNearHouse_1";
+        ChangeCharacterAddressGroup(sld, "SanJuan_town", "quest", "goto24");
+        LAi_SetActorType(sld); 
+		sld.rank = 1; //чтобы умер сразу
+		sld.skill.Fencing = 1;                
+		sld.skill.Pistol = 1;
+		LAi_SetHP(sld, 1, 1);
+		DeleteAttribute(sld, "Items");
+		GiveItem2Character(sld, "GOF_blade2");
+		GiveItem2Character(sld, "pistol1");
+		GiveItem2Character(sld, "order");
+		//Сальватор с бандюганами
+		LAi_group_Delete("EnemyFight");
+        sld = CharacterFromID("Husband");
+        sld.dialog.currentnode = "TalkNearHouse_1";
+        ChangeCharacterAddressGroup(sld, "SanJuan_town", "quest", "goto25");		
+        for (i=1; i<=2; i++)
+        {
+			sld = GetCharacter(NPC_GenerateCharacter("Bandit_S"+i, "pirate_"+i, "man", "man", 30, PIRATE, 1, true, "quest"));
+			FantomMakeCoolFighter(sld, 30, 80, 70, "GOF_blade28", "pistol3", "bullet", 100);			
+			LAi_SetStayType(sld);			
+			if (i==8) ChangeCharacterAddressGroup(sld, "SanJuan_town", "quest", "goto7");
+			else ChangeCharacterAddressGroup(sld, "SanJuan_town", "quest", "goto26");
+			LAi_group_MoveCharacter(sld, "EnemyFight");
+		}
+		SetTimerCondition("Romantic_DeadBrother_Cancel", 0, 0, 1, false);
+	}
+	//************** Изабелла, свадьба!!!! *******************
+	if (CheckAttribute(pchar, "RomanticQuest") && pchar.RomanticQuest == "WaitBeginWidding")
+	{	
+		pchar.RomanticQuest = "BeginWidding";
+		pchar.quest.Isabella_widding.win_condition.l1 = "locator";
+		pchar.quest.Isabella_widding.win_condition.l1.location = "SanJuan_church";
+		pchar.quest.Isabella_widding.win_condition.l1.locator_group = "quest";
+		pchar.quest.Isabella_widding.win_condition.l1.locator = "detector1";
+		pchar.quest.Isabella_widding.win_condition = "Isabella_widding";
+		sld = CharacterFromID("Isabella");
+		LAi_SetActorType(sld);
+		ChangeCharacterAddressGroup(sld , "SanJuan_church", "goto",  "goto11");
+		sld.dialog.currentnode = "TalkWidding";
+		//падре
+		LAi_SetActorType(CharacterFromID("SanJuan_Priest"));
+		SetTimerCondition("Romantic_Widding_Cancel", 0, 0, 1, false);
+	}
 }
 
 //снятие квеста, если энкаунтер кэпа исчез на карте

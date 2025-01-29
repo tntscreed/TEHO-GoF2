@@ -27,13 +27,14 @@ void InitBaseInterfaces()
 	InitTimerInterface();
 }
 
-string questTextFileName[4];
+string questTextFileName[5];
 ref GetQuestTextFileName()
 {
 	questTextFileName[0] = "PROGRAM\QuestBook\QuestBook_Part1.txt"; //документ-квестбук - только записи в Документы
 	questTextFileName[1] = "PROGRAM\QuestBook\QuestBook_Part2.txt"; // квестбук на генераторы, мини- и мезоквесты
 	questTextFileName[2] = "PROGRAM\QuestBook\QuestBook_New.txt"; // Warship. Это наш квестбук
 	questTextFileName[3] = "PROGRAM\QuestBook\QuestBook_Part3.txt"; //отдельный квестбук на макроквесты
+	questTextFileName[4] = "PROGRAM\QuestBook\QuestBook_Coas.txt";
 	return &questTextFileName;
 }
 
@@ -198,9 +199,6 @@ void InitInterfaceTables()
 	// boal -->
 	Interfaces[INTERFACE_DEBUGER].SectionName = "interface\debuger.c";
 	Interfaces[INTERFACE_DEBUGER].IniFile     = "RESOURCE\INI\INTERFACES\debuger.ini";
-	
-	Interfaces[INTERFACE_BOAL_BETA].SectionName = "interface\boal_beta.c";
-	Interfaces[INTERFACE_BOAL_BETA].IniFile = "RESOURCE\INI\INTERFACES\boal_beta.ini";
 	
 	Interfaces[INTERFACE_CARDSGAME].SectionName = "interface\boal_cards.c";
 	Interfaces[INTERFACE_CARDSGAME].IniFile = "RESOURCE\INI\INTERFACES\boal_cards.ini";

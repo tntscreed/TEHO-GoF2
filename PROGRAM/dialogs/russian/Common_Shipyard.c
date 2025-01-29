@@ -100,7 +100,20 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			
+			       if (Pchar.questTemp.CapBloodLine == true )
+            {
+                dialog.Text = LinkRandPhrase("Hey, Doctor Blood! " + TimeGreeting() + ".",
+                                    "Great to see you, Peter Blood.",
+                                    "It's good that you've come around here, " + GetFullName(pchar) + ". How's Colonel Bishop doing these days?");
+                Link.l1 = "Alas, I am leaving, " + NPChar.name + ". 'Til we meet again.";
+				Link.l1.go = "exit";
+                if(CheckAttribute(Pchar, "questTemp.CapBloodLine.ShipForJack") && Pchar.questTemp.CapBloodLine.ShipForJack == true)
+                {
+                    Link.l2 = "I'm looking for a captain that'll get me and my friend to Tortuga for the modest amount of 3000 piasters. Do you have anyone in mind?";
+    				Link.l2.go = "Blood_Shipyard1";
+                }
+				break;
+            }
 //Jason ---------------------------------------Бремя гасконца------------------------------------------------
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.location == "Fortfrance_shipyard")
 			{
@@ -2248,6 +2261,93 @@ void ProcessDialogEvent()
 			sld = characterFromId("Jeffry");
 			sld.DeckDialogNode = "Jeffry_9";
 		break;
+
+        case "Blood_Shipyard1":
+			dialog.text = "Well, Doctor, that depends on the identity of your friend and his business in Tortuga.";
+			link.l1 = "My friend, well... he's an honest trader... er. Let's say he deals in antiques.";
+			link.l1.go = "Blood_Shipyard2";
+			link.l2 = "My dear friend is a filibuster. He lost his vessel long ago, in an attack from a Spanish patrol. ";
+			link.l2.go = "Blood_Shipyard3";
+			link.l3 = "Perhaps you've heard of him - Captain Jacques Swallow?";
+			link.l3.go = "Blood_Shipyard4";
+		break;
+		
+		case "Blood_Shipyard2":
+			dialog.text = "A trader? A trader-cum-antique dealer desires entry to Tortuga? You're pulling my leg, Doctor!";
+			link.l1 = "I wouldn't dream of it, sir! I'm just, er, trying to help. To help him, I mean. My friend... You see.";
+			link.l1.go = "Blood_Shipyard5";
+
+		break;
+		case "Blood_Shipyard3":
+			dialog.text = "And where did this happen?";
+			link.l1 = "That was... er... Head like cheese, you know. He did tell me once, though.";
+			link.l1.go = "exit";
+			CloseQuestHeader("PirateQuest");
+			Pchar.questTemp.CapBloodLine.ShipForJack = false;
+
+		break;
+        case "Blood_Shipyard4":
+			dialog.text = "Then you mean former Captain... yes?";
+			link.l1 = "Um... Well, I suppose so, yes. So do you know him?";
+			link.l1.go = "Blood_Shipyard6";
+		break;
+		
+        case "Blood_Shipyard5":
+			dialog.text = "All right, I'll believe you. For now. There's a man in the port, name of John Mayner. Speak with him. I just sold him a corvette.";
+			link.l1 = "Sundry thanks. ";
+			link.l1.go = "Exit";
+			LoginMainer();
+			AddQuestRecord("PirateQuest", "2");
+		break;
+		
+        case "Blood_Shipyard6":
+			dialog.text = "Yes, I have heard of him. Mind, I don't know how Jacques Swallow lived before he sailed on his treasure hunt to Tortuga... He was captain of the Ebony Oyster, at the time...";
+			link.l1 = "What? He never mentioned that.";
+			link.l1.go = "Blood_Shipyard7";
+		break;
+		
+        case "Blood_Shipyard7":
+			dialog.text = "Seems his tongue is not as loose as it once was. Life taught him well. On the third day, the first mate went to him and said, 'We all agreed we should... cooperate.' Meaning, we all wanna know where we're going. So Jack gave him the map, and then come nighttime...";
+			link.l1 = "... There was a mutiny?";
+			link.l1.go = "Blood_Shipyard8";
+		break;
+		
+        case "Blood_Shipyard8":
+			dialog.text = "No! Don't interrupt me! Come nighttime, I say, the map was gone. The sea wolves had heaps of tobacco but no pipes, so what they did is they used the map for rolling paper! They smoked the whole thing up! By the fourth day, the rum was gone, along with the tobacco, and the treasure was, as they say, a pipe dream. Some jackass got it in his head to blame Jacques, and the crew rallied behind the fool. So the pirates plopped Jacques on some desert island, to die... That is, after going insane from the heat. You know, Peter, normally when you beach a pirate, what you do is you give him a gun and a single bullet. Just the one. Not enough to hunt, or to defend yourself... But not altogether useless. Anyway, they didn't even allow Swallow that. But Jacques made it off, and he's been harboring a grudge ever since. Ten years now, he's been dreaming up a revenge epic and grandiose enough for the Oyster's new captain.";
+			link.l1 = "That's quite the story, but what about the Captain and the ship? Got any idea what I should do?";
+			link.l1.go = "Blood_Shipyard9";
+			link.l2 = "How did Jacques escape?";
+			link.l2.go = "Blood_Shipyard10";
+		break;
+		
+        case "Blood_Shipyard9":
+			dialog.text = "Find John Mayner. He should be around the port. He's setting to sail his spanking-new corvette straight on to Tortuga.";
+			link.l1 = "Many thanks. ";
+			link.l1.go = "Exit";
+			LoginMainer();
+			AddQuestRecord("PirateQuest", "2");
+		break;
+		
+        case "Blood_Shipyard10":
+			dialog.text = "Ah, that's a story in its own right! So there he was on the bank. He just sat there for three days and three nights... Idea was so the local fauna would, uh, get used to him. On the morning of the fourth day, he grabbed two sea turtles, tied 'em together, and had himself a good laugh!";
+			link.l1 = "That's... fascinating. But how did he escape?";
+			link.l1.go = "Blood_Shipyard11";
+		break;
+		
+        case "Blood_Shipyard11":
+			dialog.text = "I was just getting to that! So after three days of sitting on the bank, he spent the whole fourth day pointing laughing at the turtles. I guess the sun must have got to him. Just then, a group smugglers arrived. Turned out they had a stash there. The smugglers just about bust a gut over the turtles, so they took Jack back with them. They needed a laugh, they said.";
+			link.l1 = "That's incredible! So... speaking of turtles, how do I get him to Tortuga?";
+			link.l1.go = "Blood_Shipyard12";
+		break;
+		
+        case "Blood_Shipyard12":
+			dialog.text = "You need Captain Mayner. John Mayner. I just sold him a corvette, so he should still be around somewhere. Go take a look around the port.";
+			link.l1 = "Yes, all right. Thanks in the plenty. ";
+			link.l1.go = "Exit";
+			LoginMainer();
+			AddQuestRecord("PirateQuest", "3");
+		break;
+
 	}
 }
 

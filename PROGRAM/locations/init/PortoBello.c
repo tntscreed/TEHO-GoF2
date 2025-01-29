@@ -167,7 +167,7 @@ int LocationInitPortoBello(int n)
 	locations[n].reload.l21.label = "House";
 	
 	locations[n].reload.l22.name = "houseF2";
-	locations[n].reload.l22.go = "CommonRoom_MH2";
+	locations[n].reload.l22.go = "PortoBello_houseF2";
 	locations[n].reload.l22.emerge = "reload1";
 	locations[n].reload.l22.autoreload = "0";
 	locations[n].reload.l22.label = "House";
@@ -238,6 +238,49 @@ int LocationInitPortoBello(int n)
 	locations[n].reload.l33.autoreload = "0";
 	locations[n].reload.l33.label = "House";
 	n = n + 1;
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Дом с засадой по квесту Изабеллы
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "PortoBello_houseF2";
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\mediumhouse02.tga";
+	//Town sack
+	locations[n].townsack = "PortoBello";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "PortoBello";
+ 	locations[n].islandId = "Mein";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\mediumhouse02";
+	locations[n].models.always.mediumhouse02 = "mediumhouse02";
+	locations[n].models.always.mediumhouse02.level = 65538;
+	locations[n].models.day.locators = "mediumhouse02_locators";
+	locations[n].models.night.locators = "mediumhouse02_Nlocators";
+
+	Locations[n].models.always.mediumhouse02windows = "mediumhouse02_windows";
+	Locations[n].models.always.mediumhouse02windows.tech = "LocationWindows";
+	locations[n].models.always.mediumhouse02windows.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.always.mediumhouse02rand= "mediumhouse02_rand";
+	locations[n].models.day.charactersPatch = "mediumhouse02_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "mediumhouse02_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+    //Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "PortoBello_town";
+	locations[n].reload.l1.emerge = "houseF2";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+	n = n + 1;
+
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// ТАВЕРНА

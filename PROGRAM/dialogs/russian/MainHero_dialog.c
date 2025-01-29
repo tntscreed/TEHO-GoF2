@@ -64,6 +64,13 @@ void ProcessDialogEvent()
 				pchar.quest.Fleetwood_repeatShore.function = "Fleetwood_repeatShore";
     		}
 			//<-- Голландский гамбит
+			    	if (pchar.RomanticQuest == "SeekIsabella" && pchar.location == "Beliz_ExitTown")
+    		{
+    		    dialog.text = "This looks like the servant of Rosette... The Salvatore case is easy to solve; the bodies of the innocent are everywhere. That means we're on the right path.";
+    			link.l1 = "...";
+    			link.l1.go = "exit";
+				pchar.RomanticQuest = "FoundServantGirl";
+    		}
 			
 			//--> Ложный след
 			if(CheckAttribute(pchar, "questTemp.FalseTrace") && pchar.questTemp.FalseTrace == "TalkCabinWoman" && PChar.location == Get_My_Cabin()) 
@@ -520,7 +527,7 @@ void ProcessDialogEvent()
 			}
 
 			Link.l1 = "Exit";
-			Link.l1.go = "VEX_DEBUG_PERSONAL";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_PERSONAL_HERCULES":
@@ -534,7 +541,7 @@ void ProcessDialogEvent()
 			}
 
 			Link.l1 = "Exit";
-			Link.l1.go = "VEX_DEBUG_PERSONAL";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_PERSONAL_GOD":
@@ -550,14 +557,14 @@ void ProcessDialogEvent()
 			}
 
 			Link.l1 = "Exit";
-			Link.l1.go = "VEX_DEBUG_PERSONAL";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_PERSONAL_GOLD":
 			AddMoneyToCharacter(pchar, 10000000);
 			Dialog.Text = "10,000,000 gold added!";
 			Link.l1 = "Exit";
-			Link.l1.go = "VEX_DEBUG_PERSONAL";
+			Link.l1.go = "exit";
 		break;
 
 		case "VEX_DEBUG_SHIP_MANAGEMENT":
